@@ -117,6 +117,7 @@ services.xserver.desktopManager.plasma5.excludePackages = with pkgs.libsForQt5; 
 	zellij
 	bat
 	git
+	gh
 	nushell
 	starship
 	rustup
