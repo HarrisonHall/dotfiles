@@ -74,29 +74,21 @@
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
      initialPassword =  "password";
-     shell = pkgs.fish;
+     shell = pkgs.nushell;
      packages = with pkgs; [
-        # Essential
         firefox
 	alacritty
-	hackgen-nf-font
-	steam
-	
-	# CLI
+	flameshot
 	emacs-nox
 	tealdeer
+	steam
 	discord
-	
-	# Utils
-	flameshot
+	sgtpuzzles
+	hackgen-nf-font
 	feh
 	vlc
 	obs-studio
 	zathura
-	hoard
-
-	# Fun
-	sgtpuzzles
      ];
   };
 
@@ -104,19 +96,13 @@
   # $ nix search wget
    environment.systemPackages = with pkgs; [
      wget
-     zip
-     unzip
-     p7zip
      bottom
      tealdeer
      zellij
      bat
      git
      gh
-     #nushell
-     #ion
-     helix
-     fish
+     nushell
      starship
      rustup
      ripgrep
@@ -126,8 +112,6 @@
      onefetch
      python3
      rustup
-     ffmpeg_5-full
-     libgccjit
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

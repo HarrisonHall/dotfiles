@@ -1,0 +1,292 @@
+ls
+config nu
+man zellij
+zellij --help
+zellij attach
+zellij attach || zellij
+zellij attach or zellij
+zellij attach || zellij
+which nu
+chsh
+cat /etc/shells
+command -v nu
+which nu
+sudo emacs /etc/shells
+sudo nano /etc/shells
+which nu | echo
+which nu | cat
+echo "/run/current-system/sw/bin/nu" | sudo tee -a /etc/shells
+sudo emacs /etc/nixos/configuration.nix
+cd
+mkdir ~/.cache/starship
+starship init nu | save ~/.cache/starship/init.nu
+source ~/.cache/starship/init.nu
+nu --version
+bash
+$nu.env-path
+emacs /home/harrison/.config/nushell/env.nu
+$nu.config-path
+emacs .config/nushell/config.nu
+term size
+term size -c
+man term size
+cd .config/nushell/
+ls
+emacs config.nu
+cd
+cd .cache/starship/
+ls
+term size
+term size | get columns
+emacs init.nu
+cat init.nu
+emacs init.nu
+$nu.en
+$nu.env-path
+emacs $nu.env-path
+emacs $nu.config-path
+file ~/.cache
+ll
+cd
+ll
+ls -la
+emacs $nu.config-path
+emacs ~/.cache/starship/init.nu
+ls
+cd ~/workspace/configw/
+ls
+who
+mkdir .cache
+ls
+cd .cache/
+ls
+ll
+ls -la
+mv ~/.cache/starship/ .
+ls
+cd
+cd .cache/
+ln -s ~/workspace/configw/.cache/starship/
+ls
+rm -rf starship/
+ln -s ~/workspace/configw/.cache/starship/
+ls
+cd
+ls
+cd .cache
+cd starship/
+ls
+ll
+ls -la
+cd ..
+rmdir starship
+ln -s ~/workspace/configw/.cache/starship
+rmdir starship && ln -s ~/workspace/configw/.cache/starship
+rmdir starshipln -s ~/workspace/configw/.cache/starship
+rmdir starship
+ln -s ~/workspace/configw/.cache/starship
+rm starship/
+rm -rf starship/
+ln -s ~/workspace/configw/.cache/starship
+cd .cache/
+ls
+rmdir starship/
+ls
+ln -s ~/workspace/configw/.cache/starship/
+cd starship/
+ls
+ls
+cd starship/
+ls
+where
+cd
+ls
+cd .config/nushell/
+ls
+cd ..
+ls
+bash
+ls
+sudo emacs /etc/nixos/configuration.nix
+df -h
+steam
+sudo emacs /etc/nixos/configuration.nix
+nixos-rebuild switch
+sudo emacs /etc/nixos/configuration.nix
+nixos-rebuild switch
+sudo nixos-rebuild switch
+shutdown -r 0
+config nu
+who
+ls
+zellij
+ls
+who
+ls
+bottom
+htop
+top
+bot
+bat /etc/nixos/configuration.nix
+bt
+top
+gotop
+crate install bottom
+cargo install bottom
+rustup default stable
+cargo install bottom
+gcc
+gcc --version
+top
+nix-shell -p htop
+sudo emacs /etc/nixos/configuration.nix
+htop
+sudo nano /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+shutdown -r 0
+nix-shell -p nix-info --run "nix-info -m"
+tmux
+tellij
+man dircolors 
+man gcc
+man man
+ls
+who
+ls
+zellij
+htop
+btm
+zellij 
+fg
+zellij
+zellilj a
+zellij attach
+zellij attach second-amusement
+zellij attach 
+zellij attach material-chess
+zellij attach 
+zellij attach or zellij
+ls
+ll
+ls -la
+ls -la | select name
+ls -la | select name | grep -i git
+ls -la | select name | select 8
+ls
+cd workspace/configw/
+ls
+cd .config/
+ls
+mkdir zellij
+ls
+ll
+ls -la
+cd zellij/
+ls
+zellij setup --dump-config > config.kdl
+bashzellij setup --dump-config > config.kdl
+bash
+ls
+cat config.kdl
+ls
+cd
+cd .config/
+ln -s ~/workspace/configw/.config/zellij/
+cd zellij/
+ls
+emasc config.kdl
+ls
+emacs config.kdl
+zellij
+emacs config.kdl
+hoard
+zellij
+who
+ls
+zellij
+emacs config.kdl
+ls
+zellij
+cd ..
+ls
+cd alacritty/
+ls
+who
+emacs alacritty.yml
+ls
+cd Downloads/
+ls
+mkdir resized
+cd resized/
+nix-shell -p ffmpeg_5-full
+cd
+cd workspace/configw/
+ls
+emacs configuration.nix
+ls
+nix-shell -p ion
+ls
+cd workspace/configw/
+ls
+ll
+cd workspace/configwls
+cd workspace/configw
+ls
+cd .config
+ls
+cd alacritty/
+ls
+shutdown -r 0
+nixos-rebuild switch
+sudo nixos-rebuild switch
+ls
+cd workspace/configw/
+ls
+cat configuration.nix
+emasc configuration.nix
+emacs configuration.nix
+ls
+emacs configuration.nix
+ls
+cd /etc/nixos/
+ls
+less configuration.nix~
+cp configuration.nix~ configuration.nix
+sudo cp configuration.nix~ configuration.nix
+ls
+less configuration.nix
+cd
+nixos-rebuild switch
+sudo nixos-rebuild switch
+cd workspace/configw/
+ls
+cp /etc/nixos/configuration.nix~ config.old
+ls
+shutdown -r 0
+ls
+sudo emacs /etc/nixos/configuration.nix
+tldr wget
+tldr --update
+tldr wget
+ls
+tldr tldr
+tldr git-config
+ls
+cd
+cd workspace/
+ls
+cd configw/
+ls
+cd .config/zellij/
+ls
+emacs config.kdl
+sudo nixos-rebuild switch
+sudo emacs /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
+shutdown -r 0
+ls
+cd .config/zellij/
+ls
+cd ..
+ls
+emacs alacritty/alacritty.yml
