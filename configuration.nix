@@ -78,14 +78,18 @@
      packages = with pkgs; [
         # Essential
         firefox
-	alacritty
-	hackgen-nf-font
-	steam
+      	alacritty
+	      hackgen-nf-font
+	      discord
+	      steam
 	
 	# CLI
-	emacs-nox
-	tealdeer
-	discord
+	## Editor
+	lapce
+	## Other
+	tealdeer  # better manpages/tldr
+	hoard  # manage cli commands
+	tokei  # Code counter
 	
 	# Utils
 	flameshot
@@ -93,10 +97,12 @@
 	vlc
 	obs-studio
 	zathura
-	hoard
 
 	# Fun
 	sgtpuzzles
+
+	# Class
+	# teams
      ];
   };
 
