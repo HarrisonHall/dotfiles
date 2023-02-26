@@ -9,5 +9,29 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
-[editor.file-picker]
+#[editor.file-picker]
 #hidden = false
+
+[keys.insert]
+# Movement
+C-p = "move_line_up"
+C-n = "move_line_down"
+C-f = "move_char_right"
+C-b = "move_char_left"
+A-b = "move_prev_word_start"
+A-f = ["move_next_word_end", "move_char_right"]
+C-a = "goto_line_start"
+C-e = "goto_line_end_newline"
+C-v = "page_down"
+A-v = "page_up"
+# Text
+C-x = {C-s = ":write"}
+C-k = ["kill_to_line_end"] # TODO - select, copy, kill line
+A-w = "yank_joined_to_clipboard"
+C-w = ["yank_joined_to_clipboard", "delete_selection"]
+C-y = "paste_after"
+C-u = "undo"
+A-u = "redo"
+
+# Pane
+C-l = "align_view_center"

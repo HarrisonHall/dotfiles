@@ -44,6 +44,10 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  services.xserver.displayManager.defaultSession = "plasmawayland";
+  environment.sessionVariables = {
+    MOZ_ENABLE_WAYLAND = "1";
+  };
 
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
@@ -62,7 +66,16 @@
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;  # Recommended for pipewire
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -77,63 +90,69 @@
      shell = pkgs.fish;
      packages = with pkgs; [
         # Essential
-        firefox
+        firefox-wayland
       	alacritty
 	      hackgen-nf-font
 	      discord
 	      steam
 	
-	# CLI
-	## Editor
-	lapce
-	## Other
-	tealdeer  # better manpages/tldr
-	hoard  # manage cli commands
-	tokei  # Code counter
-	
-	# Utils
-	flameshot
-	feh
-	vlc
-	obs-studio
-	zathura
+        # CLI
+        ## Editor
+        lapce
+        ## Other
+        tealdeer  # better manpages/tldr
+        hoard  # manage cli commands
+        tokei  # Code counter
 
-	# Fun
-	sgtpuzzles
+        # Utils
+        flameshot  # Take screenshots
+        feh  # View images
+        vlc  # Audio-video viewerw
+        obs-studio  # Capture audio and video        
+        zathura  # PDF viewier
 
-	# Class
-	# teams
+        # Fun
+        sgtpuzzles
+
+        # Class
+        # teams
      ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     wget
-     zip
-     unzip
-     p7zip
-     bottom
-     tealdeer
-     zellij
-     bat
-     git
-     gh
-     #nushell
-     #ion
-     helix
-     fish
-     starship
-     rustup
-     ripgrep
-     file
-     colordiff
-     tree
-     onefetch
-     python3
-     rustup
-     ffmpeg_5-full
-     libgccjit
+  environment.systemPackages = with pkgs; [
+    # Shell
+    fish
+    starship
+
+    # Editor
+    helix
+
+    # Coding
+    git
+    gh
+    onefetch
+
+    # Building
+    gcc
+    python3
+    rustup
+
+    # Core utils
+    bat
+    bottom
+    colordiff
+    ffmpeg_5-full
+    file
+    tree
+    wget  # Network downloader
+    zip  # Zipping
+    unzip  # Unzipping
+    p7zip  # 7z
+    tealdeer
+    ripgrep
+    zellij  # Terminal multiplixer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
