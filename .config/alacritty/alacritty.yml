@@ -2,10 +2,11 @@ import:
   - ~/.config/alacritty/nord-theme.yaml
 
 shell:
-  program: zellij
-  #program: ion
-  #program: nu
-  #program: zellij
+  #program: "zellij attach --create Main"
+  program: fish
+  args:
+    - -c
+    - "zellij attach --create Main"
 
 font:
   normal:

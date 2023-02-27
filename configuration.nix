@@ -1,6 +1,6 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+# configuration.nix
+## Nix configuration - Harrison Hall
+## Check `man configuration.nix` or nixos manual (`nixos-help`)
 
 { config, pkgs, ... }:
 
@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = ["mem_sleep_default=deep"];
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/sda"; # TODO - can this be generalized?
 
   services.fprintd.enable = true;
 
@@ -42,7 +42,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
+  # Enable Wayland and X11 windowing system.
   services.xserver.enable = true;
   services.xserver.displayManager.defaultSession = "plasmawayland";
   environment.sessionVariables = {
@@ -56,24 +56,15 @@
     name = "kwallet";
     enableKwallet = true;
   };
-
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = {
-  #   "eurosign:e";
-  #   "caps:escape" # map caps to escape.
-  # };
-
+  
   # Enable sound.
   sound.enable = true;
-  #hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;  # Recommended for pipewire
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
     #jack.enable = true;
   };
 
@@ -116,6 +107,9 @@
 
         # Class
         # teams
+
+        # 
+        gnome.adwaita-icon-theme  # Used for firefox
      ];
   };
 
@@ -134,10 +128,13 @@
     gh
     onefetch
 
-    # Building
+    # Language & Building
     gcc
+    llvmPackages_15.libclang
     python3
     rustup
+    rust-analyzer
+    zig
 
     # Core utils
     bat
@@ -174,18 +171,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  # system.copySystemConfiguration = true;
+  system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
-
+  system.stateVersion = "22.11"; # https://nixos.org/nixos.options.html read docs for ugprading
 }
 
