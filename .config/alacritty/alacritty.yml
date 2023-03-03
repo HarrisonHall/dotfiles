@@ -8,6 +8,15 @@ shell:
     - -c
     - "zellij attach --create Main"
 
+window:
+  #padding:
+  #  x: 12
+  #  y: 12
+  dimensions:
+    columns: 80
+    lines: 24
+  dynamic_padding: true
+
 font:
   normal:
     family: HackGen35 Console NFJ

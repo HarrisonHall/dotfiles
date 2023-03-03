@@ -1,7 +1,6 @@
-theme = "nord"
+theme = "base16_default"
 
 [editor]
-#line-number = "relative"
 mouse = true
 
 [editor.cursor-shape]
@@ -25,7 +24,7 @@ C-e = "goto_line_end_newline"
 C-v = "page_down"
 A-v = "page_up"
 # Text
-C-x = {C-s = ":write"}
+C-x = {C-s = ":write", C-c = ":write-quit"}
 C-k = ["kill_to_line_end"] # TODO - select, copy, kill line
 A-w = "yank_joined_to_clipboard"
 C-w = ["yank_joined_to_clipboard", "delete_selection"]

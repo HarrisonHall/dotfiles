@@ -137,6 +137,10 @@ keybinds {
         // Old tmux bindings
         bind "|" "\\" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "-" "_" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "Alt Left" { Resize "Left"; }
+        bind "Alt Right" { Resize "Right"; }
+        bind "Alt Up" { Resize "Up"; }
+        bind "Alt Down" { Resize "Down"; }
         // bind "$" {    }  // TODO - rename pane
         // bind "." {    }  // TODO - rename session
     }
