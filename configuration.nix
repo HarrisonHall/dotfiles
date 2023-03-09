@@ -96,6 +96,7 @@
         tokei  # Code counter
 
         # Utils
+        calibre  # ebook software
         flameshot  # Take screenshots
         feh  # View images
         vlc  # Audio-video viewerw
@@ -142,14 +143,16 @@
     colordiff
     ffmpeg_5-full
     file
+    tealdeer  # tldr
     tree
     wget  # Network downloader
+    zellij  # Terminal multiplexer
     zip  # Zipping
     unzip  # Unzipping
     p7zip  # 7z
-    tealdeer
+    xdg-utils  # Application opening/desktop integration
+    
     ripgrep
-    zellij  # Terminal multiplixer
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

@@ -197,6 +197,10 @@ plugins {
 
 on_force_close "detach"  // Or quit
 
+env {
+    RUST_BACKTRACE 1
+}
+
 //  Send a request for a simplified ui (without arrow fonts) to plugins
 //  Options:
 //    - true
