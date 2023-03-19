@@ -44,7 +44,7 @@
 
   # Enable Wayland and X11 windowing system.
   services.xserver.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  #services.xserver.displayManager.defaultSession = "plasmawayland";
   environment.sessionVariables = {
     MOZ_ENABLE_WAYLAND = "1";
   };
@@ -59,14 +59,15 @@
   
   # Enable sound.
   sound.enable = true;
-  security.rtkit.enable = true;  # Recommended for pipewire
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    #jack.enable = true;
-  };
+  hardware.pulseaudio.enable = true;
+  #security.rtkit.enable = true;  # Recommended for pipewire
+  #services.pipewire = {
+  #  enable = true;
+  #  alsa.enable = true;
+  #  alsa.support32Bit = true;
+  #  pulse.enable = true;
+  #  #jack.enable = true;
+  #};
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -90,6 +91,7 @@
         # CLI
         ## Editor
         lapce
+        vscode
         ## Other
         tealdeer  # better manpages/tldr
         hoard  # manage cli commands
@@ -144,6 +146,7 @@
     ffmpeg_5-full
     file
     tealdeer  # tldr
+    tmux  # Terminal multiplexer
     tree
     wget  # Network downloader
     zellij  # Terminal multiplexer
@@ -151,6 +154,7 @@
     unzip  # Unzipping
     p7zip  # 7z
     xdg-utils  # Application opening/desktop integration
+    xsel  # X selection util
     
     ripgrep
   ];

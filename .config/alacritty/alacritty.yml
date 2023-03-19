@@ -6,7 +6,8 @@ shell:
   program: fish
   args:
     - -c
-    - "zellij attach --create Main"
+    #- "zellij attach --create Main"
+    - "tmux new-session -A -s MAIN"
 
 window:
   #padding:
