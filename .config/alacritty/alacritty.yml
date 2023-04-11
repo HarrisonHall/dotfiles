@@ -2,12 +2,13 @@ import:
   - ~/.config/alacritty/nord-theme.yaml
 
 shell:
-  #program: "zellij attach --create Main"
   program: fish
   args:
     - -c
-    #- "zellij attach --create Main"
     - "tmux new-session -A -s MAIN"
+
+env:
+  TERM: xterm-256color
 
 window:
   #padding:

@@ -10,3 +10,7 @@ Modern .dotfiles and configuration. Designed for new setups using nixos and wayl
 sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 sudo nix-channel --update
 ```
+
+## Tips
+- `command-not-found` error: ``
+- Try program temporarily: `nix-shell -p <program/package>`

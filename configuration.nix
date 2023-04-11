@@ -110,6 +110,7 @@
 
         # Class
         # teams
+        anki-bin
 
         # 
         gnome.adwaita-icon-theme  # Used for firefox
@@ -134,20 +135,23 @@
     # Language & Building
     gcc
     llvmPackages_15.libclang
+    patchelf  # Patch binaries
     python3
     rustup
     rust-analyzer
     zig
 
     # Core utils
-    bat
-    bottom
-    colordiff
-    ffmpeg_5-full
-    file
+    bat  # Cat with wings
+    bottom  # Top utility written in rust
+    colordiff  # Diff- with color!
+    ffmpeg_5-full  # Manage video
+    file  # Get information on files
+    imagemagick  # Image commands like convert
+    ripgrep  # Recursively search
     tealdeer  # tldr
     tmux  # Terminal multiplexer
-    tree
+    tree  # Display directory structure tree
     wget  # Network downloader
     zellij  # Terminal multiplexer
     zip  # Zipping
@@ -156,7 +160,10 @@
     xdg-utils  # Application opening/desktop integration
     xsel  # X selection util
     
-    ripgrep
+    # Dev utils
+    pkg-config
+    alsa-lib
+    udev    
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

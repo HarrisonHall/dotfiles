@@ -1,7 +1,8 @@
-theme = "base16_default"
+theme = "nord"
 
 [editor]
 mouse = true
+true-color = true
 
 [editor.cursor-shape]
 insert = "bar"
