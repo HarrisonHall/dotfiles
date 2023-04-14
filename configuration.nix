@@ -74,6 +74,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.fish.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.harrison = {
      isNormalUser = true;
@@ -126,6 +128,7 @@
 
     # Editor
     helix
+    # TODO - set editor to something sane
 
     # Coding
     git

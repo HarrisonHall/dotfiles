@@ -11,4 +11,9 @@ fi
 
 # NIX
 cp configuration.nix /etc/nixos/configuration.nix
-nixos-rebuild switch
+nixos-rebuild switch # --upgrade  # TODO - upgrade flag
+
+if [ $? -eq 0 ]; then
+    nix-env --delete-generations 60d
+    nix-store --gc
+fi
