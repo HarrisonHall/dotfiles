@@ -18,6 +18,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = ["mem_sleep_default=deep"];
   boot.loader.grub.device = "/dev/sda"; # TODO - can this be generalized?
+  boot.supportedFilesystems = [ "ntfs" ];
 
   services.fprintd.enable = true;
 
@@ -41,6 +42,28 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "HackGen Console NFJ"
+      "IPAGothic"
+    ];
+    sansSerif = [
+      "Noto Sans"
+      "IPAPGothic"
+    ];
+    serif = [
+      "Noto Serif"
+      "IPAPMincho"
+    ];
+  };
+
 
   # Enable Wayland and X11 windowing system.
   services.xserver.enable = true;
@@ -79,20 +102,26 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.harrison = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "docker" "wheel" ];
      initialPassword =  "password";
      shell = pkgs.fish;
      packages = with pkgs; [
         # Essential
         firefox-wayland
       	alacritty
-	      hackgen-nf-font
-	      discord
+ 	      discord
 	      steam
+
+        # Fonts
+        hackgen-nf-font
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        ipafont
+        kochi-substitute
 	
         # CLI
         ## Editor
-        lapce
         vscode
         ## Other
         tealdeer  # better manpages/tldr
@@ -114,7 +143,7 @@
         # teams
         anki-bin
 
-        # 
+        # Icons
         gnome.adwaita-icon-theme  # Used for firefox
      ];
   };
@@ -124,7 +153,6 @@
   environment.systemPackages = with pkgs; [
     # Shell
     fish
-    starship
 
     # Editor
     helix
@@ -141,16 +169,22 @@
     patchelf  # Patch binaries
     python3
     rustup
-    rust-analyzer
     zig
+    ## LSP
+    nil  # Nix LSP
+    marksman  # Markdown LSP
+    rust-analyzer  # Rust LSP
 
     # Core utils
     bat  # Cat with wings
     bottom  # Top utility written in rust
     colordiff  # Diff- with color!
+    delta  # Diffing tool
     ffmpeg_5-full  # Manage video
     file  # Get information on files
+    gparted  # 
     imagemagick  # Image commands like convert
+    pandoc  # File conversion
     ripgrep  # Recursively search
     tealdeer  # tldr
     tmux  # Terminal multiplexer
@@ -160,13 +194,23 @@
     zip  # Zipping
     unzip  # Unzipping
     p7zip  # 7z
+    wl-clipboard  # Wayland clipboard utility
     xdg-utils  # Application opening/desktop integration
     xsel  # X selection util
     
     # Dev utils
     pkg-config
     alsa-lib
-    udev    
+    udev
+
+    # Python packages
+    (python3.withPackages(ps: with ps; [
+      cryptography
+      pandas
+      pip
+      "python-lsp-server[all]"
+      requests
+    ]))
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -190,6 +234,6 @@
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
 
-  system.stateVersion = "22.11"; # https://nixos.org/nixos.options.html read docs for ugprading
+  system.stateVersion = "22.11"; # https://nixos.org/nixos.options.html read docs for upgrading
 }
 
