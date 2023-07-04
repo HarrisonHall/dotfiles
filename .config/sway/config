@@ -1,0 +1,112 @@
+set $menu wofi --show run
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+
+font pango:HackGen35 Console NJF Medium 11
+default_border none
+
+# Startup
+exec --no-startup-id swaybg -i ~/media/wallpapers/clear_mountain.jpg
+
+# Apps
+bindsym $mod+shift+t exec $term
+bindsym $mod+s exec $menu
+bindsym $mod+shift+q exec swaynag -t warning -m "Exiting sway..." -B "Yep" "swaymsg exit"
+bindsym $mod+Return exec $term
+bindsym $mod+l exec swaylock -f
+#bindsym Alt+Shift+4 grim | wl-copy -t image/png
+#bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
+
+# keyboard
+floating_modifier $mod normal
+bindsym $mod+Shift+r reload
+bindsym $mod+Shift+w kill
+bindsym $mod+b bar mode toggle
+bindsym $mod+f floating toggle
+bindsym --release --whole-window $mod+button2 floating toggle
+bindsym $mod+m fullscreen
+
+## Resize
+bindsym $mod+left resize 
+## Focus
+#bindsym $mod+$left focus left
+#bindsym $mod+$right focus right
+#bindsym $mod+$up focus up
+#bindsym $mod+$down focus down
+## Move focused
+bindsym $mod+Shift+$left focus left
+bindsym $mod+Shift+$right focus right
+bindsym $mod+Shift+$up focus up
+bindsym $mod+Shift+$down focus down
+## Workspaces
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+## Move
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+## Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+bar {
+	swaybar_command waybar
+	position top
+	#status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+}
+
+# screenshots
+bindsym $mod+c exec grim  -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
+
+# Brightness
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
+
+# Volume
+bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
+bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
+bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
+
+# Printscreen mode
+mode "printscreen" {
+    bindsym s exec grim -t png -g "$(slurp -d)" - | wl-copy -t image/png && swaymsg 'mode "default"'
+    bindsym f exec grim -t png - | wl-copy -t image/png; mode default
+    bindsym Print exec grim -t png - | wl-copy -t image/png; mode default
+    bindsym w exec swaymsg -t get_tree | jq -r '.. | select(.focused?) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -t png -g - - | wl-copy -t image/png && swaymsg 'mode "default"'
+    bindsym o exec swaymsg -t get_tree | jq -r '.. | (.nodes? // empty)[] | select(.focused) | .rect | "\(.x),\(.y) \(.width)x\(.height)"' | grim -t png -g - - | wl-copy -t image/png && swaymsg 'mode "default"'
+	bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym Print mode "printscreen"
+bindsym $mod+u exec grim -t png - | wl-copy -t image/png
+
+# Lock&Idle
+exec swayidle -w \
+	timeout 300 'swaylock -f -c 000000' \
+	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	before-sleep 'swaylock -f -c 000000'
+
+
+exec dbus-sway-environment
+exec configure-gtk
+
+include @sysconfdir@/sway/config.d/*

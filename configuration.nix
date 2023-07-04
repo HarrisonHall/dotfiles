@@ -2,8 +2,40 @@
 ## Nix configuration - Harrison Hall
 ## Check `man configuration.nix` or nixos manual (`nixos-help`)
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
+let
+  # DBUS sway helper
+  dbus-sway-environment = pkgs.writeTextFile {
+    name = "dbus-sway-environment";
+    destination = "/bin/dbus-sway-environment";
+    executable = true;
+
+    text = ''
+  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+  systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+  systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+      '';
+  };
+
+  # GTK sway helper
+  configure-gtk = pkgs.writeTextFile {
+      name = "configure-gtk";
+      destination = "/bin/configure-gtk";
+      executable = true;
+      text = let
+        schema = pkgs.gsettings-desktop-schemas;
+        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+      in ''
+        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+        gnome_schema=org.gnome.desktop.interface
+        gsettings set $gnome_schema gtk-theme 'Dracula'
+        '';
+  };
+
+  user = "harrison";
+
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -17,7 +49,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = ["mem_sleep_default=deep"];
-  boot.loader.grub.device = "/dev/sda"; # TODO - can this be generalized?
+  boot.loader.grub.device = "/dev/sda";
   boot.supportedFilesystems = [ "ntfs" ];
 
   services.fprintd.enable = true;
@@ -42,13 +74,23 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-    ];
-  };
+  # i18n.inputMethod = {
+  #   enabled = "fcitx5";
+  #   fcitx5.addons = with pkgs; [
+  #     fcitx5-mozc
+  #     fcitx5-gtk
+  #   ];
+  # };
+  fonts.fonts = with pkgs; [
+    #(nerdfonts.override { fonts = [ "" ]; })
+    powerline-fonts
+    #nerdfonts
+    hackgen-nf-font  # TODO - not working???
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    font-awesome
+  ];
   fonts.fontconfig.defaultFonts = {
     monospace = [
       "HackGen Console NFJ"
@@ -64,45 +106,99 @@
     ];
   };
 
-
-  # Enable Wayland and X11 windowing system.
+  # Sway
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    # extraPackages = with pkgs; [
+      # swaylock
+      # swayidle
+      # wl-clipboard
+      # wf-recorder
+      # mako # notification daemon
+      # grim
+      # slurp
+    # ];
+    extraSessionCommands = ''
+      export SDL_VIDEODRIVER=wayland
+      export QT_QPA_PLATFORM=wayland
+      export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
+      export _JAVA_AWT_WM_NONREPARENTING=1
+      export MOZ_ENABLE_WAYLAND=1
+    '';
+  };
+  security.polkit.enable = true;
+  hardware.opengl.enable = true;
+  security.pam.services.swaylock.text = ''
+  auth include login
+  '';
   services.xserver.enable = true;
-  #services.xserver.displayManager.defaultSession = "plasmawayland";
-  environment.sessionVariables = {
-    MOZ_ENABLE_WAYLAND = "1";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
+    };
+  };
+  systemd.services.greetd = {
+    unitConfig = {
+         After = lib.mkOverride 0 [ "multi-user.target" ];
+    };
+    serviceConfig = {
+      Type = "idle";
+    };
   };
 
-  # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  security.pam.services.kwallet = {
-    name = "kwallet";
-    enableKwallet = true;
-  };
+  # VT color
+  # systemd.services.vt_color = {
+  #   enable = true;
+  #   description = "Virtual terminal color";
+  #   unitConfig = {
+  #     Type = "oneshot";
+  #   };
+  #   serviceConfig = {
+  #     ExecStart = "/home/${user}/.config/configw/scripts/vt_nord.sh";
+  #   };
+  #   wantedBy = [ "multi-user.target" ];
+  # };
   
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  #security.rtkit.enable = true;  # Recommended for pipewire
-  #services.pipewire = {
-  #  enable = true;
-  #  alsa.enable = true;
-  #  alsa.support32Bit = true;
-  #  pulse.enable = true;
-  #  #jack.enable = true;
-  #};
+  # hardware.pulseaudio.enable = true;
+  security.rtkit.enable = true;  # Recommended for pipewire
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    # alsa.support32Bit = true;
+    pulse.enable = true;
+    # jack.enable = true;
+  };
+
+  # Enable dbus
+  services.dbus.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    # gtk portal needed to make gtk apps happy
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+  # Enable backlight support
+  #programs.light.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.harrison = {
+  users.users.${user} = {
      isNormalUser = true;
-     extraGroups = [ "docker" "wheel" ];
+     extraGroups = [ "docker" "video" "wheel" ];
      initialPassword =  "password";
      shell = pkgs.fish;
      packages = with pkgs; [
@@ -113,14 +209,10 @@
 	      steam
 
         # Fonts
-        hackgen-nf-font
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-        ipafont
-        kochi-substitute
+        font-manager
+        
 	
-        # CLI
+        # CLI+
         ## Editor
         vscode
         ## Other
@@ -130,7 +222,6 @@
 
         # Utils
         calibre  # ebook software
-        flameshot  # Take screenshots
         feh  # View images
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video        
@@ -156,7 +247,6 @@
 
     # Editor
     helix
-    # TODO - set editor to something sane
 
     # Coding
     git
@@ -184,6 +274,7 @@
     file  # Get information on files
     gparted  # 
     imagemagick  # Image commands like convert
+    kbd  # Keyboard & virtual terminal utils
     pandoc  # File conversion
     ripgrep  # Recursively search
     tealdeer  # tldr
@@ -194,9 +285,27 @@
     zip  # Zipping
     unzip  # Unzipping
     p7zip  # 7z
-    wl-clipboard  # Wayland clipboard utility
     xdg-utils  # Application opening/desktop integration
     xsel  # X selection util
+
+    # WM
+    wayland
+    glib # gsettings
+    grim # screenshot functionality
+    bemenu # wayland clone of dmenu
+    wdisplays # tool to configure displays
+    dbus-sway-environment
+    configure-gtk
+    swaylock
+    swayidle
+    wl-clipboard
+    wf-recorder
+    mako
+    grim  # Screenshot tool
+    slurp  # Screenspace selector
+    waybar
+    wofi
+    swaybg
     
     # Dev utils
     pkg-config
@@ -234,6 +343,6 @@
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
 
-  system.stateVersion = "22.11"; # https://nixos.org/nixos.options.html read docs for upgrading
+  system.stateVersion = "23.05"; # https://nixos.org/nixos.options.html read docs for upgrading
 }
 
