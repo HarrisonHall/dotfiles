@@ -1,0 +1,11 @@
+max-visible=4
+layer=top
+font=HackGen35 Console NFJ
+background-color=#e5e9f0dd
+text-color=#2e3440
+border-color=#eceff4
+border-radius=7
+max-icon-size=48
+default-timeout=5000
+anchor=top-right
+margin=20

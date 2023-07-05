@@ -110,15 +110,25 @@ in
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true;
-    # extraPackages = with pkgs; [
-      # swaylock
-      # swayidle
-      # wl-clipboard
-      # wf-recorder
-      # mako # notification daemon
-      # grim
-      # slurp
-    # ];
+    extraPackages = with pkgs; [
+      wayland  # Wayland libs
+      glib # gsettings
+      grim # screenshot functionality
+      bemenu # wayland clone of dmenu
+      wdisplays # tool to configure displays
+      dbus-sway-environment  # DBUS environment (custom)
+      configure-gtk  # GTK configuration (custom)
+      swaylock  # Lock screen management
+      swayidle  # Idle management
+      wl-clipboard  # Wayland clipboard utilities
+      wf-recorder  # Wayland screen recorder
+      mako  # Wayland notification daemon
+      grim  # Screenshot tool
+      slurp  # Screenspace selector
+      waybar  # Better swaybar
+      wofi  # Wayland rofi
+      swaybg  # Change sway bg
+    ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
       export QT_QPA_PLATFORM=wayland
@@ -134,6 +144,7 @@ in
   '';
   services.xserver.enable = true;
 
+  # Enable greetd-tuigreet minimal greeter
   services.greetd = {
     enable = true;
     settings = {
@@ -172,7 +183,7 @@ in
   services.pipewire = {
     enable = true;
     alsa.enable = true;
-    # alsa.support32Bit = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
     # jack.enable = true;
   };
@@ -189,13 +200,13 @@ in
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
   # Enable backlight support
-  #programs.light.enable = true;
+  programs.light.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   programs.fish.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define user
   users.users.${user} = {
      isNormalUser = true;
      extraGroups = [ "docker" "video" "wheel" ];
@@ -211,8 +222,7 @@ in
         # Fonts
         font-manager
         
-	
-        # CLI+
+	      # CLI+
         ## Editor
         vscode
         ## Other
@@ -236,6 +246,9 @@ in
 
         # Icons
         gnome.adwaita-icon-theme  # Used for firefox
+
+        # Games
+        vulkan-loader
      ];
   };
 
@@ -253,7 +266,8 @@ in
     gh
     onefetch
 
-    # Language & Building
+    # Language
+    ## Compilers & Interpreters
     gcc
     llvmPackages_15.libclang
     patchelf  # Patch binaries
@@ -272,7 +286,7 @@ in
     delta  # Diffing tool
     ffmpeg_5-full  # Manage video
     file  # Get information on files
-    gparted  # 
+    gparted  # Disk management
     imagemagick  # Image commands like convert
     kbd  # Keyboard & virtual terminal utils
     pandoc  # File conversion
@@ -287,25 +301,6 @@ in
     p7zip  # 7z
     xdg-utils  # Application opening/desktop integration
     xsel  # X selection util
-
-    # WM
-    wayland
-    glib # gsettings
-    grim # screenshot functionality
-    bemenu # wayland clone of dmenu
-    wdisplays # tool to configure displays
-    dbus-sway-environment
-    configure-gtk
-    swaylock
-    swayidle
-    wl-clipboard
-    wf-recorder
-    mako
-    grim  # Screenshot tool
-    slurp  # Screenspace selector
-    waybar
-    wofi
-    swaybg
     
     # Dev utils
     pkg-config
@@ -322,27 +317,7 @@ in
     ]))
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
-
-  system.stateVersion = "23.05"; # https://nixos.org/nixos.options.html read docs for upgrading
+  system.stateVersion = "23.05";  # nixos version
 }
 

@@ -6,6 +6,8 @@ Modern .dotfiles and configuration. Designed for new setups using nixos and wayl
 ## Setup or Update
 1. `git clone https://github.com/HarrisonHall/configW`
 2. `cd configw && sudo ./build.sh`
+3. Custom setup:
+   * Set password `passwd`
 
 ## command-not-found
 ```bash

@@ -101,9 +101,9 @@ bindsym $mod+u exec grim -t png - | wl-copy -t image/png
 
 # Lock&Idle
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
+	timeout 300 'swaylock -f' \
 	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-	before-sleep 'swaylock -f -c 000000'
+	before-sleep 'swaylock -f'
 
 
 exec dbus-sway-environment
