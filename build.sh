@@ -13,8 +13,9 @@ done
 
 # NIX
 echo "- Building config"
-sudo cp "${configw}/configuration.nix" /etc/nixos/configuration.nix
-sudo nixos-rebuild switch # --upgrade  # TODO - upgrade flag
+sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix"
+# --upgrade --show-traces  # TODO - turn into flags
+
 ## Run GC on success
 if [ $? -eq 0 ]; then
     echo "- Running garbage collection"

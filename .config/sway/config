@@ -7,7 +7,7 @@ set $up k
 set $right l
 set $term alacritty
 
-font pango:HackGen35 Console NJF Medium 11
+font pango:HackGen35 Console NJ Medium 11
 default_border none
 
 # Startup
@@ -19,8 +19,6 @@ bindsym $mod+s exec $menu
 bindsym $mod+shift+q exec swaynag -t warning -m "Exiting sway..." -B "Yep" "swaymsg exit"
 bindsym $mod+Return exec $term
 bindsym $mod+l exec swaylock -f
-#bindsym Alt+Shift+4 grim | wl-copy -t image/png
-#bindsym Print exec grim -g "$(slurp -d)" - | wl-copy -t image/png
 
 # keyboard
 floating_modifier $mod normal
@@ -28,6 +26,7 @@ bindsym $mod+Shift+r reload
 bindsym $mod+Shift+w kill
 bindsym $mod+b bar mode toggle
 bindsym $mod+f floating toggle
+## TODO vvv doesn't work
 bindsym --release --whole-window $mod+button2 floating toggle
 bindsym $mod+m fullscreen
 
@@ -71,7 +70,6 @@ bindsym $mod+minus scratchpad show
 bar {
 	swaybar_command waybar
 	position top
-	#status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
 }
 
 # screenshots
@@ -101,8 +99,8 @@ bindsym $mod+u exec grim -t png - | wl-copy -t image/png
 
 # Lock&Idle
 exec swayidle -w \
-	timeout 300 'swaylock -f' \
-	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	timeout 500 'swaylock -f' \
+	timeout 500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 	before-sleep 'swaylock -f'
 
 

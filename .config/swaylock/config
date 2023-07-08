@@ -35,7 +35,7 @@ show-failed-attempts
 # disable-caps-lock-text
 
 # Show the current Caps Lock state also on the indicator
-# indicator-caps-lock
+indicator-caps-lock
 
 # Image scaling mode: 'stretch', 'fill', 'fit', 'center', 'tile' & 'solid\color'
 # scaling
@@ -56,11 +56,11 @@ caps-lock-bs-hl-color=d08770ff
 caps-lock-key-hl-color=ebcb8bff
 
 # Sets the font of the text
-font=HackGen35 Console NFJ
+font=Hack
 
 # FUTURE RELEASE
 # Sets a fixed font size for the indicator text
-# font-size=<size>
+font-size=26
 
 # FUTURE RELEASE
 # Sets the indicator to show even if idle
@@ -147,16 +147,16 @@ ring-wrong-color=d08770ff
 separator-color=3b4252ff
 
 # Sets the color of the text
-text-color=eceff4ff
+text-color=eceff400
 
 # Sets the color of the text when cleared
-text-clear-color=3b4252ff
+text-clear-color=3b425200
 
 # Sets the color of the text when Caps Lock is active
 # text-caps-lock-color=<rrggbb[aa]>
 
 # Sets the color of the text when verifying
-text-ver-color=3b4252ff
+text-ver-color=3b425200
 
 # Sets the color of the text when invalid
-text-wrong-color=3b4252ff
+text-wrong-color=3b425200

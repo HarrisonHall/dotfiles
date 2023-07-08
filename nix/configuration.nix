@@ -5,6 +5,8 @@
 { config, pkgs, lib, ... }:
 
 let
+  user = "harrison";
+  
   # DBUS sway helper
   dbus-sway-environment = pkgs.writeTextFile {
     name = "dbus-sway-environment";
@@ -33,13 +35,12 @@ let
         '';
   };
 
-  user = "harrison";
-
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [ 
+      # Include the results of the hardware scan.
+      /etc/nixos/hardware-configuration.nix
     ];
 
   hardware.opengl.driSupport32Bit = true;  # steam?
@@ -85,7 +86,7 @@ in
     #(nerdfonts.override { fonts = [ "" ]; })
     powerline-fonts
     #nerdfonts
-    hackgen-nf-font  # TODO - not working???
+    hackgen-nf-font
     noto-fonts
     noto-fonts-cjk
     noto-fonts-emoji
@@ -93,7 +94,7 @@ in
   ];
   fonts.fontconfig.defaultFonts = {
     monospace = [
-      "HackGen Console NFJ"
+      "HackGen35 Console NF"
       "IPAGothic"
     ];
     sansSerif = [
@@ -128,6 +129,7 @@ in
       waybar  # Better swaybar
       wofi  # Wayland rofi
       swaybg  # Change sway bg
+      capitaine-cursors  # Cursor
     ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
@@ -232,9 +234,11 @@ in
 
         # Utils
         calibre  # ebook software
+        (callPackage ./packages/cdtest.nix { })  # Manage temporary project directories
         feh  # View images
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video        
+        xplorer  # File explorer
         zathura  # PDF viewier
 
         # Fun

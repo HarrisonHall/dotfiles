@@ -35,3 +35,9 @@ A-u = "redo"
 
 # Pane
 C-l = "align_view_center"
+
+[keys.normal."C-w"]
+"\\" = "vsplit"
+"minus" = "hsplit"
+"x" = "wclose"
+"C-d" = "wclose"

@@ -21,19 +21,19 @@ window:
 
 font:
   normal:
-    family: HackGen35 Console NFJ
+    family: HackGen35 Console NF
     style: Regular
 
   bold:
-    family: HackGen35 Console NFJ
+    family: HackGen35 Console NF
     style: Bold
 
   italic:
-    family: HackGen35 Console NFJ
+    family: HackGen35 Console NF
     style: Italic
 
   bold_italic:
-    family: HackGen35 Console NFJ
+    family: HackGen35 Console NF
     style: Bold Italic
 
   size: 12
