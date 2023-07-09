@@ -234,7 +234,7 @@ in
 
         # Utils
         calibre  # ebook software
-        (callPackage ./packages/cdtest.nix { })  # Manage temporary project directories
+        (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         feh  # View images
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video        
