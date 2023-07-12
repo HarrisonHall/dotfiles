@@ -11,11 +11,17 @@ font pango:HackGen35 Console NJ Medium 11
 default_border none
 
 # Startup
+## BG
 exec --no-startup-id swaybg -i ~/media/wallpapers/clear_mountain.jpg
+## Monitor
+output eDP-1 scale 1.75
+## Cursor
+seat seat0 xcursor_theme "capitaine-cursors"
 
 # Apps
 bindsym $mod+shift+t exec $term
-bindsym $mod+s exec $menu
+bindsym $mod+s exec wofi --show drun
+bindsym $mod+shift+s exec wofi --show run
 bindsym $mod+shift+q exec swaynag -t warning -m "Exiting sway..." -B "Yep" "swaymsg exit"
 bindsym $mod+Return exec $term
 bindsym $mod+l exec swaylock -f
@@ -62,6 +68,9 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
+## Move monitors
+bindsym $mod+Shift+Right move workspace to output right
+bindsym $mod+Shift+Left move workspace to output left
 ## Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show

@@ -12,6 +12,9 @@ select = "underline"
 #[editor.file-picker]
 #hidden = false
 
+# [editor.lsp]
+# display-inlay-hints = true
+
 [keys.insert]
 # Movement
 C-p = "move_line_up"

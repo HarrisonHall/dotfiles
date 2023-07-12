@@ -32,6 +32,7 @@ let
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
         gsettings set $gnome_schema gtk-theme 'Dracula'
+        gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
         '';
   };
 
@@ -53,12 +54,15 @@ in
   boot.loader.grub.device = "/dev/sda";
   boot.supportedFilesystems = [ "ntfs" ];
 
-  services.fprintd.enable = true;
+  # services.fprintd.enable = true;  # Fingerprint support
 
   networking.hostName = "hachha-laptop-nixos"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  # TODO - see if the following two are necessary for networkmanager...
+  # services.gnome.gnome-keyring.enable = true;  # Remember passwords
+  # security.pam.services.greetd.enableGnomeKeyring = true;  # Unlock keyring on login (for greetd)
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -114,11 +118,11 @@ in
     extraPackages = with pkgs; [
       wayland  # Wayland libs
       glib # gsettings
-      grim # screenshot functionality
       bemenu # wayland clone of dmenu
       wdisplays # tool to configure displays
       dbus-sway-environment  # DBUS environment (custom)
       configure-gtk  # GTK configuration (custom)
+      swayr  # Simple cli for managing sway
       swaylock  # Lock screen management
       swayidle  # Idle management
       wl-clipboard  # Wayland clipboard utilities
@@ -207,11 +211,13 @@ in
   nixpkgs.config.allowUnfree = true;
 
   programs.fish.enable = true;
+  environment.variables.EDITOR = "hx";
+  environment.variables.VISUAL = "code";
 
   # Define user
   users.users.${user} = {
      isNormalUser = true;
-     extraGroups = [ "docker" "video" "wheel" ];
+     extraGroups = [ "docker" "network" "networkmanager" "video" "wheel" ];
      initialPassword =  "password";
      shell = pkgs.fish;
      packages = with pkgs; [
@@ -228,16 +234,21 @@ in
         ## Editor
         vscode
         ## Other
-        tealdeer  # better manpages/tldr
+        broot  # Quickly jump around directories
+        (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
+        du-dust  # Disk-usage command
+        exa  # Better ls
         hoard  # manage cli commands
+        mdp  # Markdown presentation tool
+        tealdeer  # better manpages/tldr
         tokei  # Code counter
 
         # Utils
         calibre  # ebook software
-        (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         feh  # View images
         vlc  # Audio-video viewerw
-        obs-studio  # Capture audio and video        
+        obs-studio  # Capture audio and video
+        tuifeed  # atom/rss viewer
         xplorer  # File explorer
         zathura  # PDF viewier
 

@@ -62,8 +62,7 @@
 #waybar {
     background: @bg;
     color: @light;
-    font-family: HackGen35 Console NFJ;
-    /*font-family: Noto Sans JP Thin;*/
+    font-family: "Hack", "Font Awesome 6 Free", "HackGen35 Console NFJ";
     font-size: 1rem;
     font-weight: bold;
 }
