@@ -162,55 +162,29 @@
 	margin-left: 40px;
 }
 
-#custom-alsa {
-	background: @sound;
-}
-
 #network {
-    background: @network;
-}
-
-#memory {
-    background: @memory;
-}
-
-#cpu {
-    background: @cpu;
-}
-
-#temperature {
-    background: @temp;
 }
 
 #custom-layout {
-    background: @layout;
 }
 
 #battery {
-    background: @battery;
 }
 
 #backlight {
-	background: @backlight;
 }
 
 #clock.date {
-    background: @date;
 }
 
 #clock.time {
-    background: @time;
-}
-
-#pulseaudio { /* Unsused but kept for those who needs it */
-    background: @sound;
-}
-
-#pulseaudio.muted {
-    /* No styles */
 }
 
 #tray {
-	background: @tray;
 }
 
+#pulseaudio {
+}
+
+#network {
+}

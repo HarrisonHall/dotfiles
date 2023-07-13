@@ -1,0 +1,9 @@
+[sources]
+# Write here the sources you want to get the feed from following the example below
+hachha = "https://hachha.dev/blog.rss"
+#"hachha.dev" = "https://hachha.dev/blog.rss"
+reddit = "https://old.reddit.com/.rss?feed=71e68a9313aae45cf6647d31e7ea6cae483f6628&user=capt_jelly"
+hackernews = "https://news.ycombinator.com/rss"
+nasa = "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+github = "https://github.com/HarrisonHall.private.atom?token=AGEQZQY3VH5WIPPP2GWPEZF6M7WI6"
+suckless = "http://suckless.org/atom.xml"

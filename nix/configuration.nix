@@ -79,13 +79,13 @@ in
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  # i18n.inputMethod = {
-  #   enabled = "fcitx5";
-  #   fcitx5.addons = with pkgs; [
-  #     fcitx5-mozc
-  #     fcitx5-gtk
-  #   ];
-  # };
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+    ];
+  };
   fonts.fonts = with pkgs; [
     #(nerdfonts.override { fonts = [ "" ]; })
     powerline-fonts
@@ -141,6 +141,9 @@ in
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
       export _JAVA_AWT_WM_NONREPARENTING=1
       export MOZ_ENABLE_WAYLAND=1
+      export GTK_IM_MODULE=fcitx
+      export QT_IM_MODULE=fcitx
+      export XMODIFIERS="@im=fcitx"
     '';
   };
   security.polkit.enable = true;
@@ -246,6 +249,7 @@ in
         # Utils
         calibre  # ebook software
         feh  # View images
+        killall  # killall signaller
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video
         tuifeed  # atom/rss viewer

@@ -17,6 +17,8 @@ exec --no-startup-id swaybg -i ~/media/wallpapers/clear_mountain.jpg
 output eDP-1 scale 1.75
 ## Cursor
 seat seat0 xcursor_theme "capitaine-cursors"
+## Language
+exec fcitx5
 
 # Apps
 bindsym $mod+shift+t exec $term
@@ -30,7 +32,8 @@ bindsym $mod+l exec swaylock -f
 floating_modifier $mod normal
 bindsym $mod+Shift+r reload
 bindsym $mod+Shift+w kill
-bindsym $mod+b bar mode toggle
+# bindsym $mod+b bar mode toggle
+bindsym $mod+b exec killall -SIGUSR1 waybar
 bindsym $mod+f floating toggle
 ## TODO vvv doesn't work
 bindsym --release --whole-window $mod+button2 floating toggle
