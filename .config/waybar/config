@@ -10,7 +10,17 @@
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-        "all-outputs": false,
+        "all-outputs": true,
+        "persistent_workspaces": {
+            "1": ["DP-5", "eDP-1"],
+            "2": ["eDP-1"], 
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": []
+        },
         "format": "{icon}",
         "format-icons": {
             "1": "一",

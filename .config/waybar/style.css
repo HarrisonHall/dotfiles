@@ -31,12 +31,13 @@
 /* Nord */
 @define-color bg #353C4A;
 @define-color light #eceff4;
+@define-color disabled-text rgba(236, 239, 244, 0.25);
 @define-color dark #2e3440;
 @define-color warning #ebcb8b;
 @define-color critical #d08770;
 @define-color mode #4c566a;
 @define-color workspaces @bg;
-@define-color workspacesfocused #434C5E;
+@define-color workspacesfocused #4c566a;
 @define-color tray @workspacesfocused;
 @define-color sound #46536A;
 @define-color network #5D7096;
@@ -141,20 +142,25 @@
 
 
 #workspaces button {
-	font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
-	padding-left: 5px;
-	padding-right: 5px;
-	color: @light;
-	background: @workspaces;
+    font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
+    padding-left: 5px;
+    padding-right: 5px;
+    color: @disabled-text;
+    background: @workspaces;
 }
 
 #workspaces button.focused {
+    color: @light;
     background: @workspacesfocused;
 }
 
 #workspaces button.urgent {
 	border-color: #c9545d;
 	color: #c9545d;
+}
+
+#workspaces button.current_output {
+    color: @light;
 }
 
 #window {
