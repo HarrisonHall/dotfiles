@@ -78,7 +78,8 @@
         // "device": "acpi_video1",
         "format": "{icon}",
         "format-alt": "{percent}%",
-        "format-icons": ["󰃞", "󰃟", "󰃠"]
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "scroll-step": 10.0
     },
     "battery": {
         "states": {

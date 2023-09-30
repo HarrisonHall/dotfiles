@@ -44,7 +44,7 @@ in
       /etc/nixos/hardware-configuration.nix
     ];
 
-  hardware.opengl.driSupport32Bit = true;  # steam?
+  hardware.opengl.driSupport32Bit = true;  # May be necessary for steam
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -56,13 +56,13 @@ in
 
   # services.fprintd.enable = true;  # Fingerprint support
 
-  networking.hostName = "hachha-laptop-nixos"; # Define your hostname.
+  networking.hostName = "hachha-laptop-nixos"; # hostname
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  # TODO - see if the following two are necessary for networkmanager...
-  # services.gnome.gnome-keyring.enable = true;  # Remember passwords
-  # security.pam.services.greetd.enableGnomeKeyring = true;  # Unlock keyring on login (for greetd)
+  programs.nm-applet.enable = true;  # nmapplet
+  services.gnome.gnome-keyring.enable = true;  # Remember passwords
+  security.pam.services.greetd.enableGnomeKeyring = true;  # Unlock keyring on login (for greetd)
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -86,7 +86,7 @@ in
       fcitx5-gtk
     ];
   };
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     #(nerdfonts.override { fonts = [ "" ]; })
     powerline-fonts
     #nerdfonts
@@ -228,7 +228,6 @@ in
         firefox-wayland
       	alacritty
  	      discord
-	      steam
 
         # Fonts
         font-manager
@@ -240,33 +239,39 @@ in
         broot  # Quickly jump around directories
         (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         du-dust  # Disk-usage command
-        exa  # Better ls
         hoard  # manage cli commands
         mdp  # Markdown presentation tool
         tealdeer  # better manpages/tldr
         tokei  # Code counter
+        obsidian  # Obsidian
 
         # Utils
         calibre  # ebook software
+        dolphin  # File explorer
         feh  # View images
         killall  # killall signaller
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video
-        tuifeed  # atom/rss viewer
-        xplorer  # File explorer
+        thunderbird-bin  # Thunderbird
+        wireguard-tools  # wireguard vpn
         zathura  # PDF viewier
 
-        # Fun
-        sgtpuzzles
+        # Crypt
+        protonvpn-gui
+        protonvpn-cli
+        protonmail-bridge
+        signal-desktop
 
         # Class
-        # teams
         anki-bin
 
         # Icons
         gnome.adwaita-icon-theme  # Used for firefox
+        libsForQt5.breeze-icons  # For kwallet/dolphin
 
         # Games
+        sgtpuzzles
+	      steam
         vulkan-loader
      ];
   };
@@ -290,7 +295,6 @@ in
     gcc
     llvmPackages_15.libclang
     patchelf  # Patch binaries
-    python3
     rustup
     zig
     ## LSP
@@ -327,13 +331,18 @@ in
     udev
 
     # Python packages
-    (python3.withPackages(ps: with ps; [
+    (python3.withPackages(ps: with ps; [ 
       cryptography
+      dnspython
       pandas
       pip
       "python-lsp-server[all]"
       requests
     ]))
+
+
+    # network-manager-applet
+    networkmanagerapplet
   ];
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix

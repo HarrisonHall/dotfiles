@@ -1,11 +1,10 @@
-set $menu wofi --show run
-
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 set $term alacritty
+set $menu wofi --show run
 
 font pango:HackGen35 Console NJ Medium 11
 default_border none
@@ -21,6 +20,11 @@ exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-theme "cap
 exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-size 32
 ## Language
 # exec fcitx5
+## Network
+exec --no-startup-id nm-applet
+## Proton
+exec --no-startup-id protonmail-bridge -n
+exec --no-startup-id protonvpn --gapplication-service
 
 # Apps
 bindsym $mod+shift+t exec $term
@@ -114,7 +118,7 @@ bindsym $mod+u exec grim -t png - | wl-copy -t image/png
 # Lock&Idle
 exec swayidle -w \
 	timeout 500 'swaylock -f' \
-	timeout 500 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 	before-sleep 'swaylock -f'
 
 
