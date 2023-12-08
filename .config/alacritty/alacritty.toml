@@ -1,0 +1,34 @@
+import = ["/home/hhall/.config/alacritty/nord-theme.toml"]
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12
+
+[font.bold]
+family = "HackGen35 Console NF"
+style = "Bold"
+
+[font.bold_italic]
+family = "HackGen35 Console NF"
+style = "Bold Italic"
+
+[font.italic]
+family = "HackGen35 Console NF"
+style = "Italic"
+
+[font.normal]
+family = "HackGen35 Console NF"
+style = "Regular"
+
+[shell]
+args = ["-c", "tmux new-session -A -s MAIN"]
+program = "fish"
+
+[window]
+dynamic_padding = true
+
+[window.dimensions]
+columns = 80
+lines = 24
