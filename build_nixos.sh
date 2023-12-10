@@ -1,15 +1,10 @@
 #!/usr/bin/env sh
 ## build.sh
-configw=$(cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd)
+configw="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
 # Update configuration
 echo "- Symlinking"
-## Symlink configw
-ln -s -T $configw ~/.config/configw >/dev/null 2>&1
-## Symlink .config
-for configuration in $(find "${configw}" -maxdepth 2 -path "*/.config/*"); do
-    ln -s -T $configuration ~/.config/$(basename $configuration) >/dev/null 2>&1
-done
+./scripts/symlink_all.sh $configw
 
 # NIX
 echo "- Building config"

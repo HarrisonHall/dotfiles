@@ -15,3 +15,6 @@
 
 [diff]
     colorMoved = default
+[user]
+	email = hachha@hachha.dev
+	name = hachha

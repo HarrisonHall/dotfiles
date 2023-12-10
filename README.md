@@ -1,20 +1,26 @@
 # configW
-Modern .dotfiles and configuration. Designed for new setups using nixos and wayland.
+Modern .dotfiles and configuration.
+This is designed for new setups using [nix](https://nixos.org/).
 
-
-
-## Setup or Update
-1. `git clone https://github.com/HarrisonHall/configW`
-2. `cd configw && sudo ./build.sh`
-3. Custom setup:
+## Setup
+### NixOS
+1. `sudo ./build_nixos.sh`
+2. Custom setup:
    * Set password `passwd`
 
-## command-not-found
-```bash
+### *nix
+0. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
+1. Update profile: `./build_shell.sh`
+2. Custom setup:
+   * N/A
+
+## Notes & Issues
+### command-not-found
+```sh
 sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
 sudo nix-channel --update
 ```
 
 ## Tips
-- `command-not-found` error: ``
 - Try program temporarily: `nix-shell -p <program/package>`
+- Package lookup: [nixpkgs](https://search.nixos.org/packages)

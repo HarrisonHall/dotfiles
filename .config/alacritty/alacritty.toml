@@ -1,4 +1,4 @@
-import = ["/home/hhall/.config/alacritty/nord-theme.toml"]
+import = ["~/.config/alacritty/nord-theme.toml"]
 
 [env]
 TERM = "xterm-256color"

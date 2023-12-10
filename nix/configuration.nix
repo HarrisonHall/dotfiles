@@ -87,9 +87,7 @@ in
     ];
   };
   fonts.packages = with pkgs; [
-    #(nerdfonts.override { fonts = [ "" ]; })
     powerline-fonts
-    #nerdfonts
     hackgen-nf-font
     noto-fonts
     noto-fonts-cjk
@@ -172,19 +170,6 @@ in
     };
   };
 
-  # VT color
-  # systemd.services.vt_color = {
-  #   enable = true;
-  #   description = "Virtual terminal color";
-  #   unitConfig = {
-  #     Type = "oneshot";
-  #   };
-  #   serviceConfig = {
-  #     ExecStart = "/home/${user}/.config/configw/scripts/vt_nord.sh";
-  #   };
-  #   wantedBy = [ "multi-user.target" ];
-  # };
-  
   # Enable sound.
   sound.enable = true;
   # hardware.pulseaudio.enable = true;
