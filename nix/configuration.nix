@@ -44,6 +44,8 @@ in
       /etc/nixos/hardware-configuration.nix
     ];
 
+  hardware.opengl.enable = true;
+  hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;  # May be necessary for steam
 
   # Use the systemd-boot EFI boot loader.
@@ -115,6 +117,7 @@ in
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       wayland  # Wayland libs
+      wayland-protocols  # Other wayland stuffs
       glib # gsettings
       bemenu # wayland clone of dmenu
       wdisplays # tool to configure displays
@@ -132,6 +135,11 @@ in
       wofi  # Wayland rofi
       swaybg  # Change sway bg
       capitaine-cursors  # Cursor
+      mate.mate-polkit  # polkit
+
+      mesa
+      glfw
+      glfw-wayland
     ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
@@ -145,7 +153,6 @@ in
     '';
   };
   security.polkit.enable = true;
-  hardware.opengl.enable = true;
   security.pam.services.swaylock.text = ''
   auth include login
   '';
@@ -202,6 +209,12 @@ in
   environment.variables.EDITOR = "hx";
   environment.variables.VISUAL = "code";
 
+  # Enable automounting
+  services.udisks2.enable = true;
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+
   # Define user
   users.users.${user} = {
      isNormalUser = true;
@@ -222,7 +235,7 @@ in
         vscode
         ## Other
         broot  # Quickly jump around directories
-        (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
+        # (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         du-dust  # Disk-usage command
         hoard  # manage cli commands
         mdp  # Markdown presentation tool
@@ -255,11 +268,14 @@ in
         libsForQt5.breeze-icons  # For kwallet/dolphin
 
         # Games
-        sgtpuzzles
+        godot_4
+        sgt-puzzles
 	      steam
         vulkan-loader
      ];
   };
+
+  programs.steam.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

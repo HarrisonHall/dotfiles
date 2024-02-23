@@ -19,12 +19,14 @@ seat seat0 xcursor_theme "capitaine-cursors" 32
 exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
 exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-size 32
 ## Language
-# exec fcitx5
+exec --no-startup-id fcitx5 &
 ## Network
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet &
 ## Proton
-exec --no-startup-id protonmail-bridge -n
-exec --no-startup-id protonvpn --gapplication-service
+exec --no-startup-id protonmail-bridge -n &
+exec --no-startup-id protonvpn --gapplication-service &
+## Polkit
+exec --no-startup-id /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 &
 
 # Apps
 bindsym $mod+shift+t exec $term

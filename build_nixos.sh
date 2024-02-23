@@ -15,5 +15,6 @@ sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix"
 if [ $? -eq 0 ]; then
     echo "- Running garbage collection"
     nix-env --delete-generations 14d
+    # nix-collect-garbage -d
     nix-store --gc
 fi

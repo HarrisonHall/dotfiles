@@ -12,8 +12,8 @@
         "disable-scroll": true,
         "all-outputs": true,
         "persistent_workspaces": {
-            "1": ["DP-5", "eDP-1"],
-            "2": ["eDP-1"], 
+            "1": [],
+            "2": [], 
             "3": [],
             "4": [],
             "5": [],
