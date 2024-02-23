@@ -241,7 +241,7 @@ in
         mdp  # Markdown presentation tool
         tealdeer  # better manpages/tldr
         tokei  # Code counter
-        obsidian  # Obsidian
+        #obsidian  # Obsidian
 
         # Utils
         calibre  # ebook software
@@ -348,6 +348,6 @@ in
   ];
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
-  system.stateVersion = "23.05";  # nixos version
+  system.stateVersion = "23.11";  # nixos version
 }
 

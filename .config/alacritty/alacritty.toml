@@ -22,22 +22,6 @@ style = "Italic"
 family = "HackGen35 Console NF"
 style = "Regular"
 
-# [font.bold]
-# family = "Hack"
-# style = "Bold"
-
-# [font.bold_italic]
-# family = "Hack"
-# style = "Bold Italic"
-
-# [font.italic]
-# family = "Hack"
-# style = "Italic"
-
-# [font.normal]
-# family = "Hack"
-# style = "Regular"
-
 [shell]
 args = ["-c", "tmux new-session -A -s MAIN"]
 program = "fish"
