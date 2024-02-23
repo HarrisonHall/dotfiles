@@ -6,13 +6,13 @@ This is designed for new setups using [nix](https://nixos.org/).
 ### NixOS
 1. `sudo ./build_nixos.sh`
 2. Custom setup:
-   * Set password `passwd`
+   - Set password `passwd`
 
 ### *nix
 0. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
 1. Update profile: `./build_shell.sh`
 2. Custom setup:
-   * N/A
+   - Install gui programs: firefox, discord, obsidian, thunderbird, vlc...
 
 ## Notes & Issues
 ### command-not-found

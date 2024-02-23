@@ -1,4 +1,3 @@
-function lsi --wraps='exa -la' --description 'alias lsi=exa -la'
-  exa -la $argv
-        
+function lsi --wraps='eza' --description 'alias lsi=eza'
+  eza -la --icons=auto $argv
 end

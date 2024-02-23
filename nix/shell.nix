@@ -3,10 +3,14 @@
 {
   inherit (pkgs)
 
+  # Base
+  uutils-coreutils  #-noprefix ??
+
 	# Essential
 	bat
 	bottom
 	colordiff
+  eza
 	fish  # NOTE: May need other installation to be usable with chsh
 	gh
   git

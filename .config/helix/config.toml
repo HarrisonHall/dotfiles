@@ -1,4 +1,4 @@
-theme = "nord"
+theme = "catppuccin_macchiato"
 
 [editor]
 mouse = true
@@ -9,8 +9,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
-#[editor.file-picker]
-#hidden = false
+# [editor.file-picker]
+# hidden = false
 
 # [editor.lsp]
 # display-inlay-hints = true

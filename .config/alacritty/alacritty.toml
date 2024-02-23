@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/nord-theme.toml"]
+import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -22,12 +22,29 @@ style = "Italic"
 family = "HackGen35 Console NF"
 style = "Regular"
 
+# [font.bold]
+# family = "Hack"
+# style = "Bold"
+
+# [font.bold_italic]
+# family = "Hack"
+# style = "Bold Italic"
+
+# [font.italic]
+# family = "Hack"
+# style = "Italic"
+
+# [font.normal]
+# family = "Hack"
+# style = "Regular"
+
 [shell]
 args = ["-c", "tmux new-session -A -s MAIN"]
 program = "fish"
 
 [window]
 dynamic_padding = true
+startup_mode = "Maximized"
 
 [window.dimensions]
 columns = 80

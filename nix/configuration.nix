@@ -292,6 +292,7 @@ in
     bottom  # Top utility written in rust
     colordiff  # Diff- with color!
     delta  # Diffing tool
+    eza # Better ls (ll)
     ffmpeg_5-full  # Manage video
     file  # Get information on files
     gparted  # Disk management
