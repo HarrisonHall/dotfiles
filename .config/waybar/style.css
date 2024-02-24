@@ -28,27 +28,49 @@
 
 /* COLORS */
 
-/* Nord */
-@define-color bg #353C4A;
-@define-color light #eceff4;
-@define-color disabled-text rgba(236, 239, 244, 0.25);
-@define-color dark #2e3440;
-@define-color warning #ebcb8b;
-@define-color critical #d08770;
-@define-color mode #4c566a;
+/* Catppuccin Macchiato */
+@define-color base   #24273a;
+@define-color mantle #1e2030;
+@define-color crust  #181926;
+
+@define-color text     #cad3f5;
+@define-color subtext0 #a5adcb;
+@define-color subtext1 #b8c0e0;
+
+@define-color surface0 #363a4f;
+@define-color surface1 #494d64;
+@define-color surface2 #5b6078;
+
+@define-color overlay0 #6e738d;
+@define-color overlay1 #8087a2;
+@define-color overlay2 #939ab7;
+
+@define-color blue      #8aadf4;
+@define-color lavender  #b7bdf8;
+@define-color sapphire  #7dc4e4;
+@define-color sky       #91d7e3;
+@define-color teal      #8bd5ca;
+@define-color green     #a6da95;
+@define-color yellow    #eed49f;
+@define-color peach     #f5a97f;
+@define-color maroon    #ee99a0;
+@define-color red       #ed8796;
+@define-color mauve     #c6a0f6;
+@define-color pink      #f5bde6;
+@define-color flamingo  #f0c6c6;
+@define-color rosewater #f4dbd6;
+
+/* Color variables */
+@define-color bg @base;
+@define-color light @text;
+@define-color disabled-text @surface1;
+@define-color dark @mantle;
+@define-color warning @yellow;
+@define-color critical @red;
+@define-color mode @teal;
 @define-color workspaces @bg;
-@define-color workspacesfocused #4c566a;
-@define-color tray @workspacesfocused;
-@define-color sound #46536A;
-@define-color network #5D7096;
-@define-color memory #546484;
-@define-color cpu #596A8D;
-@define-color temp #4D5C78;
-@define-color layout #5e81ac;
-@define-color battery #88c0d0;
-@define-color date #2e3440;
-@define-color time #3A4253;
-@define-color backlight #3F495D;
+@define-color workspacesfocused @blue;
+@define-color workspacesfocusedtext @base;
 
 /* Reset all styles */
 * {
@@ -140,7 +162,6 @@
     margin-right: 10px;
 }
 
-
 #workspaces button {
     font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
     padding-left: 5px;
@@ -150,7 +171,7 @@
 }
 
 #workspaces button.focused {
-    color: @light;
+    color: @workspacesfocusedtext;
     background: @workspacesfocused;
 }
 
@@ -160,7 +181,7 @@
 }
 
 #workspaces button.current_output {
-    color: @light;
+    color: @workspacesfocusedtext;
 }
 
 #window {
