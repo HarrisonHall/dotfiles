@@ -22,5 +22,12 @@ sudo nix-channel --update
 ```
 
 ## Tips
+
+### Nix
 - Try program temporarily: `nix-shell -p <program/package>`
 - Package lookup: [nixpkgs](https://search.nixos.org/packages)
+
+### Rust
+- `rustup update`
+- `rustup toolchain install stable`
+- `rustup toolchain install nightly`

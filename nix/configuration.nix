@@ -119,7 +119,7 @@ in
       wayland  # Wayland libs
       wayland-protocols  # Other wayland stuffs
       glib # gsettings
-      bemenu # wayland clone of dmenu
+      bemenu # Wayland clone of dmenu
       wdisplays # tool to configure displays
       dbus-sway-environment  # DBUS environment (custom)
       configure-gtk  # GTK configuration (custom)
@@ -135,7 +135,8 @@ in
       wofi  # Wayland rofi
       swaybg  # Change sway bg
       capitaine-cursors  # Cursor
-      mate.mate-polkit  # polkit
+      mate.mate-polkit  # Polkit
+      networkmanagerapplet  # Network manager bar applet
 
       mesa
       glfw
@@ -215,6 +216,13 @@ in
   # Enable docker
   virtualisation.docker.enable = true;
 
+  # Enable running "normal" linux packages with different linkers
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # TODO - add any missing dynamic libraries for unpackaged programs here,
+    # NOT in environment.systemPackages
+  ];
+
   # Define user
   users.users.${user} = {
      isNormalUser = true;
@@ -252,7 +260,6 @@ in
         obs-studio  # Capture audio and video
         thunderbird-bin  # Thunderbird
         wireguard-tools  # wireguard vpn
-        zathura  # PDF viewier
 
         # Crypt
         protonvpn-gui
@@ -293,11 +300,11 @@ in
 
     # Language
     ## Compilers & Interpreters
-    gcc
-    llvmPackages_15.libclang
+    gcc  # GCC
+    llvmPackages_15.libclang  # Clang
     patchelf  # Patch binaries
-    rustup
-    zig
+    rustup  # Manage rust toolchains
+    zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP
     marksman  # Markdown LSP
@@ -305,9 +312,9 @@ in
 
     # Core utils
     bat  # Cat with wings
-    bottom  # Top utility written in rust
+    bottom  # Modern top utility
     colordiff  # Diff- with color!
-    delta  # Diffing tool
+    delta  # Diffing tool (for git)
     eza # Better ls (ll)
     ffmpeg_5-full  # Manage video
     file  # Get information on files
@@ -341,10 +348,6 @@ in
       "python-lsp-server[all]"
       requests
     ]))
-
-
-    # network-manager-applet
-    networkmanagerapplet
   ];
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
