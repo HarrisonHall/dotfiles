@@ -170,18 +170,19 @@
     background: @workspaces;
 }
 
-#workspaces button.focused {
-    color: @workspacesfocusedtext;
-    background: @workspacesfocused;
-}
-
 #workspaces button.urgent {
-	border-color: #c9545d;
-	color: #c9545d;
+    border-color: @red;
+    color: @red;
 }
 
 #workspaces button.current_output {
     color: @workspacesfocusedtext;
+    background: @blue;
+}
+
+#workspaces button.focused {
+    color: @workspacesfocusedtext;
+    background: @green;
 }
 
 #window {

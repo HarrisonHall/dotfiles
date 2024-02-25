@@ -10,3 +10,6 @@ ln -s -T "${configw}" ~/.config/configw >/dev/null 2>&1
 for configuration in $(find "${configw}" -maxdepth 2 -path "*/.config/*"); do
     ln -s -T $configuration ~/.config/$(basename $configuration) >/dev/null 2>&1
 done
+
+## Bat setup
+bat cache --build
