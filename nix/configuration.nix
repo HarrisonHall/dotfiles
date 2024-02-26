@@ -246,6 +246,7 @@ in
         # (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         du-dust  # Disk-usage command
         hoard  # manage cli commands
+        just  # Justfile executor
         mdp  # Markdown presentation tool
         tealdeer  # better manpages/tldr
         tokei  # Code counter
