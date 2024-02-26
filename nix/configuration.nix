@@ -211,6 +211,8 @@ in
   environment.variables.VISUAL = "code";
 
   # Enable automounting
+  # services.devmon.enable = true;
+  services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   # Enable docker
