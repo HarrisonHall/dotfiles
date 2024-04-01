@@ -1,5 +1,5 @@
 # configuration.nix
-## Nix configuration - Harrison Hall
+## Nix configuration
 ## Check `man configuration.nix` or nixos manual (`nixos-help`)
 
 { config, pkgs, lib, ... }:
@@ -31,9 +31,19 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Dracula'
+        gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin Macchiato"
+        # gsettings set $gnome_schema cursor-theme "Catppuccin-Macchiato-Dark"
         gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+        gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
         '';
+  };
+
+  # Catppuccin
+  catppuccin-gtk = pkgs.catppuccin-gtk.override {
+    accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
+    size = "compact";
+    tweaks = [ "rimless" "black" ]; # You can also specify multiple tweaks here
+    variant = "macchiato";
   };
 
 in
@@ -60,8 +70,7 @@ in
 
   networking.hostName = "hachha-laptop-nixos"; # hostname
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;  # nmapplet
   services.gnome.gnome-keyring.enable = true;  # Remember passwords
   security.pam.services.greetd.enableGnomeKeyring = true;  # Unlock keyring on login (for greetd)
@@ -89,25 +98,32 @@ in
     ];
   };
   fonts.packages = with pkgs; [
-    powerline-fonts
-    hackgen-nf-font
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    font-awesome
+    fira  # Sans font (en)
+    mplus-outline-fonts.githubRelease  # Backup sans (en, jp)
+    noto-fonts  # Serif font (en)
+    noto-fonts-cjk-serif  # Serif font (jp)
+    hackgen-nf-font  # Monospace font w/ symbols (en, jp)
+    font-awesome  # Backup symbols
   ];
   fonts.fontconfig.defaultFonts = {
     monospace = [
       "HackGen35 Console NF"
-      "IPAGothic"
+      "M PLUS 1 CODE"
+      "Font Awesome 6 Free"
+      "Font Awesome 6 Brands"
     ];
     sansSerif = [
-      "Noto Sans"
-      "IPAPGothic"
+      "M PLUS 1"
+      "Fira Sans"
+      "Font Awesome 6 Free"
+      "Font Awesome 6 Brands"
     ];
     serif = [
       "Noto Serif"
-      "IPAPMincho"
+      "Noto Serif CJK JP"
+      "M PLUS 1"
+      "Font Awesome 6 Free"
+      "Font Awesome 6 Brands"
     ];
   };
 
@@ -135,6 +151,8 @@ in
       wofi  # Wayland rofi
       swaybg  # Change sway bg
       capitaine-cursors  # Cursor
+      catppuccin-cursors.macchiatoDark  # Cursor
+      catppuccin-gtk  # GTK theme
       mate.mate-polkit  # Polkit
       networkmanagerapplet  # Network manager bar applet
 
@@ -157,6 +175,10 @@ in
   security.pam.services.swaylock.text = ''
   auth include login
   '';
+  security.pam.services.swaylock.failDelay = {
+    enable = true;
+    delay = 500000;  # 0.5s
+  };
   services.xserver.enable = true;
 
   # Enable greetd-tuigreet minimal greeter
@@ -204,7 +226,10 @@ in
   # Enable backlight support
   programs.light.enable = true;
 
+  # Allow unfree
   nixpkgs.config.allowUnfree = true;
+  # Allow flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.fish.enable = true;
   environment.variables.EDITOR = "hx";
@@ -217,6 +242,14 @@ in
 
   # Enable docker
   virtualisation.docker.enable = true;
+
+  # Enable syncthing
+  services.syncthing = {
+    enable = true;
+    user = "harrison";
+    dataDir = "/home/${user}/workspace/notes";    # Default folder for new synced folders
+    configDir = "/home/${user}/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
 
   # Enable running "normal" linux packages with different linkers
   programs.nix-ld.enable = true;
@@ -245,19 +278,22 @@ in
         vscode
         ## Other
         broot  # Quickly jump around directories
-        # (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
+        (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
+        direnv  # Manage environments based on directory (nix support)
         du-dust  # Disk-usage command
         hoard  # manage cli commands
         just  # Justfile executor
         mdp  # Markdown presentation tool
         tealdeer  # better manpages/tldr
         tokei  # Code counter
-        #obsidian  # Obsidian
+        obsidian  # Obsidian
 
         # Utils
         calibre  # ebook software
         dolphin  # File explorer
         feh  # View images
+        halloy  # IRC
+        inkscape-with-extensions  # Inkscape
         killall  # killall signaller
         vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video
@@ -270,7 +306,7 @@ in
         protonmail-bridge
         signal-desktop
 
-        # Class
+        # Hobby
         anki-bin
 
         # Icons
@@ -278,10 +314,10 @@ in
         libsForQt5.breeze-icons  # For kwallet/dolphin
 
         # Games
-        godot_4
-        sgt-puzzles
-	      steam
-        vulkan-loader
+        godot_4  # Godot engine
+        sgt-puzzles  # Simon Tatham's puzzles
+	      steam  # Steam
+        vulkan-loader  # Steam runtime dependency?
      ];
   };
 
@@ -291,15 +327,15 @@ in
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Shell
-    fish
+    fish  # Friendly Interactive Shell
 
     # Editor
-    helix
+    helix  # Helix editor
 
     # Coding
-    git
-    gh
-    onefetch
+    git  # Git
+    gh  # Github cli
+    onefetch  # Git repo visualizer
 
     # Language
     ## Compilers & Interpreters
@@ -311,6 +347,7 @@ in
     ## LSP
     nil  # Nix LSP
     marksman  # Markdown LSP
+    nodePackages.prettier  # Prettier
     rust-analyzer  # Rust LSP
 
     # Core utils

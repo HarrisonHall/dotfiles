@@ -71,7 +71,7 @@
                     "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
             }
         },
-        "tooltip-format": "<span size='14pt' font='Hack'>{calendar}</span>",
+        "tooltip-format": "<span size='14pt'>{calendar}</span>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "backlight": {
