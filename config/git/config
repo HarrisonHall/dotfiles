@@ -21,3 +21,5 @@
 [user]
 	email = hachha@hachha.dev
 	name = hachha
+[init]
+	defaultBranch = main
