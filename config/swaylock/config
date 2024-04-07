@@ -56,21 +56,21 @@ caps-lock-bs-hl-color=d08770ff
 caps-lock-key-hl-color=ebcb8bff
 
 # Sets the font of the text
-font=Hack
+# font=Hack
 
 # FUTURE RELEASE
 # Sets a fixed font size for the indicator text
-font-size=26
+# font-size=26
 
 # FUTURE RELEASE
 # Sets the indicator to show even if idle
 # indicator-idle-visible
 
 # Sets the indicator radius (default: 50)
-indicator-radius=100
+indicator-radius=50
 
 # Sets the indicator thickness (default: 10)
-indicator-thickness=10
+indicator-thickness=15
 
 # FUTURE RELEASE
 # Sets the horizontal position of the indicator
@@ -81,25 +81,25 @@ indicator-thickness=10
 # indicator-y-position
 
 # Sets the color of the inside of the indicator
-inside-color=2e3440ff
+#inside-color=2e3440ff
 
 # Sets the color of the inside of the indicator when cleared
-inside-clear-color=81a1c1ff
+#inside-clear-color=81a1c1ff
 
 # Sets the color of the inside of the indicator when Caps Lock is active
 # inside-caps-lock-color=<rrggbb[aa]>
 
 # Sets the color of the inside of the indicator when verifying
-inside-ver-color=5e81acff
+#inside-ver-color=5e81acff
 
 # Sets the color of the inside of the indicator when invalid
-inside-wrong-color=bf616aff
+#inside-wrong-color=bf616aff
 
 # Sets the color of key press highlight segments
-key-hl-color=a3be8cff
+#key-hl-color=a3be8cff
 
 # Sets the background color of the box containing the layout text
-layout-bg-color=2e3440ff
+#layout-bg-color=2e3440ff
 
 # Sets the color of the border of the box containing the layout text
 # layout-border-color=<rrggbb[aa]>
@@ -128,35 +128,32 @@ layout-bg-color=2e3440ff
 # Use the ring color for the line between the inside and ring
 line-uses-ring
 
-# Sets the color of the outside of the indicator when typing or idle
-ring-color=3b4252ff
-
-# Sets the color of the outside of the indicator when cleared
-ring-clear-color=88c0d0ff
-
-# Sets the color of the ring of the indicator when Caps Lock is active
-# ring-caps-lock-color=<rrggbb[aa]>
-
-# Sets the color of the outside of the indicator when verifying
-ring-ver-color=81a1c1ff
-
-# Sets the color of the outside of the indicator when invalid
-ring-wrong-color=d08770ff
-
-# Sets the color of the lines that separate highlight segments
-separator-color=3b4252ff
-
-# Sets the color of the text
-text-color=eceff400
-
-# Sets the color of the text when cleared
-text-clear-color=3b425200
-
-# Sets the color of the text when Caps Lock is active
-# text-caps-lock-color=<rrggbb[aa]>
-
-# Sets the color of the text when verifying
-text-ver-color=3b425200
-
-# Sets the color of the text when invalid
-text-wrong-color=3b425200
+color=24273a
+bs-hl-color=f4dbd6
+caps-lock-bs-hl-color=f4dbd6
+caps-lock-key-hl-color=1e2030
+inside-color=00000000
+inside-clear-color=00000000
+inside-caps-lock-color=00000000
+inside-ver-color=00000000
+inside-wrong-color=00000000
+key-hl-color=363a4f
+layout-bg-color=00000000
+layout-border-color=00000000
+layout-text-color=cad3f5
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
+ring-color=b7bdf8
+ring-clear-color=f4dbd6
+ring-caps-lock-color=f5a97f
+ring-ver-color=8aadf4
+ring-wrong-color=ee99a0
+separator-color=00000000
+text-color=00000000
+text-clear-color=00000000
+text-caps-lock-color=00000000
+text-ver-color=00000000
+text-wrong-color=00000000

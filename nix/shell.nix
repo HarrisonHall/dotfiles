@@ -18,6 +18,7 @@
 	just
 	tealdeer
 	tmux
+  tmuxp
 	tree
 	ripgrep
 	rustup

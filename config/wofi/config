@@ -1,0 +1,5 @@
+mode=drun
+allow_images=true
+image_size=30
+width=40%
+columns=2

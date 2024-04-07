@@ -1,11 +1,16 @@
 max-visible=4
 layer=top
-font=HackGen35 Console NF
-background-color=#e5e9f0dd
-text-color=#2e3440
-border-color=#eceff4
+font=M PLUS 1 12
 border-radius=4
 max-icon-size=48
-default-timeout=5000
+default-timeout=8000
 anchor=top-right
 margin=20
+
+background-color=#24273a
+text-color=#cad3f5
+border-color=#8aadf4
+progress-color=over #363a4f
+
+[urgency=high]
+border-color=#f5a97f

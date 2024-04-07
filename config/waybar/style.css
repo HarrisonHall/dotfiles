@@ -1,30 +1,4 @@
-@keyframes blink-warning {
-  70% {
-    color: @light;
-  }
-
-  to {
-    color: @light;
-    background-color: @warning;
-  }
-}
-
-@keyframes blink-critical {
-  70% {
-    color: @light;
-  }
-
-  to {
-    color: @light;
-    background-color: @critical;
-  }
-}
-
-/* -----------------------------------------------------------------------------
- * Styles
- * -------------------------------------------------------------------------- */
-
-/* COLORS */
+/* Waybar Styling */
 
 /* Catppuccin Macchiato */
 @define-color base   #24273a;
@@ -59,14 +33,14 @@
 @define-color rosewater #f4dbd6;
 
 /* Color variables */
-@define-color bg @base;
+@define-color bg @crust;
 @define-color light @text;
-@define-color disabled-text @surface1;
+@define-color disabled-text @overlay2;
 @define-color dark @mantle;
 @define-color warning @yellow;
 @define-color critical @red;
 @define-color mode @teal;
-@define-color workspaces @bg;
+@define-color workspaces @surface0;
 @define-color workspacesfocused @blue;
 @define-color workspacesfocusedtext @base;
 
@@ -79,6 +53,29 @@
   padding: 0;
 }
 
+/* Blinking */
+@keyframes blink-warning {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @warning;
+  }
+}
+
+@keyframes blink-critical {
+  70% {
+    color: @light;
+  }
+
+  to {
+    color: @light;
+    background-color: @critical;
+  }
+}
+
 /* The whole bar */
 #waybar {
   background: @bg;
@@ -86,6 +83,10 @@
   font-family: "M PLUS 1", "Font Awesome 6 Free", "HackGen35 Console NFJ";
   font-size: 1rem;
   font-weight: bold;
+  /* padding-bottom: 0.1em; */
+  /* border-bottom: 2px solid; */
+  /* border-color: @mantle; */
+  /* padding: 1em; */
 }
 
 /* Each module */
@@ -101,8 +102,8 @@
 #custom-alsa,
 #tray,
 #backlight {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Each module that should blink */
@@ -159,6 +160,10 @@
 
 #workspaces {
   margin-right: 10px;
+  /* border-radius: 1rem; */
+  background: @workspaces;
+  margin: 0.4em;
+  /* border-radius: 0.1em; */
 }
 
 #workspaces button {
@@ -166,7 +171,6 @@
   padding-left: 5px;
   padding-right: 5px;
   color: @disabled-text;
-  background: @workspaces;
 }
 
 #workspaces button.urgent {
@@ -184,34 +188,72 @@
   background: @green;
 }
 
-#window {
-  margin-right: 40px;
-  margin-left: 40px;
+#workspaces button:hover {
+  color: @text;
+  background: @surface2;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  /* border-top: 0px solid white; */
+  /* color: @workspacesfocusedtext; */
+  /* background: @green; */
 }
 
-#network {
-}
+/* #window { */
+/* margin-right: 40px; */
+/* margin-left: 40px; */
+/* } */
 
-#custom-layout {
-}
-
-#battery {
-}
-
-#backlight {
-}
-
-#clock.date {
-}
-
-#clock.time {
+#clock {
+  color: @crust;
+  background: @green;
+  margin: 0.4em;
+  /* border-radius: 0.1em; */
 }
 
 #tray {
+  background: @surface0;
+  color: @crust;
+  /* border-right: 1em solid; */
+  /* border-left: 1em solid; */
+  /* border-color: @surface0; */
+  margin: 0.4em;
+  margin-left: 0.8em;
+  /* border-radius: 0.1em; */
 }
 
-#pulseaudio {
+#custom-launcher {
+  color: @crust;
+  background: @peach;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin: 0.4em;
+  /* border-radius: 0.1em; */
 }
 
-#network {
+.modules-right {
+  /* background: @mauve; */
+  /* color: @crust; */
+  /* padding-left: 0.5em; */
+  /* margin-top: 0.4em; */
+  /* margin-bottom: 0.4em; */
+}
+
+.modules-center {
+  /* background: @mauve; */
+  /* color: @crust; */
+  padding-top: 0em;
+  padding-bottom: 0.1em;
+}
+
+#battery,
+#network,
+#idle_inhibitor,
+#pulseaudio,
+#custom-alsa,
+#backlight {
+  background: @pink;
+  color: @crust;
+  margin-bottom: 0.4em;
+  margin-top: 0.4em;
+  padding-left: 0.5em;
 }

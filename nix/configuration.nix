@@ -32,9 +32,9 @@ let
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
         gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin Macchiato"
-        # gsettings set $gnome_schema cursor-theme "Catppuccin-Macchiato-Dark"
-        gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
+        gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Macchiato-Dark-Cursors"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+        gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         '';
   };
 
@@ -45,6 +45,7 @@ let
     tweaks = [ "rimless" "black" ]; # You can also specify multiple tweaks here
     variant = "macchiato";
   };
+  catppuccin-cursors = pkgs.catppuccin-cursors.macchiatoDark;
 
 in
 {
@@ -52,6 +53,7 @@ in
     [ 
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      <nixos-hardware/framework/13-inch/12th-gen-intel>
     ];
 
   hardware.opengl.enable = true;
@@ -132,33 +134,43 @@ in
     enable = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
-      wayland  # Wayland libs
-      wayland-protocols  # Other wayland stuffs
-      glib # gsettings
-      bemenu # Wayland clone of dmenu
-      wdisplays # tool to configure displays
-      dbus-sway-environment  # DBUS environment (custom)
-      configure-gtk  # GTK configuration (custom)
-      swayr  # Simple cli for managing sway
-      swaylock  # Lock screen management
-      swayidle  # Idle management
-      wl-clipboard  # Wayland clipboard utilities
-      wf-recorder  # Wayland screen recorder
-      mako  # Wayland notification daemon
-      grim  # Screenshot tool
-      slurp  # Screenspace selector
-      waybar  # Better swaybar
-      wofi  # Wayland rofi
-      swaybg  # Change sway bg
-      capitaine-cursors  # Cursor
-      catppuccin-cursors.macchiatoDark  # Cursor
+      # Configuration
+      catppuccin-cursors  # Cursor
       catppuccin-gtk  # GTK theme
-      mate.mate-polkit  # Polkit
-      networkmanagerapplet  # Network manager bar applet
+      catppuccin-qt5ct  # QT theme
+      configure-gtk  # GTK configuration (custom)
+      dbus-sway-environment  # DBUS environment (custom)
+      papirus-icon-theme  # Icons
 
-      mesa
+      # Libs
+      glib # gsettings
       glfw
       glfw-wayland
+      libnotify  # libnotify + notify-send
+      mesa
+      wayland  # Wayland libs
+      wayland-protocols  # Other wayland stuffs
+
+      # Essential
+      grim  # Screenshot tool
+      mako  # Wayland notification daemon
+      mate.mate-polkit  # Polkit
+      networkmanagerapplet  # Network manager bar applet
+      swaylock  # Lock screen management
+      swayidle  # Idle management
+      waybar  # Better swaybar
+      wl-clipboard  # Wayland clipboard utilities
+      wf-recorder  # Wayland screen recorder
+
+      # Scripting Utils
+      slurp  # Screenspace selector
+      swaybg  # Change sway bg
+      swayr  # Simple cli for managing sway
+
+      # Graphical Utils
+      eww  # EWW
+      wdisplays # tool to configure displays
+      wofi  # Wayland rofi
     ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
@@ -180,6 +192,7 @@ in
     delay = 500000;  # 0.5s
   };
   services.xserver.enable = true;
+  services.xserver.dpi = 96;
 
   # Enable greetd-tuigreet minimal greeter
   services.greetd = {
@@ -206,10 +219,11 @@ in
   security.rtkit.enable = true;  # Recommended for pipewire
   services.pipewire = {
     enable = true;
+    audio.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # jack.enable = true;
+    jack.enable = true;
   };
 
   # Enable dbus
@@ -234,6 +248,7 @@ in
   programs.fish.enable = true;
   environment.variables.EDITOR = "hx";
   environment.variables.VISUAL = "code";
+  environment.variables.XCURSOR_PATH = lib.mkDefault "$HOME/.icons:$HOME/.local/share/icons:$HOME/.nix-profile/share/icons:/usr/share/icons"; # "~/.nix-profile/bin/<your app>";
 
   # Enable automounting
   # services.devmon.enable = true;
@@ -290,8 +305,9 @@ in
 
         # Utils
         calibre  # ebook software
-        dolphin  # File explorer
+        element-desktop  # Element [MATRIX]
         feh  # View images
+        gnome.nautilus  # File explorer
         halloy  # IRC
         inkscape-with-extensions  # Inkscape
         killall  # killall signaller
@@ -365,6 +381,7 @@ in
     ripgrep  # Recursively search
     tealdeer  # tldr
     tmux  # Terminal multiplexer
+    tmuxp  # tmux manager
     tree  # Display directory structure tree
     wget  # Network downloader
     zellij  # Terminal multiplexer

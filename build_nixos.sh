@@ -9,7 +9,7 @@ echo "- Symlinking"
 
 # NIX
 echo "- Building config"
-sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix" -j 2
+sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix" -j 4
 # --upgrade --show-traces  # TODO - turn into flags
 
 ## Run GC on success

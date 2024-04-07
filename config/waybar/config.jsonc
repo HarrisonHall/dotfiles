@@ -2,9 +2,10 @@
     // "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "spacing": 0, // Gaps between modules (0px)
+    // "margin-bottom": 5,
 
     // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/scratchpad", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "keyboard-state", "backlight", "battery", "tray", "clock"],
     // Modules configuration
@@ -51,12 +52,10 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 20,
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
-        // "calendar": "",
         "calendar": {
             "mode"          : "month",
             "mode-mon-col"  : 3,
@@ -121,5 +120,11 @@
         "tooltip": true,
         "tooltip-format": "{desc} {volume}% {icon}\nTODO",
         "on-click": "pavucontrol"
+    },
+    "custom/launcher": {
+        "format": "火山",
+        "on-click": "wofi --show drun",
+        "tooltip-format": "",
+        "tooltip": false
     }
 }
