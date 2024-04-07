@@ -9,7 +9,7 @@ echo "- Symlinking"
 
 # NIX
 echo "- Building shell"
-nix profile install -f nix/shell.nix
+nix profile install -f nix/shell.nix --extra-experimental-features nix-command
 
 ## Run GC on success
 # if [ $? -eq 0 ]; then
