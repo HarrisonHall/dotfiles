@@ -294,7 +294,6 @@ in
         ## Other
         broot  # Quickly jump around directories
         (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
-        direnv  # Manage environments based on directory (nix support)
         du-dust  # Disk-usage command
         hoard  # manage cli commands
         just  # Justfile executor
@@ -371,6 +370,7 @@ in
     bottom  # Modern top utility
     colordiff  # Diff- with color!
     delta  # Diffing tool (for git)
+    direnv  # Manage environments based on directory (nix support)
     eza # Better ls (ll)
     ffmpeg_5-full  # Manage video
     file  # Get information on files
@@ -378,6 +378,8 @@ in
     imagemagick  # Image commands like convert
     kbd  # Keyboard & virtual terminal utils
     pandoc  # File conversion
+    podman  # Better docker
+    podman-compose  # Better docker-compose
     ripgrep  # Recursively search
     tealdeer  # tldr
     tmux  # Terminal multiplexer

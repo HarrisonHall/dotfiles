@@ -10,6 +10,7 @@
 	bat
 	bottom
 	colordiff
+  direnv
   eza
 	fish  # NOTE: May need other installation to be usable with chsh
 	gh
@@ -20,6 +21,8 @@
 	tmux
   tmuxp
 	tree
+  podman
+  podman-compose
 	ripgrep
 	rustup
 	

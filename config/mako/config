@@ -1,7 +1,7 @@
 max-visible=4
 layer=top
 font=M PLUS 1 12
-border-radius=4
+border-radius=0
 max-icon-size=48
 default-timeout=8000
 anchor=top-right
