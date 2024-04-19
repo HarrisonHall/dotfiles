@@ -1,0 +1,8 @@
+DESKTOP="$HOME/workspace"
+DOWNLOAD="$HOME/downloads"
+#TEMPLATES="$HOME/workspace"
+#PUBLICSHARE
+DOCUMENTS="$HOME/workspace"
+MUSIC="$HOME/media/music"
+PICTURES="$HOME/media"
+VIDEOS="$HOME/media"

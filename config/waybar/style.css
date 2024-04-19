@@ -160,16 +160,15 @@
 
 #workspaces {
   margin-right: 10px;
-  /* border-radius: 1rem; */
   background: @workspaces;
   margin: 0.4em;
-  /* border-radius: 0.1em; */
 }
 
 #workspaces button {
-  font-weight: bold; /* Somewhy the bar-wide setting is ignored*/
-  padding-left: 5px;
-  padding-right: 5px;
+  all: unset;
+  font-weight: bold;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
   color: @disabled-text;
 }
 

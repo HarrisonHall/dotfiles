@@ -41,15 +41,39 @@ $background: $macchiato-overlay0;
 
 .window {
   background-color: $macchiato-base;
-  border: $macchiato-blue solid 0.4em;
+  border: $macchiato-blue solid 0.2rem;
   padding: 1em;
 }
 
 .big-button {
-  /* font-family: "Font Awesome 6 Free", "M PLUS 1 Medium"; */
-  border: $macchiato-blue solid 0.1em;
-  font-size: 2em;
-  padding: 1em;
+  font-family: "Font Awesome 6 Free", "M PLUS 1 Medium";
+  border: $macchiato-blue solid 0.2rem;
+  font-size: 4rem;
+  padding: 2rem;
+}
+
+.power {
+  /* color: red; */
+}
+
+.restart {
+  
+}
+
+.logout {
+  
+}
+
+.sleep {
+  
+}
+
+.lock {
+  
+}
+
+.exit {
+  
 }
 
 .powermenu-box {

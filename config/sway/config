@@ -1,5 +1,3 @@
-include catppuccin-mocha
-
 set $mod Mod4
 set $left h
 set $down j
@@ -8,8 +6,24 @@ set $right l
 set $term alacritty
 set $menu wofi --show run
 
-font pango:HackGen35 Console NJ Medium 11
-default_border none
+# Style
+font pango:M PLUS 1 Medium 12
+focus_follows_mouse yes
+mouse_warping output
+# default_border none
+smart_borders on
+smart_gaps on
+default_border pixel 4
+gaps inner 6
+gaps outer 2
+## target                title     bg     text   indicator  border
+include catppuccin-macchiato
+client.focused           $crust    $crust $text  $text      $crust
+client.focused_inactive  $overlay0 $base  $text  $text      $overlay0
+client.unfocused         $overlay0 $base  $text  $text      $overlay0
+client.urgent            $red      $base  $red   $overlay0  $red
+client.placeholder       $overlay0 $base  $text  $overlay0  $overlay0
+client.background        $base
 
 # Startup
 ## BG
@@ -18,8 +32,6 @@ exec --no-startup-id swaybg -i ~/media/wallpapers/clear_mountain.jpg
 output eDP-1 scale 1.75
 ## Cursor
 seat seat0 xcursor_theme "Catppuccin-Macchiato-Dark-Cursors" 32
-exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-theme "capitaine-cursors"
-exec --no-startup-id gsettings set org.gnome.desktop.interface cursor-size 32
 ## Language
 exec --no-startup-id fcitx5 &
 ## Network
@@ -31,6 +43,8 @@ exec --no-startup-id protonvpn --gapplication-service &
 exec --no-startup-id /nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1 &
 ## EWW Daemon
 exec --no-startup-id eww daemon &
+## DBUS settings (env with nautilus)
+exec --no-startup-id dbus-update-activation-environment --systemd --all
 
 # Apps
 bindsym $mod+shift+t exec $term
@@ -88,6 +102,9 @@ bindsym $mod+Shift+6 move container to workspace number 6
 bindsym $mod+Shift+7 move container to workspace number 7
 bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
+## Splitting
+#bindsym $mod+| splith
+#bindsym $mod+- splitv
 ## Scratchpad
 bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
@@ -123,6 +140,23 @@ mode "printscreen" {
 bindsym Print mode "printscreen"
 bindsym $mod+u exec grim -t png - | wl-copy -t image/png
 
+# Resize mode
+mode "resize" {
+    bindsym h resize grow width 10 px or 10 ppt
+    bindsym j resize shrink height 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink width 10 px or 10 ppt
+
+    bindsym down resize shrink height 10 px or 10 ppt
+    bindsym left resize grow width 10 px or 10 ppt
+    bindsym right resize shrink width 10 px or 10 ppt
+    bindsym up resize grow height 10 px or 10 ppt
+
+    bindsym return mode "default"
+    bindsym escape mode "default"
+}
+bindsym $mod+q mode "resize"
+
 # Lock&Idle
 exec swayidle -w \
 	timeout 500 'swaylock -f' \
@@ -134,3 +168,19 @@ exec dbus-sway-environment
 exec configure-gtk
 
 include @sysconfdir@/sway/config.d/*
+
+# Rules for specific apps
+## Generic
+for_window [window_role = "pop-up"] floating enable
+for_window [window_role = "bubble"] floating enable
+for_window [window_role = "dialog"] floating enable
+for_window [window_type = "dialog"] floating enable
+for_window [window_role = "task_dialog"] floating enable
+for_window [window_type = "menu"] floating enable
+for_window [app_id = "floating"] floating enable
+
+# for_window [title = ".*Godot.*"] floating enable
+# for_window [title = ".*godot.*"] floating enable
+for_window [instance = "Godot_Engine"] floating enable
+# for_window [title = ".*Godot Engine.*"] resize set width 100ppt height 100ppt
+for_window [title = ".*Godot Engine.*"] floating disable

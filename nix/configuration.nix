@@ -31,7 +31,7 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin Macchiato"
+        gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Macchiato-Standard-Blue-Dark"
         gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Macchiato-Dark-Cursors"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
@@ -39,11 +39,11 @@ let
   };
 
   # Catppuccin
-  catppuccin-gtk = pkgs.catppuccin-gtk.override {
-    accents = [ "blue" ]; # You can specify multiple accents here to output multiple themes
-    size = "compact";
-    tweaks = [ "rimless" "black" ]; # You can also specify multiple tweaks here
+  catppuccin-gtk-custom = pkgs.catppuccin-gtk.override {
     variant = "macchiato";
+    accents = [ "blue" ];
+    size = "standard";  # compact
+    tweaks = [ "rimless" "normal" ]; # black
   };
   catppuccin-cursors = pkgs.catppuccin-cursors.macchiatoDark;
 
@@ -132,11 +132,13 @@ in
   # Sway
   programs.sway = {
     enable = true;
+    wrapperFeatures.base = true;
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       # Configuration
       catppuccin-cursors  # Cursor
-      catppuccin-gtk  # GTK theme
+      # catppuccin-gtk  # GTK theme
+      catppuccin-gtk-custom
       catppuccin-qt5ct  # QT theme
       configure-gtk  # GTK configuration (custom)
       dbus-sway-environment  # DBUS environment (custom)
@@ -156,6 +158,7 @@ in
       mako  # Wayland notification daemon
       mate.mate-polkit  # Polkit
       networkmanagerapplet  # Network manager bar applet
+      shared-mime-info  # Allow apps to have mime info
       swaylock  # Lock screen management
       swayidle  # Idle management
       waybar  # Better swaybar
@@ -175,6 +178,7 @@ in
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
       export QT_QPA_PLATFORM=wayland
+			# export QT_QPA_PLATFORM=wayland-egl
       export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
       export _JAVA_AWT_WM_NONREPARENTING=1
       export MOZ_ENABLE_WAYLAND=1
@@ -193,6 +197,53 @@ in
   };
   services.xserver.enable = true;
   services.xserver.dpi = 96;
+
+  # /etc/XXX
+  environment.etc = {
+    # GTK
+    ## 2.0
+    "xdg/gtk-2.0/gtkrc".text = lib.mkDefault ''
+      gtk-theme-name="Catppuccin-Macchiato-Standard-Blue-Dark"
+      gtk-icon-theme-name="Papirus-Dark"
+      gtk-font-name="monospace 12"
+      gtk-cursor-theme-name="Catppuccin-Macchiato-Dark-Cursors"
+    '';
+    "gtk-2.0/gtkrc".source = config.environment.etc."xdg/gtk-2.0/gtkrc".source;
+    ## 3.0
+    "xdg/gtk-3.0/settings.ini".text = lib.mkDefault ''
+      [Settings]
+      gtk-theme-name=Catppuccin-Macchiato-Standard-Blue-Dark
+      gtk-icon-theme-name=Papirus-Dark
+      gtk-font-name=monospace 12
+      gtk-cursor-theme-name=Catppuccin-Macchiato-Dark-Cursors
+      gtk-application-prefer-dark-theme=true
+    '';
+    "gtk-3.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
+    ## 4.0
+    "xdg/gtk-4.0/settings.ini".text = lib.mkDefault ''
+      [Settings]
+      gtk-theme-name=Catppuccin-Macchiato-Standard-Blue-Dark
+      gtk-icon-theme-name=Papirus-Dark
+      gtk-font-name=monospace 12
+      gtk-cursor-theme-name=Catppuccin-Macchiato-Dark-Cursors
+      gtk-application-prefer-dark-theme=true
+    '';
+    "gtk-4.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
+  };
+
+  # Default apps
+  ## /etc/profiles/per-user/harrison/share/applications/
+  # xdg.mimeApps = {
+  #   enable = true;
+  #   associations.added = {
+  #     "application/pdf" = ["firefox.desktop"];
+  #     "image/png" = [ "feh" "firefox.desktop" "gimp.desktop" ];
+  #   };
+  #   defaultApplications = {
+  #     "application/pdf" = ["firefox.desktop"];
+  #     "image/png" = [ "feh" "firefox.desktop" "gimp.desktop" ];
+  #   };
+  # };
 
   # Enable greetd-tuigreet minimal greeter
   services.greetd = {
@@ -376,6 +427,7 @@ in
     file  # Get information on files
     gparted  # Disk management
     imagemagick  # Image commands like convert
+    jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
     pandoc  # File conversion
     podman  # Better docker

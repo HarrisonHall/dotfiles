@@ -17,7 +17,7 @@
          :vexpand true :hexpand true
          :valign "end" :halign "center"
          :space-evenly true
-      (button :class "big-button" :onclick "poweroff" "")
+      (button :class "big-button red" :onclick "poweroff" "")
       (button :class "big-button" :onclick "reboot" "")
       (button :class "big-button" :onclick "sway exit" "")
       (button :class "big-button" :onclick "systemctl suspend & ${close-powermenu}" "")
