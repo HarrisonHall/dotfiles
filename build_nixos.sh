@@ -15,7 +15,8 @@ sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix" -j 
 ## Run GC on success
 if [ $? -eq 0 ]; then
     echo "- Running garbage collection"
-    nix-env --delete-generations +5  # Keep last 5 generations
-    nix-collect-garbage -d
-    nix-store --gc
+    sudo nix-collect-garbage --delete-older-than 30d
+    # sudo nix-env --delete-generations +5  # Keep last 5 generations
+    sudo nix-store --gc
+    # sudo nixos-rebuild boot
 fi

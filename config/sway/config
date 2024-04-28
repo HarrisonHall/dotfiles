@@ -1,10 +1,17 @@
+# Wofi configuration
+
+# Vars
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
 set $term alacritty
-set $menu wofi --show run
+
+# Scripts
+set $progs ~/.config/rofi/launcher/drun.sh
+set $progs_all ~/.config/rofi/launcher/run.sh
+set $powermenu ~/.config/rofi/powermenu/powermenu.sh
 
 # Style
 font pango:M PLUS 1 Medium 12
@@ -48,11 +55,9 @@ exec --no-startup-id dbus-update-activation-environment --systemd --all
 
 # Apps
 bindsym $mod+shift+t exec $term
-bindsym $mod+s exec wofi --show drun
-bindsym $mod+shift+s exec wofi --show run
-# bindsym $mod+shift+q exec swaynag -t warning -m "Exiting sway..." -B "Yep" "swaymsg exit"
-bindsym $mod+shift+q exec eww open powermenu
-# bindsym $mod+l exec swaylock -f
+bindsym $mod+s exec $progs
+bindsym $mod+shift+s exec $progs_all
+bindsym $mod+shift+q exec $powermenu
 
 # keyboard
 floating_modifier $mod normal

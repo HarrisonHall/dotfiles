@@ -106,6 +106,8 @@ in
     noto-fonts-cjk-serif  # Serif font (jp)
     hackgen-nf-font  # Monospace font w/ symbols (en, jp)
     font-awesome  # Backup symbols
+    # monofur-nerdfont  # Backup monospace font
+    # noto-fonts-emoji noto-fonts-monochrome-emoji  # Backup emoji fonts
   ];
   fonts.fontconfig.defaultFonts = {
     monospace = [
@@ -166,14 +168,16 @@ in
       wf-recorder  # Wayland screen recorder
 
       # Scripting Utils
+      acpi  # Battery
       slurp  # Screenspace selector
       swaybg  # Change sway bg
       swayr  # Simple cli for managing sway
 
       # Graphical Utils
-      eww  # EWW
+      # eww  # EWW
       wdisplays # tool to configure displays
-      wofi  # Wayland rofi
+      # wofi  # Wayland rofi
+      rofi-wayland
     ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland
