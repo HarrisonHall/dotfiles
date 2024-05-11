@@ -6,6 +6,7 @@ configw="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 # Update configuration
 echo "- Symlinking"
 ./scripts/symlink_all.sh $configw
+./scripts/build_heir.sh
 
 # NIX
 echo "- Building config"

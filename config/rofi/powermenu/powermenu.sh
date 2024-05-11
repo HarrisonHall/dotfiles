@@ -32,6 +32,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p "Uptime: $uptime" \
 		-mesg "Uptime: $uptime" \
+		-click-to-exit \
 		-theme ${dir}/${theme}.rasi
 }
 
@@ -70,7 +71,7 @@ run_cmd() {
 			reboot
 		elif [[ $1 == '--suspend' ]]; then
 			mpc -q pause
-			amixer set Master mute
+			# amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
 			sway exit

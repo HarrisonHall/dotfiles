@@ -165,7 +165,10 @@ in
       swayidle  # Idle management
       waybar  # Better swaybar
       wl-clipboard  # Wayland clipboard utilities
+      wtype  # Wayland type utility
       wf-recorder  # Wayland screen recorder
+      xdg-user-dirs  # XDG help
+      xdg-utils  # XDG
 
       # Scripting Utils
       acpi  # Battery
@@ -174,10 +177,10 @@ in
       swayr  # Simple cli for managing sway
 
       # Graphical Utils
-      # eww  # EWW
-      wdisplays # tool to configure displays
-      # wofi  # Wayland rofi
-      rofi-wayland
+      pavucontrol  # Audio control
+      rofi-wayland  # Widgets and pickers
+      rofi-emoji  # Emoji picker
+      wdisplays # Configure displays
     ];
     extraSessionCommands = ''
       export SDL_VIDEODRIVER=wayland

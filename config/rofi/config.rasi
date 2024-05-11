@@ -104,6 +104,12 @@ configuration {
     }
 
 	/*---------- Keybindings ----------*/
+	/* Mouse */
+	hover-select: true;
+	me-select-entry: "";
+	me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+	/* click-to-exit: true; */
+	/* global-kb: true; */
 /*
 	kb-primary-paste: "Control+V,Shift+Insert";
 	kb-secondary-paste: "Control+v,Insert";

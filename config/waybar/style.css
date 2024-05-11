@@ -33,7 +33,8 @@
 @define-color rosewater #f4dbd6;
 
 /* Color variables */
-@define-color bg @crust;
+/* @define-color bg @crust; */
+@define-color bg #11111b;
 @define-color light @text;
 @define-color disabled-text @overlay2;
 @define-color dark @mantle;
