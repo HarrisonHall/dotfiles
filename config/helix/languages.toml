@@ -1,6 +1,7 @@
 [[language]]
-name = "rust"
+name = "css"
 auto-format = true
+formatter = { command = "prettier", args = ["--parser", "css"] }
 
 [[language]]
 name = "html"
@@ -8,16 +9,20 @@ auto-format = true
 formatter = { command = "prettier", args = ["--parser", "html"] }
 
 [[language]]
-name = "css"
-auto-format = true
-formatter = { command = "prettier", args = ["--parser", "css"] }
-
-[[language]]
 name = "markdown"
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "markdown"] }
+formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap=always", "--print-width=80"] }
+
+[[language]]
+name = "rust"
+auto-format = true
 
 [[language]]
 name = "yaml"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "zig"
+auto-format = true
+# soft-wrap = {enable = true, max-wrap = 25, max-indent-retain = 40, wrap-indicator = "↪", wrap-at-text-width = true}

@@ -368,9 +368,10 @@ in
         halloy  # IRC
         inkscape-with-extensions  # Inkscape
         killall  # killall signaller
-        vlc  # Audio-video viewerw
         obs-studio  # Capture audio and video
+        pinta  # Basic image editor
         thunderbird-bin  # Thunderbird
+        vlc  # Audio-video viewer
         wireguard-tools  # wireguard vpn
 
         # Crypt
@@ -469,6 +470,6 @@ in
   ];
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
-  system.stateVersion = "23.11";  # nixos version
+  system.stateVersion = "24.05";  # nixos version
 }
 
