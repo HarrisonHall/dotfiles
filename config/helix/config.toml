@@ -3,6 +3,8 @@ theme = "catppuccin_macchiato"
 [editor]
 mouse = true
 true-color = true
+bufferline = "multiple"
+rulers = [80]
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,6 +16,15 @@ select = "underline"
 
 # [editor.lsp]
 # display-inlay-hints = true
+
+[editor.whitespace.characters]
+tab = "→"
+tabpad = "·"
+
+[editor.indent-guides]
+render = true
+character = "╎"  # "|", "╎", "▏", "┆", "┊", "⸽"
+skip-levels = 1
 
 [keys.insert]
 # Movement
@@ -27,6 +38,7 @@ C-a = "goto_line_start"
 C-e = "goto_line_end_newline"
 C-v = "page_down"
 A-v = "page_up"
+
 # Text
 C-x = {C-s = ":write", C-c = ":write-quit"}
 C-k = ["kill_to_line_end"] # TODO - select, copy, kill line
@@ -44,3 +56,8 @@ C-l = "align_view_center"
 "minus" = "hsplit"
 "x" = "wclose"
 "C-d" = "wclose"
+"C-p" = ":buffer-previous"
+"C-n" = ":buffer-next"
+
+[keys.normal."+"]
+a = "code_action" # Maps `ga` to show possible code actions

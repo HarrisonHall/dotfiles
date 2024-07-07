@@ -294,7 +294,7 @@ in
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
   # Enable backlight support
   programs.light.enable = true;
 
@@ -327,7 +327,7 @@ in
   # Enable running "normal" linux packages with different linkers
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
-    # TODO - add any missing dynamic libraries for unpackaged programs here,
+    # TODO: Add any missing dynamic libraries for unpackaged programs here,
     # NOT in environment.systemPackages
   ];
 
@@ -350,15 +350,17 @@ in
         ## Editor
         vscode
         ## Other
-        broot  # Quickly jump around directories
         (callPackage ./pkgs/cdtest.nix { })  # Manage temporary project directories
         du-dust  # Disk-usage command
         hoard  # manage cli commands
         just  # Justfile executor
-        mdp  # Markdown presentation tool
+        slides  # Markdown presentation tool
         tealdeer  # better manpages/tldr
         tokei  # Code counter
-        obsidian  # Obsidian
+        typst  # Latex alternative
+        obsidian  # GUI note manager
+        yazi  # CLI file manager
+        zk  # CLI note manager
 
         # Utils
         calibre  # ebook software
@@ -366,6 +368,7 @@ in
         feh  # View images
         gnome.nautilus  # File explorer
         halloy  # IRC
+        imhex  # Hex viewer
         inkscape-with-extensions  # Inkscape
         killall  # killall signaller
         obs-studio  # Capture audio and video
@@ -419,6 +422,7 @@ in
     rustup  # Manage rust toolchains
     zig  # Zig toolchain
     ## LSP
+    ltex-ls  # Tex/Markdown spellcheck
     nil  # Nix LSP
     marksman  # Markdown LSP
     nodePackages.prettier  # Prettier

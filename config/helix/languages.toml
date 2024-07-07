@@ -1,3 +1,7 @@
+[language-server.ltex]
+command = "ltex-ls"
+args = []
+
 [[language]]
 name = "css"
 auto-format = true
@@ -12,6 +16,7 @@ formatter = { command = "prettier", args = ["--parser", "html"] }
 name = "markdown"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap=always", "--print-width=80"] }
+language-servers = ["markdown", "ltex-ls"]
 
 [[language]]
 name = "rust"

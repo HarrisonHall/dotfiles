@@ -1,0 +1,36 @@
+[Default Applications]
+inode/directory=nautilus.desktop
+inode/x-empty=helix.desktop
+
+application/pdf=firefox.desktop
+image/jpeg=firefox.desktop
+image/png=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+
+text/markdown=helix.desktop
+text/plain=helix.desktop
+text/readme=helix.desktop
+
+video/mp4=vlc.desktop
+video/webm=vlc.desktop
+
+x-scheme-handler/mailto=userapp-Thunderbird-W0T6B2.desktop
+message/rfc822=userapp-Thunderbird-W0T6B2.desktop
+x-scheme-handler/mid=userapp-Thunderbird-W0T6B2.desktop
+x-scheme-handler/feed=userapp-Thunderbird-VSI8B2.desktop
+application/rss+xml=userapp-Thunderbird-VSI8B2.desktop
+application/x-extension-rss=userapp-Thunderbird-VSI8B2.desktop
+x-scheme-handler/webcal=userapp-Thunderbird-A5V7B2.desktop
+text/calendar=userapp-Thunderbird-A5V7B2.desktop
+application/x-extension-ics=userapp-Thunderbird-A5V7B2.desktop
+x-scheme-handler/webcals=userapp-Thunderbird-A5V7B2.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-W0T6B2.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-W0T6B2.desktop;
+x-scheme-handler/feed=userapp-Thunderbird-VSI8B2.desktop;
+application/rss+xml=userapp-Thunderbird-VSI8B2.desktop;
+application/x-extension-rss=userapp-Thunderbird-VSI8B2.desktop;
+x-scheme-handler/webcal=userapp-Thunderbird-A5V7B2.desktop;
+x-scheme-handler/webcals=userapp-Thunderbird-A5V7B2.desktop;

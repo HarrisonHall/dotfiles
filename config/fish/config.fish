@@ -3,4 +3,5 @@ if status is-interactive
     set fish_greeting
     eval (dircolors -c ~/.config/dircolors/.dircolors)
     alias ll "eza -la --icons=auto --group-directories-first --classify"
+    set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-macchiato.json
 end

@@ -184,8 +184,25 @@ for_window [window_role = "task_dialog"] floating enable
 for_window [window_type = "menu"] floating enable
 for_window [app_id = "floating"] floating enable
 
+## Primary
+assign [app_id = ".*firefox.*"] workspace number 1
+assign [app_id = ".*Alacritty.*"] workspace number 2
+assign [class = ".*obsidian.*"] workspace number 3
+assign [title = ".*Anki.*"] workspace number 6
+assign [app_id = ".*thunderbird.*"] workspace number 7
+assign [title = ".*Discord.*"] workspace number 8
+
+## Godot
 # for_window [title = ".*Godot.*"] floating enable
 # for_window [title = ".*godot.*"] floating enable
 for_window [instance = "Godot_Engine"] floating enable
 # for_window [title = ".*Godot Engine.*"] resize set width 100ppt height 100ppt
 for_window [title = ".*Godot Engine.*"] floating disable
+
+# Launch primary apps
+exec firefox
+exec alacritty
+exec obsidian
+exec anki
+exec thunderbird
+exec discord
