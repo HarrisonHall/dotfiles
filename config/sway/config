@@ -12,6 +12,7 @@ set $term alacritty
 set $progs ~/.config/rofi/launcher/drun.sh
 set $progs_all ~/.config/rofi/launcher/run.sh
 set $powermenu ~/.config/rofi/powermenu/powermenu.sh
+set $helpmenu ~/.config/rofi/applets/help.sh
 
 # Style
 font pango:M PLUS 1 Medium 12
@@ -58,6 +59,7 @@ bindsym $mod+shift+t exec $term
 bindsym $mod+s exec $progs
 bindsym $mod+shift+s exec $progs_all
 bindsym $mod+shift+q exec $powermenu
+bindsym $mod+Slash exec $helpmenu
 
 # keyboard
 floating_modifier $mod normal

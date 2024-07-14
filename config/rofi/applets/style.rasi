@@ -70,6 +70,7 @@ textbox-prompt-colon {
     background-color:            @urgent;
     text-color:                  @background;
 }
+
 prompt {
     enabled:                     true;
     padding:                     10px;
@@ -89,6 +90,7 @@ message {
     background-color:            @background-alt;
     text-color:                  @foreground;
 }
+
 textbox {
     background-color:            inherit;
     text-color:                  inherit;
@@ -121,6 +123,7 @@ element {
     text-color:                  @foreground;
     cursor:                      pointer;
 }
+
 element-text {
     font:                        "Font Awesome 6 Free Solid 28";
     background-color:            transparent;
@@ -135,18 +138,21 @@ element alternate.normal {
     background-color:            var(background-alt);
     text-color:                  var(foreground);
 }
+
 element normal.urgent,
 element alternate.urgent,
 element selected.active {
     background-color:            var(urgent);
     text-color:                  var(background);
 }
+
 element normal.active,
 element alternate.active,
 element selected.urgent {
     background-color:            var(active);
     text-color:                  var(background);
 }
+
 element selected.normal {
     background-color:            var(selected);
     text-color:                  var(background);
