@@ -437,6 +437,7 @@ in
     eza # Better ls (ll)
     ffmpeg_5-full  # Manage video
     file  # Get information on files
+    fzf  # Fuzzy file searching
     gparted  # Disk management
     imagemagick  # Image commands like convert
     jq  # JSON tool
