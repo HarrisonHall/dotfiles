@@ -31,21 +31,13 @@ let
       in ''
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
-        gsettings set org.gnome.desktop.interface gtk-theme "Catppuccin-Macchiato-Standard-Blue-Dark"
-        gsettings set org.gnome.desktop.interface cursor-theme "Catppuccin-Macchiato-Dark-Cursors"
+        gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-macchiato-dark"
+        gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Classic"
+        gsettings set org.gnome.desktop.interface cursor-size "24"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
         '';
   };
-
-  # Catppuccin
-  catppuccin-gtk-custom = pkgs.catppuccin-gtk.override {
-    variant = "macchiato";
-    accents = [ "blue" ];
-    size = "standard";  # compact
-    tweaks = [ "rimless" "normal" ]; # black
-  };
-  catppuccin-cursors = pkgs.catppuccin-cursors.macchiatoDark;
 
 in
 {
@@ -57,7 +49,7 @@ in
     ];
 
   hardware.opengl.enable = true;
-  hardware.opengl.driSupport = true;
+  # hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;  # May be necessary for steam
 
   # Use the systemd-boot EFI boot loader.
@@ -138,10 +130,6 @@ in
     wrapperFeatures.gtk = true;
     extraPackages = with pkgs; [
       # Configuration
-      catppuccin-cursors  # Cursor
-      # catppuccin-gtk  # GTK theme
-      catppuccin-gtk-custom
-      catppuccin-qt5ct  # QT theme
       configure-gtk  # GTK configuration (custom)
       dbus-sway-environment  # DBUS environment (custom)
       papirus-icon-theme  # Icons
@@ -209,34 +197,39 @@ in
   environment.etc = {
     # GTK
     ## 2.0
-    "xdg/gtk-2.0/gtkrc".text = lib.mkDefault ''
-      gtk-theme-name="Catppuccin-Macchiato-Standard-Blue-Dark"
-      gtk-icon-theme-name="Papirus-Dark"
-      gtk-font-name="monospace 12"
-      gtk-cursor-theme-name="Catppuccin-Macchiato-Dark-Cursors"
-    '';
-    "gtk-2.0/gtkrc".source = config.environment.etc."xdg/gtk-2.0/gtkrc".source;
-    ## 3.0
-    "xdg/gtk-3.0/settings.ini".text = lib.mkDefault ''
-      [Settings]
-      gtk-theme-name=Catppuccin-Macchiato-Standard-Blue-Dark
-      gtk-icon-theme-name=Papirus-Dark
-      gtk-font-name=monospace 12
-      gtk-cursor-theme-name=Catppuccin-Macchiato-Dark-Cursors
-      gtk-application-prefer-dark-theme=true
-    '';
-    "gtk-3.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
-    ## 4.0
-    "xdg/gtk-4.0/settings.ini".text = lib.mkDefault ''
-      [Settings]
-      gtk-theme-name=Catppuccin-Macchiato-Standard-Blue-Dark
-      gtk-icon-theme-name=Papirus-Dark
-      gtk-font-name=monospace 12
-      gtk-cursor-theme-name=Catppuccin-Macchiato-Dark-Cursors
-      gtk-application-prefer-dark-theme=true
-    '';
-    "gtk-4.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
+    # "xdg/gtk-2.0/gtkrc".text = lib.mkDefault ''
+    #   gtk-theme-name="catppuccin-macchiato"
+    #   gtk-icon-theme-name="Papirus-Dark"
+    #   gtk-font-name="monospace 12"
+    #   gtk-cursor-theme-name="Bibata-Modern-Classic"
+    # '';
+    # "gtk-2.0/gtkrc".source = config.environment.etc."xdg/gtk-2.0/gtkrc".source;
+    # ## 3.0
+    # "xdg/gtk-3.0/settings.ini".text = lib.mkDefault ''
+    #   [Settings]
+    #   gtk-theme-name=catppuccin-macchiato
+    #   gtk-icon-theme-name=Papirus-Dark
+    #   gtk-font-name=monospace 12
+    #   gtk-cursor-theme-name=Bibata-Modern-Classic
+    #   gtk-application-prefer-dark-theme=true
+    # '';
+    # "gtk-3.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
+    # ## 4.0
+    # "xdg/gtk-4.0/settings.ini".text = lib.mkDefault ''
+    #   [Settings]
+    #   gtk-theme-name=catppuccin-macchiato
+    #   gtk-icon-theme-name=Papirus-Dark
+    #   gtk-font-name=monospace 12
+    #   gtk-cursor-theme-name=Bibata-Modern-Classic
+    #   gtk-application-prefer-dark-theme=true
+    # '';
+    # "gtk-4.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
   };
+
+  # Other configuration
+  # catppuccin.accent = "blue";
+  # boot.loader.grub.catppuccin.enable = true;
+  # boot.loader.grub.catppuccin.flavor = "macchiato";
 
   # Default apps
   ## /etc/profiles/per-user/harrison/share/applications/
@@ -272,7 +265,7 @@ in
   };
 
   # Enable sound.
-  sound.enable = true;
+  # sound.enable = true;
   # hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;  # Recommended for pipewire
   services.pipewire = {
@@ -366,7 +359,7 @@ in
         calibre  # ebook software
         element-desktop  # Element [MATRIX]
         feh  # View images
-        gnome.nautilus  # File explorer
+        nautilus  # File explorer
         halloy  # IRC
         imhex  # Hex viewer
         inkscape-with-extensions  # Inkscape
@@ -387,7 +380,7 @@ in
         anki-bin
 
         # Icons
-        gnome.adwaita-icon-theme  # Used for firefox
+        adwaita-icon-theme  # Used for firefox
         libsForQt5.breeze-icons  # For kwallet/dolphin
 
         # Games

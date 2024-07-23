@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=catppuccin-macchiato-dark
+Comment=An Flat Gtk+ theme based on Elegant Design
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=catppuccin-macchiato-dark
+MetacityTheme=catppuccin-machhiato-dark
+ButtonLayout=close,minimize,maximize:menu
