@@ -63,11 +63,11 @@ in
   # services.fprintd.enable = true;  # Fingerprint support
 
   networking.hostName = "hachha-laptop-nixos"; # hostname
-  # Pick only one of the below networking options.
   networking.networkmanager.enable = true;
   programs.nm-applet.enable = true;  # nmapplet
   services.gnome.gnome-keyring.enable = true;  # Remember passwords
   security.pam.services.greetd.enableGnomeKeyring = true;  # Unlock keyring on login (for greetd)
+  networking.wireguard.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -195,55 +195,7 @@ in
 
   # /etc/XXX
   environment.etc = {
-    # GTK
-    ## 2.0
-    # "xdg/gtk-2.0/gtkrc".text = lib.mkDefault ''
-    #   gtk-theme-name="catppuccin-macchiato"
-    #   gtk-icon-theme-name="Papirus-Dark"
-    #   gtk-font-name="monospace 12"
-    #   gtk-cursor-theme-name="Bibata-Modern-Classic"
-    # '';
-    # "gtk-2.0/gtkrc".source = config.environment.etc."xdg/gtk-2.0/gtkrc".source;
-    # ## 3.0
-    # "xdg/gtk-3.0/settings.ini".text = lib.mkDefault ''
-    #   [Settings]
-    #   gtk-theme-name=catppuccin-macchiato
-    #   gtk-icon-theme-name=Papirus-Dark
-    #   gtk-font-name=monospace 12
-    #   gtk-cursor-theme-name=Bibata-Modern-Classic
-    #   gtk-application-prefer-dark-theme=true
-    # '';
-    # "gtk-3.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
-    # ## 4.0
-    # "xdg/gtk-4.0/settings.ini".text = lib.mkDefault ''
-    #   [Settings]
-    #   gtk-theme-name=catppuccin-macchiato
-    #   gtk-icon-theme-name=Papirus-Dark
-    #   gtk-font-name=monospace 12
-    #   gtk-cursor-theme-name=Bibata-Modern-Classic
-    #   gtk-application-prefer-dark-theme=true
-    # '';
-    # "gtk-4.0/settings.ini".source = config.environment.etc."xdg/gtk-3.0/settings.ini".source;
   };
-
-  # Other configuration
-  # catppuccin.accent = "blue";
-  # boot.loader.grub.catppuccin.enable = true;
-  # boot.loader.grub.catppuccin.flavor = "macchiato";
-
-  # Default apps
-  ## /etc/profiles/per-user/harrison/share/applications/
-  # xdg.mimeApps = {
-  #   enable = true;
-  #   associations.added = {
-  #     "application/pdf" = ["firefox.desktop"];
-  #     "image/png" = [ "feh" "firefox.desktop" "gimp.desktop" ];
-  #   };
-  #   defaultApplications = {
-  #     "application/pdf" = ["firefox.desktop"];
-  #     "image/png" = [ "feh" "firefox.desktop" "gimp.desktop" ];
-  #   };
-  # };
 
   # Enable greetd-tuigreet minimal greeter
   services.greetd = {
@@ -427,14 +379,17 @@ in
     colordiff  # Diff- with color!
     delta  # Diffing tool (for git)
     direnv  # Manage environments based on directory (nix support)
-    eza # Better ls (ll)
+    eza  # Better ls (ll)
+    fastfetch  # Fetching tool
     ffmpeg_5-full  # Manage video
     file  # Get information on files
     fzf  # Fuzzy file searching
+    gnupg  # PGP/GPG signing
     gparted  # Disk management
     imagemagick  # Image commands like convert
     jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
+    macchina  # Fetch tool
     pandoc  # File conversion
     podman  # Better docker
     podman-compose  # Better docker-compose

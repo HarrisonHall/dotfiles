@@ -1,0 +1,15 @@
+# Halloy config.
+#
+# For a complete list of available options,
+# please visit https://halloy.squidowl.org/configuration/index.html
+
+theme = "catppuccin-macchiato"
+
+[font]
+family = "M PLUS 1 Code"
+size = 14
+
+[servers.liberachat]
+nickname = "halloy4159"
+server = "irc.libera.chat"
+channels = ["#halloy"]
