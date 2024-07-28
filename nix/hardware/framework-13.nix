@@ -46,6 +46,8 @@
   programs.light.enable = true;
 
   # Boot params
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelParams = ["mem_sleep_default=deep"];
   boot.loader.grub.device = "/dev/sda";
 
