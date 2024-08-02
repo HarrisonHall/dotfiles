@@ -18,11 +18,11 @@
     # Language
     ## Compilers & Interpreters
     rustup  # Manage rust toolchains
+    typst  # Latex alternative
     ## LSP
     ltex-ls  # Tex/Markdown spellcheck
     marksman  # Markdown LSP
     nodePackages.prettier  # Prettier
-    # rust-analyzer  # Rust LSP
 
     # Core utils
     bat  # Cat with wings
@@ -47,7 +47,6 @@
     tmux  # Terminal multiplexer
     tmuxp  # tmux manager
     tree  # Display directory structure tree
-    typst  # Latex alternative
     wget  # Network downloader
     yazi  # CLI file manager
     zellij  # Terminal multiplexer

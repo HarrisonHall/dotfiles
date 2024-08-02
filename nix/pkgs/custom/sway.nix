@@ -27,7 +27,7 @@ let
         export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
         gnome_schema=org.gnome.desktop.interface
         gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-macchiato-dark"
-        gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Modern-Classic"
+        gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Catppuccin"
         gsettings set org.gnome.desktop.interface cursor-size "24"
         gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
         gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"

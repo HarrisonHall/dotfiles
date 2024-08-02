@@ -12,6 +12,7 @@
     zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP
+    typst-lsp  # Typst LSP
 
     # Core utils
     ffmpeg_5-full  # Manage video

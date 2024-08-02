@@ -20,11 +20,14 @@ in
       ./system/networking.nix
       ./system/sound.nix
       # Packages
+      ## Core
       ./pkgs/core.nix
       ./pkgs/dev.nix
       ./pkgs/hobbies.nix
+      ./pkgs/security.nix
       ./pkgs/term-core.nix
       ./pkgs/term-extra.nix
+      ## Custom
       ./pkgs/custom/greeter.nix
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
