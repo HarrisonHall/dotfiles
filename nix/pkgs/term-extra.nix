@@ -15,7 +15,7 @@
     typst-lsp  # Typst LSP
 
     # Core utils
-    ffmpeg_5-full  # Manage video
+    ffmpeg-full  # Manage video
     gparted  # Disk management
     imagemagick  # Image commands like convert
     pandoc  # File conversion

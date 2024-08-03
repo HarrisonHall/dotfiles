@@ -35,7 +35,7 @@ client.background        $base
 
 # Startup
 ## BG
-exec --no-startup-id swaybg -i ~/media/wallpapers/clear_mountain.jpg
+exec --no-startup-id swaybg -i ~/media/wallpapers/current.image
 ## Monitor
 output eDP-1 scale 1.75
 ## Cursor

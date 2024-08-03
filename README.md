@@ -1,14 +1,17 @@
 # configW
 
-Modern .dotfiles and configuration.
-This is designed for new setups using [nix](https://nixos.org/).
+Modern .dotfiles and configuration. This is designed for new setups using
+[nix](https://nixos.org/).
 
 ## Setup
 
 ### NixOS
 
-1. `sudo ./build_nixos.sh`
-2. Custom setup:
+1. Add unstable channel
+   - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
+   - `sudo nix-channel --update`
+2. `sudo ./build_nixos.sh`
+3. Custom setup:
    - Set password `passwd`
 
 ### \*nix
@@ -16,16 +19,7 @@ This is designed for new setups using [nix](https://nixos.org/).
 0. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
 1. Update profile: `./build_shell.sh`
 2. Custom setup:
-   - Install gui programs: firefox, discord, obsidian, thunderbird, vlc...
-
-## Notes & Issues
-
-### command-not-found
-
-```sh
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos
-sudo nix-channel --update
-```
+   - Install GUI programs: firefox, discord, obsidian, thunderbird, vlc...
 
 ## Tips
 
@@ -42,10 +36,4 @@ sudo nix-channel --update
 
 ### Keybinds
 
-- `cmd+s` - Search desktop apps
-- `cmd+S` - Search all executables
-- `cmd+l` - Lock screen
-- `cmd+T` - Terminal
-- `cmd+Q` - Power (TODO - WOFI)
-- `printscreen,s` - Screenshot selection
-- `printscreen,f` - Screenshot fullscreen
+- `cmd+?` - View keybinds

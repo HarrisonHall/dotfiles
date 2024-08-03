@@ -3,6 +3,9 @@
     editor = hx
 	fsmonitor = true
 
+[pull]
+	rebase = true
+
 [user]
 	email = hachha@hachha.dev
 	name = hachha
