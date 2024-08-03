@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 ## build.sh
-configw="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
+dotfiles="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
 # Update configuration
 echo "- Symlinking"
-./scripts/symlink_all.sh $configw
+./scripts/symlink_all.sh $dotfiles
 
 # NIX
 echo "- Building shell"

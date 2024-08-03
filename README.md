@@ -1,4 +1,4 @@
-# configW
+# dotfiles
 
 Modern .dotfiles and configuration. This is designed for new setups using
 [nix](https://nixos.org/).

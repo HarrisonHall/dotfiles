@@ -39,7 +39,7 @@
 [maintenance]
 	auto = true
 	strategy = incremental
-	repo = /home/harrison/workspace/configw
+	repo = /home/harrison/workspace/dotfiles
 
 [rerere]
 	enabled = true

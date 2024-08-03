@@ -1,16 +1,16 @@
 #!/usr/bin/env sh
 
 ## build.sh
-configw="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
+dotfiles="$(cd -P -- "$(dirname -- "$0")" && pwd -P)"
 
 # Update configuration
 echo "- Symlinking"
-./scripts/symlink_all.sh $configw
+./scripts/symlink_all.sh $dotfiles
 ./scripts/build_heir.sh
 
 # NIX
 echo "- Building config"
-sudo nixos-rebuild switch -I nixos-config="${configw}/nix/configuration.nix" -j 4
+sudo nixos-rebuild switch -I nixos-config="${dotfiles}/nix/configuration.nix" -j 4
 # --upgrade --show-traces  # TODO - turn into flags
 
 ## Run GC on success
