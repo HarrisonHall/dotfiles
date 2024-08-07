@@ -1,6 +1,6 @@
 # Terminal configuration (core)
 
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
