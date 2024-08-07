@@ -8,25 +8,25 @@
 
 [flags]
 # Whether to hide the average cpu entry.
-#hide_avg_cpu = false
+hide_avg_cpu = false
 # Whether to use dot markers rather than braille.
-#dot_marker = false
+dot_marker = false
 # The update rate of the application.
-#rate = "1s"
+rate = "500ms"
 # Whether to put the CPU legend to the left.
-#left_legend = false
+left_legend = true
 # Whether to set CPU% on a process to be based on the total CPU or just current usage.
-#current_usage = false
+current_usage = false
 # Whether to set CPU% on a process to be based on the total CPU or per-core CPU% (not divided by the number of cpus).
-#unnormalized_cpu = false
+unnormalized_cpu = false
 # Whether to group processes with the same name together by default.
-#group_processes = false
+group_processes = true
 # Whether to make process searching case sensitive by default.
-#case_sensitive = false
+case_sensitive = false
 # Whether to make process searching look for matching the entire word by default.
-#whole_word = false
+whole_word = false
 # Whether to make process searching use regex by default.
-#regex = false
+regex = true
 # Defaults to Celsius.  Temperature is one of:
 #temperature_type = "k"
 #temperature_type = "f"
@@ -34,37 +34,35 @@
 #temperature_type = "kelvin"
 #temperature_type = "fahrenheit"
 #temperature_type = "celsius"
-# The default time interval (in milliseconds).
-#default_time_value = "60s"
+# The default time interval
+default_time_value = "60s"
 # The time delta on each zoom in/out action (in milliseconds).
-#time_delta = 15000
+# time_delta = 15000
 # Hides the time scale.
-#hide_time = false
+hide_time = false
 # Override layout default widget
-#default_widget_type = "proc"
-#default_widget_count = 1
+default_widget_type = "proc"
+default_widget_count = 1
 # Expand selected widget upon starting the app
-#expanded_on_startup = true
+expanded_on_startup = false
 # Use basic mode
-#basic = false
+basic = false
 # Use the old network legend style
 #use_old_network_legend = false
 # Remove space in tables
-#hide_table_gap = false
+hide_table_gap = false
 # Show the battery widgets
-#battery = false
+battery = true
 # Disable mouse clicks
-#disable_click = false
-# Built-in themes.  Valid values are "default", "default-light", "gruvbox", "gruvbox-light", "nord", "nord-light"
-#color = "default"
+disable_click = false
 # Show memory values in the processes widget as values by default
 #mem_as_value = false
 # Show tree mode by default in the processes widget.
-#tree = false
+tree = true
 # Shows an indicator in table widgets tracking where in the list you are.
-#show_table_scroll_position = false
+show_table_scroll_position = true
 # Show processes as their commands by default in the process widget.
-#process_command = false
+process_command = true
 # Displays the network widget with binary prefixes.
 #network_use_binary_prefix = false
 # Displays the network widget using bytes.
@@ -74,11 +72,11 @@
 # Hides advanced options to stop a process on Unix-like systems.
 #disable_advanced_kill = false
 # Shows GPU(s) memory
-#enable_gpu_memory = false
+enable_gpu_memory = true
 # Shows cache and buffer memory
-#enable_cache_memory = false
+enable_cache_memory = true
 # How much data is stored at once in terms of time.
-#retention = "10m"
+retention = "10m"
 
 # These are flags around the process widget.
 
@@ -134,28 +132,30 @@
 # All widgets must have the type value set to one of ["cpu", "mem", "proc", "net", "temp", "disk", "empty"].
 # All layout components have a ratio value - if this is not set, then it defaults to 1.
 # The default widget layout:
-#[[row]]
-#  ratio=30
-#  [[row.child]]
-#  type="cpu"
-#[[row]]
-#    ratio=40
-#    [[row.child]]
-#      ratio=4
-#      type="mem"
-#    [[row.child]]
-#      ratio=3
-#      [[row.child.child]]
-#        type="temp"
-#      [[row.child.child]]
-#        type="disk"
-#[[row]]
-#  ratio=30
-#  [[row.child]]
-#    type="net"
-#  [[row.child]]
-#    type="proc"
-#    default=true
+[[row]]
+  ratio=2
+  [[row.child]]
+  type="cpu"
+[[row]]
+    ratio=3
+    [[row.child]]
+      ratio=6
+      type="mem"
+    [[row.child]]
+      ratio=4
+      type="net"
+[[row]]
+  ratio=5
+  [[row.child]]
+    ratio=6
+    type="proc"
+    default=true
+  [[row.child]]
+    ratio=4
+    [[row.child.child]]
+      type="disk"
+    [[row.child.child]]
+      type="temp"
 
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters.  This is admittedly
