@@ -11,12 +11,12 @@ family = "HackGen35 Console NF"
 style = "Bold"
 
 [font.bold_italic]
-family = "HackGen35 Console NF"
-style = "Bold Italic"
+family = "M PLUS 1 Code"
+style = "SemiBold"
 
 [font.italic]
-family = "HackGen35 Console NF"
-style = "Italic"
+family = "M PLUS 1 Code"
+style = "Regular"
 
 [font.normal]
 family = "HackGen35 Console NF"

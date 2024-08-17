@@ -5,14 +5,12 @@ mouse = true
 true-color = true
 bufferline = "multiple"
 rulers = [80]
+gutters = ["diagnostics", "line-numbers", "diff"]
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
-
-# [editor.file-picker]
-# hidden = false
 
 # [editor.lsp]
 # display-inlay-hints = true
