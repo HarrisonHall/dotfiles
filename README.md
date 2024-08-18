@@ -1,25 +1,31 @@
 # dotfiles
 
 Modern .dotfiles and configuration. This is designed for new setups using
-[nix](https://nixos.org/).
+[nix](https://nixos.org/). Most configuration is placed outside of nix for
+compatibility with non-nix systems.
 
 ## Setup
 
 ### NixOS
 
-1. Add unstable channel
+1. `nix-shell`
+2. Add unstable channel
    - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
    - `sudo nix-channel --update`
-2. `sudo ./build_nixos.sh`
-3. Custom setup:
-   - Set password `passwd`
+3. `just install`
 
 ### \*nix
 
-0. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
-1. Update profile: `./build_shell.sh`
-2. Custom setup:
+1. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
+2. `nix-shell`
+3. Update profile: `just install-shell`
+4. Custom setup:
    - Install GUI programs: firefox, discord, obsidian, thunderbird, vlc...
+
+### Manual setup
+
+- Wallpaper is installed at `~/media/wallpapers/current.image`
+- Set password `passwd`
 
 ## Tips
 

@@ -33,6 +33,7 @@
     du-dust  # Disk usage
     eza  # Better ls (ll)
     fastfetch  # Fetching tool
+    fd  # Better find
     file  # Get information on files
     fzf  # Fuzzy file searching
     gnupg  # PGP/GPG signing

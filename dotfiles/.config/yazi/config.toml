@@ -1,0 +1,7 @@
+[manager]
+sort_by = "natural"
+show_hidden = false
+show_symlink = true
+
+[preview]
+tab_size = 4

@@ -9,6 +9,7 @@
     gcc  # GCC
     llvmPackages_15.libclang  # Clang
     patchelf  # Patch binaries
+    rye  # Python toolchains
     zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP
@@ -29,12 +30,12 @@
     udev
 
     # Python packages
+    python312Packages.python-lsp-server
     (python3.withPackages(ps: with ps; [ 
       cryptography
       dnspython
       pandas
       pip
-      "python-lsp-server[all]"
       requests
     ]))
   ];
