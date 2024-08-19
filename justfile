@@ -64,5 +64,7 @@ directory-ensure-rm dir:
 symlinks-link:
     #!/usr/bin/env sh
     ln -s -T {{DOTFILES}} ~/.config/dotfiles 2> /dev/null
+    pushd ~/.config/dotfiles
     stow --restow --target ~/. dotfiles
+    popd
     true
