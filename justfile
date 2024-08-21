@@ -12,7 +12,7 @@ default:
 install: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env sh
     echo {{DOTFILES}}
-    sudo nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nix" -j 4
+    sudo nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nixos.nix" -j 4
     if [ $? -eq 0 ]; then
         sudo nix-collect-garbage --delete-older-than {{GC_DURATION}}
         sudo nix-store --gc
@@ -22,7 +22,7 @@ install: hier-build-base symlinks-link hier-build-extra
 # Install config for shell
 install-shell: hier-build-base symlinks-link
     #!/usr/bin/env sh
-    nix profile install -f {{DOTFILES}}/nix/shell.nix \
+    nix profile install -f {{DOTFILES}}/nix/configuration.profile.nix \
         --extra-experimental-features nix-command
     if [ $? -eq 0 ]; then
         nix-env --delete-generations {{GC_DURATION}}
@@ -53,7 +53,7 @@ hier-build-extra:
 # Ensure directory exists
 directory-ensure-mk dir:
     #!/usr/bin/env sh
-    test -d {{dir}} || mkdir {{dir}}
+    test -d {{dir}} || mkdir -p {{dir}}
 
 # Ensure directory doesn't exist
 directory-ensure-rm dir:
@@ -66,5 +66,6 @@ symlinks-link:
     ln -s -T {{DOTFILES}} ~/.config/dotfiles 2> /dev/null
     pushd ~/.config/dotfiles
     stow --restow --target ~/. dotfiles
+    stowed=$?
     popd
-    true
+    exit $stowed
