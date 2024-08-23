@@ -9,7 +9,7 @@
     gcc  # GCC
     llvmPackages_15.libclang  # Clang
     patchelf  # Patch binaries
-    rye  # Python toolchains
+    uv  # Python toolchains
     zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP

@@ -43,6 +43,7 @@
     macchina  # Fetch tool
     ripgrep  # Recursively search
     slides  # Markdown presentation tool
+    starship  # Easy prompt
     tealdeer  # tldr
     tokei  # Code counter
     tmux  # Terminal multiplexer
@@ -56,5 +57,6 @@
     p7zip  # 7z
     xdg-utils  # Application opening/desktop integration
     zk  # CLI note manager
+    zoxide  # Better cd
   ];
 }
