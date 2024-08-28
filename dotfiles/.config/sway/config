@@ -6,7 +6,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term alacritty
+set $term wezterm
 
 # Scripts
 set $progs ~/.config/rofi/launcher/drun.sh
@@ -189,6 +189,7 @@ for_window [app_id = "floating"] floating enable
 ## Primary
 assign [app_id = ".*firefox.*"] workspace number 1
 assign [app_id = ".*Alacritty.*"] workspace number 2
+assign [app_id = ".*Wezterm.*"] workspace number 2
 assign [class = ".*obsidian.*"] workspace number 3
 assign [title = ".*Anki.*"] workspace number 6
 assign [app_id = ".*thunderbird.*"] workspace number 7
@@ -203,8 +204,8 @@ for_window [title = ".*Godot Engine.*"] floating disable
 
 # Launch primary apps
 exec firefox
-exec alacritty
-exec obsidian
+exec wezterm
+# exec obsidian
 exec anki
 exec thunderbird
 exec discord

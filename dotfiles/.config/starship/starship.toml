@@ -3,6 +3,17 @@
 add_newline = false
 palette = "catppuccin_macchiato"
 
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[?](bold green)"
+
+[directory]
+style = "sky bold"
+
+[git_branch]
+style = "mauve bold"
+
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
 flamingo = "#f0c6c6"

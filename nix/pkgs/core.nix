@@ -5,9 +5,9 @@
 {
   users.users.${user}.packages = with pkgs; [
     # Essential
-    firefox-wayland
-  	alacritty
     discord
+    firefox-wayland
+    wezterm
 
     # Utils
     calibre  # ebook software

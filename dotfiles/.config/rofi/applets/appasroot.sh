@@ -10,7 +10,7 @@ source "$HOME"/.config/rofi/applets/shared/theme.bash
 theme="$type/$style"
 
 # Conf
-term='alacritty'
+term='wezterm'
 
 # Theme Elements
 prompt='Applications'

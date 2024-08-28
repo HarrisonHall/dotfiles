@@ -29,6 +29,7 @@ in
       ./pkgs/term-extra.nix
       ## Custom
       ./pkgs/custom/greeter.nix
+      ./pkgs/custom/grub.nix
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
       ./pkgs/custom/sway.nix

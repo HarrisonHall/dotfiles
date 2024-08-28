@@ -42,4 +42,9 @@ compatibility with non-nix systems.
 
 ### Keybinds
 
-- `cmd+?` - View keybinds
+- `[Super]+?` - View keybindings
+
+## TODO
+
+- VT shell - setvtrgb
+- Grub - grub2-mkdfont pf2

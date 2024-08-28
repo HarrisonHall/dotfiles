@@ -55,6 +55,12 @@
     ];
   };
 
+  # console = {
+  #   earlySetup = true;
+  #   font = "${pkgs.hackgen-nf-font}/share/fonts/HackGen35ConsoleNF-Regular.ttf";
+  #   keyMap = "us";
+  # };
+
   environment.systemPackages = with pkgs; [
     font-manager
   ];

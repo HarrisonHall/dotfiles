@@ -1,9 +1,9 @@
-[[manager.prepend_keymap]]
-on   = "<C-s>"
-run  = 'shell "$SHELL" --block --confirm'
-desc = "Open shell here"
+# [[manager.prepend_keymap]]
+# on   = "<C-s>"
+# run  = 'shell "$SHELL" --block --confirm'
+# desc = "Open shell here"
 
-[[input.prepend_keymap]]
-on   = "<Esc>"
-run  = "close"
-desc = "Cancel input"
+# [[input.prepend_keymap]]
+# on   = "<Esc>"
+# run  = "close"
+# desc = "Cancel input"
