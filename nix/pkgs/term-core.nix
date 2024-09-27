@@ -25,6 +25,7 @@
     nodePackages.prettier  # Prettier
 
     # Core utils
+    bash  # Legacy shell for use with scripts
     bat  # Cat with wings
     bottom  # Modern top utility
     colordiff  # Diff- with color!

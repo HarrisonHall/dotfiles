@@ -2,6 +2,7 @@
 
 DOTFILES := `git rev-parse --show-toplevel`
 GC_DURATION := "30d"
+UPDATE := "false"
 
 # List all
 [private]
@@ -9,25 +10,32 @@ default:
     just --list
 
 # Install config
-install: hier-build-base symlinks-link hier-build-extra
-    #!/usr/bin/env sh
-    echo {{DOTFILES}}
+install update=UPDATE: hier-build-base symlinks-link hier-build-extra
+    #!/usr/bin/env fish
+    if {{update}}
+        nix-channel --update
+        sudo nix-channel --update
+    end
     sudo nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nixos.nix" -j 4
-    if [ $? -eq 0 ]; then
+    if test $status -eq 0
         sudo nix-collect-garbage --delete-older-than {{GC_DURATION}}
         sudo nix-store --gc
         # sudo nixos-rebuild boot
-    fi
+    end
 
 # Install config for shell
-install-shell: hier-build-base symlinks-link
-    #!/usr/bin/env sh
+install-shell update=UPDATE: hier-build-base symlinks-link
+    #!/usr/bin/env fish
+    if {{update}}
+        nix-channel --update
+        sudo nix-channel --update
+    end
     nix profile install -f {{DOTFILES}}/nix/configuration.profile.nix \
         --extra-experimental-features nix-command
-    if [ $? -eq 0 ]; then
+    if test $status -eq 0
         nix-env --delete-generations {{GC_DURATION}}
         nix-store --gc
-    fi
+    end
 
 # Build base directories
 hier-build-base:
@@ -52,20 +60,20 @@ hier-build-extra:
 
 # Ensure directory exists
 directory-ensure-mk dir:
-    #!/usr/bin/env sh
+    #!/usr/bin/env fish
     test -d {{dir}} || mkdir -p {{dir}}
 
 # Ensure directory doesn't exist
 directory-ensure-rm dir:
-    #!/usr/bin/env sh
+    #!/usr/bin/env fish
     rmdir {{dir}} 2> /dev/null || true
 
 # Link symlinks
 symlinks-link:
-    #!/usr/bin/env sh
+    #!/usr/bin/env fish
     ln -s -T {{DOTFILES}} ~/.config/dotfiles 2> /dev/null
     pushd ~/.config/dotfiles
     stow --restow --target ~/. dotfiles
-    stowed=$?
+    set stowed $status
     popd
     exit $stowed

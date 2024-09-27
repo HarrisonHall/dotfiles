@@ -21,9 +21,5 @@
     pinta  # Basic image editor
     thunderbird-bin  # Thunderbird
     vlc  # Audio-video viewer
-
-    # Icons
-    # adwaita-icon-theme  # Used for firefox
-    # libsForQt5.breeze-icons  # For kwallet/dolphin
   ];
 }

@@ -19,6 +19,7 @@ config.font = wezterm.font_with_fallback {
   'HackGen35 Console NF',
   'M PLUS 1 Code',
   'Font Awesome 6 Free',
+  'Font Awesome 6 Brands',
 }
 config.font_size = 12.0
 config.color_scheme = "Catppuccin Macchiato"
@@ -29,6 +30,8 @@ config.window_padding = {
   bottom = '0.25cell',
 }
 
+-- Temp bug fix
+config.front_end = 'WebGpu'
 
 -- CENTER
 

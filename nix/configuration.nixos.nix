@@ -34,6 +34,7 @@ in
       ./pkgs/custom/steam.nix
       ./pkgs/custom/sway.nix
       ./pkgs/custom/syncthing.nix
+      ./pkgs/custom/vm.nix
     ];
 
   # Allow unfree

@@ -37,6 +37,7 @@
     monospace = [
       "HackGen35 Console NF"
       "M PLUS 1 CODE"
+      "Fira Mono"
       "Font Awesome 6 Free"
       "Font Awesome 6 Brands"
     ];
@@ -54,6 +55,8 @@
       "Font Awesome 6 Brands"
     ];
   };
+
+  environment.variables.FREETYPE_PROPERTIES = "cff:no-stem-darkening=0 autofitter:no-stem-darkening=0";
 
   # console = {
   #   earlySetup = true;

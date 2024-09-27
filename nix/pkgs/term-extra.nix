@@ -20,6 +20,7 @@
     gparted  # Disk management
     imagemagick  # Image commands like convert
     pandoc  # File conversion
+    ripgrep-all  # rga = ripgrep + rich-text searching (pdf, docx, etc.)
     slides  # Markdown presentation tool
     wireguard-tools  # Wireguard CLI
     xsel  # X selection util
