@@ -25,6 +25,7 @@ x-scheme-handler/webcal=userapp-Thunderbird-A5V7B2.desktop
 text/calendar=userapp-Thunderbird-A5V7B2.desktop
 application/x-extension-ics=userapp-Thunderbird-A5V7B2.desktop
 x-scheme-handler/webcals=userapp-Thunderbird-A5V7B2.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-W0T6B2.desktop;

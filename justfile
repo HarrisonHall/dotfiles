@@ -7,7 +7,7 @@ UPDATE := "false"
 # List all
 [private]
 default:
-    just --list
+    @just --list
 
 # Install config
 install update=UPDATE: hier-build-base symlinks-link hier-build-extra

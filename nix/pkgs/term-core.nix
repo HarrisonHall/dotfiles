@@ -57,6 +57,7 @@
     unzip  # Unzipping
     p7zip  # 7z
     xdg-utils  # Application opening/desktop integration
+    yt-dlp  # Youtube+ downloader
     zk  # CLI note manager
     zoxide  # Better cd
   ];

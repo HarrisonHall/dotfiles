@@ -30,6 +30,22 @@ config.window_padding = {
   bottom = '0.25cell',
 }
 
+-- Keybinds
+config.keys = {
+  -- Disable accidental zoom-in
+  {
+    key = '=',
+    mods = 'CTRL',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+  -- Disable accidental zoom-out
+  {
+    key = '-',
+    mods = 'CTRL',
+    action = wezterm.action.DisableDefaultAssignment,
+  },
+}
+
 -- Temp bug fix
 config.front_end = 'WebGpu'
 

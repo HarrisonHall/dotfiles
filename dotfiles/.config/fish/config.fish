@@ -13,6 +13,8 @@ if status is-interactive
     # Path
     set PATH $PATH ~/.cargo/bin
     # Other setup
+    # Direnv
+    type -f direnv 2&>/dev/null && direnv hook fish | source
     ## FZF
     set -x FZF_DEFAULT_OPTS "\
         --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
@@ -25,4 +27,5 @@ if status is-interactive
     type -f starship 2&>/dev/null && starship init fish | source
     ## Zoxide
     type -f zoxide 2&>/dev/null && zoxide init fish | source
+    alias cd z
 end
