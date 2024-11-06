@@ -40,6 +40,8 @@ install-shell update=UPDATE: hier-build-base symlinks-link
 # Build base directories
 hier-build-base:
     just directory-ensure-mk ~/.config
+    just directory-ensure-mk ~/.local
+    just directory-ensure-mk ~/.local/share/applications
     just directory-ensure-mk ~/downloads
     just directory-ensure-mk ~/media
     just directory-ensure-mk ~/media/music
