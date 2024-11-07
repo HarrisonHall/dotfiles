@@ -8,6 +8,7 @@
     anki-bin
 
     # Games
+    dolphin-emu  # GC/Wii emulation
     godot_4  # Godot engine
     sgt-puzzles  # Simon Tatham's puzzles
   ];
