@@ -25,11 +25,12 @@
   };
   fonts.packages = with pkgs; [
     fira  # Sans font (en)
-    mplus-outline-fonts.githubRelease  # Backup sans (en, jp)
+    mplus-outline-fonts.githubRelease  # Backup sans (en, CJK)
     noto-fonts  # Serif font (en)
-    noto-fonts-cjk-serif  # Serif font (jp)
-    hackgen-nf-font  # Monospace font w/ symbols (en, jp)
+    noto-fonts-cjk-serif  # Serif font (CJK)
+    hackgen-nf-font  # Monospace font w/ symbols (en, CJK)
     font-awesome  # Backup symbols
+    sarasa-gothic  # Iosevka + Hans (CJK)
     # monofur-nerdfont  # Backup monospace font
     # noto-fonts-emoji noto-fonts-monochrome-emoji  # Backup emoji fonts
   ];
