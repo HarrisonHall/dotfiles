@@ -7,6 +7,11 @@ if status is-interactive
     # Shortcuts
     alias ll "eza -la --icons=auto --group-directories-first --classify"
     alias ls "eza --icons=auto --group-directories-first"
+    alias fetch macchina
+    alias fetch-min nitch
+    alias fetch-max fastfetch
+    alias neofetch fastfetch
+    alias screenfetch fastfetch
     # Man paging
     set -x MANROFFOPT -c
     set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"

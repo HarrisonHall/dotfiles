@@ -42,6 +42,7 @@
     jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
     macchina  # Fetch tool
+    nitch  # Minimal fetching
     ripgrep  # Recursively search
     slides  # Markdown presentation tool
     starship  # Easy prompt
