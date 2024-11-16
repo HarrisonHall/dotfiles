@@ -47,6 +47,7 @@ hier-build-base:
     just directory-ensure-mk ~/media/music
     just directory-ensure-mk ~/media/wallpapers
     just directory-ensure-mk ~/workspace
+    just directory-ensure-mk ~/workspace/dev
 
 # Build extra directories
 hier-build-extra:
