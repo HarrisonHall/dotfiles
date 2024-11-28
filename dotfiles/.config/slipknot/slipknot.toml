@@ -1,0 +1,217 @@
+update_delta_sec = 3600
+
+# Settings that apply to **everything**.
+[global]
+
+[global.filters]
+exclude-title-words = [
+  "sports",
+  "football",
+  "nfl",
+  "basketball",
+]
+exclude-content-words = [
+  "trump",
+  "musk",
+]
+
+# Settings that apply to the all feed.
+[all]
+exclude-title-words = [
+  "politics",
+]
+
+
+# Feed definitions.
+
+[feeds.hacking]
+feeds = ["hackernews", "ziglang"]
+
+[feeds.hackernews]
+url = "https://news.ycombinator.com/rss"
+tags = ["hacking"]
+exclude-title-words = ["llm", "ai", "hiring"]
+
+[feeds.ziglang]
+url = "https://ziglang.org/devlog/index.xml"
+tags = ["hacking", "zig"]
+
+[feeds.guardian-us]
+url = "https://www.theguardian.com/us/rss"
+tags = ["news"]
+
+[feeds.guardian-environment]
+url = "https://www.theguardian.com/us/environment/rss"
+tags = ["news"]
+
+[feeds.guardian-science]
+url = "https://www.theguardian.com/science/rss"
+tags = ["news", "science"]
+
+[feeds.guardian-technology]
+url = "https://www.theguardian.com/us/technology/rss"
+tags = ["news", "science", "technology"]
+
+[feeds.lobsters]
+url = "https://lobste.rs/rss"
+tags = ["hacking"]
+exclude-title-words = ["llm", "ai", "hiring"]
+
+[feeds.verge]
+url = "https://www.theverge.com/rss/index.xml"
+tags = ["tech"]
+exclude-title-words = ["ai", "llm"]
+
+[feeds.npr-national]
+url = "https://feeds.npr.org/1003/rss.xml"
+tags = ["news"]
+exclude-title-words = ["trump", "biden", "nfl", "sports", "football", "basketball"]
+
+[feeds.npr-world]
+url = "https://feeds.npr.org/1004/rss.xml"
+tags = ["news"]
+exclude-title-words = ["trump", "biden", "nfl", "sports", "football", "basketball"]
+
+[feeds.npr-science]
+url = "https://feeds.npr.org/1007/rss.xml"
+tags = ["news", "science"]
+
+[feeds.npr-climate]
+url = "https://feeds.npr.org/1167/rss.xml"
+tags = ["news", "science"]
+
+[feeds.two-stop-bits]
+url = "https://twostopbits.com/rss"
+tags = ["gaming"]
+
+[feeds.xkcd]
+url = "https://xkcd.com/rss.xml"
+tags = ["comics"]
+
+[feeds.old-new-thing]
+url = "https://devblogs.microsoft.com/oldnewthing/feed"
+tags = ["hacking"]
+
+[feeds.bennett-meares]
+url = "https://bmeares.com/rss/"
+tags = ["blog", "hacking"]
+
+[feeds.dave-heinamann]
+url = "https://dheinemann.com/atom/"
+tags = ["blog", "hacking"]
+
+[feeds.game-dev-city]
+url = "http://gamedev.city/rss"
+tags = ["hacking", "gaming"]
+
+[feeds.goodgoodgood]
+url = "https://www.goodgoodgood.co/articles/rss.xml"
+tags = ["news", "positive"]
+
+[feeds.importai]
+url = "https://jack-clark.net/feed/"
+tags = ["ai"]
+
+[feeds.inside-climate-news]
+url = "https://insideclimatenews.org/"
+tags = ["news", "science"]
+
+[feeds.lucidity]
+url = "https://ludic.mataroa.blog/rss/"
+tags = ["hacking"]
+
+[feeds.matcha]
+url = "https://matcha-jp.com/easy/feed"
+tags = ["japanese"]
+
+[feeds.nasa-breaking-news]
+url = "http://nasa.gov/rss/dyn/breaking_news.rss"
+tags = ["news", "science"]
+
+[feeds.nhk-easier]
+url = "https://nhkeasier.com/feed/"
+tags = ["japanese", "news"]
+
+[feeds.positive-news]
+url = "http://positive.news/rss"
+tags = ["news", "positive"]
+
+[feeds.rust-gamedev-wg]
+url = "https://gamedev.rs/rss.xml"
+tags = ["hacking", "gaming"]
+
+[feeds.tldr]
+url = "https://tldr.tech/api/rss/tech"
+tags = ["news", "tech"]
+
+[feeds.tldr-design]
+url = "https://tldr.tech/api/rss/design"
+tags = ["design"]
+
+[feeds.tldr-devops]
+url = "https://tldr.tech/api/rss/devops"
+tags = ["hacking"]
+
+[feeds.tldr-infosec]
+url = "https://tldr.tech/api/rss/infosec"
+tags = ["hacking", "security"]
+
+[feeds.talking-climate]
+url = "https://www.talkingclimate.ca/feed"
+tags = ["news", "science"]
+
+[feeds.conversation-politics]
+url = "https://theconversation.com/us/politics/articles.atom"
+tags = ["news"]
+
+[feeds.conversation-environment-energy]
+url = "https://theconversation.com/us/environment/articles.atom"
+tags = ["news", "science"]
+
+[feeds.conversation-science-tech]
+url = "https://theconversation.com/us/technology/articles.atom"
+tags = ["news", "science"]
+
+[feeds.hachha]
+url = "https://hachha.dev/blog.feed"
+tags = ["blog", "hacking"]
+
+[feeds.without-boats]
+url = "https://without.boats/index.xml"
+tags = ["blog", "hacking"]
+
+[feeds.underjord]
+url = "https://underjord.io/feed.xml"
+tags = ["blog", "hacking"]
+
+[feeds.matthew-strom]
+url = "https://matthewstrom.com/feed.xml"
+tags = ["blog", "design"]
+
+[feeds.infosecurity-magazine]
+url = "https://www.infosecurity-magazine.com/rss/news/"
+tags = ["hacking", "security"]
+
+[feeds.itchio-featured]
+url = "https://itch.io/feed/featured.xml`"
+tags = ["gaming"]
+
+[feeds.ntietz]
+url = "https://www.ntietz.com/atom.xml"
+tags = ["blog", "hacking"]
+
+[feeds.matklad]
+url = "https://matklad.github.io/feed.xml"
+tags = ["blog", "hacking"]
+
+[feeds.japan-times]
+url = "https://www.japantimes.co.jp/news/feed/"
+tags = ["news", "japanese"]
+
+# [feeds.suckless]
+# url = "http://suckless.org/atom.xml"
+# tags = ["hacking", "releases"]
+
+# [feeds.xyz]
+# url = ""
+# tags = []
