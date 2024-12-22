@@ -50,8 +50,13 @@ url = "https://www.japantimes.co.jp/news/feed/"
 tags = ["news", "japanese"]
 
 [feeds.asahi-shimbun-headlines]
-# url = "https://www.asahi.com/information/service/rss.html"
+# More feeds: https://www.asahi.com/information/service/rss.html
 url = "https://www.asahi.com/rss/asahi/newsheadlines.rdf"
+tags = ["news", "japanese"]
+
+[feeds.nhk]
+# More feeds: https://www.nhk.or.jp/toppage/rss/index.html
+url = "https://www3.nhk.or.jp/rss/news/cat0.xml"
 tags = ["news", "japanese"]
 
 ## Hacking

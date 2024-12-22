@@ -5,7 +5,7 @@
 {
   users.users.${user}.packages = with pkgs; [
     # Essential
-    discord
+    discord-canary
     firefox-wayland
     wezterm
 

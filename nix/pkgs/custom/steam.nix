@@ -23,7 +23,7 @@
     #protonup-qt
 
     # Lutris
-    libgpgerror
+    libgpg-error
     libxml2
     lutris
     freetype

@@ -1,0 +1,8 @@
+[user]
+name = "Harrison Hall"
+email = "hachha@hachha.dev"
+
+[ui]
+editor = "hx"
+# diff.tool = ["delta", "--color-only"]
+default-command = "log"

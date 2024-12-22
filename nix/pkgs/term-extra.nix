@@ -26,9 +26,12 @@
     xsel  # X selection util
     
     # Dev utils
-    pkg-config
     alsa-lib
+    pkg-config
     udev
+
+    # Extra tools
+    mdbook  # Convert markdown to books
 
     # Python packages
     python312Packages.python-lsp-server

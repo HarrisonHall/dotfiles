@@ -1,5 +1,11 @@
 # Terminal configuration (core)
 
+let
+
+  pkgs2405 = import (fetchTarball https://nixos.org/channels/nixos-24.05/nixexprs.tar.xz) { };
+
+in
+
 { pkgs, ... }:
 
 {
@@ -13,6 +19,7 @@
     # Coding
     git  # Git
     gh  # Github cli
+    jujutsu  # Jujutsu versioning cli
     onefetch  # Git repo visualizer
 
     # Language
@@ -30,7 +37,7 @@
     bottom  # Modern top utility
     colordiff  # Diff- with color!
     delta  # Diffing tool (for git)
-    direnv  # Manage environments based on directory (nix support)
+    pkgs2405.direnv  # Manage environments based on directory (nix support)
     du-dust  # Disk usage
     eza  # Better ls (ll)
     fastfetch  # Fetching tool
@@ -42,6 +49,7 @@
     jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
     macchina  # Fetch tool
+    newsboat  # Feed viewing
     nitch  # Minimal fetching
     ripgrep  # Recursively search
     slides  # Markdown presentation tool

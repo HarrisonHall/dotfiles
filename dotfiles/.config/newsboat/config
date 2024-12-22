@@ -1,0 +1,37 @@
+# General
+
+auto-reload yes
+reload-time 3600
+reload-threads 2
+download-retries 2
+download-timeout 20
+prepopulate-query-feeds yes
+browser "firefox %u"
+
+# Theme
+
+include ~/.config/newsboat/catppuccin-dark
+
+# Feed sorting
+
+feed-sort-order unreadarticlecount-asc
+color info default default reverse
+color listnormal_unread yellow default
+color listfocus blue default reverse bold
+color listfocus_unread blue default reverse bold
+text-width 80
+
+# Bindings
+
+confirm-exit no
+cleanup-on-quit no
+
+# unbind-key ENTER
+unbind-key j
+bind-key j down
+unbind-key k
+bind-key k up
+unbind-key J
+bind-key l open
+unbind-key K
+bind-key h quit
