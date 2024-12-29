@@ -2,7 +2,18 @@
 name = "Harrison Hall"
 email = "hachha@hachha.dev"
 
+[aliases]
+push-force = ""
+stash-all = ""
+branch-list = ""
+log-bookmark = ["log", "-T", "builtin_log_detailed", "-r", "..@"]
+log-all = ["log", "-r", "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"]
+
 [ui]
+default-command = "log-bookmark"
+# default-revset = "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"
 editor = "hx"
-# diff.tool = ["delta", "--color-only"]
-default-command = "log"
+
+[ui.diff]
+tool = ["delta"]
+format = "git"

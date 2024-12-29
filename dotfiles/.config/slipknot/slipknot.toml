@@ -1,4 +1,5 @@
 update_delta_sec = 7200
+log = "/tmp/slipknot.log"
 
 # Settings that apply to **everything**.
 [global]
@@ -17,6 +18,12 @@ exclude-content-words = [
   "musk",
 ]
 
+[global.limits]
+# Maximum feeds returned, something sane
+max = 512
+# 1 month in seconds
+oldest_sec = 2628000
+
 # Settings that apply to the all feed.
 [all]
 exclude-title-words = [
@@ -30,6 +37,7 @@ exclude-title-words = [
 [feeds.guardian-us]
 url = "https://www.theguardian.com/us/rss"
 tags = ["news"]
+max = 2
 
 [feeds.npr-national]
 url = "https://feeds.npr.org/1003/rss.xml"
@@ -98,9 +106,9 @@ tags = ["tldr", "hacking"]
 url = "https://tldr.tech/api/rss/infosec"
 tags = ["tldr", "hacking", "security"]
 
-[feeds.infosecurity-magazine]
-url = "https://www.infosecurity-magazine.com/rss/news/"
-tags = ["hacking", "security"]
+# [feeds.infosecurity-magazine]
+# url = "https://www.infosecurity-magazine.com/rss/news/"
+# tags = ["hacking", "security"]
 
 [feeds.suckless]
 url = "http://suckless.org/atom.xml"
@@ -146,6 +154,14 @@ tags = ["blog", "hacking"]
 
 [feeds.matklad]
 url = "https://matklad.github.io/feed.xml"
+tags = ["blog", "hacking"]
+
+[feeds.slightknack]
+url = "https://slightknack.dev/atom.xml"
+tags = ["blog", "hacking"]
+
+[feeds.mitchellh]
+url = "https://mitchellh.com/feed.xml"
 tags = ["blog", "hacking"]
 
 ## Technology

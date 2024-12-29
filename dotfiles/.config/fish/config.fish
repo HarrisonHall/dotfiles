@@ -5,6 +5,7 @@ if status is-interactive
     eval (dircolors -c ~/.config/dircolors/.dircolors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-macchiato.json
     # Shortcuts
+    # type -f doas 2&>/dev/null && alias sudo doas
     alias ll "eza -la --icons=auto --group-directories-first --classify"
     alias ls "eza --icons=auto --group-directories-first"
     alias fetch macchina
@@ -12,6 +13,7 @@ if status is-interactive
     alias fetch-max fastfetch
     alias neofetch fastfetch
     alias screenfetch fastfetch
+    alias nix-shell "nix-shell --command \"fish\""
     # Man paging
     set -x MANROFFOPT -c
     set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"

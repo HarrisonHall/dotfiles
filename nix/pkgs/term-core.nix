@@ -9,6 +9,7 @@ in
 { pkgs, ... }:
 
 {
+  services.lorri.enable = true;
   environment.systemPackages = with pkgs; [
     # Shell
     fish  # Friendly Interactive Shell
@@ -37,7 +38,7 @@ in
     bottom  # Modern top utility
     colordiff  # Diff- with color!
     delta  # Diffing tool (for git)
-    pkgs2405.direnv  # Manage environments based on directory (nix support)
+    # pkgs2405.direnv  # Manage environments based on directory (nix support)
     du-dust  # Disk usage
     eza  # Better ls (ll)
     fastfetch  # Fetching tool
@@ -49,7 +50,8 @@ in
     jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
     macchina  # Fetch tool
-    newsboat  # Feed viewing
+    # newsboat  # Feed viewing
+    newsraft  # Feed viewing
     nitch  # Minimal fetching
     ripgrep  # Recursively search
     slides  # Markdown presentation tool

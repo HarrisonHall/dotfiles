@@ -31,6 +31,7 @@
     udev
 
     # Extra tools
+    localsend  # Send things on the same network
     mdbook  # Convert markdown to books
 
     # Python packages

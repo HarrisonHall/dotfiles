@@ -1,0 +1,25 @@
+# ghostty config
+# NOTE: shift+ctrl+, for reload -- shift+ctrl+i for inspector
+
+title = "ghostty"
+command = "fish"
+initial-command = "tmux new-session -A -s MAIN"
+
+theme = catppuccin-macchiato
+
+font-size = 12
+font-family = "HackGen35 Console NF"
+font-family = "M PLUS 1 Code"
+font-family = "Font Awesome 6 Free"
+font-family = "Font Awesome 6 Brands"
+
+font-family-bold = "HackGen35 Console NF"
+font-style-bold = "Bold"
+font-family-italic = "Sarasa Fixed J"
+font-style-italic = "Italic"
+#font-family-bold-italic = "M PLUS 1 Code"
+#font-style-bold-italic = "Bold"
+
+# fullscreen = true
+window-decoration = false
+window-padding-balance = true

@@ -7,9 +7,9 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "harrisonhall";
     repo = pname;
-    rev = "54888408ab387bcfa17d668840d2403c52af146d";
+    rev = "30602c8d9115431ac6d49d3d54e2ca5167deb60e";
     # hash = lib.fakeHash;
-    hash = "sha256-eTvy7p8PZ4uAux+mvENZx5zBax1DgAic8g/2KJt2jnA=";
+    hash = "sha256-VIIgoEAy+lHr1zGSByLLYbs2+lRWdpI7hTFWDagoEhw=";
   };
 
   cargoLock = {

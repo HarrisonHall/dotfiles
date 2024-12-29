@@ -2,12 +2,24 @@
 
 { config, pkgs, lib, user, ... }:
 
+let
+  masterTarball =
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/master.tar.gz;
+in
+
 {
+  nixpkgs.config = {
+    packageOverrides = pkgs: with pkgs; {
+      master = import masterTarball {
+        # config = config.nixpkgs.config;
+      };
+    };
+  };
   users.users.${user}.packages = with pkgs; [
     # Essential
-    discord-canary
-    firefox-wayland
-    wezterm
+    discord-canary # Discord, but with more features!
+    firefox  # Browser
+    master.ghostty  # Terminal
 
     # Utils
     calibre  # ebook software
@@ -21,5 +33,6 @@
     pinta  # Basic image editor
     thunderbird-bin  # Thunderbird
     vlc  # Audio-video viewer
+    wezterm  # Backup terminal
   ];
 }

@@ -3,6 +3,9 @@
 DOTFILES := `git rev-parse --show-toplevel`
 GC_DURATION := "30d"
 UPDATE := "false"
+SUDO := "sudo"
+# SUDO := `type -f doas 2&>/dev/null && echo "doas" || echo "asdf"`
+# SUDO := `type -f doas 2&>/dev/null && echo "doas" || echo "sudo"`
 
 # List all
 [private]
@@ -14,13 +17,13 @@ install update=UPDATE: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
     if {{update}}
         nix-channel --update
-        sudo nix-channel --update
+        {{SUDO}} nix-channel --update
     end
-    sudo nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nixos.nix" -j 4
+    {{SUDO}} nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nixos.nix" -j 4
     if test $status -eq 0
-        sudo nix-collect-garbage --delete-older-than {{GC_DURATION}}
-        sudo nix-store --gc
-        # sudo nixos-rebuild boot
+        {{SUDO}} nix-collect-garbage --delete-older-than {{GC_DURATION}}
+        {{SUDO}} nix-store --gc
+        # {{SUDO}} nixos-rebuild boot
     end
 
 # Install config for shell
@@ -28,7 +31,7 @@ install-shell update=UPDATE: hier-build-base symlinks-link
     #!/usr/bin/env fish
     if {{update}}
         nix-channel --update
-        sudo nix-channel --update
+        {{SUDO}} nix-channel --update
     end
     nix profile install -f {{DOTFILES}}/nix/configuration.profile.nix \
         --extra-experimental-features nix-command

@@ -58,17 +58,28 @@ in
 
   # Define user
   users.users.${user} = {
-     isNormalUser = true;
-     extraGroups = [ "video" "wheel" ];
-     initialPassword =  "password";
-     shell = pkgs.fish;
+    isNormalUser = true;
+    extraGroups = [ "video" "wheel" "seat" ];
+    initialPassword =  "password";
+    shell = pkgs.fish;
   };
 
   programs.fish.enable = true;
   environment.variables.EDITOR = "hx";
+  environment.variables.PAGER = "bat";
   environment.variables.VISUAL = "code";
 
+  security.sudo.enable = true;
+  security.doas.enable = true;
+  security.doas.extraRules = [{
+    users = [ "${user}" ];
+    # Optional, retains environment variables while running commands 
+    # e.g. retains your NIX_PATH when applying your config
+    keepEnv = true; 
+    persist = true;  # Optional, only require password verification a single time
+  }];
+
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
-  system.stateVersion = "24.05";  # nixos version
+  system.stateVersion = "24.11";  # nixos version
 }
 
