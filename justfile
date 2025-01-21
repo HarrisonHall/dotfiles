@@ -27,7 +27,7 @@ install update=UPDATE: hier-build-base symlinks-link hier-build-extra
     end
 
 # Install config for shell
-install-shell update=UPDATE: hier-build-base symlinks-link
+install-shell update=UPDATE: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
     if {{update}}
         nix-channel --update
@@ -42,27 +42,33 @@ install-shell update=UPDATE: hier-build-base symlinks-link
 
 # Build base directories
 hier-build-base:
-    just directory-ensure-mk ~/.config
-    just directory-ensure-mk ~/.local
-    just directory-ensure-mk ~/.local/share/applications
-    just directory-ensure-mk ~/downloads
-    just directory-ensure-mk ~/media
-    just directory-ensure-mk ~/media/music
-    just directory-ensure-mk ~/media/wallpapers
-    just directory-ensure-mk ~/workspace
-    just directory-ensure-mk ~/workspace/dev
+    @just directory-ensure-mk ~/.config
+    @just directory-ensure-mk ~/.local
+    @just directory-ensure-mk ~/.local/share/applications
+    @just directory-ensure-mk ~/downloads
+    @just directory-ensure-mk ~/media
+    @just directory-ensure-mk ~/media/art
+    @just directory-ensure-mk ~/media/music
+    @just directory-ensure-mk ~/media/wallpapers
+    @just directory-ensure-mk ~/workspace
+    @just directory-ensure-mk ~/workspace/bin
+    @just directory-ensure-mk ~/workspace/dev
+    @just directory-ensure-mk ~/workspace/dev/games
+    @just directory-ensure-mk ~/workspace/games
+    @just directory-ensure-mk ~/workspace/software
+    @just directory-ensure-mk ~/workspace/storage
 
 # Build extra directories
 hier-build-extra:
     xdg-user-dirs-update
-    just directory-ensure-rm ~/Desktop
-    just directory-ensure-rm ~/Documents
-    just directory-ensure-rm ~/Downloads
-    just directory-ensure-rm ~/Music
-    just directory-ensure-rm ~/Pictures
-    just directory-ensure-rm ~/Public
-    just directory-ensure-rm ~/Templates
-    just directory-ensure-rm ~/Videos
+    @just directory-ensure-rm ~/Desktop
+    @just directory-ensure-rm ~/Documents
+    @just directory-ensure-rm ~/Downloads
+    @just directory-ensure-rm ~/Music
+    @just directory-ensure-rm ~/Pictures
+    @just directory-ensure-rm ~/Public
+    @just directory-ensure-rm ~/Templates
+    @just directory-ensure-rm ~/Videos
 
 # Ensure directory exists
 directory-ensure-mk dir:

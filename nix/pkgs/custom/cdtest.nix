@@ -4,6 +4,7 @@ rustPlatform.buildRustPackage rec {
   pname = "cdtest";
   version = "0.2.0";
 
+  # nix run nixpkgs#nurl -- https://github.com/harrisonhall/cdtest
   src = fetchFromGitHub {
     owner = "harrisonhall";
     repo = pname;

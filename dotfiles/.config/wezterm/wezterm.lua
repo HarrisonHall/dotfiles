@@ -9,8 +9,8 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Launch
-config.default_prog = { 'tmux', 'new-session', '-A', '-s', 'MAIN' }
--- config.default_prog = { 'zellij', 'attach', '-c', 'Main' }
+config.default_prog = { 'tmux', 'new-session', '-A', '-s', 'main' }
+-- config.default_prog = { 'zellij', 'attach', '-c', 'main' }
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
@@ -49,6 +49,13 @@ config.keys = {
 
 -- Temp bug fix
 config.front_end = 'WebGpu'
+
+-- Make title wezterm
+wezterm.on('format-window-title', function()
+  local title = 'wezterm'
+  -- some logic here
+  return title
+end)
 
 -- CENTER
 

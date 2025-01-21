@@ -6,7 +6,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term ghostty
+set $term wezterm
 
 # Scripts
 set $progs ~/.config/rofi/launcher/drun.sh
@@ -36,8 +36,10 @@ client.background        $base
 # Startup
 ## BG
 exec --no-startup-id swaybg -i ~/media/wallpapers/current.image
-## Monitor
+## Monitor(s)
 output eDP-1 scale 1.75
+output eDP-1 pos 0 0
+output DP-5 pos 1289 0
 ## Cursor
 seat * xcursor_theme "Bibata-Catppuccin" 24
 ## Language
@@ -190,6 +192,7 @@ for_window [app_id = "floating"] floating enable
 assign [app_id = ".*firefox.*"] workspace number 1
 assign [app_id = ".*Alacritty.*"] workspace number 2
 assign [title = ".*ghostty.*"] workspace number 2
+assign [title = ".*wezterm.*"] workspace number 2
 assign [class = ".*obsidian.*"] workspace number 3
 assign [title = ".*Anki.*"] workspace number 6
 assign [app_id = ".*thunderbird.*"] workspace number 7
@@ -204,8 +207,8 @@ for_window [title = ".*Godot Engine.*"] floating disable
 
 # Launch primary apps
 exec firefox
-exec ghostty
+exec wezterm
 # exec obsidian
-exec anki
+# exec anki
 exec thunderbird
-exec discord
+exec discord-canary

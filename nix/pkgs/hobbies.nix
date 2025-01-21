@@ -11,5 +11,10 @@
     dolphin-emu  # GC/Wii emulation
     godot_4  # Godot engine
     sgt-puzzles  # Simon Tatham's puzzles
+
+    aseprite 
+    blender
+    inkscape-with-extensions  # Inkscape
+    krita
   ];
 }

@@ -2,12 +2,12 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
     set fish_greeting
     # Colors
-    eval (dircolors -c ~/.config/dircolors/.dircolors)
+    type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-macchiato.json
     # Shortcuts
     # type -f doas 2&>/dev/null && alias sudo doas
-    alias ll "eza -la --icons=auto --group-directories-first --classify"
-    alias ls "eza --icons=auto --group-directories-first"
+    type -f eza 2&>/dev/null && alias ll "eza -la --icons=auto --group-directories-first --classify"
+    type -f eza 2&>/dev/null && alias ls "eza --icons=auto --group-directories-first"
     alias fetch macchina
     alias fetch-min nitch
     alias fetch-max fastfetch
@@ -18,7 +18,9 @@ if status is-interactive
     set -x MANROFFOPT -c
     set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"
     # Path
+    set PATH /sbin $PATH
     set PATH $PATH ~/.cargo/bin
+    set PATH "~/.config/dotfiles/dotfiles/workspace/software/bin/$(uname -m)" $PATH
     # Other setup
     # Direnv
     type -f direnv 2&>/dev/null && direnv hook fish | source
@@ -32,7 +34,12 @@ if status is-interactive
     ## Starship
     set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
     type -f starship 2&>/dev/null && starship init fish | source
+    ## Taskwarrior
+    set -x TASKRC ~/.config/taskwarrior/.taskrc
+    set -x TASKDATA ~/workspace/notes/todo/tasks
+    ## Rust
+    set -x RUST_BACKTRACE 1
     ## Zoxide
     type -f zoxide 2&>/dev/null && zoxide init fish | source
-    alias cd z
+    type -f zoxide 2&>/dev/null && alias cd z
 end

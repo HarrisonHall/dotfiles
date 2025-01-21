@@ -10,6 +10,9 @@
 	email = hachha@hachha.dev
 	name = hachha
 
+[help]
+	autocorrect = prompt
+
 # NOTE: Bang (!) before aliases can reference scripts (e.g. bb = "!script.sh")
 [alias]
 	push-force = "push --force-with-lease"

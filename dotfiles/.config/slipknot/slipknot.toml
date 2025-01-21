@@ -1,4 +1,4 @@
-update_delta_sec = 7200
+freq = "2hours"
 log = "/tmp/slipknot.log"
 
 # Settings that apply to **everything**.
@@ -10,34 +10,31 @@ exclude-title-words = [
   "football",
   "nfl",
   "basketball",
-  "trump",
-  "musk",
 ]
-exclude-content-words = [
+exclude-substrings = [
   "trump",
   "musk",
 ]
 
-[global.limits]
+[global.options]
 # Maximum feeds returned, something sane
 max = 512
 # 1 month in seconds
-oldest_sec = 2628000
+oldest = "1month"
 
 # Settings that apply to the all feed.
 [all]
 exclude-title-words = [
 ]
 
-
 # Feed definitions.
+[feeds]
 
 ## News
 
 [feeds.guardian-us]
 url = "https://www.theguardian.com/us/rss"
 tags = ["news"]
-max = 2
 
 [feeds.npr-national]
 url = "https://feeds.npr.org/1003/rss.xml"
@@ -61,11 +58,13 @@ tags = ["news", "japanese"]
 # More feeds: https://www.asahi.com/information/service/rss.html
 url = "https://www.asahi.com/rss/asahi/newsheadlines.rdf"
 tags = ["news", "japanese"]
+max = 5
 
 [feeds.nhk]
 # More feeds: https://www.nhk.or.jp/toppage/rss/index.html
 url = "https://www3.nhk.or.jp/rss/news/cat0.xml"
 tags = ["news", "japanese"]
+max = 5
 
 ## Hacking
 
@@ -113,6 +112,10 @@ tags = ["tldr", "hacking", "security"]
 [feeds.suckless]
 url = "http://suckless.org/atom.xml"
 tags = ["hacking", "releases"]
+
+[feeds.terminal-trove]
+url = "https://terminaltrove.com/blog.xml"
+tags = ["hacking"]
 
 ## Hacking blogs
 
@@ -162,6 +165,10 @@ tags = ["blog", "hacking"]
 
 [feeds.mitchellh]
 url = "https://mitchellh.com/feed.xml"
+tags = ["blog", "hacking"]
+
+[feeds.erikarow]
+url = "https://erikarow.land/combined.xml"
 tags = ["blog", "hacking"]
 
 ## Technology
@@ -223,6 +230,10 @@ tags = ["news", "science"]
 url = "https://theconversation.com/us/environment/articles.atom"
 tags = ["news", "science"]
 
+[feeds.matt-strassler]
+url = "https://profmattstrassler.com/feed/"
+tags = ["science"]
+
 ## Gaming
 
 [feeds.two-stop-bits]
@@ -260,3 +271,69 @@ tags = ["news", "positive"]
 [feeds.positive-news]
 url = "http://positive.news/rss"
 tags = ["news", "positive"]
+
+## Government
+
+[feeds.usa-bills]
+url = "https://www.govinfo.gov/rss/bills.xml"
+tags = ["gov"]
+
+[feeds.usa-federal-budget]
+url = "https://www.govinfo.gov/rss/budget.xml"
+tags = ["gov"]
+
+[feeds.sec]
+url = "https://www.sec.gov/news/pressreleases.rss"
+tags = ["gov", "sec"]
+
+## Other blogs
+
+[feeds.brandonsanderson]
+url = "https://www.brandonsanderson.com/blogs/blog/tagged/state-of-the-sanderson.atom"
+tags = ["blog", "reading"]
+
+## Entertainment
+
+[feeds.simpleflips]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
+tags = ["gaming", "video"]
+
+[feeds.solidjj]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEq_Dr1GHvnNPQNfgOzhZ8Q"
+tags = ["video"]
+
+[feeds.dunkey]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg"
+tags = ["gaming", "video"]
+
+[feeds.kurzgesagt]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q"
+tags = ["video"]
+
+[feeds.hbomberguy]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UClt01z1wHHT7c5lKcU8pxRQ"
+tags = ["video", "notify"]
+
+[feeds.clustermint]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPQGGTbdmv0AsE1XARaOAVA"
+tags = ["gaming", "video"]
+
+[feeds.asahilina-yt]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCwkfNQzKwICfPKs6V0ZUFZQ"
+tags = ["hacking", "video"]
+
+[feeds.warowl]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFcHE36IoySjYj1Rytxyog"
+tags = ["gaming", "video"]
+
+[feeds.ign-reviews]
+url = "http://feeds.feedburner.com/ign/reviews"
+tags = ["gaming"]
+
+[feeds.ign-tech]
+url = "http://feeds.feedburner.com/ign/tech-articles"
+tags = ["tech", "gaming"]
+
+[feeds.ign-comics]
+url = "https://feeds.feedburner.com/ign/comics-articles"
+tags = ["gaming", "comics"]
