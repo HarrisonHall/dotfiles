@@ -18,18 +18,16 @@ if status is-interactive
     set -x MANROFFOPT -c
     set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"
     # Path
-    set PATH /sbin $PATH
-    set PATH $PATH ~/.cargo/bin
-    set PATH "~/.config/dotfiles/dotfiles/workspace/software/bin/$(uname -m)" $PATH
+    set PATH /sbin "$HOME/workspace/software/bin/$(uname -m)" $PATH ~/.cargo/bin
     # Other setup
     # Direnv
     type -f direnv 2&>/dev/null && direnv hook fish | source
     ## FZF
-    set -x FZF_DEFAULT_OPTS "\
-        --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
-        --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
-        --color=marker:#b7bdf8,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
-        --color=selected-bg:#494d64 \
+    set -Ux FZF_DEFAULT_OPTS "\
+        --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+        --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+        --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+        --color=selected-bg:#45475a \
         --multi"
     ## Starship
     set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
