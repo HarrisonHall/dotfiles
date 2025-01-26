@@ -1,5 +1,6 @@
 freq = "2hours"
 log = "/tmp/slipknot.log"
+storage = 4096
 
 # Settings that apply to **everything**.
 [global]

@@ -7,7 +7,7 @@ shell-integration = fish
 initial-command = "tmux new-session -A -s main"
 # initial-command = "zellij attach -c main"
 
-theme = catppuccin-macchiato
+theme = catppuccin-mocha
 
 font-size = 12
 font-family = "HackGen35 Console NF"

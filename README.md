@@ -44,6 +44,10 @@ compatibility with non-nix systems.
 
 - `[Super]+?` - View keybindings
 
+### Configuration
+
+- Use something like `nwg-look` to ensure (GTK) styles are applied correctly
+
 ## TODO
 
 - VT shell - setvtrgb
