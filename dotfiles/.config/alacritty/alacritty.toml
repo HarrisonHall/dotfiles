@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/catppuccin-macchiato.toml"]
+import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -23,7 +23,7 @@ family = "HackGen35 Console NF"
 style = "Regular"
 
 [shell]
-args = ["-c", "tmux new-session -A -s MAIN"]
+args = ["-c", "tmux new-session -A -s main"]
 program = "fish"
 
 [window]

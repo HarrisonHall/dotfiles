@@ -33,6 +33,9 @@
     sqlite
     xml2
 
+    # Steam
+    # gamescope
+
     pkgsi686Linux.gperftools   # required to run CS:Source
   ];
 
