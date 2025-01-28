@@ -2,7 +2,7 @@
 ## Nix configuration
 ## Check `man configuration.nix` or nixos manual (`nixos-help`)
 
-{ config, pkgs, lib, passthru, ... }:
+{ config, pkgs, lib, passthru, stdenv, ... }:
 
 let
   user = "harrison";  
@@ -29,7 +29,6 @@ in
       ./pkgs/term-extra.nix
       ## Custom
       ./pkgs/custom/greeter.nix
-      ./pkgs/custom/grub.nix
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
       ./pkgs/custom/sway.nix
@@ -43,8 +42,51 @@ in
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Boot
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    supportedFilesystems = [ "ntfs" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+      # "video=1920x1080"
+      "vt.default_red=30,243,166,249,137,245,148,186,88,243,166,249,137,245,148,166"
+      "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173"
+      "vt.default_blu=46,168,161,175,250,231,213,222,112,168,161,175,250,231,213,200"
+    ];
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    loader.timeout = 0;  # Press any key to load the bootloader list
+    plymouth = {
+      enable = true;
+      themePackages = [
+        (pkgs.catppuccin-plymouth.override { variant = "mocha"; })
+      ];
+      theme = "catppuccin-mocha";
+    };
+  };
+  console.colors = [
+    "1e1e2e" # base
+    "181825" # mantle
+    "313244" # surface0
+    "45475a" # surface1
+    "585b70" # surface2
+    "cdd6f4" # text
+    "f5e0dc" # rosewater
+    "b4befe" # lavender
+    "f38ba8" # red
+    "fab387" # peach
+    "f9e2af" # yellow
+    "a6e3a1" # green
+    "94e2d5" # teal
+    "89b4fa" # blue
+    "cba6f7" # mauve
+    "f2cdcd" # flamingo
+  ];
 
   # Set your time zone.
   time.timeZone = "America/New_York";

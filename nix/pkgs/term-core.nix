@@ -14,6 +14,7 @@
     git  # Git
     gh  # Github cli
     jujutsu  # Jujutsu versioning cli
+    mosh  # UDP SSH
     onefetch  # Git repo visualizer
 
     # Language
