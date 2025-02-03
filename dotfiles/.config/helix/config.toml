@@ -1,4 +1,4 @@
-theme = "catppuccin_macchiato_plus"
+theme = "catppuccin_mocha_plus"
 
 [editor]
 mouse = true
@@ -6,6 +6,9 @@ true-color = true
 bufferline = "multiple"
 rulers = [80]
 gutters = ["diagnostics", "line-numbers", "diff"]
+cursorline = true
+color-modes = true
+end-of-line-diagnostics = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -23,6 +26,9 @@ tabpad = "·"
 render = true
 character = "╎"  # "|", "╎", "▏", "┆", "┊", "⸽"
 skip-levels = 1
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
 
 [keys.insert]
 # Movement

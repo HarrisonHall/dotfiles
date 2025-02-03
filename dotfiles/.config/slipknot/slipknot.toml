@@ -2,25 +2,35 @@ freq = "2hours"
 log = "/tmp/slipknot.log"
 storage = 4096
 
+# Here are the feeds I tend to care about:
+# - /all (everything)
+# - /tag/fun (fun things)
+# - /tag/gaming (game things)
+# - /tag/gov (gov things)
+# - /feed/dont-miss (can't miss!)
+
 # Settings that apply to **everything**.
 [global]
 
 [global.filters]
 exclude-title-words = [
   "sports",
-  "football",
   "nfl",
-  "basketball",
+  "#shorts",
 ]
 exclude-substrings = [
+  "soccer",
+  "football",
+  "basketball",
   "trump",
+  "トランプ",
   "musk",
 ]
 
 [global.options]
 # Maximum feeds returned, something sane
 max = 512
-# 1 month in seconds
+# Oldest entry returned
 oldest = "1month"
 
 # Settings that apply to the all feed.
@@ -28,7 +38,7 @@ oldest = "1month"
 exclude-title-words = [
 ]
 
-# Feed definitions.
+# Feed definitions and settings.
 [feeds]
 
 ## News
@@ -40,12 +50,12 @@ tags = ["news"]
 [feeds.npr-national]
 url = "https://feeds.npr.org/1003/rss.xml"
 tags = ["news"]
-exclude-content-words = ["trump", "biden", "nfl", "sports", "football", "basketball"]
+exclude-content-words = ["trump", "biden"]
 
 [feeds.npr-world]
 url = "https://feeds.npr.org/1004/rss.xml"
 tags = ["news"]
-exclude-content-words = ["trump", "biden", "nfl", "sports", "football", "basketball"]
+exclude-content-words = ["trump", "biden"]
 
 [feeds.conversation-politics]
 url = "https://theconversation.com/us/politics/articles.atom"
@@ -69,13 +79,10 @@ max = 5
 
 ## Hacking
 
-[feeds.hacking]
-feeds = ["hackernews", "ziglang"]
-
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking"]
-exclude-title-words = ["llm", "ai", "hiring"]
+exclude-title-words = ["llm", "ai", "hiring", "fun"]
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"
@@ -83,7 +90,7 @@ tags = ["hacking", "zig"]
 
 [feeds.lobsters]
 url = "https://lobste.rs/rss"
-tags = ["hacking"]
+tags = ["hacking", "fun"]
 exclude-title-words = ["llm", "ai", "hiring"]
 
 [feeds.importai]
@@ -116,7 +123,15 @@ tags = ["hacking", "releases"]
 
 [feeds.terminal-trove]
 url = "https://terminaltrove.com/blog.xml"
-tags = ["hacking"]
+tags = ["hacking", "fun"]
+
+[feeds.ai-robots-txt]
+url = "https://github.com/ai-robots-txt/ai.robots.txt/releases.atom"
+tags = ["hacking", "ai"]
+
+[feeds.utopia-css]
+url = "https://utopia.fyi/feed.xml"
+tags = ["hacking", "releases"]
 
 ## Hacking blogs
 
@@ -181,7 +196,7 @@ tags = ["news", "science", "technology"]
 [feeds.verge]
 url = "https://www.theverge.com/rss/index.xml"
 tags = ["tech"]
-exclude-title-words = ["ai", "llm"]
+exclude-title-words = ["ai", "llm", "fun"]
 
 [feeds.conversation-science-tech]
 url = "https://theconversation.com/us/technology/articles.atom"
@@ -251,7 +266,7 @@ tags = ["hacking", "gaming"]
 
 [feeds.itchio-featured]
 url = "https://itch.io/feed/featured.xml"
-tags = ["gaming"]
+tags = ["gaming", "fun"]
 
 [feeds.gaming-on-linux]
 url = "https://www.gamingonlinux.com/article_rss.php"
@@ -261,7 +276,7 @@ tags = ["gaming"]
 
 [feeds.xkcd]
 url = "https://xkcd.com/rss.xml"
-tags = ["comics"]
+tags = ["comics", "fun"]
 
 ## Positive News
 
@@ -289,7 +304,7 @@ tags = ["gov", "sec"]
 
 ## Other blogs
 
-[feeds.brandonsanderson]
+[feeds.brandon-sanderson]
 url = "https://www.brandonsanderson.com/blogs/blog/tagged/state-of-the-sanderson.atom"
 tags = ["blog", "reading"]
 
@@ -297,35 +312,35 @@ tags = ["blog", "reading"]
 
 [feeds.simpleflips]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
-tags = ["gaming", "video"]
+tags = ["gaming", "video", "fun"]
 
 [feeds.solidjj]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEq_Dr1GHvnNPQNfgOzhZ8Q"
-tags = ["video"]
+tags = ["video", "fun"]
 
 [feeds.dunkey]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg"
-tags = ["gaming", "video"]
+tags = ["gaming", "video", "fun"]
 
 [feeds.kurzgesagt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q"
-tags = ["video"]
+tags = ["video", "fun"]
 
 [feeds.hbomberguy]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UClt01z1wHHT7c5lKcU8pxRQ"
-tags = ["video", "notify"]
+tags = ["video", "notify", "fun"]
 
 [feeds.clustermint]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPQGGTbdmv0AsE1XARaOAVA"
-tags = ["gaming", "video"]
+tags = ["gaming", "video", "fun"]
 
 [feeds.asahilina-yt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCwkfNQzKwICfPKs6V0ZUFZQ"
-tags = ["hacking", "video"]
+tags = ["hacking", "video", "fun"]
 
 [feeds.warowl]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFcHE36IoySjYj1Rytxyog"
-tags = ["gaming", "video"]
+tags = ["gaming", "video", "fun"]
 
 [feeds.ign-reviews]
 url = "http://feeds.feedburner.com/ign/reviews"
@@ -338,3 +353,22 @@ tags = ["tech", "gaming"]
 [feeds.ign-comics]
 url = "https://feeds.feedburner.com/ign/comics-articles"
 tags = ["gaming", "comics"]
+
+## Common aggregates
+
+[feeds.dont-miss]
+feeds = [
+  ## Hacking
+  "hachha",
+  "bennett-meares",
+  "ziglang",
+  "without-boats",
+  "underjord",
+  "matklad",
+  ## Reading
+  "brandon-sanderson",
+  ## Entertainment
+  "simpleflips",
+  "dunkey",
+  "hbomberguy",
+]

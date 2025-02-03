@@ -1,0 +1,43 @@
+# Keys
+bind j select-next
+bind k select-prev
+bind J select-next-page
+bind ^d select-next-page
+bind ^D select-next-page
+bind K select-prev-page
+bind ^u select-prev-page
+bind ^U select-prev-page
+bind , shift-west
+bind . shift-east
+bind < shift-reset
+bind > shift-east
+
+bind enter enter
+bind l enter
+bind h navigate-back
+bind backspace navigate-back
+bind q quit
+bind Q quit-hard
+
+bind n jump-to-next-unread
+bind N jump-to-prev-unread
+
+bind t sort-by-time
+bind u sort-by-unread
+bind i sort-by-important
+bind a sort-by-alphabet
+
+bind ^X mark-read-all
+bind o mark-read; exec "xdg-open %l &"
+
+# Colors
+# color-status green default bold
+# color-status-info cyan default bold
+# color-status-fail red default bold
+color-list-item-unread blue default
+color-list-item-important red default
+# color-list-feed
+color-list-feed-unread blue default
+color-list-section green default
+color-list-section-unread blue default bold
+

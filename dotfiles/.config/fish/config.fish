@@ -4,10 +4,9 @@ if status is-interactive
     # Colors
     type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-mocha.json
-    # Man paging
-    set -x MANROFFOPT -c
-    set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"
+    # Paging
     set -x PAGER bat
+    set -x DELTA_PAGER "bat -p"
     # Path
     set PATH /sbin "$HOME/workspace/software/bin/$(uname -m)" $PATH ~/.cargo/bin
     # Shortcuts and other setup
@@ -31,6 +30,11 @@ if status is-interactive
     type -f eza 2&>/dev/null && alias ls "eza --icons=auto --group-directories-first"
     ## Nix
     alias nix-shell "nix-shell --command \"fish\""
+    ## Man
+    set -x MANROFFOPT -c
+    set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"
+    set -x MANPATH $(realpath "$HOME/.local/share/man") /run/current-system/sw/share/man /etc/profiles/per-user/harrison/share/man "$MANPATH"
+    # set -x MANPATH
     ## SSH
     set _ssh (which ssh 2>/dev/null)
     set _mosh (which mosh 2>/dev/null)
