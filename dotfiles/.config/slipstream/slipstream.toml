@@ -1,5 +1,5 @@
 freq = "2hours"
-log = "/tmp/slipknot.log"
+log = "/tmp/slipstream.log"
 storage = 4096
 
 # Here are the feeds I tend to care about:
@@ -7,7 +7,7 @@ storage = 4096
 # - /tag/fun (fun things)
 # - /tag/gaming (game things)
 # - /tag/gov (gov things)
-# - /feed/dont-miss (can't miss!)
+# - /feed/dont-miss (can't miss these!)
 
 # Settings that apply to **everything**.
 [global]
@@ -17,14 +17,21 @@ exclude-title-words = [
   "sports",
   "nfl",
   "#shorts",
+  "llm",
+  "llms",
+  "doge",
 ]
 exclude-substrings = [
   "soccer",
+  "サッカー",
   "football",
+  "フットボール",
   "basketball",
+  "バスケットボール",
   "trump",
   "トランプ",
   "musk",
+  "イーロン",
 ]
 
 [global.options]
@@ -35,8 +42,9 @@ oldest = "1month"
 
 # Settings that apply to the all feed.
 [all]
-exclude-title-words = [
-]
+
+[all.filters]
+exclude-tags = ["satire"]
 
 # Feed definitions and settings.
 [feeds]
@@ -82,7 +90,7 @@ max = 5
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking"]
-exclude-title-words = ["llm", "ai", "hiring", "fun"]
+exclude-title-words = ["ai", "hiring", "fun"]
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"
@@ -185,6 +193,10 @@ tags = ["blog", "hacking"]
 
 [feeds.erikarow]
 url = "https://erikarow.land/combined.xml"
+tags = ["blog", "hacking"]
+
+[feeds.elly-town]
+url = "https://elly.town/feed.xml"
 tags = ["blog", "hacking"]
 
 ## Technology
@@ -306,12 +318,34 @@ tags = ["gov", "sec"]
 
 [feeds.brandon-sanderson]
 url = "https://www.brandonsanderson.com/blogs/blog/tagged/state-of-the-sanderson.atom"
+tags = ["blog", "reading", "fun"]
+
+[feeds.lmnt]
+url = "https://lmnt.me/feed.xml"
+tags = ["blog", "fun"]
+
+[feeds.jt-woodhouse]
+url = "https://www.jtwoodhouse.com/rss/"
 tags = ["blog", "reading"]
+
+## Link blogs
+
+[feeds.hachha-links]
+url = "https://hachha.dev/links.feed"
+tags = ["blog", "links"]
 
 ## Entertainment
 
+[feeds.the-onion]
+url = "https://theonion.com/feed/"
+tags = ["fun", "satire"]
+
 [feeds.simpleflips]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
+tags = ["gaming", "video", "fun"]
+
+[feeds.simpleflips-full]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCydmoF3pPpijDuFMvTaQIZw"
 tags = ["gaming", "video", "fun"]
 
 [feeds.solidjj]
@@ -354,6 +388,64 @@ tags = ["tech", "gaming"]
 url = "https://feeds.feedburner.com/ign/comics-articles"
 tags = ["gaming", "comics"]
 
+[feeds.not-just-bikes]
+url = "https://rss.nebula.app/video/channels/notjustbikes.rss"
+tags = ["video"]
+
+[feeds.gmtk]
+url = "https://rss.nebula.app/video/channels/gmtk.rss"
+tags = ["video", "gaming", "fun"]
+
+[feeds.yuka-chan]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCaYX_KdvYlylMr2wZ03DMfA"
+tags = ["video", "japanese", "fun"]
+
+[feeds.3b1b]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw"
+tags = ["video", "math"]
+
+[feeds.no-boilerplate]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA"
+tags = ["video", "hacking"]
+
+[feeds.equalyze]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCg6bOX5kiEvLxY5GXoSvEGg"
+tags = ["video", "music", "gaming"]
+
+[feeds.qumu]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0QbcOX2gI5zruEvpSmnf6Q"
+tags = ["video", "music", "gaming"]
+
+[feeds.cheese-parade]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQ1aOToWpOdaIj1784_5M0g"
+tags = ["video", "fun"]
+
+[feeds.bobby-ivar]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCETZ4AkABYwBRzpWBJ33KUw"
+tags = ["video", "gaming", "fun"]
+
+[feeds.chris-and-jack]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Liv5-jdU2Qk53lTtYDG2w"
+tags = ["video", "fun"]
+must-include-substrings = ["Chris & Jack"] # Ignore shorts
+
+[feeds.funke]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCd-qVRcjoK9zjtDs_LRxSmw"
+tags = ["video", "gaming", "fun"]
+
+[feeds.dogen]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCSX0NhNdBA-ZnEFkYFzdw4A"
+tags = ["video", "japanese", "fun"]
+
+[feeds.sakurai-on-creating-games]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5CTV3JSdrlo5Pa42QkK8SA"
+tags = ["video", "japanese", "gaming", "fun"]
+
+[feeds.scott-the-woz]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4rqhyiTs7XyuODcECvuiiQ"
+tags = ["video", "gaming", "fun"]
+
+
 ## Common aggregates
 
 [feeds.dont-miss]
@@ -367,8 +459,16 @@ feeds = [
   "matklad",
   ## Reading
   "brandon-sanderson",
+  "jt-woodhouse",
   ## Entertainment
   "simpleflips",
   "dunkey",
   "hbomberguy",
+  "not-just-bikes",
+  "solidjj",
+  "no-boilerplate",
+  "bobby-ivar",
+  "chris-and-jack",
+  "funke",
+  "dogen",
 ]

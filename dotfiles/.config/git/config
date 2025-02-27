@@ -36,6 +36,9 @@
 
 [diff]
     colorMoved = default
+    algorithm = histogram
+    mnemonicPrefix = true
+    renames = true
 
 [init]
 	defaultBranch = main
@@ -43,10 +46,38 @@
 [maintenance]
 	auto = true
 	strategy = incremental
-	repo = /home/harrison/workspace/dotfiles
+	repo = "$HOME/workspace/dotfiles"
 
 [rerere]
 	enabled = true
+	autoupdate = true
+
+[column]
+	ui = auto
+
+[branch]
+        sort = -committerdate
+
+[tag]
+        sort = version:refname
+
+[commit]
+	verbose = true
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
 
 [credential "https://github.com"]
 	helper = 
@@ -58,8 +89,3 @@
 
 [credential]
 	helper = store
-
-# [url "https://github"]
-#   insteadOf = git://github
-# [url "git@github.com:"]
-#   insteadOf = git://github

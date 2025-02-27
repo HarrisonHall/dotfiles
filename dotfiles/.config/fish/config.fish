@@ -59,7 +59,13 @@ if status is-interactive
     set -x TASKDATA ~/workspace/notes/todo/tasks
     ## Rust
     set -x RUST_BACKTRACE 1
+    ## uv
+    type -f uv 2&>/dev/null && uv generate-shell-completion fish | source
+    type -f uv 2&>/dev/null && uvx --generate-shell-completion fish | source
     ## Zoxide
     type -f zoxide 2&>/dev/null && zoxide init fish | source
     type -f zoxide 2&>/dev/null && alias cd z
+    # Etc.
+    ## Do not track https://consoledonottrack.com/
+    set -x DO_NOT_TRACK 1
 end
