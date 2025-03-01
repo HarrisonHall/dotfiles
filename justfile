@@ -3,9 +3,7 @@
 DOTFILES := `git rev-parse --show-toplevel`
 GC_DURATION := "30d"
 UPDATE := "false"
-SUDO := "sudo"
-# SUDO := `type -f doas 2&>/dev/null && echo "doas" || echo "asdf"`
-# SUDO := `type -f doas 2&>/dev/null && echo "doas" || echo "sudo"`
+SUDO := `command -v doas 2&>/dev/null && echo "doas" || echo "bash"`
 
 # List all
 [private]
@@ -19,12 +17,13 @@ install update=UPDATE: hier-build-base symlinks-link hier-build-extra
         nix-channel --update
         {{SUDO}} nix-channel --update
     end
-    {{SUDO}} nixos-rebuild switch -I nixos-config="{{DOTFILES}}/nix/configuration.nixos.nix" -j 4
+    {{SUDO}} nixos-rebuild switch -I nixos-config="{{DOTFILES}}/pkgs/nix/configuration.nixos.nix" -j 4
     if test $status -eq 0
         {{SUDO}} nix-collect-garbage --delete-older-than {{GC_DURATION}}
         {{SUDO}} nix-store --gc
         # {{SUDO}} nixos-rebuild boot
     end
+    just post-install
 
 # Install config for shell
 install-shell update=UPDATE: hier-build-base symlinks-link hier-build-extra
@@ -33,12 +32,13 @@ install-shell update=UPDATE: hier-build-base symlinks-link hier-build-extra
         nix-channel --update
         {{SUDO}} nix-channel --update
     end
-    nix profile install -f {{DOTFILES}}/nix/configuration.profile.nix \
+    nix profile install -f {{DOTFILES}}/pkgs/nix/configuration.profile.nix \
         --extra-experimental-features nix-command
     if test $status -eq 0
         nix-env --delete-generations {{GC_DURATION}}
         nix-store --gc
     end
+    just post-install
 
 # Build base directories
 hier-build-base:
@@ -85,7 +85,14 @@ symlinks-link:
     #!/usr/bin/env fish
     ln -s -T {{DOTFILES}} ~/.config/dotfiles 2> /dev/null
     pushd ~/.config/dotfiles
-    stow --restow --target ~/. dotfiles
+    stow --adopt --restow --target ~/. dotfiles
     set stowed $status
     popd
     exit $stowed
+
+[private]
+post-install:
+    # Update bat.
+    bat cache --build
+    # Update fonts.
+    fc-cache -fv

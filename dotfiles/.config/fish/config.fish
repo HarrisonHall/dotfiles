@@ -1,3 +1,12 @@
+#!/usr/bin/env fish
+
+# Base variables.
+set -x EDITOR hx
+set -x TERM wezterm
+set -x LANG en_US.UTF-8
+set -x LC_ALL en_US.UTF-8
+
+# Shell setup.
 if status is-interactive
     # Commands to run in interactive sessions can go here
     set fish_greeting
@@ -8,7 +17,7 @@ if status is-interactive
     set -x PAGER bat
     set -x DELTA_PAGER "bat -p"
     # Path
-    set PATH /sbin "$HOME/workspace/software/bin/$(uname -m)" $PATH ~/.cargo/bin
+    set PATH /sbin /usr/sbin "$HOME/workspace/software/bin/$(uname -m)" $PATH ~/.cargo/bin
     # Shortcuts and other setup
     # Direnv
     type -f direnv 2&>/dev/null && direnv hook fish | source
@@ -30,6 +39,7 @@ if status is-interactive
     type -f eza 2&>/dev/null && alias ls "eza --icons=auto --group-directories-first"
     ## Nix
     alias nix-shell "nix-shell --command \"fish\""
+    type -f $HOME/.nix-profile/etc/profile.d/nix.fish 2&>/dev/null && source $HOME/.nix-profile/etc/profile.d/nix.fish
     ## Man
     set -x MANROFFOPT -c
     set -x MANPAGER "sh -c 'col -bx | bat -l man --color=always -p'"
@@ -68,4 +78,17 @@ if status is-interactive
     # Etc.
     ## Do not track https://consoledonottrack.com/
     set -x DO_NOT_TRACK 1
+end
+
+# Start DE, if applicable.
+set -x XDG_VTNR (basename "$(tty)" | sed 's/tty//')
+if begin
+        [ -z "$WAYLAND_DISPLAY" ]; and [ "$XDG_VTNR" -eq 1 ]
+    end
+    if begin
+            command -v sway 2&>/dev/null
+        end
+        /usr/libexec/pipewire-launcher 2&>/dev/null &
+        exec dbus-run-session sway
+    end
 end

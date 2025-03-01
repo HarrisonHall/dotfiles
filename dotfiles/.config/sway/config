@@ -172,9 +172,15 @@ exec swayidle -w \
 	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
 	before-sleep 'swaylock -f'
 
+# dbus
+exec dbus-update-activation-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
-exec dbus-sway-environment
-exec configure-gtk
+# GTK
+exec gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-macchiato-dark"
+exec gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Catppuccin"
+exec gsettings set org.gnome.desktop.interface cursor-size "24"
+exec gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+exec gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
 
 include @sysconfdir@/sway/config.d/*
 
