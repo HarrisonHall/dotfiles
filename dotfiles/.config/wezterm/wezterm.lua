@@ -14,7 +14,10 @@ config.default_prog = { 'tmux', 'new-session', '-A', '-s', 'main' }
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
--- Themeing
+-- Wayland
+--config.enable_wayland = false  -- Force xWayland
+
+-- Theming
 config.term = "xterm-256color"
 config.font = wezterm.font_with_fallback {
   'HackGen35 Console NF',

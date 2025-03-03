@@ -2,9 +2,11 @@
 
 # Base variables.
 set -x EDITOR hx
-set -x TERM wezterm
-set -x LANG en_US.UTF-8
-set -x LC_ALL en_US.UTF-8
+# set -x TERM wezterm
+# set -x LANG en_US.UTF-8
+# set -x LC_ALL en_US.UTF-8
+# set -x LANG en_US
+# set -x LC_ALL en_US
 
 # Shell setup.
 if status is-interactive
@@ -48,15 +50,15 @@ if status is-interactive
     ## SSH
     set _ssh (which ssh 2>/dev/null)
     set _mosh (which mosh 2>/dev/null)
-    function ssh --wraps ssh -d "SSH with tmux"
-        if test -n "$_mosh"
-            echo "Using `mosh $argv`"
-            $_mosh $argv -- /bin/sh -c 'tmux new-session -A -s main'
-        else
-            echo "Using `ssh $argv`"
-            $_ssh $argv -t -- /bin/sh -c 'tmux new-session -A -s main'
-        end
-    end
+    # function ssh --wraps ssh -d "SSH with tmux"
+    #     if test -n "$_mosh"
+    #         echo "Using `mosh $argv`"
+    #         $_mosh $argv -- /bin/sh -c 'tmux new-session -A -s main'
+    #     else
+    #         echo "Using `ssh $argv`"
+    #         $_ssh $argv -t -- /bin/sh -c 'tmux new-session -A -s main'
+    #     end
+    # end
     alias mosh ssh
     alias ssh-vanilla _ssh
     ## Starship
@@ -88,7 +90,17 @@ if begin
     if begin
             command -v sway 2&>/dev/null
         end
+        # Environment setup.
+        set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
+        set -x CHARSET UTF-8
+        set -x LANG en_US.UTF-8
+        set -x LC_COLLATE C
+        set -x LC_ALL en_US.UTF-8
+        # /etc/profile.d/locale.sh 2&>/dev/null
+        # Pipewire setup.
         /usr/libexec/pipewire-launcher 2&>/dev/null &
+        # Run sway.
+        #set -x WAYLAND_DISPLAY 1  # Tmp
         exec dbus-run-session sway
     end
 end

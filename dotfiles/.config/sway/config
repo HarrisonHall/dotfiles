@@ -6,7 +6,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term wezterm
+# set $term wezterm
+set $term ghostty
 
 # Scripts
 set $progs ~/.config/rofi/launcher/drun.sh
@@ -213,8 +214,9 @@ for_window [title = ".*Godot Engine.*"] floating disable
 
 # Launch primary apps
 exec firefox
-exec wezterm
+# exec wezterm
+exec ghostty
 # exec obsidian
 # exec anki
-exec thunderbird
-exec discord-canary
+# exec thunderbird
+# exec discord-canary
