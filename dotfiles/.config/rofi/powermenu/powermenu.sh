@@ -64,15 +64,13 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			# systemctl poweroff
-			poweroff
+			~/.config/dotfiles/scripts/shutdown.any.sh
 		elif [[ $1 == '--reboot' ]]; then
-			# systemctl reboot
-			reboot
+			~/.config/dotfiles/scripts/reboot.any.sh
+		elif [[ $1 == '--lock' ]]; then
+			~/.config/dotfiles/scripts/lock.any.sh
 		elif [[ $1 == '--suspend' ]]; then
-			mpc -q pause
-			# amixer set Master mute
-			systemctl suspend
+			~/.config/dotfiles/scripts/suspend.any.sh
 		elif [[ $1 == '--logout' ]]; then
 			sway exit
 		fi
@@ -91,7 +89,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		swaylock -f
+		run_cmd --lock
         ;;
     $suspend)
 		run_cmd --suspend

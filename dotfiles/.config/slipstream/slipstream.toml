@@ -1,3 +1,5 @@
+# slipstream configuration.
+
 freq = "2hours"
 log = "/tmp/slipstream.log"
 storage = 4096
@@ -84,6 +86,10 @@ max = 5
 url = "https://www3.nhk.or.jp/rss/news/cat0.xml"
 tags = ["news", "japanese"]
 max = 5
+
+[feeds.associated-press]
+url = "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"
+tags = ["news"]
 
 ## Hacking
 
@@ -471,4 +477,5 @@ feeds = [
   "chris-and-jack",
   "funke",
   "dogen",
+  "cheese-parade",
 ]
