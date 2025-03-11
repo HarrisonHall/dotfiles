@@ -44,6 +44,7 @@
     jq  # JSON tool
     kbd  # Keyboard & virtual terminal utils
     macchina  # Fetch tool
+    mergiraf  # Merge tool
     newsraft  # Feed viewing
     nitch  # Minimal fetching
     ripgrep  # Recursively search

@@ -2,6 +2,7 @@
     pager = delta
     editor = hx
 	fsmonitor = true
+	attributesfile = ~/.config/git/attributes
 
 [pull]
 	rebase = true
@@ -30,6 +31,10 @@
     navigate = true    # use n and N to move between diff sections
     light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
     features = catppuccin-mocha
+
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 
 [merge]
     conflictstyle = diff3

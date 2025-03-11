@@ -109,7 +109,7 @@ if begin
         # Alpine setup.
         if uname -a | grep -i alpine
             set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
-            set -x LOCALE_ARCHIVE $MUSL_LOCPATH
+            # set -x LOCALE_ARCHIVE $MUSL_LOCPATH
             set -x CHARSET UTF-8
             set -x LANG en_US.UTF-8
             set -x LC_COLLATE C
