@@ -31,6 +31,8 @@ window-decoration = false
 window-padding-balance = true
 
 # Keybinds
+keybind = ctrl+,=unbind
+keybind = cmd+,=unbind
 keybind = cmd+t=unbind
 keybind = cmd+n=unbind
 keybind = cmd+c=unbind

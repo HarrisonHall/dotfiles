@@ -1,0 +1,35 @@
+# slipstream configuration.
+
+freq = "10min"
+log = "/tmp/slipreader.log"
+storage = 4096
+
+# Settings that apply to **everything**.
+[global]
+
+[global.filters]
+exclude-title-words = [
+]
+exclude-substrings = [
+]
+
+[global.options]
+# Maximum feeds returned, something sane
+max = 512
+# Oldest entry returned
+oldest = "1month"
+
+# Settings that apply to the all feed.
+[all]
+
+[all.filters]
+exclude-tags = []
+
+# Feed definitions and settings.
+[feeds]
+
+## News
+
+[feeds.hachha-slipstream]
+url = "https://feeds.hachha.dev/all/feed"
+tags = ["hachha"]

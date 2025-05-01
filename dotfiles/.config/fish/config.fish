@@ -63,6 +63,9 @@ if status is-interactive
         /etc/profiles/per-user/$USER/share/man
     type -f busybox 2&>/dev/null && set -e MANPAGER
 
+    ## Alias slipstream.
+    alias slipr "slipstream --debug -c ~/.config/slipstream/slipreader.toml read"
+
     ## Configure SSH.
     set _ssh (which ssh 2>/dev/null)
     set _mosh (which mosh 2>/dev/null)
@@ -109,11 +112,14 @@ if begin
         # Alpine setup.
         if uname -a | grep -i alpine
             set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
-            # set -x LOCALE_ARCHIVE $MUSL_LOCPATH
-            set -x CHARSET UTF-8
-            set -x LANG en_US.UTF-8
-            set -x LC_COLLATE C
-            set -x LC_ALL en_US.UTF-8
+            # set -x LC_ALL en_US.UTF-8
+            # set -x LANG C.UTF-8
+            set -x LC_ALL C.UTF-8
+            set -x LANG C.UTF-8
+            #set -x LOCALE_ARCHIVE $MUSL_LOCPATH
+            # set -x CHARSET en_US.UTF-8
+            # set -x LC_CTYPE C.UTF-8
+            # set -x LC_COLLATE C
         end
 
         # Pipewire setup.

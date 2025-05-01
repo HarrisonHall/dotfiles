@@ -3,6 +3,7 @@ inode/directory=nautilus.desktop
 inode/x-empty=helix.desktop
 
 application/pdf=firefox.desktop
+text/html=firefox.desktop
 image/jpeg=firefox.desktop
 image/png=firefox.desktop
 x-scheme-handler/http=firefox.desktop

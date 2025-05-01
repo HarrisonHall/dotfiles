@@ -61,11 +61,13 @@ tags = ["news"]
 url = "https://feeds.npr.org/1003/rss.xml"
 tags = ["news"]
 exclude-content-words = ["trump", "biden"]
+exclude-substrings = ["morning news brief"]
 
 [feeds.npr-world]
 url = "https://feeds.npr.org/1004/rss.xml"
 tags = ["news"]
 exclude-content-words = ["trump", "biden"]
+exclude-substrings = ["morning news brief"]
 
 [feeds.conversation-politics]
 url = "https://theconversation.com/us/politics/articles.atom"
@@ -89,6 +91,10 @@ max = 5
 
 [feeds.associated-press]
 url = "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"
+tags = ["news"]
+
+[feeds.bbc]
+url = "https://feeds.bbci.co.uk/news/rss.xml"
 tags = ["news"]
 
 ## Hacking
@@ -204,6 +210,10 @@ tags = ["blog", "hacking"]
 [feeds.elly-town]
 url = "https://elly.town/feed.xml"
 tags = ["blog", "hacking"]
+
+[feeds.skull]
+url = "https://brutecat.com/rss.xml"
+tags = ["blog", "hacking", "security"]
 
 ## Technology
 

@@ -16,23 +16,36 @@
 SCRIPTPATH=$(dirname $(readline -f "$0"))
 
 # Install core packages.
-doas apk install \
-  alpine-locales bind-tools libc6-compat build-base \
+doas apk add \
+  alpine-locales bind-tools libc6-compat gcompat build-base \
   bash curl git less python3 xz \
   mandoc mandoc-doc man-pages docs lang \
   networkmanager network-manager-applet networkmanager-wifi networkmanager-tui networkmanager-cli \
   fish tmux \
-  dbus dbus-x11 flatpak xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs \
+  dbus dbus-x11 flatpak libnotify xdg-desktop-portal xdg-desktop-portal-wlr xdg-user-dirs xdg-utils \
   pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber \
   grim mako slurp swaybg rofi-wayland waybar wdisplays \
   font-awesome font-noto font-misc-misc \
-  nautilus papirus-icon-fonts wezterm wezterm-fonts vlc \
+  nautilus gvfs \
+  papirus-icon-fonts wezterm wezterm-fonts vlc \
   steam-devices \
+  alsa-lib alsa-lib-dev \
   udisks2 udisks2-doc autofs dosfstools exfat usbutils \
-  pm-utils apcid \
+  pm-utils acpid \
   terminus-font \
   syncthing syncthing-openrc \
-  clang glfw-dev libc-dev pkgconf wayland-dev 
+  clang glfw-dev libc-dev pkgconf wayland-dev \
+  podman podman-compose
+
+doas apk add \
+  fontconfig \
+  xorgproto libxkbcommon libxkbcommon-dev xkbcomp xkbcli xkeyboard-config \
+  glfw glfw-dev libx11 libx11-dev libxcursor-dev libxrandr-dev libinput-dev libinput xinput  libxi-dev \
+  raylib raylib-dev \
+  mesa-gl libxkbcommon libva-glx libva-glx-dev libxkbcommon-dev sdl2-dev sdl12-compat-dev
+
+# Others?
+# thunar thunar-volman
 
 # User setup.
 doas chsh -s /usr/bin/fish
@@ -75,8 +88,7 @@ doas rc-update add networkmanager default
 doas rc-update del networking boot
 doas rc-update del wpa_supplicant boot
 
-# TODO: Install flatpaks (steam, anki, etc.)
-# TODO: dbus-launcher in /etc/profile
+# TODO: Install flatpaks (steam, discord, calibre, anki, etc.)
 # TODO: https://wiki.alpinelinux.org/wiki/Suspend_on_LID_close
 # TODO: https://github.com/catppuccin/tty
 # doas grub-mkconfig -o /boot/grub/grub.cfg
