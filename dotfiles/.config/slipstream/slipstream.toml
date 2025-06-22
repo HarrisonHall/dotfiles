@@ -96,6 +96,7 @@ tags = ["news"]
 [feeds.bbc]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
 tags = ["news"]
+exclude-substrings = ["newscast"]
 
 ## Hacking
 
