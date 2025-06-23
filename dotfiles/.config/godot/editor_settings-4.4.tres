@@ -1,0 +1,102 @@
+[gd_resource type="EditorSettings" load_steps=2 format=3]
+
+[sub_resource type="InputEventKey" id="InputEventKey_w6mr7"]
+keycode = 4194326
+
+[resource]
+interface/editor/editor_screen = -2
+interface/editor/code_font_size = 12.0
+interface/editor/show_update_spinner = false
+interface/theme/preset = "Custom"
+interface/theme/base_color = Color(0.141176, 0.152941, 0.227451, 1)
+interface/theme/accent_color = Color(0.541176, 0.678431, 0.956863, 1)
+interface/theme/contrast = 0.2
+interface/theme/icon_saturation = 0.6
+text_editor/theme/color_theme = "Catppuccin Macchiato"
+text_editor/theme/highlighting/symbol_color = Color(0.568627, 0.843137, 0.890196, 1)
+text_editor/theme/highlighting/keyword_color = Color(0.776471, 0.627451, 0.964706, 1)
+text_editor/theme/highlighting/control_flow_keyword_color = Color(0.776471, 0.627451, 0.964706, 1)
+text_editor/theme/highlighting/base_type_color = Color(0.933333, 0.831373, 0.623529, 1)
+text_editor/theme/highlighting/engine_type_color = Color(0.933333, 0.831373, 0.623529, 1)
+text_editor/theme/highlighting/user_type_color = Color(0.933333, 0.831373, 0.623529, 1)
+text_editor/theme/highlighting/comment_color = Color(0.431373, 0.45098, 0.552941, 1)
+text_editor/theme/highlighting/doc_comment_color = Color(0.6, 0.7, 0.8, 0.8)
+text_editor/theme/highlighting/string_color = Color(0.65098, 0.854902, 0.584314, 1)
+text_editor/theme/highlighting/background_color = Color(0.141176, 0.152941, 0.227451, 1)
+text_editor/theme/highlighting/completion_background_color = Color(0.117647, 0.12549, 0.188235, 1)
+text_editor/theme/highlighting/completion_selected_color = Color(0.211765, 0.227451, 0.309804, 1)
+text_editor/theme/highlighting/completion_existing_color = Color(0.776471, 0.627451, 0.964706, 0.129412)
+text_editor/theme/highlighting/completion_scroll_color = Color(0.211765, 0.227451, 0.309804, 1)
+text_editor/theme/highlighting/completion_scroll_hovered_color = Color(0.286275, 0.301961, 0.392157, 1)
+text_editor/theme/highlighting/completion_font_color = Color(0.792157, 0.827451, 0.960784, 1)
+text_editor/theme/highlighting/text_color = Color(0.792157, 0.827451, 0.960784, 1)
+text_editor/theme/highlighting/line_number_color = Color(0.501961, 0.529412, 0.635294, 1)
+text_editor/theme/highlighting/safe_line_number_color = Color(0.65098, 0.854902, 0.584314, 1)
+text_editor/theme/highlighting/caret_color = Color(0.956863, 0.858824, 0.839216, 1)
+text_editor/theme/highlighting/text_selected_color = Color(0.792157, 0.827451, 0.960784, 1)
+text_editor/theme/highlighting/selection_color = Color(0.356863, 0.376471, 0.470588, 1)
+text_editor/theme/highlighting/brace_mismatch_color = Color(0.929412, 0.529412, 0.588235, 1)
+text_editor/theme/highlighting/current_line_color = Color(0.792157, 0.827451, 0.960784, 0.0627451)
+text_editor/theme/highlighting/line_length_guideline_color = Color(0.211765, 0.227451, 0.309804, 1)
+text_editor/theme/highlighting/word_highlighted_color = Color(0.356863, 0.376471, 0.470588, 1)
+text_editor/theme/highlighting/number_color = Color(0.960784, 0.662745, 0.498039, 1)
+text_editor/theme/highlighting/function_color = Color(0.541176, 0.678431, 0.956863, 1)
+text_editor/theme/highlighting/member_variable_color = Color(0.717647, 0.741176, 0.972549, 1)
+text_editor/theme/highlighting/mark_color = Color(0.929412, 0.529412, 0.588235, 0.219608)
+text_editor/theme/highlighting/bookmark_color = Color(0.541176, 0.678431, 0.956863, 1)
+text_editor/theme/highlighting/breakpoint_color = Color(0.929412, 0.529412, 0.588235, 1)
+text_editor/theme/highlighting/executing_line_color = Color(0.933333, 0.831373, 0.623529, 1)
+text_editor/theme/highlighting/code_folding_color = Color(0.501961, 0.529412, 0.635294, 1)
+text_editor/theme/highlighting/search_result_color = Color(0.356863, 0.376471, 0.470588, 1)
+text_editor/theme/highlighting/search_result_border_color = Color(0, 0, 0, 0)
+text_editor/behavior/files/open_dominant_script_on_scene_change = true
+text_editor/completion/idle_parse_delay = 2.0
+text_editor/completion/add_type_hints = false
+editors/3d_gizmos/gizmo_settings/bone_axis_length = 0.1
+editors/3d/navigation/emulate_numpad = false
+editors/3d/navigation/orbit_modifier = 0
+editors/3d/navigation/pan_modifier = 1
+editors/3d/navigation/zoom_modifier = 4
+interface/editor/debug/enable_pseudolocalization = false
+editors/3d_gizmos/gizmo_colors/shape = Color(0.5, 0.7, 1, 1)
+export/android/android_sdk_path = ""
+export/android/debug_keystore = ""
+export/android/debug_keystore_pass = "android"
+export/macos/rcodesign = ""
+export/web/http_port = 8060
+export/web/tls_key = ""
+export/web/tls_certificate = ""
+export/windows/rcedit = ""
+export/windows/osslsigncode = ""
+export/windows/wine = ""
+_default_feature_profile = ""
+_use_favorites_root_selection = false
+network/debug_adapter/request_timeout = 1000
+editors/3d_gizmos/gizmo_colors/path = Color(0.5, 0.5, 1, 0.8)
+editors/grid_map/editor_side = 1
+text_editor/theme/highlighting/gdscript/function_definition_color = Color(0.541176, 0.678431, 0.956863, 1)
+text_editor/theme/highlighting/gdscript/global_function_color = Color(0.929412, 0.529412, 0.588235, 1)
+text_editor/theme/highlighting/gdscript/node_path_color = Color(0.545098, 0.835294, 0.792157, 1)
+text_editor/theme/highlighting/gdscript/node_reference_color = Color(0.545098, 0.835294, 0.792157, 1)
+text_editor/theme/highlighting/gdscript/annotation_color = Color(0.960784, 0.662745, 0.498039, 1)
+text_editor/theme/highlighting/gdscript/string_name_color = Color(0.792157, 0.827451, 0.960784, 1)
+export/android/java_sdk_path = ""
+_editor_settings_advanced_mode = false
+_project_settings_advanced_mode = false
+_export_template_download_directory = ""
+_script_setup_templates_dictionary = {}
+_script_setup_use_script_templates = false
+shortcuts = [{
+"name": "spatial_editor/viewport_zoom_modifier_1",
+"shortcuts": [SubResource("InputEventKey_w6mr7")]
+}, {
+"name": "spatial_editor/viewport_zoom_modifier_2",
+"shortcuts": []
+}]
+metadata/script_setup_templates_dictionary = {
+"Area3D": "0NodeDefault",
+"CharacterBody3D": "0CharacterBody3DBasic Movement",
+"Node": "0NodeDefault",
+"Node3D": "0NodeDefault"
+}
+metadata/export_template_download_directory = "/home/harrison/.cache/godot"

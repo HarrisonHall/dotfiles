@@ -101,31 +101,31 @@ if status is-interactive
     type -f zoxide 2&>/dev/null && alias cd z
 end
 
-# Start DE, if applicable.
-set -x XDG_VTNR (basename "$(tty)" | sed 's/tty//')
-if begin
-        [ -z "$WAYLAND_DISPLAY" ]; and [ "$XDG_VTNR" -eq 1 ]
-    end
-    if begin
-            command -v sway 2&>/dev/null
-        end
-        # Alpine setup.
-        if uname -a | grep -i alpine
-            set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
-            # set -x LC_ALL en_US.UTF-8
-            # set -x LANG C.UTF-8
-            set -x LC_ALL C.UTF-8
-            set -x LANG C.UTF-8
-            #set -x LOCALE_ARCHIVE $MUSL_LOCPATH
-            # set -x CHARSET en_US.UTF-8
-            # set -x LC_CTYPE C.UTF-8
-            # set -x LC_COLLATE C
-        end
+# # Start DE, if applicable.
+# set -x XDG_VTNR (basename "$(tty)" | sed 's/tty//')
+# if begin
+#         [ -z "$WAYLAND_DISPLAY" ]; and [ "$XDG_VTNR" -eq 1 ]
+#     end
+#     if begin
+#             command -v sway 2&>/dev/null
+#         end
+#         # Alpine setup.
+#         if uname -a | grep -i alpine
+#             set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
+#             # set -x LC_ALL en_US.UTF-8
+#             # set -x LANG C.UTF-8
+#             set -x LC_ALL C.UTF-8
+#             set -x LANG C.UTF-8
+#             #set -x LOCALE_ARCHIVE $MUSL_LOCPATH
+#             # set -x CHARSET en_US.UTF-8
+#             # set -x LC_CTYPE C.UTF-8
+#             # set -x LC_COLLATE C
+#         end
 
-        # Pipewire setup.
-        /usr/libexec/pipewire-launcher 2&>/dev/null &
+#         # Pipewire setup.
+#         # /usr/libexec/pipewire-launcher 2&>/dev/null &
 
-        # Run sway.
-        exec dbus-run-session sway
-    end
-end
+#         # Run sway.
+#         exec dbus-run-session sway
+#     end
+# end

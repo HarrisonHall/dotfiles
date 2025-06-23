@@ -5,5 +5,6 @@
       fish
       just
       stow
+      git
     ];
 }

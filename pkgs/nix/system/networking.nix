@@ -13,7 +13,7 @@
    extraGroups = [ "network" "networkmanager" ];
   };
 
-  programs.ssh.startAgent = true;
+  # programs.ssh.startAgent = true;
   # services.openssh = {
   #   enable = true;
   #   # require public key authentication for better security

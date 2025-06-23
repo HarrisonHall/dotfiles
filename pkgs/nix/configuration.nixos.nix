@@ -13,7 +13,8 @@ in
   imports =
     [ 
       # Hardware
-      ./hardware/framework-13.nix
+      # ./hardware/framework-13.nix
+      ./hardware/desktop.nix
       # System
       ./system/input.nix
       ./system/mounting.nix
@@ -32,6 +33,7 @@ in
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
       ./pkgs/custom/sway.nix
+      ./pkgs/custom/niri.nix
       ./pkgs/custom/syncthing.nix
       ./pkgs/custom/vm.nix
     ];
@@ -122,6 +124,6 @@ in
   }];
 
   system.copySystemConfiguration = true;  # Copy this to /run/current-system/configuration.nix
-  system.stateVersion = "24.11";  # nixos version
+  system.stateVersion = "25.05";  # nixos version
 }
 

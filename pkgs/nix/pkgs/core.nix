@@ -14,7 +14,7 @@
     # Essential
     discord-canary # Discord, but with more features!
     firefox  # Browser
-    # master.ghostty  # Terminal
+    ghostty  # Terminal
 
     # Utils
     # calibre  # ebook software

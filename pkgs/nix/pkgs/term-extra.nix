@@ -13,7 +13,7 @@
     zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP
-    typst-lsp  # Typst LSP
+    tinymist  # Typst LSP
 
     # Core utils
     ffmpeg-full  # Manage video
@@ -22,6 +22,7 @@
     pandoc  # File conversion
     ripgrep-all  # rga = ripgrep + rich-text searching (pdf, docx, etc.)
     slides  # Markdown presentation tool
+    taskwarrior3  # Tasks
     wireguard-tools  # Wireguard CLI
     xsel  # X selection util
     

@@ -73,6 +73,7 @@ run_cmd() {
 			~/.config/dotfiles/scripts/suspend.any.sh
 		elif [[ $1 == '--logout' ]]; then
 			sway exit
+			niri msg action quit
 		fi
 	else
 		exit 0

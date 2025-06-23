@@ -5,7 +5,7 @@
     // "margin-bottom": 5,
 
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/scratchpad", "sway/mode"],
+    "modules-left": ["custom/launcher", "niri/workspaces", "sway/workspaces", "sway/scratchpad", "sway/mode"],
     "modules-center": ["sway/window"],
     "modules-right": [
         "idle_inhibitor", 
@@ -17,6 +17,21 @@
         "clock"
     ],
     // Modules configuration
+    "niri/workspaces": {
+        // "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "一",
+            "2": "二",
+            "3": "三",
+            "4": "四",
+            "5": "五",
+            "6": "六",
+            "7": "七",
+            "8": "八",
+        }
+    },
     "sway/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
@@ -25,10 +40,10 @@
             "2": [], 
             "3": [],
             "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": []
+            // "5": [],
+            // "6": [],
+            // "7": [],
+            // "8": []
         },
         "format": "{icon}",
         "format-icons": {
