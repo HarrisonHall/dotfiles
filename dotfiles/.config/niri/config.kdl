@@ -3,15 +3,15 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
 
 // Startup.
-spawn-at-startup "waybar"
-spawn-at-startup "mako"
-spawn-at-startup "fcitx5"
-spawn-at-startup "nm-applet"
-spawn-at-startup "eww daemon"
-spawn-at-startup "/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1"
-spawn-at-startup "swaybg" "-i" "~/media/wallpapers/current.image"
-spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg action power-off-monitors'" "timeout" "500" "'swaylock'" "before-sleep" "'swaylock'"
-spawn-at-startup "sh" "-c" "xwayland-satellite :12 &"
+// spawn-at-startup "waybar"
+// spawn-at-startup "mako"
+// spawn-at-startup "fcitx5"
+// spawn-at-startup "nm-applet"
+// spawn-at-startup "eww daemon"
+// spawn-at-startup "/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1"
+// spawn-at-startup "swaybg" "-i" "~/media/wallpapers/current.image"
+// spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg action power-off-monitors'" "timeout" "500" "'swaylock'" "before-sleep" "'swaylock'"
+// spawn-at-startup "sh" "-c" "xwayland-satellite :12 &"
 
 // GTK.
 spawn-at-startup "gsettings set org.gnome.desktop.interface" "gtk-theme" "catppuccin-macchiato-dark"
@@ -181,11 +181,13 @@ binds {
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
-    Mod+R { switch-preset-column-width; }
-    Mod+Shift+R { switch-preset-window-height; }
-    Mod+Ctrl+R { reset-window-height; }
+    // Mod+R { switch-preset-column-width; }
+    // Mod+Shift+R { switch-preset-window-height; }
+    // Mod+R { reset-window-height; reset-window-height; }
+    Mod+R { expand-column-to-available-width; }
+    //set-window-width 100%; }
+    // Mod+Ctrl+R { reset-window-height; }
     // Mod+F { maximize-column; }
-    Mod+Shift+F { fullscreen-window; }
     Mod+M { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
@@ -205,7 +207,8 @@ binds {
 
     // Move the focused window between the floating and the tiling layout.
     // Mod+F       { toggle-window-floating; }
-    Mod+F { switch-focus-between-floating-and-tiling; }
+    // Mod+F { switch-focus-between-floating-and-tiling; }
+    Mod+F { toggle-window-floating; }
 
     // Toggle tabbed column display mode.
     // Windows in this column will appear as vertical tabs,
@@ -307,7 +310,7 @@ cursor {
     xcursor-size 24
 
     hide-when-typing
-    hide-after-inactive-ms 1000
+    hide-after-inactive-ms 15000
 }
 
 // You can configure outputs by their name, which you can find

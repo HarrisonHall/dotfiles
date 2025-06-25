@@ -2,10 +2,10 @@
 # https://github.com/davidbgonz/dotfiles/blob/main/home/taskwarrior/.task/themes/catppuccin.theme
 
 # General decoration
-color.label=magenta
-color.label.sort=magenta
+color.label=bold blue
+color.label.sort=bold cyan
 color.alternate=
-color.header=cyan
+color.header=magenta
 color.footnote=yellow
 color.warning=bold red
 color.error=white on red

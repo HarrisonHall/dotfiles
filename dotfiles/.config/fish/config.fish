@@ -81,6 +81,9 @@ if status is-interactive
     alias mosh ssh
     alias ssh-vanilla $_ssh
 
+    ## Hook atuin.
+    type -f atuin 2&>/dev/null && atuin init fish | source
+
     ## Hook starship.
     set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
     type -f starship 2&>/dev/null && starship init fish | source
@@ -99,6 +102,10 @@ if status is-interactive
     ## Hook zoxide.
     type -f zoxide 2&>/dev/null && zoxide init fish | source
     type -f zoxide 2&>/dev/null && alias cd z
+
+    ## Other misc. aliases.
+    type -f bat 2&>/dev/null && alias cat bat
+    type -f btm 2&>/dev/null && alias top btm && alias htop btm
 end
 
 # # Start DE, if applicable.

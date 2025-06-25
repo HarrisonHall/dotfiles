@@ -4,10 +4,11 @@
 
 {
   users.users.${user}.packages = with pkgs; [
-    ## Editor
+    ## Editors
+    kdePackages.kate
     vscode
     ## Other
-    (callPackage ./custom/cdtest.nix { })  # Manage temporary project directories
+    # (callPackage ./custom/cdtest.nix { })  # Manage temporary project directories
     obsidian  # GUI note manager
   ];
 }

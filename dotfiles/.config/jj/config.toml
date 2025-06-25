@@ -15,9 +15,13 @@ default-command = "log-bookmark"
 editor = "hx"
 conflict-marker-style = "git"
 
-[ui.diff]
-tool = ["delta"]
-format = "git"
+diff-formatter = ["delta"]
+
+[merge-tools.difft]
+diff-args = ["--color=always", "$left", "$right"]
+# [ui.diff-formatter]
+# tool = ["delta"]
+# format = "git"
 
 [git]
 subprocess = true

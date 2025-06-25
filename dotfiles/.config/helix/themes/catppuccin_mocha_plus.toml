@@ -1,3 +1,12 @@
 inherits = "catppuccin_mocha"
 
+# Enable strikethrough.
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
+
+# Let's not use italics, maybe.
+# "markup.italic" = { fg = "red", modifiers = ["italic"] }
+# "markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
+"comment" = { fg = "overlay2", modifiers = [] }
+"variable.parameter" = { fg = "maroon", modifiers = [] }
+"keyword.control.conditional" = { fg = "mauve", modifiers = [] }
+"namespace" = { fg = "yellow", modifiers = []}

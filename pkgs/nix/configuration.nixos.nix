@@ -52,7 +52,7 @@ in
       "splash"
       "boot.shell_on_fail"
       "loglevel=3"
-      "rd.systemd.show_status=false"
+      "rd.systemd.show_status=auto"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
       # "video=1920x1080"
@@ -60,7 +60,7 @@ in
       "vt.default_grn=30,139,227,226,180,194,226,194,91,139,227,226,180,194,226,173"
       "vt.default_blu=46,168,161,175,250,231,213,222,112,168,161,175,250,231,213,200"
     ];
-    consoleLogLevel = 0;
+    consoleLogLevel = 3;
     initrd.verbose = false;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {
@@ -111,7 +111,7 @@ in
   programs.fish.enable = true;
   environment.variables.EDITOR = "hx";
   environment.variables.PAGER = "bat";
-  environment.variables.VISUAL = "code";
+  environment.variables.VISUAL = "kate";
 
   security.sudo.enable = true;
   security.doas.enable = true;

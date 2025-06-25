@@ -1,18 +1,11 @@
-# Hobbies configuration
+# Core packages configuration.
 
 { config, pkgs, lib, user, ... }:
 
 {
-  # nixpkgs.config = {
-  #   packageOverrides = pkgs: with pkgs; {
-  #     master = import masterTarball {
-  #       # config = config.nixpkgs.config;
-  #     };
-  #   };
-  # };
   users.users.${user}.packages = with pkgs; [
     # Essential
-    discord-canary # Discord, but with more features!
+    discord  # Discord, but with more features!
     firefox  # Browser
     ghostty  # Terminal
 

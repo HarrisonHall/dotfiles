@@ -35,6 +35,15 @@
     localsend  # Send things on the same network
     mdbook  # Convert markdown to books
 
+    # Experimental
+    atuin
+    bacon  # Rust compiler-driven development
+    viddy
+    hexyl
+    dua
+    procs
+    fselect
+
     # Python packages
     python312Packages.python-lsp-server
     (python3.withPackages(ps: with ps; [ 

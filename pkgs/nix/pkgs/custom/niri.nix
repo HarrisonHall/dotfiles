@@ -1,102 +1,9 @@
 { lib, pkgs, user, ... }:
 
-let
-
-  # DBUS sway helper
-  dbus-sway-environment = pkgs.writeTextFile {
-    name = "dbus-sway-environment";
-    destination = "/bin/dbus-sway-environment";
-    executable = true;
-
-    text = ''
-  dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-  systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-  systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
-      '';
-  };
-
-  # GTK sway helper
-  configure-gtk = pkgs.writeTextFile {
-      name = "configure-gtk";
-      destination = "/bin/configure-gtk";
-      executable = true;
-      text = let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in ''
-        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-        gnome_schema=org.gnome.desktop.interface
-        gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-macchiato-dark"
-        gsettings set org.gnome.desktop.interface cursor-theme "Bibata-Catppuccin"
-        gsettings set org.gnome.desktop.interface cursor-size "24"
-        gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-        gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
-        '';
-  };
-
-in
 {
   programs.niri = {
     enable = true;
-    # wrapperFeatures.base = true;
-    # wrapperFeatures.gtk = true;
-    # extraPackages = with pkgs; [
-    #   # Custom configuration
-    #   # configure-gtk  # GTK configuration (custom)
-    #   # dbus-sway-environment  # DBUS environment (custom)
-
-    #   # Icon configuration
-    #   papirus-icon-theme  # Icons
-
-    #   # Libs
-    #   glib # gsettings
-    #   glfw
-    #   glfw-wayland
-    #   libnotify  # libnotify + notify-send
-    #   mesa
-    #   wayland  # Wayland libs
-    #   wayland-protocols  # Other wayland stuffs
-
-    #   # Essential
-    #   grim  # Screenshot tool
-    #   mako  # Wayland notification daemon
-    #   mate.mate-polkit  # Polkit
-    #   networkmanagerapplet  # Network manager bar applet
-    #   shared-mime-info  # Allow apps to have mime info
-    #   swaylock  # Lock screen management
-    #   swayidle  # Idle management
-    #   waybar  # Better swaybar
-    #   wl-clipboard  # Wayland clipboard utilities
-    #   wtype  # Wayland type utility
-    #   wf-recorder  # Wayland screen recorder
-    #   xdg-user-dirs  # XDG help
-    #   xdg-utils  # XDG
-
-    #   # Scripting Utils
-    #   acpi  # Battery
-    #   slurp  # Screenspace selector
-    #   swaybg  # Change sway bg
-    #   swayr  # Simple cli for managing sway
-
-    #   # Graphical Utils
-    #   pavucontrol  # Audio control
-    #   rofi-wayland  # Widgets and pickers
-    #   rofi-emoji  # Emoji picker
-    #   wdisplays # Configure displays
-    # ];
-   #  extraSessionCommands = ''
-   #    export SDL_VIDEODRIVER=wayland
-   #    export QT_QPA_PLATFORM=wayland
-			# # export QT_QPA_PLATFORM=wayland-egl
-   #    export QT_WAYLAND_DISABLE_WINDOWDECORATION="1"
-   #    export _JAVA_AWT_WM_NONREPARENTING=1
-   #    export MOZ_ENABLE_WAYLAND=1
-   #    export GTK_IM_MODULE=fcitx
-   #    export QT_IM_MODULE=fcitx
-   #    export XMODIFIERS="@im=fcitx"
-   #  '';
   };
-
   
   users.users.${user}.packages = with pkgs; [
     xwayland-satellite
@@ -124,4 +31,68 @@ in
   };
 
   environment.variables.XCURSOR_PATH = lib.mkDefault "$HOME/.icons:$HOME/.local/share/icons:$HOME/.nix-profile/share/icons:/usr/share/icons"; # "~/.nix-profile/bin/<your app>";
+
+  systemd.user.services."niri-swaybg" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.swaybg}/bin/swaybg -i /home/${user}/media/wallpapers/current.image";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  # systemd.user.services."niri-eww" = {
+  #   enable = true;
+  #   serviceConfig.ExecStart = "${pkgs.eww}/bin/eww daemon";
+  #   wantedBy = ["niri.service"];
+  # };
+  systemd.user.services."niri-network-manager" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  systemd.user.services."waybar" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.waybar}/bin/waybar";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  # systemd.user.services."mako" = {
+  #   enable = true;
+  #   wantedBy = ["niri.service"];
+  # };
+  systemd.user.services."niri-fcitx" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.fcitx5}/bin/fcitx5";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  systemd.user.services."niri-polkit" = {
+    enable = true;
+    serviceConfig.ExecStart = "sh -c \"/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1\"";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  systemd.user.services."niri-swayidle" = {
+    enable = true;
+    serviceConfig.ExecStart = ''
+      ${pkgs.swayidle}/bin/swayidle -w \
+        timeout 500 'swaylock -f' \
+        timeout 600 'niri msg action power-off-monitors' \
+        before-sleep 'swaylock -f'
+    '';
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
+  systemd.user.services."niri-xwayland" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :12";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
 }
