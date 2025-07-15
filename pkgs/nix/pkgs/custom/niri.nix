@@ -57,6 +57,7 @@
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
+    environment = lib.mkForce {};
   };
   # systemd.user.services."mako" = {
   #   enable = true;

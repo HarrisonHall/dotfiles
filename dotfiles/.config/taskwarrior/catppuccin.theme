@@ -35,8 +35,8 @@ color.tag.none=
 color.tagged=
 
 # Due
-color.due=red
-color.due.today=red
+color.due=yellow
+color.due.today=bold yellow
 color.overdue=bold red
 
 # UDA

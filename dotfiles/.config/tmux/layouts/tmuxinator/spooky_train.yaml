@@ -1,0 +1,13 @@
+name: spooky_train
+root: ~/workspace/dev/games/spooky_train
+
+windows:
+  - build:
+      layout: main-vertical
+      panes:
+        - nix-dev
+        - nix-dev -c bacon
+  - code:
+      layout: main-vertical
+      panes:
+        - nix-dev -c hx .

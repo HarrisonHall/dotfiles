@@ -1,2 +1,6 @@
+# atuin config.
+
+workspaces = true
+
 [theme]
 name = "catppuccin-mocha-blue"

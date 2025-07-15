@@ -1,0 +1,23 @@
+session_name: toki
+start_directory: ~/workspace/dev/games/toki4
+
+windows:
+  - window_name: build
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - nix-dev
+      - nix-dev -c hx ./build.zig
+  - window_name: code
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - nix-dev -c hx src/
+  - window_name: "..."
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - nix-dev

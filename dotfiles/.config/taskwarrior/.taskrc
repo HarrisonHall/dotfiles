@@ -1,4 +1,38 @@
 # include dark-16.theme
 include ~/.config/taskwarrior/catppuccin.theme
 verbose=no
+nag=
 news.version=3.2.0
+
+
+# Misc priority:
+due=2days
+urgency.age.coefficient=0.0
+urgency.project.coefficient=0.0
+
+# Priority:
+uda.priority.values=C,H,M,,L
+uda.priority.default=
+uda.priority.C.coefficient=4.0
+uda.priority.H.coefficient=2.0
+uda.priority.M.coefficient=1.0
+uda.priority..coefficient=0.9
+uda.priority.L.coefficient=0.8
+
+# Time estimates:
+uda.estimate.type=string
+uda.estimate.default=
+uda.estimate.label=Estimate
+uda.estimate.values=S,,M,L
+uda.estimate.L.coefficient=1.75
+uda.estimate.M.coefficient=1.0
+uda.estimate..coefficient=0.9
+uda.estimate.S.coefficient=0.8
+
+# Next report:
+report.next.context=1
+report.next.description=Most urgent tasks
+report.next.columns=id,start.age,entry.age,depends,priority,estimate,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.next.labels=ID,Active,Age,Deps,Prio,Est,Proj,Tag,Recur,S,Due,Until,Desc,Urg
+report.next.sort=urgency-
+

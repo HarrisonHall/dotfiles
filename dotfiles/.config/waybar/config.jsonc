@@ -5,15 +5,24 @@
     // "margin-bottom": 5,
 
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "niri/workspaces", "sway/workspaces", "sway/scratchpad", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-left": [
+        // "custom/launcher",
+        "niri/workspaces",
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window",
+        "niri/window"
+    ],
     "modules-right": [
+        "tray", 
         "idle_inhibitor", 
         "pulseaudio", 
-        "keyboard-state", 
-        "backlight", 
-        "battery", 
-        "tray", 
+        // "keyboard-state", 
+        // "backlight", 
+        // "battery", 
         "clock"
     ],
     // Modules configuration
@@ -106,7 +115,7 @@
         "scroll-step": 10.0,
         "tooltip": true,
         "tooltip-format": "{percent}%",
-        "on-click": "~/.config/rofi/applets/brightness.sh"
+        "on-click": "$HOME/.config/rofi/applets/brightness.sh"
     },
     "battery": {
         "states": {
@@ -121,7 +130,7 @@
         "format-icons": ["", "", "", "", ""],
         "tooltip": true,
         "tooltip-format": "{time} {capacity}%",
-        "on-click": "~/.config/rofi/applets/battery.sh"
+        "on-click": "$HOME/.config/rofi/applets/battery.sh"
     },
     "network": {
         "format-wifi": "<span></span>",
@@ -146,15 +155,15 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["<span></span>", "<span></span>", "<span></span>"]
+            "default": ["", "", ""]
         },
         "tooltip": true,
         "tooltip-format": "{desc} {volume}% {icon}",
-        "on-click": "~/.config/rofi/applets/volume.sh"
+        "on-click": "$HOME/.config/rofi/applets/volume.sh"
     },
     "custom/launcher": {
         "format": "火山",
-        "on-click": "~/.config/rofi/launcher/drun.sh",
+        "on-click": "$HOME/.config/rofi/launcher/drun.sh",
         "tooltip-format": "",
         "tooltip": false
     }

@@ -1,9 +1,6 @@
 // If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
 keybinds {
-    normal {
-        // uncomment this and adjust key if using copy_on_select=false
-        // bind "Alt c" { Copy; }
-    }
+    normal {}
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
     }
@@ -107,6 +104,7 @@ keybinds {
         bind "d" { Detach; }
     }
     tmux {
+        // Modes.
         bind "Ctrl t" { SwitchToMode "Tab"; }
         bind "Ctrl g" { SwitchToMode "Locked"; }
         bind "Ctrl p" { SwitchToMode "Pane"; }
@@ -115,7 +113,8 @@ keybinds {
         bind "Ctrl o" { SwitchToMode "Session"; }
 
         bind "[" { SwitchToMode "Scroll"; }
-        bind "Ctrl q" { Write 2; SwitchToMode "Normal"; }
+        // bind "Ctrl q" { Write 2; SwitchToMode "Normal"; }
+        bind "Ctrl q" { SwitchToMode "Normal"; }
         bind "\"" { NewPane "Down"; SwitchToMode "Normal"; }
         bind "%" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
@@ -131,6 +130,10 @@ keybinds {
         bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "Ctrl h" { Resize "Left"; }
+        bind "Ctrl l" { Resize "Right"; }
+        bind "Ctrl j" { Resize "Down"; }
+        bind "Ctrl k" { Resize "Up"; }
         bind "o" { FocusNextPane; }
         bind "d" { Detach; }
 
@@ -186,6 +189,9 @@ keybinds {
         unbind "Ctrl p"
         unbind "Ctrl b"  // No classic tmux
     }
+    shared {
+        unbind "Alt f"
+    }
 }
 
 plugins {
@@ -208,27 +214,11 @@ env {
 //
 // simplified_ui true
 
-// default_shell "fish"
+default_shell "fish"
 
-pane_frames true
+pane_frames false
 
-themes {
-    nord {
-        fg "#D8DEE9"
-        bg "#2E3440"
-        black "#3B4252"
-        red "#BF616A"
-        green "#A3BE8C"
-        yellow "#EBCB8B"
-        blue "#81A1C1"
-        magenta "#B48EAD"
-        cyan "#88C0D0"
-        white "#E5E9F0"
-        orange "#D08770"
-    }
-}
-
-theme "nord"
+theme "catppuccin-mocha"
 
 default_mode "normal"
 

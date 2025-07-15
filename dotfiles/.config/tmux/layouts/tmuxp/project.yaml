@@ -1,0 +1,23 @@
+session_name: "${PROJECT}"
+start_directory: "${PROJECT_DIR}"
+
+windows:
+  - window_name: docs
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - null
+  - window_name: build
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - null
+      - null
+  - window_name: code
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - null

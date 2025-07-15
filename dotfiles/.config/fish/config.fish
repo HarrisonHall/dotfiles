@@ -51,6 +51,7 @@ if status is-interactive
 
     ## Configure nix.
     alias nix-shell "nix-shell --command \"fish\""
+    alias nix-dev "nix develop --command \"fish\""
     type -f $HOME/.nix-profile/etc/profile.d/nix.fish 2&>/dev/null && source $HOME/.nix-profile/etc/profile.d/nix.fish
 
     ## Configure man.
@@ -91,6 +92,9 @@ if status is-interactive
     ## Configure taskwarrior.
     set -x TASKRC ~/.config/taskwarrior/.taskrc
     set -x TASKDATA ~/workspace/notes/todo/tasks
+
+    ## Configure tmuxp.
+    set -x TMUXP_CONFIGDIR ~/.config/tmux/layouts/tmuxp
 
     ## Configure rust.
     set -x RUST_BACKTRACE 1

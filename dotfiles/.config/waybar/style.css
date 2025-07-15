@@ -78,10 +78,6 @@
   font-family: "M PLUS 1", "Font Awesome 6 Free", "HackGen35 Console NFJ";
   font-size: 1rem;
   font-weight: bold;
-  /* padding-bottom: 0.1em; */
-  /* border-bottom: 2px solid; */
-  /* border-color: @mantle; */
-  /* padding: 1em; */
 }
 
 /* Each module */
@@ -97,8 +93,8 @@
 #custom-alsa,
 #tray,
 #backlight {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  /* padding-left: 0.5rem; */
+  /* padding-right: 0.5rem; */
 }
 
 /* Each module that should blink */
@@ -151,82 +147,65 @@
   background: @mode;
 }
 
-/* Workspaces stuff */
-
 #workspaces {
-  margin-right: 10px;
-  background: @workspaces;
-  margin: 0.4em;
+  border-radius: 1rem;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1rem;
 }
 
-/* Workspaces unfocused on other monitor. */
 #workspaces button {
-  all: unset;
-  font-weight: bold;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  color: @workspacesfocusedtext;
-  background: @blue;
+  color: @text;
+}
+
+#workspaces button.active {
+  color: @sky;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  border-radius: 1rem;
 }
 
 /* Workspaces that are unused. */
 #workspaces button.persistent {
   color: @disabled-text;
-  background: @workspaces;
 }
 
 /* Workspaces that are urgent. */
 #workspaces button.urgent {
-  border-color: @red;
   color: @red;
 }
 
 /* Workspaces focused on other monitor. */
 #workspaces button.visible {
   color: @workspacesfocusedtext;
-  background: @mauve;
 }
 
 /* Workspaces unfocused on current monitor. */
 #workspaces button.current_output {
-  color: @workspacesfocusedtext;
-  background: @blue;
+  color: @text;
+  border-radius: 1rem;
 }
 
 /* Workspaces focused on current monitor. */
 #workspaces button.focused {
-  color: @workspacesfocusedtext;
-  background: @green;
+  color: @green;
 }
-
-#workspaces button:hover {
-  color: @text;
-  background: @surface2;
-  box-shadow: inherit;
-  text-shadow: inherit;
-}
-
-/* #window { */
-/* margin-right: 40px; */
-/* margin-left: 40px; */
-/* } */
 
 #clock {
   color: @crust;
   background: @green;
   margin: 0.4em;
-  /* border-radius: 0.1em; */
 }
 
 #tray {
   background: @surface0;
   color: @crust;
-  /* border-right: 1em solid; */
-  /* border-left: 1em solid; */
-  /* border-color: @surface0; */
-  margin: 0.4em;
-  margin-left: 0.8em;
-  /* border-radius: 0.1em; */
+  border-right: 1em solid;
+  border-left: 1em solid;
+  border-color: @surface0;
+  border-radius: 0.1em;
 }
 
 #custom-launcher {
@@ -235,22 +214,14 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
   margin: 0.4em;
-  /* border-radius: 0.1em; */
+  border-radius: 0.1em;
 }
 
 .modules-right {
-  /* background: @mauve; */
-  /* color: @crust; */
   /* padding-left: 0.5em; */
-  /* margin-top: 0.4em; */
-  /* margin-bottom: 0.4em; */
 }
 
 .modules-center {
-  /* background: @mauve; */
-  /* color: @crust; */
-  padding-top: 0em;
-  padding-bottom: 0.1em;
 }
 
 #battery,
@@ -259,9 +230,81 @@
 #pulseaudio,
 #custom-alsa,
 #backlight {
-  background: @pink;
-  color: @crust;
-  margin-bottom: 0.4em;
-  margin-top: 0.4em;
+  /* margin-bottom: 0.4em; */
+  /* margin-top: 0.4em; */
   padding-left: 0.5em;
+}
+
+#custom-music,
+#tray,
+#backlight,
+#clock,
+#battery,
+#pulseaudio,
+#custom-lock,
+#custom-power {
+  background-color: @surface0;
+  /* padding: 0.5rem 1rem; */
+  margin: 5px 0;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1rem;
+  margin-left: 0rem;
+  padding: 0.25rem 1rem;
+  padding-left: 0.5rem;
+  /* padding-top: auto; */
+  /* padding-bottom: auto; */
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#backlight {
+  color: @yellow;
+}
+
+#backlight,
+#battery {
+  border-radius: 0;
+}
+
+#pulseaudio {
+  color: @maroon;
+  border-radius: 1rem 0px 0px 1rem;
+  margin-left: 1rem;
+}
+
+#custom-music {
+  color: @mauve;
+  border-radius: 1rem;
+}
+
+#custom-lock {
+  border-radius: 1rem 0px 0px 1rem;
+  color: @lavender;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
+}
+
+#tray {
+  margin-right: 1rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
+  border-radius: 1rem;
 }
