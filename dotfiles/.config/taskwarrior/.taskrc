@@ -9,6 +9,7 @@ news.version=3.2.0
 due=2days
 urgency.age.coefficient=0.0
 urgency.project.coefficient=0.0
+urgency.tags.coefficient=0.0
 
 # Priority:
 uda.priority.values=C,H,M,,L
