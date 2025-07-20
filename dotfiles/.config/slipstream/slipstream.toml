@@ -154,6 +154,10 @@ tags = ["hacking", "ai"]
 url = "https://utopia.fyi/feed.xml"
 tags = ["hacking", "releases"]
 
+[feeds.scientific-computing-rs]
+url = "https://scientificcomputing.rs/monthly/rss.xml"
+tags = ["hacking", "science"]
+
 ## Hacking blogs
 
 [feeds.hachha]
