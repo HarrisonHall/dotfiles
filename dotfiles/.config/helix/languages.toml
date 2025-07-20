@@ -2,6 +2,10 @@
 command = "ltex-ls"
 args = []
 
+[language-server.zk]
+command = "zk"
+args = ["lsp"]
+
 [[language]]
 name = "css"
 auto-format = true
@@ -16,7 +20,7 @@ formatter = { command = "prettier", args = ["--parser", "html"] }
 name = "markdown"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap=always", "--print-width=80"] }
-language-servers = ["marksman", "ltex-ls"]
+language-servers = ["marksman", "ltex-ls", "zk"]
 
 [[language]]
 name = "rust"
