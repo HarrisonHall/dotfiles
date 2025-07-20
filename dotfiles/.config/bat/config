@@ -1,2 +1,3 @@
 --theme="catppuccin-mocha"
 --style=numbers
+--pager="less -FRX -I"
