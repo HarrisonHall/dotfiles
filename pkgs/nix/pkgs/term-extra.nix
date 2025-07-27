@@ -9,8 +9,6 @@
     gcc  # GCC
     llvmPackages_15.libclang  # Clang
     patchelf  # Patch binaries
-    uv  # Python toolchains
-    zig  # Zig toolchain
     ## LSP
     nil  # Nix LSP
     tinymist  # Typst LSP
@@ -22,7 +20,6 @@
     pandoc  # File conversion
     ripgrep-all  # rga = ripgrep + rich-text searching (pdf, docx, etc.)
     slides  # Markdown presentation tool
-    taskwarrior3  # Tasks
     wireguard-tools  # Wireguard CLI
     xsel  # X selection util
     
@@ -36,9 +33,6 @@
     mdbook  # Convert markdown to books
 
     # Experimental
-    atuin
-    bacon  # Rust compiler-driven development
-    viddy
     hexyl
     dua
     procs

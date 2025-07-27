@@ -21,12 +21,18 @@
     ## Compilers & Interpreters
     rustup  # Manage rust toolchains
     typst  # Latex alternative
+    uv  # Python toolchains
+    zig  # Zig toolchain
     ## LSP
     ltex-ls  # Tex/Markdown spellcheck
     marksman  # Markdown LSP
     nodePackages.prettier  # Prettier
+    vale
+    vale-ls  # Spellcheck and grammar
 
     # Core utils
+    atuin  # Shell history
+    bacon  # Rust compiler-driven development
     bash  # Legacy shell for use with scripts
     bat  # Cat with wings
     bottom  # Modern top utility
@@ -48,15 +54,18 @@
     mergiraf  # Merge tool
     newsraft  # Feed viewing
     nitch  # Minimal fetching
+    ouch  # Easy (de)compression
     ripgrep  # Recursively search
     slides  # Markdown presentation tool
     starship  # Easy prompt
-    # taskwarrior3  # TODOs
+    systemctl-tui  # Experimental
+    taskwarrior3  # Tasks
     tealdeer  # tldr
     tokei  # Code counter
     tmux  # Terminal multiplexer
     tmuxp  # tmux manager
     tree  # Display directory structure tree
+    viddy  # Better watch
     wget  # Network downloader
     yazi  # CLI file manager
     zellij  # Terminal multiplexer

@@ -26,11 +26,11 @@ doas apk add \
   pavucontrol pipewire pipewire-alsa pipewire-jack pipewire-pulse wireplumber \
   grim mako slurp swaybg rofi-wayland waybar wdisplays \
   font-awesome font-noto font-misc-misc \
-  nautilus gvfs \
+  nautilus \
+  udisks2 udisks2-doc autofs dosfstools exfat usbutils gvfs gvfs-mtp gvfs-fuse fuse-openrc \
   papirus-icon-fonts wezterm wezterm-fonts vlc \
   steam-devices \
   alsa-lib alsa-lib-dev \
-  udisks2 udisks2-doc autofs dosfstools exfat usbutils \
   pm-utils acpid \
   terminus-font \
   syncthing syncthing-openrc \
@@ -62,6 +62,7 @@ doas rc-update add consolefont boot
 doas rc-update add acpid default
 doas rc-update add networkmanager default
 doas rc-update del syncthing
+doas rc-update add fuse
 
 crontab $SCRIPTPATH/crontab
 
