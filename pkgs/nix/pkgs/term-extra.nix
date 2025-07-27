@@ -37,7 +37,7 @@
     dua
     procs
     fselect
-    # tmuxinator  # Replaced with tmuxp
+    sd
 
     # Python packages
     python312Packages.python-lsp-server
