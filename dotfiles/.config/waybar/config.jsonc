@@ -13,16 +13,16 @@
         "sway/mode"
     ],
     "modules-center": [
-        "sway/window",
-        "niri/window"
+        "niri/window",
+        "sway/window"
     ],
     "modules-right": [
         "tray", 
         "idle_inhibitor", 
         "pulseaudio", 
         // "keyboard-state", 
-        // "backlight", 
-        // "battery", 
+        "backlight", 
+        "battery", 
         "clock"
     ],
     // Modules configuration
