@@ -1,6 +1,6 @@
 { pkgs ? import <nixpkgs> {} }:
   pkgs.mkShell {
-    # nativeBuildInputs is usually what you want -- tools you need to run
+    # Tools for installing the environment:
     nativeBuildInputs = with pkgs.buildPackages; [
       fish
       just
