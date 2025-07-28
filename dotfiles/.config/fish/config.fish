@@ -27,9 +27,6 @@ if status is-interactive
     set -x PAGER bat
     set -x DELTA_PAGER "bat -p"
 
-    # Hook direnv.
-    type -f direnv 2&>/dev/null && direnv hook fish | source
-
     ## Set fetching aliases.
     alias fetch macchina
     alias fetch-min nitch
@@ -84,6 +81,9 @@ if status is-interactive
 
     ## Hook atuin.
     type -f atuin 2&>/dev/null && atuin init fish | source
+
+    # Hook direnv.
+    type -f direnv 2&>/dev/null && direnv hook fish | source
 
     ## Hook starship.
     set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
