@@ -5,7 +5,8 @@
 { config, pkgs, lib, passthru, stdenv, ... }:
 
 let
-  user = "harrison";  
+  user = "hachha";
+  userFull = "Harrison";
 
 in
 {
@@ -14,7 +15,8 @@ in
     [ 
       # Hardware
       # ./hardware/framework-13.nix
-      ./hardware/desktop.nix
+      # ./hardware/desktop.nix
+      /etc/nixos/hardware-configuration.nix
       # System
       ./system/input.nix
       ./system/mounting.nix
@@ -32,6 +34,7 @@ in
       ./pkgs/custom/greeter.nix
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
+      ./pkgs/custom/kde.nix
       ./pkgs/custom/sway.nix
       ./pkgs/custom/niri.nix
       ./pkgs/custom/syncthing.nix
@@ -62,6 +65,8 @@ in
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {
       enable = true;
@@ -116,7 +121,8 @@ in
   # Define user
   users.users.${user} = {
     isNormalUser = true;
-    extraGroups = [ "video" "wheel" "seat" ];
+    description = "${userFull}";
+    extraGroups = ["networkmanager" "video" "wheel" "seat" ];
     initialPassword =  "password";
     shell = pkgs.fish;
   };

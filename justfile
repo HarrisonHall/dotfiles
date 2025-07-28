@@ -47,10 +47,6 @@ hier-build-base:
     @just directory-ensure-mk ~/.local
     @just directory-ensure-mk ~/.local/share/applications
     @just directory-ensure-mk ~/downloads
-    @just directory-ensure-mk ~/media
-    @just directory-ensure-mk ~/media/art
-    @just directory-ensure-mk ~/media/music
-    @just directory-ensure-mk ~/media/wallpapers
     @just directory-ensure-mk ~/workspace
     @just directory-ensure-mk ~/workspace/bin
     @just directory-ensure-mk ~/workspace/dev
@@ -74,15 +70,15 @@ hier-build-extra:
 # Build extra directories.
 hier-build-symlinks:
     # Create base folders for symlinks:
-    mkdir -p ~/.config
-    mkdir -p ~/.fonts
-    mkdir -p ~/.ssh
-    mkdir -p ~/.local/share/applications
-    mkdir -p ~/.local/share/fcitx5
-    mkdir -p ~/.local/share/icons
-    mkdir -p ~/.local/share/man
-    mkdir -p ~/.local/share/omf
-    mkdir -p ~/.local/share/themes
+    @mkdir -p ~/.config
+    @mkdir -p ~/.fonts
+    @mkdir -p ~/.ssh
+    @mkdir -p ~/.local/share/applications
+    @mkdir -p ~/.local/share/fcitx5
+    @mkdir -p ~/.local/share/icons
+    @mkdir -p ~/.local/share/man
+    @mkdir -p ~/.local/share/omf
+    @mkdir -p ~/.local/share/themes
 
 # Ensure directory exists.
 directory-ensure-mk dir:
