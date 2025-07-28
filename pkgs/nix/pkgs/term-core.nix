@@ -39,7 +39,7 @@
     colordiff  # Diff- with color!
     delta  # Diffing tool (for git)
     difftastic  # Diffing tool (for git)
-    direnv  # Manage environments based on directory (nix support)
+    # direnv  # Manage environments based on directory (nix support)
     du-dust  # Disk usage
     eza  # Better ls (ll)
     fastfetch  # Fetching tool
