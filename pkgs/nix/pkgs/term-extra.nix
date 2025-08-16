@@ -12,6 +12,8 @@
     ## LSP
     nil  # Nix LSP
     tinymist  # Typst LSP
+    ## Toolchains
+    platformio-core
 
     # Core utils
     ffmpeg-full  # Manage video
@@ -38,15 +40,5 @@
     procs
     fselect
     sd
-
-    # Python packages
-    python312Packages.python-lsp-server
-    (python3.withPackages(ps: with ps; [ 
-      cryptography
-      dnspython
-      pandas
-      pip
-      requests
-    ]))
   ];
 }

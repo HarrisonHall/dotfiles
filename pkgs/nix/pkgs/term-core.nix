@@ -27,6 +27,8 @@
     ltex-ls  # Tex/Markdown spellcheck
     marksman  # Markdown LSP
     nodePackages.prettier  # Prettier
+    python313Packages.jedi-language-server
+    ruff
     vale
     vale-ls  # Spellcheck and grammar
 

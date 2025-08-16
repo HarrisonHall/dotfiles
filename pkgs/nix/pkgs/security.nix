@@ -11,5 +11,12 @@
 
     # Signal messaging
     signal-desktop
+
+    # Tor
+    tor
+    tor-browser
+    mullvad
+    mullvad-vpn
+    mullvad-browser
   ];
 }
