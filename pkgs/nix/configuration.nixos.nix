@@ -112,11 +112,30 @@ in
   time.timeZone = "America/New_York";
 
   # Enable running "normal" linux packages with different linkers
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # TODO: Add any missing dynamic libraries for unpackaged programs here,
-    # NOT in environment.systemPackages
-  ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = [
+      # TODO: Add any missing dynamic libraries for unpackaged programs here,
+      # NOT in environment.systemPackages
+      pkgs.stdenv.cc.cc.lib
+      pkgs.zlib
+      pkgs.zstd
+      pkgs.file
+
+      pkgs.curl
+      pkgs.openssl
+      pkgs.attr
+      pkgs.libssh
+      pkgs.bzip2
+      pkgs.libxml2
+      pkgs.acl
+      pkgs.libsodium
+      pkgs.util-linux
+      pkgs.xz
+      pkgs.systemd
+      
+    ];
+  };
 
   # Define user
   users.users.${user} = {

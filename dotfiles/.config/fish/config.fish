@@ -9,7 +9,11 @@ set PATH \
     "$HOME/workspace/software/bin/$(uname -m)" \
     $PATH \
     ~/.cargo/bin \
-    "$HOME/.config/dotfiles/scripts"
+    "$HOME/.config/dotfiles/scripts" \
+    "$HOME/.local/bin"
+set LD_LIBRARY_PATH \
+    $NIX_LD_LIBRARY_PATH \
+    $LD_LIBRARY_PATH
 
 ## Do not track (https://consoledonottrack.com/).
 set -x DO_NOT_TRACK 1
