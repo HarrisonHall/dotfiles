@@ -99,6 +99,13 @@ symlinks-link: hier-build-symlinks
     stow --adopt --restow --target ~/. dotfiles
     set stowed $status
     popd
+    # Symlink dotfiles:
+    if ! test -e ~/workspace/dotfiles;
+        ln -s (realpath {{DOTFILES}}) ~/workspace/dotfiles
+    end
+    if ! test -e ~/.config/dotfiles;
+        ln -s (realpath {{DOTFILES}}) ~/.config/dotfiles
+    end
     exit $stowed
 
 # post-install events.

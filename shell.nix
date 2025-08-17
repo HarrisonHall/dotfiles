@@ -6,5 +6,7 @@
       just
       stow
       git
+      xdg-utils
+      xdg-user-dirs
     ];
 }

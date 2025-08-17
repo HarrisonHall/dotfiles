@@ -7,7 +7,7 @@ COMMAND=workspace/dev/slipknot/run.sh
 set -x
 set -e
 
-scp $LOCAL web-server:$FINAL
+scp $LOCAL web-server:$FINAL || exit 1
 ssh web-server -t $COMMAND
 
 exit $?

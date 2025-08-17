@@ -93,8 +93,8 @@
 #custom-alsa,
 #tray,
 #backlight {
-  /* padding-left: 0.5rem; */
-  /* padding-right: 0.5rem; */
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /* Each module that should blink */
@@ -152,10 +152,14 @@
   margin: 5px;
   background-color: @surface0;
   margin-left: 1rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 #workspaces button {
   color: @text;
+  padding-left: 0.15rem;
+  padding-right: 0.15rem;
 }
 
 #workspaces button.active {
@@ -284,6 +288,7 @@
   color: @maroon;
   border-radius: 1rem 0px 0px 1rem;
   margin-left: 1rem;
+  padding-left: 1rem;
 }
 
 #custom-music {
