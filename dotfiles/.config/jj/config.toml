@@ -23,5 +23,5 @@ diff-args = ["--color=always", "$left", "$right"]
 # tool = ["delta"]
 # format = "git"
 
-[git]
-subprocess = true
+# [git]
+# subprocess = true
