@@ -1,3 +1,7 @@
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
 [language-server.ltex]
 command = "ltex-ls"
 args = []
@@ -26,6 +30,11 @@ auto-format = true
 formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap=always", "--print-width=80"] }
 # language-servers = ["marksman", "ltex", "zk"]
 language-servers = ["marksman", "vale", "zk"]
+
+[[language]]
+name = "python"
+language-servers = ["ruff", "pylsp"]
+auto-format = true
 
 [[language]]
 name = "rust"
