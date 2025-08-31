@@ -4,13 +4,13 @@
 set -x EDITOR hx
 
 # Path configuration.
-set PATH \
-    /sbin /usr/sbin \
-    "$HOME/workspace/software/bin/$(uname -m)" \
-    $PATH \
-    ~/.cargo/bin \
-    "$HOME/.config/dotfiles/scripts" \
-    "$HOME/.local/bin"
+fish_add_path --path /sbin
+fish_add_path --path /usr/sbin
+fish_add_path --path "$HOME/workspace/software/bin/$(uname -m)"
+fish_add_path --path "$HOME/.local/bin"
+fish_add_path --path "$HOME/.config/dotfiles/scripts"
+fish_add_path --path "$HOME/.cargo/bin"
+
 set LD_LIBRARY_PATH \
     $NIX_LD_LIBRARY_PATH \
     $LD_LIBRARY_PATH
