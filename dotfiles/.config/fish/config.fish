@@ -103,6 +103,9 @@ if status is-interactive
     ## Configure rust.
     set -x RUST_BACKTRACE 1
 
+    ## Configure python.
+    set -x PYTHONSTARTUP "$HOME/.config/python/interactive_startup.py"
+
     ## Hook uv.
     type -f uv 2&>/dev/null && uv generate-shell-completion fish | source
     type -f uv 2&>/dev/null && uvx --generate-shell-completion fish | source
