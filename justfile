@@ -69,7 +69,7 @@ hier-build-extra:
 
 # Build extra directories.
 hier-build-symlinks:
-    # Create base folders for symlinks:
+    @# Create base folders for symlinks:
     @mkdir -p ~/.config
     @mkdir -p ~/.fonts
     @mkdir -p ~/.ssh

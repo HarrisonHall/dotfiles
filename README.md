@@ -33,6 +33,7 @@ compatibility with non-nix systems.
 
 - Try program temporarily: `nix-shell -p <program/package>`
 - Package lookup: [nixpkgs](https://search.nixos.org/packages)
+- Query package dependencies: `nix-store -q --tree (which <package>)`
 
 ### Rust
 

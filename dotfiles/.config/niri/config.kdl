@@ -30,6 +30,7 @@ spawn-at-startup "gsettings set org.gnome.desktop.interface" "icon-theme" "Papir
 // Screenshots.
 screenshot-path "/tmp/tmp.png"
 
+// NOTE: Check out keypresses with `wev`.
 binds {
     // Help menus.
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -45,6 +46,10 @@ binds {
 
     // Terminal.
     Mod+Shift+T hotkey-overlay-title="Terminal" { spawn "ghostty"; }
+    XF86Explorer hotkey-overlay-title="Terminal" { spawn "ghostty"; }
+    XF86Calculator hotkey-overlay-title="Calculator" { spawn "ghostty" "-e" "~/.config/python/interactive_startup.fish"; }
+    // XF86Calculator hotkey-overlay-title="Calculator" { spawn "~/.config/python/interactive_startup.fish"; }
+    XF86Tools hotkey-overlay-title="Media" { spawn "vlc"; }
 
     // Volume keys (PipeWire & WirePlumber).
     XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
@@ -538,4 +543,10 @@ window-rule {
 window-rule {
   match title="^$"
   open-floating true
+}
+
+// Custom rule to make a window float.
+window-rule {
+	match app-id="CustomFloat"
+	open-floating true
 }
