@@ -59,10 +59,13 @@
     serviceConfig.Restart = "on-failure";
     environment = lib.mkForce {};
   };
-  # systemd.user.services."mako" = {
-  #   enable = true;
-  #   wantedBy = ["niri.service"];
-  # };
+  systemd.user.services."mako" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.mako}/bin/mako";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+  };
   systemd.user.services."niri-fcitx" = {
     enable = true;
     serviceConfig.ExecStart = "${pkgs.fcitx5}/bin/fcitx5";

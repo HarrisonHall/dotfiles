@@ -66,6 +66,7 @@ in
       swaylock  # Lock screen management
       swayidle  # Idle management
       waybar  # Better swaybar
+      wev  # Wayland keyboard
       wl-clipboard  # Wayland clipboard utilities
       wtype  # Wayland type utility
       wf-recorder  # Wayland screen recorder

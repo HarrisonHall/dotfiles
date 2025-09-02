@@ -12,6 +12,10 @@
     godot_4  # Godot engine
     sgt-puzzles  # Simon Tatham's puzzles
 
+    # Music
+    picard
+
+    # Art
     aseprite 
     blender
     inkscape-with-extensions  # Inkscape

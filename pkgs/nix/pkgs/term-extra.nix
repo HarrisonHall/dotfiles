@@ -33,6 +33,7 @@
     # Extra tools
     localsend  # Send things on the same network
     mdbook  # Convert markdown to books
+    monolith  # Archive web-pages
 
     # Experimental
     hexyl
