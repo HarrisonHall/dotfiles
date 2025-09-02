@@ -93,8 +93,8 @@
 #custom-alsa,
 #tray,
 #backlight {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 /* Each module that should blink */
@@ -148,18 +148,18 @@
 }
 
 #workspaces {
-  border-radius: 1rem;
+  border-radius: 1em;
   margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
+  margin-left: 1em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
 }
 
 #workspaces button {
   color: @text;
-  padding-left: 0.15rem;
-  padding-right: 0.15rem;
+  padding-left: 0.15em;
+  padding-right: 0.15em;
 }
 
 #workspaces button.active {
@@ -168,7 +168,7 @@
 
 #workspaces button:hover {
   color: @sapphire;
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 
 /* Workspaces that are unused. */
@@ -189,7 +189,7 @@
 /* Workspaces unfocused on current monitor. */
 #workspaces button.current_output {
   color: @text;
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 
 /* Workspaces focused on current monitor. */
@@ -248,17 +248,17 @@
 #custom-lock,
 #custom-power {
   background-color: @surface0;
-  /* padding: 0.5rem 1rem; */
+  /* padding: 0.5em 1em; */
   margin: 5px 0;
 }
 
 #clock {
   color: @blue;
-  border-radius: 0px 1rem 1rem 0px;
-  margin-right: 1rem;
-  margin-left: 0rem;
-  padding: 0.25rem 1rem;
-  padding-left: 0.5rem;
+  border-radius: 0px 1em 1em 0px;
+  margin-right: 1em;
+  margin-left: 0em;
+  padding: 0.25em 1em;
+  padding-left: 0.5em;
   /* padding-top: auto; */
   /* padding-bottom: auto; */
 }
@@ -286,30 +286,30 @@
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
-  margin-left: 1rem;
-  padding-left: 1rem;
+  border-radius: 1em 0px 0px 1em;
+  margin-left: 1em;
+  padding-left: 1em;
 }
 
 #custom-music {
   color: @mauve;
-  border-radius: 1rem;
+  border-radius: 1em;
 }
 
 #custom-lock {
-  border-radius: 1rem 0px 0px 1rem;
+  border-radius: 1em 0px 0px 1em;
   color: @lavender;
 }
 
 #custom-power {
-  margin-right: 1rem;
-  border-radius: 0px 1rem 1rem 0px;
+  margin-right: 1em;
+  border-radius: 0px 1em 1em 0px;
   color: @red;
 }
 
 #tray {
-  margin-right: 1rem;
-  padding-left: 0rem;
-  padding-right: 0rem;
-  border-radius: 1rem;
+  margin-right: 1em;
+  padding-left: 0em;
+  padding-right: 0em;
+  border-radius: 1em;
 }

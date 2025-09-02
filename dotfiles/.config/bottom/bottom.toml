@@ -7,81 +7,33 @@
 # is also set here.
 
 [flags]
-# Whether to hide the average cpu entry.
 hide_avg_cpu = false
-# Whether to use dot markers rather than braille.
 dot_marker = false
-# The update rate of the application.
 rate = "500ms"
-# Whether to put the CPU legend to the left.
-left_legend = true
-# Whether to set CPU% on a process to be based on the total CPU or just current usage.
+cpu_left_legend = true
 current_usage = false
-# Whether to set CPU% on a process to be based on the total CPU or per-core CPU% (not divided by the number of cpus).
 unnormalized_cpu = false
-# Whether to group processes with the same name together by default.
 group_processes = true
-# Whether to make process searching case sensitive by default.
 case_sensitive = false
-# Whether to make process searching look for matching the entire word by default.
 whole_word = false
-# Whether to make process searching use regex by default.
 regex = true
-# Defaults to Celsius.  Temperature is one of:
-#temperature_type = "k"
-#temperature_type = "f"
-#temperature_type = "c"
-#temperature_type = "kelvin"
-#temperature_type = "fahrenheit"
-#temperature_type = "celsius"
-# The default time interval
 default_time_value = "60s"
-# The time delta on each zoom in/out action (in milliseconds).
-# time_delta = 15000
-# Hides the time scale.
 hide_time = false
-# Override layout default widget
 default_widget_type = "proc"
 default_widget_count = 1
-# Expand selected widget upon starting the app
-expanded_on_startup = false
-# Use basic mode
-basic = false
-# Use the old network legend style
-#use_old_network_legend = false
-# Remove space in tables
-hide_table_gap = false
-# Show the battery widgets
+# expanded_on_startup = false
+# hide_table_gap = false
 battery = true
-# Disable mouse clicks
 disable_click = false
-# Show memory values in the processes widget as values by default
-#mem_as_value = false
-# Show tree mode by default in the processes widget.
 tree = true
-# Shows an indicator in table widgets tracking where in the list you are.
 show_table_scroll_position = true
-# Show processes as their commands by default in the process widget.
 process_command = true
-# Displays the network widget with binary prefixes.
-#network_use_binary_prefix = false
-# Displays the network widget using bytes.
-#network_use_bytes = false
-# Displays the network widget with a log scale.
-#network_use_log = false
-# Hides advanced options to stop a process on Unix-like systems.
-#disable_advanced_kill = false
-# Shows GPU(s) memory
-enable_gpu_memory = true
-# Shows cache and buffer memory
+# enable_gpu_memory = true
 enable_cache_memory = true
-# How much data is stored at once in terms of time.
 retention = "10m"
 
-# These are flags around the process widget.
-
-#[processes]
-#columns = ["PID", "Name", "CPU%", "Mem%", "R/s", "W/s", "T.Read", "T.Write", "User", "State"]
+[processes]
+columns = ["pid", "name", "cpu%", "mem%", "State"]
 
 # These are all the components that support custom theming.  Note that colour support
 # will depend on terminal support.
