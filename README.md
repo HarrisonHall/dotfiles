@@ -38,8 +38,17 @@ compatibility with non-nix systems.
 ### Rust
 
 - `rustup update`
+- `rustup component add rust-analyzer`
 - `rustup toolchain install stable`
 - `rustup toolchain install nightly`
+
+### SSH
+
+- Create your ssh key `ssh-keygen -t ed25519 -a 32 -f ~/.ssh/id_ed25519`
+- Symlink to default `ln -s ~/.ssh/id_ed25519 ~/.ssh/default`
+- Add to servers:
+  - `ssh-copy-id -i ~/.ssh/id_ed25519 hachha@home-server`
+  - `ssh-copy-id -i ~/.ssh/id_ed25519 root@web-server`
 
 ### Keybinds
 

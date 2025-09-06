@@ -3,6 +3,7 @@
 freq = "10min"
 log = "/tmp/slipreader.log"
 storage = 4096
+database = "~/.cache/slipstream/slip.db"
 
 # Settings that apply to **everything**.
 [global]
@@ -40,7 +41,7 @@ tags = ["hachha"]
 r = "read"
 C-a = "archive"
 o = "open"
-S-O = "open-2"
+S-o = "open-2"
 u = "update"
 
 1 = "read-1"

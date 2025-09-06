@@ -5,7 +5,7 @@
 { config, pkgs, lib, passthru, stdenv, ... }:
 
 let
-  user = "hachha";
+  user = "harrison";
   userFull = "Harrison";
 
 in
@@ -65,7 +65,8 @@ in
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
-    loader.systemd-boot.enable = true;
+    # loader.systemd-boot.enable = true;
+    # loader.grub.enable = true;
     loader.efi.canTouchEfiVariables = true;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {

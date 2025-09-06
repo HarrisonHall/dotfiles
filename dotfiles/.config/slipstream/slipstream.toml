@@ -3,6 +3,7 @@
 freq = "2hours"
 log = "/tmp/slipstream.log"
 storage = 4096
+database = "./slip.db"
 
 # Here are the feeds I tend to care about:
 # - /all (everything)
@@ -219,6 +220,14 @@ tags = ["blog", "hacking"]
 [feeds.skull]
 url = "https://brutecat.com/rss.xml"
 tags = ["blog", "hacking", "security"]
+
+[feeds.rubenerd]
+url = "https://rubenerd.com/feed/"
+tags = ["blog", "hacking"]
+
+[feeds.loris-cro]
+url = "https://kristoff.it/index.xml"
+tags = ["blog", "hacking", "zig"]
 
 ## Technology
 

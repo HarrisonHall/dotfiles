@@ -115,3 +115,5 @@ post-install:
     bat cache --build
     # Update fonts.
     fc-cache -fv
+    # Update vale.
+    vale sync

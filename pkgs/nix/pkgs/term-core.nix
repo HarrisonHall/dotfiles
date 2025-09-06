@@ -58,7 +58,8 @@
     nitch  # Minimal fetching
     ouch  # Easy (de)compression
     ripgrep  # Recursively search
-    slides  # Markdown presentation tool
+    slides  # Markdown presentation tool    
+    (callPackage ./custom/slipstream.nix { })  # Manage temporary project directories
     starship  # Easy prompt
     systemctl-tui  # Experimental
     taskwarrior3  # Tasks
