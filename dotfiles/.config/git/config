@@ -19,6 +19,8 @@
 	push-force = "push --force-with-lease"
 	stash-all = "stash --all"
 	branch-list = "!~/.config/git/scripts/branch-history.sh"
+	touch = "commit --amend --no-edit"
+	amend = "commit --amend --no-edit -a"
 
 [include]
     path = ~/.config/git/delta/macchiato.gitconfig
@@ -61,10 +63,10 @@
 	ui = auto
 
 [branch]
-        sort = -committerdate
+    sort = -committerdate
 
 [tag]
-        sort = version:refname
+    sort = version:refname
 
 [commit]
 	verbose = true
