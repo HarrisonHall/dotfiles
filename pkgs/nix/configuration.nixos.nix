@@ -65,9 +65,9 @@ in
     ];
     consoleLogLevel = 3;
     initrd.verbose = false;
-    loader.systemd-boot.enable = true;
-    # loader.grub.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+    # loader.systemd-boot.enable = true;
+    loader.grub.enable = true;
+    # loader.efi.canTouchEfiVariables = true;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {
       enable = true;

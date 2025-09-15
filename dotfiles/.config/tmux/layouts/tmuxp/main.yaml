@@ -16,7 +16,6 @@ windows:
       main-pane-width: "50%"
     panes:
       - slipr
-      # - newsraft
   - window_name: notes
     layout: main-vertical
     options:

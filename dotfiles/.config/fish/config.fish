@@ -4,18 +4,21 @@
 set -x EDITOR hx
 
 # Path configuration.
+fish_add_path --path /bin
+fish_add_path --path /usr/bin
 fish_add_path --path /sbin
 fish_add_path --path /usr/sbin
 fish_add_path --path "$HOME/workspace/software/bin/$(uname -m)"
 fish_add_path --path "$HOME/.local/bin"
 fish_add_path --path "$HOME/.config/dotfiles/scripts"
 fish_add_path --path "$HOME/.cargo/bin"
+fish_add_path --path "$HOME/.nix-profile/bin"
 
-set LD_LIBRARY_PATH \
+set -x LD_LIBRARY_PATH \
     $NIX_LD_LIBRARY_PATH \
     $LD_LIBRARY_PATH
 
-## Do not track (https://consoledonottrack.com/).
+# Do not track (https://consoledonottrack.com/).
 set -x DO_NOT_TRACK 1
 
 # Shell setup.
@@ -66,7 +69,7 @@ if status is-interactive
     type -f busybox 2&>/dev/null && set -e MANPAGER
 
     ## Alias slipstream.
-    alias slipr "slipstream --debug -c ~/.config/slipstream/slipreader.toml read"
+    alias slipr "slipstream -c ~/.config/slipstream/slipreader.toml read"
 
     ## Configure SSH.
     set _ssh (which ssh 2>/dev/null)
@@ -131,14 +134,8 @@ if begin
                 command -v sway 2&>/dev/null
             end
             set -x MUSL_LOCPATH /usr/share/i18n/locales/musl
-            # set -x LC_ALL en_US.UTF-8
-            # set -x LANG C.UTF-8
             set -x LC_ALL C.UTF-8
             set -x LANG C.UTF-8
-            #set -x LOCALE_ARCHIVE $MUSL_LOCPATH
-            # set -x CHARSET en_US.UTF-8
-            # set -x LC_CTYPE C.UTF-8
-            # set -x LC_COLLATE C
 
             # Pipewire setup.
             /usr/libexec/pipewire-launcher 2&>/dev/null &

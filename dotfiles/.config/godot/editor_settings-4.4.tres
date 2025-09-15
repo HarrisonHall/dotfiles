@@ -12,6 +12,7 @@ interface/theme/base_color = Color(0.141176, 0.152941, 0.227451, 1)
 interface/theme/accent_color = Color(0.541176, 0.678431, 0.956863, 1)
 interface/theme/contrast = 0.2
 interface/theme/icon_saturation = 0.6
+filesystem/import/blender/blender_path = "/etc/profiles/per-user/harrison/bin/blender"
 text_editor/theme/color_theme = "Catppuccin Macchiato"
 text_editor/theme/highlighting/symbol_color = Color(0.568627, 0.843137, 0.890196, 1)
 text_editor/theme/highlighting/keyword_color = Color(0.776471, 0.627451, 0.964706, 1)

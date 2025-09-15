@@ -14,6 +14,7 @@ database = "./slip.db"
 
 # Settings that apply to **everything**.
 [global]
+user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 
 [global.filters]
 exclude-title-words = [
@@ -43,11 +44,14 @@ max = 512
 # Oldest entry returned
 oldest = "1month"
 
-# Settings that apply to the all feed.
-[all]
+[serve]
 
-[all.filters]
-exclude-tags = ["satire"]
+# Settings that apply to the all feed.
+[serve.all]
+max = 256
+
+[serve.all.filters]
+exclude-tags = ["satire", "social"]
 
 # Feed definitions and settings.
 [feeds]
@@ -228,6 +232,14 @@ tags = ["blog", "hacking"]
 [feeds.loris-cro]
 url = "https://kristoff.it/index.xml"
 tags = ["blog", "hacking", "zig"]
+
+[feeds.abhinavsarkar]
+url = "https://notes.abhinavsarkar.net/feed.atom"
+tags = ["blog", "hacking"]
+
+[feeds.tekhne]
+url = "https://tekhne.dev/feed/"
+tags = ["blog", "hacking"]
 
 ## Technology
 
@@ -476,9 +488,18 @@ url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4rqhyiTs7XyuODcECvu
 tags = ["video", "gaming", "fun"]
 
 
+## Social feeds
+
+[feeds.mastodon]
+mastodon = "https://mastodon.social/api/v1/timelines/home"
+token = "bs2JuQaPKrGAogV9n2VKSmFoCLQfvwITWDL2eYwIx64"
+tags = ["social", "mastodon"]
+
+
 ## Common aggregates
 
 [feeds.dont-miss]
+tags = ["dont-miss"]
 feeds = [
   ## Hacking
   "hachha",
