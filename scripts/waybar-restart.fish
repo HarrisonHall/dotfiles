@@ -14,5 +14,4 @@ if test $status -eq 0
     exit 0
 end
 
-echo here3
 exit 1

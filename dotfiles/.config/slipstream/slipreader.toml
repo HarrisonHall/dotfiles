@@ -1,6 +1,8 @@
 # slipreader configuration.
 
 freq = "10min"
+workers = 2
+timezone = "est"
 log = "/tmp/slipreader.log"
 storage = 4096
 database = "~/.cache/slipstream/slip.db"
@@ -38,6 +40,7 @@ url = "https://feeds.hachha.dev/tag/social/feed"
 
 [read]
 scroll = 1
+scroll_buffer = 6
 
 [read.tags]
 hidden = ["unread", "important"]
@@ -199,20 +202,20 @@ command = [
     monolith \
       --no-js \
       --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" \
-      --output ~/media/articles/{{link.name-}}.html \
+      --output ~/media/articles/unsored/{{link.name-}}.html \
       "{{link.url}}" \
   """,
 ]
 
 [[read.commands]]
 name = "archive-1"
-command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/{{link.name-}}.html "{link.url1}}"""",]
+command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/unsorted/{{link.name-}}.html "{link.url1}}"""",]
 [[read.commands]]
 name = "archive-2"
-command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/{{link.name-}}.html "{{link.url2}}"""",]
+command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/unsorted/{{link.name-}}.html "{{link.url2}}"""",]
 [[read.commands]]
 name = "archive-3"
-command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/{{link.name-}}.html "{{link.url3}}"""",]
+command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/unsorted/{{link.name-}}.html "{{link.url3}}"""",]
 [[read.commands]]
 name = "archive-4"
-command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/{{link.name-}}.html "{{link.url4}}"""",]
+command = ["fish", "-c", """monolith --no-js --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" --output ~/media/articles/unsorted/{{link.name-}}.html "{{link.url4}}"""",]

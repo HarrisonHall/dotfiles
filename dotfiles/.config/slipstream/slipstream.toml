@@ -1,6 +1,8 @@
 # slipstream configuration.
 
 freq = "2hours"
+workers = 8
+timezone = "est"
 log = "/tmp/slipstream.log"
 storage = 4096
 database = "./slip.db"
@@ -491,9 +493,11 @@ tags = ["video", "gaming", "fun"]
 ## Social feeds
 
 [feeds.mastodon]
-mastodon = "https://mastodon.social/api/v1/timelines/home"
-token = "bs2JuQaPKrGAogV9n2VKSmFoCLQfvwITWDL2eYwIx64"
+mastodon = "https://mastodon.social"
+type = "home-timeline"
+token = "jq7OF0HyUcRlzzwlKSMRLfeP2CSSJFh29w5zeBnq8D8"
 tags = ["social", "mastodon"]
+freq = "15min"
 
 
 ## Common aggregates
