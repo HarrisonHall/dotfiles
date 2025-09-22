@@ -2,7 +2,7 @@
 
 freq = "2hours"
 workers = 8
-timezone = "est"
+timezone = "New York"
 log = "/tmp/slipstream.log"
 storage = 4096
 database = "./slip.db"

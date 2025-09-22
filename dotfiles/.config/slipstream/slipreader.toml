@@ -50,6 +50,14 @@ tag = "unread"
 color = { fg = "yellow" }
 
 [[read.tags.colors]]
+tag = "news"
+color = { fg = "green" }
+
+[[read.tags.colors]]
+tag = "gov"
+color = { fg = "bright-magenta" }
+
+[[read.tags.colors]]
 tag = "hacking"
 color = { underline = "light-cyan" }
 
@@ -74,6 +82,10 @@ tag = "satire"
 color = { bg = "yellow", fg = "black" }
 
 [[read.tags.colors]]
+tag = "social"
+color = { fg = "black", bg = "cyan" }
+
+[[read.tags.colors]]
 tag = "dont-miss"
 color = { bg = "blue", fg = "black" }
 
@@ -85,6 +97,10 @@ color = { bg = "red", fg = "black" }
 tag = "archive"
 color = { fg = "cyan", bg = "light-red" }
 
+[[read.tags.color]]
+tag = "read-later"
+color = { fg = "black", bg = "bright-blue" }
+
 [read.hooks]
 fetch = []
 insert = [":add-tag unread"]
@@ -95,30 +111,35 @@ C-d = "page-down"
 C-u = "page-up"
 S-l = "next"
 S-h = "prev"
-# down = "down"
+up = "up"
+down = "down"
+left = "left"
+right = "right"
 
 # Important:
 i = ":toggle-tag important"
 S-i = ":search --tag important"
-C-i = ":search --tag important"
+C-i = "noop"
 
 # Read:
-r = "!read"
-S-r = "!read-2"
-C-r = ":search --command read"
+r = ":toggle-tag read-later"
+S-r = ":search --tag read-later"
+C-r = "!read"
 
 # Archive:
 a = ":toggle-tag archive"
-S-a = "!archive"
-C-a = ":search --command archive"
+S-a = ":search --command archive"
+C-a = "!archive"
 
 # Open:
 o = "!open"
 S-o = "!open-2"
 C-o = "noop"
 
+# Update:
 u = "update"
 S-u = ":search -t unread"
+# C-u = "noop"  # Used for page-up.
 
 1 = "!read-1"
 C-1 = "!archive-1"
