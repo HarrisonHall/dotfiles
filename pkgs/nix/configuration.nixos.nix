@@ -5,7 +5,7 @@
 { config, pkgs, lib, passthru, stdenv, ... }:
 
 let
-  user = "harrison";
+  user = "hachha";
   userFull = "Harrison";
 
 in

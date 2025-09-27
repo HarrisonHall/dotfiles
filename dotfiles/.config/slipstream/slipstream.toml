@@ -2,7 +2,7 @@
 
 freq = "2hours"
 workers = 8
-timezone = "New York"
+timezone = "local"
 log = "/tmp/slipstream.log"
 storage = 4096
 database = "./slip.db"
@@ -20,7 +20,7 @@ user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 [global.filters]
 exclude-title-words = [
-  "sports",
+  "sport",
   "nfl",
   "#shorts",
   "llm",
@@ -28,6 +28,7 @@ exclude-title-words = [
   "doge",
 ]
 exclude-substrings = [
+  "sport",
   "soccer",
   "サッカー",
   "football",
@@ -334,6 +335,18 @@ tags = ["gaming"]
 url = "https://xkcd.com/rss.xml"
 tags = ["comics", "fun"]
 
+[feeds.khyleri]
+url = "https://www.reddit.com/r/Khyleri/new.rss"
+tags = ["comics", "fun"]
+
+[feeds.calvin-and-hobbes]
+url = "https://www.comicsrss.com/rss/calvinandhobbes.rss"
+tags = ["comics", "fun"]
+
+[feeds.chainsaw-man]
+url = "https://sjapi.up.railway.app/rss/chainsaw-man.xml"
+tags = ["comics", "fun", "japanese", "manga"]
+
 ## Positive News
 
 [feeds.goodgoodgood]
@@ -371,6 +384,16 @@ tags = ["blog", "fun"]
 [feeds.jt-woodhouse]
 url = "https://www.jtwoodhouse.com/rss/"
 tags = ["blog", "reading"]
+
+[feeds.fuse]
+url = "https://api.syosetu.com/writer/311735.Atom"
+tags = ["blog", "reading", "fun"]
+
+## Stories
+
+[feeds.gorogoromikan]
+url = "https://api.syosetu.com/writernovel/773478.Atom"
+tags = ["reading", "fun", "japanese"]
 
 ## Link blogs
 
@@ -515,6 +538,13 @@ feeds = [
   ## Reading
   "brandon-sanderson",
   "jt-woodhouse",
+  "fuse",
+  "gorogoromikan",
+  ## Comics
+  "xkcd",
+  "khyleri",
+  "calvin-and-hobbes",
+  "chainsaw-man",
   ## Entertainment
   "simpleflips",
   "dunkey",

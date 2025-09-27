@@ -97,7 +97,7 @@ color = { bg = "red", fg = "black" }
 tag = "archive"
 color = { fg = "cyan", bg = "light-red" }
 
-[[read.tags.color]]
+[[read.tags.colors]]
 tag = "read-later"
 color = { fg = "black", bg = "bright-blue" }
 

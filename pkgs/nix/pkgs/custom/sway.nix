@@ -81,7 +81,7 @@ in
 
       # Graphical Utils
       pavucontrol  # Audio control
-      rofi-wayland  # Widgets and pickers
+      rofi # Widgets and pickers
       rofi-emoji  # Emoji picker
       wdisplays # Configure displays
     ];

@@ -2,7 +2,7 @@
 
 DOTFILES := `git rev-parse --show-toplevel`
 GC_DURATION := "30d"
-UPDATE := "false"
+INSTALL_FLAGS := ""
 SUDO := `command -v doas 2&>/dev/null && echo "doas" || echo "bash"`
 
 # List all
@@ -11,9 +11,9 @@ default:
     @just --list
 
 # Install config for nixos.
-install update=UPDATE: hier-build-base symlinks-link hier-build-extra
+install flags=INSTALL_FLAGS: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
-    if {{update}}
+    if string match -i -r ".*update.*" {{flags}} 1&2>/dev/null
         nix-channel --update
         {{SUDO}} nix-channel --update
     end
@@ -22,14 +22,14 @@ install update=UPDATE: hier-build-base symlinks-link hier-build-extra
         {{SUDO}} nix-collect-garbage --delete-older-than {{GC_DURATION}}
         {{SUDO}} nix-store --gc
         # {{SUDO}} nixos-rebuild boot
+        just post-install
     end
-    just post-install
 
 # Install minimal config for shell and other environments.
 # This is for nix installs, not nixos.
-install-shell update=UPDATE: hier-build-base symlinks-link hier-build-extra
+install-shell flags=INSTALL_FLAGS: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
-    if {{update}}
+    if string match -i -r ".*update.*" {{flags}} 1&2>/dev/null
         nix-channel --update
         {{SUDO}} nix-channel --update
     end
@@ -57,7 +57,7 @@ hier-build-base:
 
 # Build extra directories.
 hier-build-extra:
-    xdg-user-dirs-update
+    @xdg-user-dirs-update
     @just directory-ensure-rm ~/Desktop
     @just directory-ensure-rm ~/Documents
     @just directory-ensure-rm ~/Downloads

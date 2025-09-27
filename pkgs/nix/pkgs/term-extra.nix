@@ -7,7 +7,7 @@
     # Language
     ## Compilers & Interpreters
     gcc  # GCC
-    llvmPackages_15.libclang  # Clang
+    libclang  # Clang
     patchelf  # Patch binaries
     ## LSP
     nil  # Nix LSP

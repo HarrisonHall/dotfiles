@@ -16,6 +16,7 @@
     nautilus  # File explorer
     halloy  # IRC
     imhex  # Hex viewer
+    kodi-wayland  # Entertainment center
     obs-studio  # Capture audio and video
     pinta  # Basic image editor
     thunderbird-bin  # Thunderbird
