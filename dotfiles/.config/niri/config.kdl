@@ -4,14 +4,7 @@
 
 // Startup.
 // spawn-at-startup "waybar"
-// spawn-at-startup "mako"
-// spawn-at-startup "fcitx5"
-// spawn-at-startup "nm-applet"
-// spawn-at-startup "eww daemon"
-// spawn-at-startup "/nix/store/$(ls -la /nix/store | grep 'mate-polkit' | grep '4096' | awk '{print $9}' | sed -n '$p')/libexec/polkit-mate-authentication-agent-1"
-// spawn-at-startup "swaybg" "-i" "~/media/wallpapers/current.image"
-// spawn-at-startup "swayidle" "-w" "timeout" "600" "'niri msg action power-off-monitors'" "timeout" "500" "'swaylock'" "before-sleep" "'swaylock'"
-// spawn-at-startup "sh" "-c" "xwayland-satellite :12 &"
+// NOTE: My spawn-at-start programs are typically executed via systemd.
 
 // GTK.
 spawn-at-startup "gsettings set org.gnome.desktop.interface" "gtk-theme" "catppuccin-macchiato-dark"
@@ -349,7 +342,7 @@ output "eDP-1" {
     mode "1920x1080@120.030"
 
     // You can use integer or fractional scale, for example use 1.5 for 150% scale.
-    scale 1.75
+    scale 1.25
 
     // Transform allows to rotate the output counter-clockwise, valid values are:
     // normal, 90, 180, 270, flipped, flipped-90, flipped-180 and flipped-270.
