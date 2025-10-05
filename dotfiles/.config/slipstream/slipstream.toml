@@ -1,6 +1,6 @@
 # slipstream configuration.
 
-freq = "2hours"
+freq = "5min"
 workers = 8
 timezone = "local"
 log = "/tmp/slipstream.log"
@@ -42,10 +42,12 @@ exclude-substrings = [
 ]
 
 [global.options]
-# Maximum feeds returned, something sane
+# Maximum feeds returned, something sane.
 max = 512
-# Oldest entry returned
+# Oldest entry returned.
 oldest = "1month"
+# Default feed update frequency.
+freq = "2hrs"
 
 [serve]
 
@@ -105,6 +107,10 @@ tags = ["news"]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
 tags = ["news"]
 exclude-substrings = ["newscast"]
+
+[feeds.aeon]
+url = "https://aeon.co/feed.atom"
+tags = ["news", "essays"]
 
 ## Hacking
 
@@ -242,6 +248,10 @@ tags = ["blog", "hacking"]
 
 [feeds.tekhne]
 url = "https://tekhne.dev/feed/"
+tags = ["blog", "hacking"]
+
+[feeds.matt-knight]
+url = "https://mattnite.net/rss.xml"
 tags = ["blog", "hacking"]
 
 ## Technology

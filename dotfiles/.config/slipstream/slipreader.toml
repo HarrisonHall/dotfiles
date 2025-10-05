@@ -1,6 +1,6 @@
 # slipreader configuration.
 
-freq = "10min"
+freq = "2min"
 workers = 2
 timezone = "est"
 log = "/tmp/slipreader.log"
@@ -17,10 +17,12 @@ exclude-substrings = [
 ]
 
 [global.options]
-# Maximum feeds returned, something sane
+# Maximum feeds returned, something sane.
 max = 512
-# Oldest entry returned
+# Oldest entry returned.
 oldest = "1month"
+# Default feed update frequency.
+freq = "10min"
 
 # Settings that apply to the all feed.
 [all]
@@ -34,9 +36,11 @@ exclude-tags = []
 [feeds.news]
 url = "https://feeds.hachha.dev/all/feed"
 tags = ["hachha"]
+freq = "90s"
 
 [feeds.social]
 url = "https://feeds.hachha.dev/tag/social/feed"
+freq = "90s"
 
 [read]
 scroll = 1
