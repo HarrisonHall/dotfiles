@@ -2,14 +2,15 @@
 # NOTE: shift+ctrl+, for reload -- shift+ctrl+i for inspector
 
 title = "ghostty"
-command = "fish"
 shell-integration = fish
 initial-command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/main.yaml"
+# command = "fish"
+command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/quick.yaml"
 # initial-command = "tmux new-session -A -s main"
 # initial-command = "zellij attach -c main"
 confirm-close-surface = false
 
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink  = false
@@ -40,3 +41,10 @@ keybind = cmd+c=unbind
 keybind = cmd+w=unbind
 keybind = cmd+opt+left=unbind
 keybind = cmd+opt+right=unbind
+keybind = ctrl+shift+t=unbind
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
+
+# Quick terminal:
+quick-terminal-position = top
+quick-terminal-screen = mouse
+quick-terminal-autohide = true

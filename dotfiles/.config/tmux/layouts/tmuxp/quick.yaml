@@ -1,0 +1,22 @@
+session_name: quick
+start_directory: ~/
+
+windows:
+  - window_name: speedy
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      -
+  - window_name: calculations
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - python
+  - window_name: files
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - yazi
