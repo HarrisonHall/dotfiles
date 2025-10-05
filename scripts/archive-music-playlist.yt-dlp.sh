@@ -21,7 +21,6 @@ if type -f yt-dlp; then
     --embed-thumbnail \
     --add-metadata \
     --xattrs \
-    --xattr-set-filesize \
     --prefer-free-formats \
     --geo-bypass \
     --no-mark-watched \
