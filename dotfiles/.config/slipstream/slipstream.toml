@@ -264,10 +264,19 @@ tags = ["news", "science", "technology"]
 url = "https://www.theverge.com/rss/index.xml"
 tags = ["tech"]
 exclude-title-words = ["ai", "llm", "fun"]
+exclude-tags = ["prime", "amazon", "deals", "smart home", "buying guide", "gift guide", "verge video", "cast"]
 
 [feeds.conversation-science-tech]
 url = "https://theconversation.com/us/technology/articles.atom"
 tags = ["news", "science"]
+
+[feeds.ink-and-switch]
+url = "https://www.inkandswitch.com/index.xml"
+tags = ["blog", "hacking"]
+
+[feeds.lets-encrypt]
+url = "https://letsencrypt.org/feed.xml"
+tags = ["blog", "hacking"]
 
 ## Japanese
 
