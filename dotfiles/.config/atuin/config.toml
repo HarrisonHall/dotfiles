@@ -2,5 +2,9 @@
 
 workspaces = true
 
+history_filter = [
+  "^caddy hash-password",
+]
+
 [theme]
 name = "catppuccin-mocha-blue"
