@@ -8,7 +8,7 @@ windows:
       main-pane-width: "50%"
     panes:
       - btm
-      - viddy -n 4 task rc._forcecolor:on
+      - viddy --interval 4 --no-title task rc._forcecolor:on
       - clear
   - window_name: news
     layout: main-vertical
