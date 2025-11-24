@@ -254,6 +254,14 @@ tags = ["blog", "hacking"]
 url = "https://mattnite.net/rss.xml"
 tags = ["blog", "hacking"]
 
+[feeds.steve-klabnik]
+url = "https://steveklabnik.com/feed.xml"
+tags = ["blog", "hacking"]
+
+[feeds.rain-sunshowers]
+url = "https://sunshowers.io/atom.xml"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]

@@ -366,6 +366,11 @@ output "DP-5" {
     position x=1280 y=0
 }
 
+output "HDMI-A-1" {
+    mode "1920x1080@74.986"
+    scale 1
+}
+
 // Settings that influence how windows are positioned and sized.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout

@@ -2,6 +2,7 @@
 
 # Set base variables.
 set -x EDITOR hx
+set -x SHELL (which fish)
 
 # Path configuration.
 fish_add_path --path /bin

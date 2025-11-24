@@ -15,10 +15,12 @@ default-command = "log-bookmark"
 editor = "hx"
 conflict-marker-style = "git"
 
+merge-editor = "mergiraf"
 diff-formatter = ["delta"]
 
 [merge-tools.difft]
 diff-args = ["--color=always", "$left", "$right"]
+
 # [ui.diff-formatter]
 # tool = ["delta"]
 # format = "git"
