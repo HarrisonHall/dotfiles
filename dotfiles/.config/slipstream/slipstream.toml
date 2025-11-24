@@ -262,8 +262,6 @@ tags = ["blog", "hacking"]
 url = "https://sunshowers.io/atom.xml"
 tags = ["blog", "hacking"]
 
-## Technology
-
 [feeds.abner]
 url = "https://abner.page/index.xml"
 tags = ["blog", "hacking"]
