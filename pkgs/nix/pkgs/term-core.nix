@@ -42,7 +42,7 @@
     delta  # Diffing tool (for git)
     difftastic  # Diffing tool (for git)
     direnv  # Manage environments based on directory (nix support)
-    du-dust  # Disk usage
+    dust  # Disk usage
     eza  # Better ls (ll)
     fastfetch  # Fetching tool
     fd  # Better find

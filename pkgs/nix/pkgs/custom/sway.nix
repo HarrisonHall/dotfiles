@@ -51,7 +51,6 @@ in
       # Libs
       glib # gsettings
       glfw
-      glfw-wayland
       libnotify  # libnotify + notify-send
       mesa
       wayland  # Wayland libs

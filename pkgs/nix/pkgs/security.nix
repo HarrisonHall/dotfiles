@@ -6,7 +6,7 @@
   users.users.${user}.packages = with pkgs; [
     # Crypt
     protonvpn-gui
-    protonvpn-cli
+    # protonvpn-cli  # Deprecated
     protonmail-bridge
 
     # Signal messaging
