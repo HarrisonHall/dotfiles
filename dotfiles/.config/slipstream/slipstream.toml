@@ -266,6 +266,14 @@ tags = ["blog", "hacking"]
 url = "https://abner.page/index.xml"
 tags = ["blog", "hacking"]
 
+[feeds.elles-home]
+url = "https://ellesho.me/page/rss.xml"
+tags = ["blog", "hacking"]
+
+[feeds.elles-readings]
+url = "https://bg.raindrop.io/rss/public/51278376"
+tags = ["aggregate", "fun"]
+
 ## Technology
 
 [feeds.guardian-technology]
