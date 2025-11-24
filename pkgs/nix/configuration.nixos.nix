@@ -46,6 +46,11 @@ in
   # Allow flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Extend buffer size for updates
+  nix.settings = {
+    download-buffer-size = 524288000; # 500 MiB
+  };
+
   # Boot
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -66,7 +71,11 @@ in
     consoleLogLevel = 3;
     initrd.verbose = false;
     # loader.systemd-boot.enable = true;
-    loader.grub.enable = true;
+    # loader.grub.enable = true;
+    loader.grub = {
+      enable = true;
+      device = "nodev";
+    };
     # loader.efi.canTouchEfiVariables = true;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {
