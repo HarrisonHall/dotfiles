@@ -172,6 +172,10 @@ tags = ["hacking", "releases"]
 url = "https://scientificcomputing.rs/monthly/rss.xml"
 tags = ["hacking", "science"]
 
+[feeds.iroh]
+url = "https://www.iroh.computer/rss.xml"
+tags = ["hacking", "rust"]
+
 ## Hacking blogs
 
 [feeds.hachha]
