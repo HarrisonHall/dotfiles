@@ -207,7 +207,8 @@ url = "https://underjord.io/feed.xml"
 tags = ["blog", "hacking"]
 
 [feeds.matthew-strom]
-url = "https://matthewstrom.com/feed.xml"
+# url = "https://matthewstrom.com/feed.xml"
+url = "https://mattstromawn.com/feed.xml"
 tags = ["blog", "design"]
 
 [feeds.ntietz]
@@ -277,6 +278,22 @@ tags = ["blog", "hacking"]
 [feeds.elles-readings]
 url = "https://bg.raindrop.io/rss/public/51278376"
 tags = ["aggregate", "fun"]
+
+[feeds.robin-sload]
+url = "https://www.robinsloan.com/lab.xml"
+tags = ["blog", "reading", "hacking"]
+
+[feeds.jamessg]
+url = "https://granary.io/url?input=html&output=atom&url=https://jamesg.blog/longform-feed/"
+tags = ["blog", "hacking"]
+
+[feeds.maurycyz]
+url = "https://maurycyz.com/index.xml"
+tags = ["blog", "hacking"]
+
+[feeds.robert-alexander]
+url = "https://alexsci.com/blog/rss.xml"
+tags = ["blog", "hacking"]
 
 ## Technology
 
