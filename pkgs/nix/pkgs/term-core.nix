@@ -5,10 +5,10 @@
 {
   environment.systemPackages = with pkgs; [
     # Shell
-    fish  # Friendly Interactive Shell
+    unstable.fish  # Friendly Interactive Shell
 
     # Editor
-    helix  # "Post-modern" editor
+    unstable.helix  # "Post-modern" editor
 
     # Coding
     git  # Git

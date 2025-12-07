@@ -3,6 +3,9 @@
 { lib, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    tuigreet
+  ];
   # greetd-tuigreet
   services.greetd = {
     enable = true;

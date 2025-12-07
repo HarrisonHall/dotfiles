@@ -45,6 +45,10 @@ in
   nixpkgs.config.allowUnfree = true;
   # Allow flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Override w/ unstable
+  nixpkgs.config.packageOverrides = pkgs: {
+    unstable = import <nixos-unstable> { config = config.nixpkgs.config; };
+  };
 
   # Extend buffer size for updates
   nix.settings = {

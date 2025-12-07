@@ -7,7 +7,7 @@
     # Essential
     discord  # Discord, but with more features!
     firefox  # Browser
-    ghostty  # Terminal
+    unstable.ghostty  # Terminal
 
     # Utils
     # calibre  # ebook software
