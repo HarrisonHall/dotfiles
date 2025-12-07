@@ -1,31 +1,27 @@
 [Hotkey]
-# Enumerate when press trigger key repeatedly
+# Enumerate when holding modifier of Toggle key
 EnumerateWithTriggerKeys=True
-# Temporally switch between first and current Input Method
+# Activate Input Method
+ActivateKeys=
+# Deactivate Input Method
+DeactivateKeys=
+# Temporarily Toggle Input Method
 AltTriggerKeys=
+# Enumerate Input Method Forward
+EnumerateForwardKeys=
+# Enumerate Input Method Backward
+EnumerateBackwardKeys=
 # Skip first input method while enumerating
 EnumerateSkipFirst=False
+# Enumerate Input Method Group Forward
+EnumerateGroupForwardKeys=
+# Enumerate Input Method Group Backward
+EnumerateGroupBackwardKeys=
+# Time limit in milliseconds for triggering modifier key shortcuts
+ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
-0=Control+space
-
-[Hotkey/EnumerateForwardKeys]
-0=Control+Shift_L
-
-[Hotkey/EnumerateBackwardKeys]
-0=Control+Shift_R
-
-[Hotkey/EnumerateGroupForwardKeys]
-0=Super+space
-
-[Hotkey/EnumerateGroupBackwardKeys]
-0=Shift+Super+space
-
-[Hotkey/ActivateKeys]
-0=Hangul_Hanja
-
-[Hotkey/DeactivateKeys]
-0=Hangul_Romaja
+0=Super+grave
 
 [Hotkey/PrevPage]
 0=Up
@@ -45,8 +41,10 @@ EnumerateSkipFirst=False
 [Behavior]
 # Active By Default
 ActiveByDefault=True
+# Reset state on Focus In
+resetStateWhenFocusIn=All
 # Share Input State
-ShareInputState=No
+ShareInputState=All
 # Show preedit in application
 PreeditEnabledByDefault=True
 # Show Input Method Information when switch input method
@@ -59,9 +57,9 @@ CompactInputMethodInformation=True
 ShowFirstInputMethodInformation=True
 # Default page size
 DefaultPageSize=5
-# Override Xkb Option
+# Override XKB Option
 OverrideXkbOption=False
-# Custom Xkb Option
+# Custom XKB Option
 CustomXkbOption=
 # Force Enabled Addons
 EnabledAddons=
@@ -69,115 +67,10 @@ EnabledAddons=
 DisabledAddons=
 # Preload input method to be used by default
 PreloadInputMethod=True
+# Allow input method in the password field
+AllowInputMethodForPassword=False
+# Show preedit text when typing password
+ShowPreeditForPassword=False
+# Interval of saving user data in minutes
+AutoSavePeriod=30
 
-# vim: ft=dosini
-[Metadata]
-Name=Catppuccin Macchiato
-Version=0.2
-Author=justTOBBI and Isabelinc
-Description=Catppuccin Macchiato Color Theme (Dark)
-ScaleWithDPI=True
-
-[InputPanel]
-# 字体
-Font=Sans 13
-# 非选中候选字颜色
-#Blue
-NormalColor=#8AADF4
-# 选中候选字颜色
-#Peach
-HighlightCandidateColor=#F5A97F
-# 高亮前景颜色(输入字符颜色)
-#Peach
-HighlightColor=#F5A97F
-# 输入字符背景颜色
-# Black3/surface0
-HighlightBackgroundColor=#363A4F
-#
-Spacing=3
-
-[InputPanel/TextMargin]
-# 候选字对左边距
-Left=10
-# 候选字对右边距
-Right=10
-# 候选字向上边距
-Top=6
-# 候选字向下边距
-Bottom=6
-
-[InputPanel/Background]
-#Black3/surface0
-Color=#363A4F
-#Black3/surface0
-BorderColor=#363A4F
-BorderWidth=2
-
-[InputPanel/Background/Margin]
-Left=2
-Right=2
-Top=2
-Bottom=2
-
-[InputPanel/Highlight]
-#Black3/surface0
-Color=#363A4F
-
-[InputPanel/Highlight/Margin]
-# 高亮区域左边距
-Left=10
-# 高亮区域右边距
-Right=10
-# 高亮区域上边距
-Top=7
-# 高亮区域下边距
-Bottom=7
-
-[Menu]
-Font=Sans 10
-#White/Text
-NormalColor=#CAD3F5
-#HighlightColor=#4c566a
-Spacing=3
-
-[Menu/Background]
-#Black3/surface0
-Color=#363A4F
-
-[Menu/Background/Margin]
-Left=2
-Right=2
-Top=2
-Bottom=2
-
-[Menu/ContentMargin]
-Left=2
-Right=2
-Top=2
-Bottom=2
-
-[Menu/Highlight]
-#Pink
-Color=#F5BDE6 
-
-[Menu/Highlight/Margin]
-Left=10
-Right=10
-Top=5
-Bottom=5
-
-[Menu/Separator]
-#Black2/base
-Color=#24273A
-
-#[Menu/CheckBox]
-#Image=radio.png
-
-#[Menu/SubMenu]
-#Image=arrow.png
-
-[Menu/TextMargin]
-Left=5
-Right=5
-Top=5
-Bottom=5
