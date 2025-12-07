@@ -16,7 +16,8 @@
     picard
 
     # Art
-    aseprite 
+    # aseprite 
+    libresprite
     blender
     inkscape-with-extensions  # Inkscape
     krita
