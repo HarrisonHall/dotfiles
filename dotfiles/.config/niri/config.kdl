@@ -7,11 +7,11 @@
 // NOTE: My spawn-at-start programs are typically executed via systemd.
 
 // GTK.
-spawn-at-startup "gsettings set org.gnome.desktop.interface" "gtk-theme" "catppuccin-macchiato-dark"
-spawn-at-startup "gsettings set org.gnome.desktop.interface" "cursor-theme" "Bibata-Catppuccin"
-spawn-at-startup "gsettings set org.gnome.desktop.interface" "cursor-size" "24"
-spawn-at-startup "gsettings set org.gnome.desktop.interface" "color-scheme" "prefer-dark"
-spawn-at-startup "gsettings set org.gnome.desktop.interface" "icon-theme" "Papirus-Dark"
+spawn-at-startup "gsettings set org.gnome.desktop.interface gtk-theme catppuccin-macchiato-dark"
+spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-theme Bibata-Catppuccin"
+spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-size 24"
+spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
+spawn-at-startup "gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -22,6 +22,12 @@ spawn-at-startup "gsettings set org.gnome.desktop.interface" "icon-theme" "Papir
 
 // Screenshots.
 screenshot-path "/tmp/tmp.png"
+
+// Workspaces:
+workspace "terminal"
+workspace "browser"
+workspace "chat"
+workspace "game"
 
 // NOTE: Check out keypresses with `wev`.
 binds {
@@ -255,7 +261,7 @@ binds {
 // Environmental variables.
 environment {
     // XWayland display id.
-    DISPLAY ":12"
+    // DISPLAY ":0"
 }
 
 // Input device configuration.

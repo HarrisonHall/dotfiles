@@ -92,11 +92,12 @@
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
   };
-  systemd.user.services."niri-xwayland" = {
-    enable = true;
-    serviceConfig.ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :12";
-    wantedBy = ["niri.service"];
-    after = [ "graphical-session.target" ];
-    serviceConfig.Restart = "on-failure";
-  };
+  # Niri now integrates with xwayland-satellite natively.
+  # systemd.user.services."niri-xwayland" = {
+  #   enable = true;
+  #   serviceConfig.ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :12";
+  #   wantedBy = ["niri.service"];
+  #   after = [ "graphical-session.target" ];
+  #   serviceConfig.Restart = "on-failure";
+  # };
 }
