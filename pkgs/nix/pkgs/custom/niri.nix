@@ -39,11 +39,6 @@
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
   };
-  # systemd.user.services."niri-eww" = {
-  #   enable = true;
-  #   serviceConfig.ExecStart = "${pkgs.eww}/bin/eww daemon";
-  #   wantedBy = ["niri.service"];
-  # };
   systemd.user.services."niri-network-manager" = {
     enable = true;
     serviceConfig.ExecStart = "${pkgs.networkmanagerapplet}/bin/nm-applet";
@@ -92,12 +87,4 @@
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
   };
-  # Niri now integrates with xwayland-satellite natively.
-  # systemd.user.services."niri-xwayland" = {
-  #   enable = true;
-  #   serviceConfig.ExecStart = "${pkgs.xwayland-satellite}/bin/xwayland-satellite :12";
-  #   wantedBy = ["niri.service"];
-  #   after = [ "graphical-session.target" ];
-  #   serviceConfig.Restart = "on-failure";
-  # };
 }

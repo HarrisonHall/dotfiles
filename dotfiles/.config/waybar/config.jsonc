@@ -87,7 +87,10 @@
     },
     "tray": {
         "icon-size": 20,
-        "spacing": 10
+        "spacing": 10,
+        "icons": {
+            // "discord": "face-monkey",
+        }
     },
     "clock": {
         "calendar": {
@@ -96,12 +99,12 @@
             "weeks-pos"     : "right",
             "on-scroll"     : 1,
             "on-click-right": "mode",
-                "format": {
-                    "months":     "<span color='#d8dee9'><b>{}</b></span>",
-                    "days":       "<span color='#b48ead'><b>{}</b></span>",
-                    "weeks":      "<span color='#8fbcbb'><b>W{}</b></span>",
-                    "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
-                    "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+            "format": {
+                "months":     "<span color='#d8dee9'><b>{}</b></span>",
+                "days":       "<span color='#b48ead'><b>{}</b></span>",
+                "weeks":      "<span color='#8fbcbb'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
+                "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
             }
         },
         "tooltip-format": "<span size='14pt' font='HackGen35 Console NF'>{calendar}</span>",

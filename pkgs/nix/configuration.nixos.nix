@@ -37,6 +37,7 @@ in
       ./pkgs/custom/kde.nix
       ./pkgs/custom/sway.nix
       ./pkgs/custom/niri.nix
+      ./pkgs/custom/music.nix
       ./pkgs/custom/syncthing.nix
       ./pkgs/custom/vm.nix
     ];

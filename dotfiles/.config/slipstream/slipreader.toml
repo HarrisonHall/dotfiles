@@ -45,6 +45,7 @@ freq = "90s"
 [read]
 scroll = 1
 scroll_buffer = 6
+initial-search = "--not-tag hidden"
 
 [read.tags]
 hidden = ["unread", "important"]
@@ -84,6 +85,14 @@ color = { bg = "light-magenta", fg = "black" }
 [[read.tags.colors]]
 tag = "satire"
 color = { bg = "yellow", fg = "black" }
+
+[[read.tags.colors]]
+tag = "comics"
+color = { bg = "magenta", fg = "black" }
+
+[[read.tags.colors]]
+tag = "reading"
+color = { bg = "magenta", fg = "black" }
 
 [[read.tags.colors]]
 tag = "social"
@@ -141,9 +150,15 @@ S-o = "!open-2"
 C-o = "noop"
 
 # Update:
-u = "update"
+0 = "update"
+u = ":search --not-tag hidden"
 S-u = ":search -t unread"
 # C-u = "noop"  # Used for page-up.
+
+# Delete (hide):
+d = ":toggle-tag hidden"
+S-d = ":search --tag hidden"
+# C-d = ":search --not-tag hidden"
 
 1 = "!read-1"
 C-1 = "!archive-1"
@@ -227,7 +242,7 @@ command = [
     monolith \
       --no-js \
       --user-agent "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" \
-      --output ~/media/articles/unsored/{{link.name-}}.html \
+      --output ~/media/articles/unsorted/{{link.name-}}.html \
       "{{link.url}}" \
   """,
 ]

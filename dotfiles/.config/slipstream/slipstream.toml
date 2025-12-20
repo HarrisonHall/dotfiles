@@ -106,7 +106,7 @@ tags = ["news"]
 [feeds.bbc]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
 tags = ["news"]
-exclude-substrings = ["newscast"]
+exclude-substrings = ["newscast", "preview ", "your first look"]
 
 [feeds.aeon]
 url = "https://aeon.co/feed.atom"
@@ -117,7 +117,8 @@ tags = ["news", "essays"]
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking"]
-exclude-title-words = ["ai", "hiring", "fun"]
+exclude-title-words = ["ai", "hiring", "fun", "agent"]
+exclude-substrings = ["openai", "llm", "-ai", "ai-"]
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"
@@ -295,6 +296,10 @@ tags = ["blog", "hacking"]
 url = "https://alexsci.com/blog/rss.xml"
 tags = ["blog", "hacking"]
 
+[feeds.schpet]
+url = "https://schpet.com/feed.xml"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -448,6 +453,10 @@ tags = ["blog", "reading"]
 [feeds.fuse]
 url = "https://api.syosetu.com/writer/311735.Atom"
 tags = ["blog", "reading", "fun"]
+
+[feeds.annas-archive]
+url = "https://annas-archive.li/blog/rss.xml"
+tags = ["blog", "reading", "hacking"]
 
 ## Stories
 

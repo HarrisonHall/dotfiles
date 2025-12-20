@@ -21,7 +21,7 @@ EnumerateGroupBackwardKeys=
 ModifierOnlyKeyTimeout=250
 
 [Hotkey/TriggerKeys]
-0=Super+grave
+0=Control+grave
 
 [Hotkey/PrevPage]
 0=Up
