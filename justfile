@@ -14,7 +14,6 @@ default:
 install flags=INSTALL_FLAGS: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
     if string match -i -r ".*update.*" {{flags}} 1&2>/dev/null
-        nix-channel --update
         {{SUDO}} nix-channel --update
     end
     {{SUDO}} nixos-rebuild switch -I nixos-config="{{DOTFILES}}/pkgs/nix/configuration.nixos.nix" -j 4

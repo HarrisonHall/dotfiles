@@ -81,7 +81,9 @@ in
       enable = true;
       device = "nodev";
     };
+    # If using efi:
     # loader.efi.canTouchEfiVariables = true;
+    # loader.grub.efiSupport = true;
     loader.timeout = 0;  # Press any key to load the bootloader list
     plymouth = {
       enable = true;

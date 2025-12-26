@@ -10,7 +10,8 @@ compatibility with non-nix systems.
 
 1. `nix-shell`
 2. Add unstable channel
-   - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos`
+   - `sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos`
+   - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable`
    - `sudo nix-channel --update`
 3. `just install`
 
