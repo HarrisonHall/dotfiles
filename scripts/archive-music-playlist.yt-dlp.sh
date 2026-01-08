@@ -4,6 +4,10 @@
 playlist_url=$1
 output=$2
 
+#    --format 'vcodec=av01/bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' \
+#    --format 140 \
+#    --format 'bestaudio[ext=m4a]' \
+
 # Use yt-dlp.
 if type -f yt-dlp; then
   yt-dlp \

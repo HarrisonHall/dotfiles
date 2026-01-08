@@ -2,7 +2,7 @@
 
 set repo (string trim $argv[1] -c "/")
 set playlist $argv[2]
-set JELLYFIN /mnt/backup/jellyfin/media
+set JELLYFIN /mnt/backup/jellyfin/music
 
 rsync -auL -r $repo home-server:$JELLYFIN/.
 
