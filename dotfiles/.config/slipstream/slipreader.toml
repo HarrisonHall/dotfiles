@@ -33,9 +33,13 @@ exclude-tags = []
 # Feed definitions and settings.
 [feeds]
 
-[feeds.news]
-url = "https://feeds.hachha.dev/all/feed"
-tags = ["hachha"]
+# [feeds.news]
+# url = "https://feeds.hachha.dev/all/feed"
+# tags = ["hachha"]
+# freq = "90s"
+[feeds.limited-news]
+url = "https://feeds.hachha.dev/feed/limited-news/feed"
+tags = ["limited-news"]
 freq = "90s"
 
 [feeds.social]
@@ -52,7 +56,7 @@ hidden = ["unread", "important"]
 
 [[read.tags.colors]]
 tag = "unread"
-color = { fg = "yellow" }
+color = { bg = "yellow", fg = "black" }
 
 [[read.tags.colors]]
 tag = "news"
@@ -60,7 +64,7 @@ color = { fg = "green" }
 
 [[read.tags.colors]]
 tag = "gov"
-color = { fg = "bright-magenta" }
+color = { bg = "bright-magenta", fg = "black" }
 
 [[read.tags.colors]]
 tag = "hacking"
@@ -68,7 +72,7 @@ color = { underline = "light-cyan" }
 
 [[read.tags.colors]]
 tag = "blog"
-color = { underline = "light-green" }
+color = { underline = "green" }
 
 [[read.tags.colors]]
 tag = "gaming"
@@ -84,7 +88,7 @@ color = { bg = "light-magenta", fg = "black" }
 
 [[read.tags.colors]]
 tag = "satire"
-color = { bg = "yellow", fg = "black" }
+color = { bg = "yellow", fg = "black", underline = "black" }
 
 [[read.tags.colors]]
 tag = "comics"
@@ -96,7 +100,11 @@ color = { bg = "magenta", fg = "black" }
 
 [[read.tags.colors]]
 tag = "social"
-color = { fg = "black", bg = "cyan" }
+color = { bg = "cyan", fg = "black" }
+
+[[read.tags.colors]]
+tag = "zine"
+color = { bg = "green", fg = "black" }
 
 [[read.tags.colors]]
 tag = "dont-miss"
@@ -108,11 +116,11 @@ color = { bg = "red", fg = "black" }
 
 [[read.tags.colors]]
 tag = "archive"
-color = { fg = "cyan", bg = "light-red" }
+color = { bg = "light-red", fg = "cyan" }
 
 [[read.tags.colors]]
 tag = "read-later"
-color = { fg = "black", bg = "bright-blue" }
+color = { bg = "bright-blue", fg = "black" }
 
 [read.hooks]
 fetch = []

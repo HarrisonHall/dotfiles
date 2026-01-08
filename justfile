@@ -5,7 +5,7 @@ GC_DURATION := "30d"
 INSTALL_FLAGS := ""
 SUDO := `command -v doas 2&>/dev/null && echo "doas" || echo "bash"`
 
-# List all
+# List all.
 [private]
 default:
     @just --list
@@ -13,10 +13,19 @@ default:
 # Install config for nixos.
 install flags=INSTALL_FLAGS: hier-build-base symlinks-link hier-build-extra
     #!/usr/bin/env fish
+
+    # Update channels:
     if string match -i -r ".*update.*" {{flags}} 1&2>/dev/null
         {{SUDO}} nix-channel --update
     end
+    if string match -i -r ".*upgrade.*" {{flags}} 1&2>/dev/null
+        {{SUDO}} nix-channel --update
+    end
+
+    # Update the configuration:
     {{SUDO}} nixos-rebuild switch -I nixos-config="{{DOTFILES}}/pkgs/nix/configuration.nixos.nix" -j 4
+
+    # Run GC:
     if test $status -eq 0
         {{SUDO}} nix-collect-garbage --delete-older-than {{GC_DURATION}}
         {{SUDO}} nix-store --gc

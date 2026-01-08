@@ -14,6 +14,7 @@ database = "./slip.db"
 # - /tag/gov (gov things)
 # - /feed/dont-miss (can't miss these!)
 
+
 # Settings that apply to **everything**.
 [global]
 user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
@@ -22,9 +23,11 @@ user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 exclude-title-words = [
   "sport",
   "nfl",
+  "scores",
   "#shorts",
   "llm",
   "llms",
+  "agentic",
   "doge",
 ]
 exclude-substrings = [
@@ -49,6 +52,7 @@ oldest = "1month"
 # Default feed update frequency.
 freq = "2hrs"
 
+
 [serve]
 
 # Settings that apply to the all feed.
@@ -58,8 +62,10 @@ max = 256
 [serve.all.filters]
 exclude-tags = ["satire", "social"]
 
+
 # Feed definitions and settings.
 [feeds]
+
 
 ## News
 
@@ -106,11 +112,23 @@ tags = ["news"]
 [feeds.bbc]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
 tags = ["news"]
-exclude-substrings = ["newscast", "preview ", "your first look"]
+exclude-substrings = ["newscast", "preview ", "your first look", "match of the"]
 
 [feeds.aeon]
 url = "https://aeon.co/feed.atom"
-tags = ["news", "essays"]
+tags = ["news", "essays", "zine", "fun"]
+
+[feeds.undark]
+url = "https://undark.org/feed/"
+tags = ["news", "essays", "zine", "fun"]
+
+[feeds.asterisk]
+url = "https://asteriskmag.com/feed"
+tags = ["news", "essays", "zine", "fun"]
+
+# Additional news sites:
+# - https://finviz.com/
+
 
 ## Hacking
 
@@ -176,6 +194,7 @@ tags = ["hacking", "science"]
 [feeds.iroh]
 url = "https://www.iroh.computer/rss.xml"
 tags = ["hacking", "rust"]
+
 
 ## Hacking blogs
 
@@ -300,6 +319,7 @@ tags = ["blog", "hacking"]
 url = "https://schpet.com/feed.xml"
 tags = ["blog", "hacking"]
 
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -324,6 +344,7 @@ tags = ["blog", "hacking"]
 url = "https://letsencrypt.org/feed.xml"
 tags = ["blog", "hacking"]
 
+
 ## Japanese
 
 [feeds.matcha]
@@ -333,6 +354,7 @@ tags = ["japanese"]
 [feeds.nhk-easier]
 url = "https://nhkeasier.com/feed/"
 tags = ["japanese", "news"]
+
 
 ## Environment & science
 
@@ -372,6 +394,7 @@ tags = ["news", "science"]
 url = "https://profmattstrassler.com/feed/"
 tags = ["science"]
 
+
 ## Gaming
 
 [feeds.two-stop-bits]
@@ -394,6 +417,11 @@ tags = ["gaming", "fun"]
 url = "https://www.gamingonlinux.com/article_rss.php"
 tags = ["gaming"]
 
+[feed.exok-games]
+url = "https://exok.com/atom.xml"
+tags = ["gaming", "indie"]
+
+
 ## Comics
 
 [feeds.xkcd]
@@ -412,6 +440,7 @@ tags = ["comics", "fun"]
 url = "https://sjapi.up.railway.app/rss/chainsaw-man.xml"
 tags = ["comics", "fun", "japanese", "manga"]
 
+
 ## Positive News
 
 [feeds.goodgoodgood]
@@ -421,6 +450,7 @@ tags = ["news", "positive"]
 [feeds.positive-news]
 url = "http://positive.news/rss"
 tags = ["news", "positive"]
+
 
 ## Government
 
@@ -435,6 +465,7 @@ tags = ["gov"]
 [feeds.sec]
 url = "https://www.sec.gov/news/pressreleases.rss"
 tags = ["gov", "sec"]
+
 
 ## Other blogs
 
@@ -458,17 +489,20 @@ tags = ["blog", "reading", "fun"]
 url = "https://annas-archive.li/blog/rss.xml"
 tags = ["blog", "reading", "hacking"]
 
+
 ## Stories
 
 [feeds.gorogoromikan]
 url = "https://api.syosetu.com/writernovel/773478.Atom"
 tags = ["reading", "fun", "japanese"]
 
+
 ## Link blogs
 
 [feeds.hachha-links]
 url = "https://hachha.dev/links.feed"
 tags = ["blog", "links"]
+
 
 ## Entertainment
 
@@ -592,6 +626,13 @@ tags = ["social", "mastodon"]
 freq = "15min"
 
 
+## Organizations
+
+[feeds.iamals]
+url = "https://www.iamals.org/feed/"
+tags = ["org", "philanthropy"]
+
+
 ## Common aggregates
 
 [feeds.dont-miss]
@@ -626,4 +667,17 @@ feeds = [
   "funke",
   "dogen",
   "cheese-parade",
+  ## Gaming
+  "exok-games",
 ]
+
+[feeds.limited-news]
+tags = ["limited-news"]
+tag_allowlist = [
+  "zine",
+  "reading",
+  "blog",
+  "indie",
+  "fun",
+]
+tag_blocklist = []
