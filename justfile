@@ -8,7 +8,7 @@ SUDO := `command -v doas 2&>/dev/null && echo "doas" || echo "bash"`
 # List all.
 [private]
 default:
-    @just --list
+    @just --list --unsorted
 
 # Install config for nixos.
 install flags=INSTALL_FLAGS: hier-build-base symlinks-link hier-build-extra

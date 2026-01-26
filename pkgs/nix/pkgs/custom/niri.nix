@@ -6,7 +6,7 @@
   };
   
   users.users.${user}.packages = with pkgs; [
-    xwayland-satellite
+    unstable.xwayland-satellite
   ];
 
   # Security

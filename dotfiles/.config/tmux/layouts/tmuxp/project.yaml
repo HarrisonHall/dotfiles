@@ -3,7 +3,6 @@ start_directory: "${PROJECT_DIR}"
 
 shell_command_before:
   - launch-env
-  - clear
 
 windows:
   - window_name: docs

@@ -2,8 +2,10 @@
 
 {
   environment.systemPackages = with pkgs; [
-    mpd
-    mpc
-    euphonica
+    mpd  # Music player daemon.
+    mpc  # Music player client.
+    rmpc  # Modern music player client.
+    euphonica  # GUI music player client.
+    mopidy  # Jellyfin bridge for mpd.
   ];
 }

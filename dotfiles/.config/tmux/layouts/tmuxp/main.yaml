@@ -22,3 +22,15 @@ windows:
       main-pane-width: "50%"
     panes:
       - cd ~/workspace/notes && clear
+  - window_name: home-server
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - mosh home-server
+  - window_name: web-server
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - mosh web-server

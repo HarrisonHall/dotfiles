@@ -69,6 +69,10 @@ exclude-tags = ["satire", "social"]
 
 ## News
 
+[feeds.united-nations-top-stories]
+url = "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
+tags = ["news"]
+
 [feeds.guardian-us]
 url = "https://www.theguardian.com/us/rss"
 tags = ["news"]
@@ -194,6 +198,10 @@ tags = ["hacking", "science"]
 [feeds.iroh]
 url = "https://www.iroh.computer/rss.xml"
 tags = ["hacking", "rust"]
+
+[feeds.indieweb-news]
+url = "https://granary.io/url?input=html&output=atom&url=https://news.indieweb.org/en"
+tags = ["hacking", "blog", "fun"]
 
 
 ## Hacking blogs
@@ -679,5 +687,6 @@ tag_allowlist = [
   "blog",
   "indie",
   "fun",
+  "hacking",
 ]
 tag_blocklist = []

@@ -23,4 +23,7 @@
     vlc  # Audio-video viewer
     wezterm  # Backup terminal
   ];
+
+  # Enable flatpak
+  services.flatpak.enable = true;
 }

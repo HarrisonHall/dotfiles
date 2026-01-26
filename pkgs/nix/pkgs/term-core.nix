@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     # Shell
     unstable.fish  # Friendly Interactive Shell
+    unstable.nushell  # Modern shell
 
     # Editor
     unstable.helix  # "Post-modern" editor
@@ -13,7 +14,7 @@
     # Coding
     git  # Git
     gh  # Github cli
-    jujutsu  # Jujutsu versioning cli
+    unstable.jujutsu  # Jujutsu versioning cli
     mosh  # UDP SSH
     onefetch  # Git repo visualizer
 
@@ -21,6 +22,7 @@
     ## Compilers & Interpreters
     rustup  # Manage rust toolchains
     typst  # Latex alternative
+    typstyle  # Typst LSP
     uv  # Python toolchains
     zig  # Zig toolchain
     ## LSP
