@@ -533,10 +533,28 @@ window-rule {
     open-maximized-to-edges true
 }
 
+// Ensure small windows are floating.
+window-rule {
+  match title="^$"
+  open-floating true
+}
+
+// Custom rule to make a window float.
+window-rule {
+	match app-id="CustomFloat"
+	open-floating true
+}
+
 // Work around WezTerm's initial configure bug by setting an empty default-column-width.
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
+}
+
+// Firefox
+window-rule {
+    match title="Mozilla Firefox"
+    open-maximized-to-edges true
 }
 
 // Open the Firefox picture-in-picture player as floating by default.
@@ -560,14 +578,3 @@ window-rule {
     clip-to-geometry true
 }
 
-// Ensure small windows are floating.
-window-rule {
-  match title="^$"
-  open-floating true
-}
-
-// Custom rule to make a window float.
-window-rule {
-	match app-id="CustomFloat"
-	open-floating true
-}
