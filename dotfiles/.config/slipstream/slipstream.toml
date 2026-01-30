@@ -138,18 +138,24 @@ tags = ["news", "essays", "zine", "fun"]
 
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
-tags = ["hacking"]
-exclude-title-words = ["ai", "hiring", "fun", "agent"]
-exclude-substrings = ["openai", "llm", "-ai", "ai-"]
+tags = ["hacking", "aggregate"]
+exclude-title-words = ["ai", "hiring", "fun"]
+exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent"]
+exclude-tags = ["ai"]
+
+[feeds.lobsters]
+url = "https://lobste.rs/rss"
+tags = ["hacking", "fun", "aggregate"]
+exclude-title-words = ["llm", "ai", "hiring"]
+exclude-tags = ["ai", "llm", "agent", "agents", "vibecoding"]
+
+[feeds.notado-jado-software-development]
+url = "https://notado.app/rss/jado/software-development/feed.rss"
+tags = ["hacking", "fun", "aggregate"]
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"
 tags = ["hacking", "zig"]
-
-[feeds.lobsters]
-url = "https://lobste.rs/rss"
-tags = ["hacking", "fun"]
-exclude-title-words = ["llm", "ai", "hiring"]
 
 [feeds.importai]
 url = "https://jack-clark.net/feed/"
@@ -157,7 +163,7 @@ tags = ["ai"]
 
 [feeds.tldr]
 url = "https://tldr.tech/api/rss/tech"
-tags = ["tldr", "news", "tech"]
+tags = ["tldr", "news", "tech", "aggregate"]
 
 [feeds.tldr-design]
 url = "https://tldr.tech/api/rss/design"
@@ -327,6 +333,9 @@ tags = ["blog", "hacking"]
 url = "https://schpet.com/feed.xml"
 tags = ["blog", "hacking"]
 
+[feeds.nathan-laundry-life-and-lab]
+url = "https://nathanlaundry.substack.com/feed"
+tags = ["blog", "minimalism", "hacking"]
 
 ## Technology
 

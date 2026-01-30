@@ -528,6 +528,11 @@ animations {
     // off
 }
 
+// In general, open new windows so they're full width.
+window-rule {
+    open-maximized-to-edges true
+}
+
 // Work around WezTerm's initial configure bug by setting an empty default-column-width.
 window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#

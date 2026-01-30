@@ -37,14 +37,20 @@ exclude-tags = []
 # url = "https://feeds.hachha.dev/all/feed"
 # tags = ["hachha"]
 # freq = "90s"
+
+# [feeds.social]
+# url = "https://feeds.hachha.dev/tag/social/feed"
+# freq = "90s"
+ 
 [feeds.limited-news]
 url = "https://feeds.hachha.dev/feed/limited-news/feed"
 tags = ["limited-news"]
-freq = "90s"
+freq = "240s"
 
-[feeds.social]
-url = "https://feeds.hachha.dev/tag/social/feed"
-freq = "90s"
+[feeds.fun]
+url = "https://feeds.hachha.dev/tag/fun/feed"
+tags = ["limited-news"]
+freq = "240s"
 
 [read]
 scroll = 1
