@@ -6,6 +6,11 @@ compatibility with non-nix systems.
 
 ## Setup
 
+### Mise
+
+1. `curl https://mise.run | sh`
+2. `mise trust`
+
 ### NixOS
 
 1. `nix-shell`

@@ -27,6 +27,10 @@ if status is-interactive
     # Disable fish greeting.
     set fish_greeting
 
+    # Enable mise.
+    # This is done at the beginning as it affects path.
+    type -f mise 2&>/dev/null && mise activate fish | source
+
     # Set colors.
     type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-mocha.json

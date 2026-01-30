@@ -1,2 +1,5 @@
 # Ignore my archive/old files
 .achive/
+
+# Ignore local mise files.
+mise.local.toml

@@ -1,0 +1,2 @@
+[tools]
+"cargo:starship-jj" = "0.7.0"

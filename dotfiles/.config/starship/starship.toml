@@ -2,6 +2,48 @@
 
 add_newline = false
 palette = "catppuccin_mocha"
+format = """
+$username\
+$hostname\
+$localip\
+$directory\
+$package\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+${custom.jj}\
+$docker_context\
+$c\
+$cmake\
+$deno\
+$gleam\
+$lua\
+$nim\
+$nodejs\
+$python\
+$typst\
+$vlang\
+$zig\
+$nix_shell\
+$spack\
+$aws\
+$direnv\
+$env_var\
+$mise\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
 
 [character]
 success_symbol = "[❯](bold green)"
@@ -11,8 +53,20 @@ vimcmd_symbol = "[?](bold green)"
 [directory]
 style = "sky bold"
 
-[git_branch]
-style = "mauve bold"
+[custom.jj]
+command = "prompt"
+format = "$output"
+ignore_timeout = true
+shell = ["starship-jj", "--ignore-working-copy", "starship"]
+use_stdin = false
+when = true
+
+[git_status]
+disabled = true
+
+[git_commit]
+disabled = true
+
 
 [palettes.catppuccin_macchiato]
 rosewater = "#f4dbd6"
