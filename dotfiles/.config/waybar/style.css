@@ -158,17 +158,15 @@
 
 #workspaces button {
   color: @text;
+  background: transparent;
+  border: none;
+  border-radius: 0em;
   padding-left: 0.15em;
   padding-right: 0.15em;
 }
 
 #workspaces button.active {
   color: @sky;
-}
-
-#workspaces button:hover {
-  color: @sapphire;
-  border-radius: 1em;
 }
 
 /* Workspaces that are unused. */
@@ -189,12 +187,18 @@
 /* Workspaces unfocused on current monitor. */
 #workspaces button.current_output {
   color: @text;
-  border-radius: 1em;
+  /* border-radius: 1em; */
 }
 
 /* Workspaces focused on current monitor. */
 #workspaces button.focused {
   color: @green;
+}
+
+#workspaces button:hover {
+  color: @sapphire;
+  box-shadow: inset 0px 4px 0px 0px @sapphire;
+  text-shadow: 0px 1px 0px @sapphire;
 }
 
 #clock {
