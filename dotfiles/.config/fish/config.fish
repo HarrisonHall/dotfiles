@@ -30,6 +30,7 @@ if status is-interactive
     # Enable mise.
     # This is done at the beginning as it affects path.
     type -f mise 2&>/dev/null && mise activate fish | source
+    type -f mise 2&>/dev/null && type -f usage 2&>/dev/null && mise completions fish | source
 
     # Set colors.
     type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)

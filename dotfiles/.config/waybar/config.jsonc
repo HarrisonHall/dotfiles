@@ -39,7 +39,8 @@
             "6": "六",
             "7": "七",
             "8": "八",
-        }
+        },
+        "cursor": true,
     },
     "sway/workspaces": {
         "disable-scroll": true,
@@ -64,7 +65,8 @@
             "6": "六",
             "7": "七",
             "8": "八",
-        }
+        },
+        // "cursor": true,
     },
     "sway/mode": {
         "format": "<b>{}</b>"
@@ -90,7 +92,8 @@
         "spacing": 10,
         "icons": {
             // "discord": "face-monkey",
-        }
+        },
+        "cursor": true,
     },
     "clock": {
         "calendar": {

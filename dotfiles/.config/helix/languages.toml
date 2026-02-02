@@ -14,22 +14,32 @@ args = ["lsp"]
 command = "vale-ls"
 args = []
 
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+
 [[language]]
 name = "css"
+language-servers = ["biome"]
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "css"] }
+# formatter = { command = "prettier", args = ["--parser", "css"] }
 
 [[language]]
 name = "html"
+language-servers = ["biome"]
 auto-format = true
-formatter = { command = "prettier", args = ["--parser", "html"] }
+# formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[[language]]
+name = "json"
+auto-format = true
+language-servers = ["biome"]
 
 [[language]]
 name = "markdown"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "markdown", "--prose-wrap=always", "--print-width=80"] }
 language-servers = ["marksman", "ltex", "zk"]
-# language-servers = ["marksman", "vale", "zk"]
 
 [[language]]
 name = "python"

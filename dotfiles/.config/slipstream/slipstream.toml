@@ -698,4 +698,6 @@ tag_allowlist = [
   "fun",
   "hacking",
 ]
-tag_blocklist = []
+tag_blocklist = [
+  "ai",
+]
