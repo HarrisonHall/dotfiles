@@ -165,7 +165,7 @@ C-o = "noop"
 
 # Update:
 0 = "update"
-u = ":search --not-tag hidden"
+u = ":search --not-tag hidden --not-tag satire"
 S-u = ":search -t unread"
 # C-u = "noop"  # Used for page-up.
 

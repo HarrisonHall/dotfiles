@@ -17,7 +17,9 @@ database = "./slip.db"
 
 # Settings that apply to **everything**.
 [global]
-user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+
+[global.limits.headers]
+user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
 
 [global.filters]
 exclude-title-words = [
@@ -140,7 +142,7 @@ tags = ["news", "essays", "zine", "fun"]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking", "aggregate"]
 exclude-title-words = ["ai", "hiring", "fun"]
-exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent"]
+exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt"]
 exclude-tags = ["ai"]
 
 [feeds.lobsters]
@@ -446,8 +448,9 @@ url = "https://xkcd.com/rss.xml"
 tags = ["comics", "fun"]
 
 [feeds.khyleri]
-url = "https://www.reddit.com/r/Khyleri/new.rss"
+url = "https://old.reddit.com/r/Khyleri/new.rss"
 tags = ["comics", "fun"]
+headers = { user-agent = "miniflux" }
 
 [feeds.calvin-and-hobbes]
 url = "https://www.comicsrss.com/rss/calvinandhobbes.rss"

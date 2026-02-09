@@ -1,3 +1,9 @@
 [tools]
+# Deps:
 usage = "latest"
+
+# Utils:
+"cargo:cfait" = "latest"
+
+# Cargo:
 "cargo:starship-jj" = "0.7.0"
