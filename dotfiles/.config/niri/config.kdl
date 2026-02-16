@@ -521,11 +521,20 @@ layout {
         // You can also change the shadow color and opacity.
         color "#0007"
     }
+
+    // Set transparent workspace background color.
+    background-color "transparent"
 }
 
 // Animation settings.
 animations {
     // off
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 // In general, open new windows so they're full width.

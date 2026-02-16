@@ -1,5 +1,5 @@
 {
-    // "layer": "top", // Waybar at top layer
+    "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "spacing": 0, // Gaps between modules (0px)
     // "margin-bottom": 5,
@@ -10,7 +10,8 @@
         "niri/workspaces",
         "sway/workspaces",
         "sway/scratchpad",
-        "sway/mode"
+        "sway/mode",
+        "wlr/taskbar",
     ],
     "modules-center": [
         "niri/window",
@@ -77,6 +78,9 @@
         "format-icons": ["", ""],
         "tooltip": true,
         "tooltip-format": "{app}: {title}"
+    },
+    "wlr/taskbar": {
+        "on-click": "activate",
     },
     "idle_inhibitor": {
         "format": "{icon} ",

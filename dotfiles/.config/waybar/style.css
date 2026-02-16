@@ -201,6 +201,30 @@
   text-shadow: 0px 1px 0px @sapphire;
 }
 
+#taskbar {
+  border-radius: 1em;
+  margin: 5px;
+  background-color: @surface0;
+  margin-left: 1em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+
+#taskbar button {
+  color: @text;
+  background: transparent;
+  border: none;
+  border-radius: 0em;
+  padding-left: 0.15em;
+  padding-right: 0.15em;
+}
+
+#taskbar button:hover {
+  color: @sapphire;
+  box-shadow: inset 0px 4px 0px 0px @sapphire;
+  text-shadow: 0px 1px 0px @sapphire;
+}
+
 #clock {
   color: @crust;
   background: @green;
