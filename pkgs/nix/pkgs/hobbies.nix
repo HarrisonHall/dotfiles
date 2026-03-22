@@ -9,7 +9,7 @@
 
     # Games
     dolphin-emu  # GC/Wii emulation
-    godot_4  # Godot engine
+    unstable.godot  # Godot engine
     sgt-puzzles  # Simon Tatham's puzzles
 
     # Music
