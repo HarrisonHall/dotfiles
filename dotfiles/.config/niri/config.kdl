@@ -205,6 +205,7 @@ binds {
     // Mod+Ctrl+R { reset-window-height; }
     // Mod+F { maximize-column; }
     Mod+M { fullscreen-window; }
+    Mod+N { maximize-window-to-edges; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
     // Makes the column "fill the rest of the space".
@@ -544,13 +545,15 @@ window-rule {
 
 // Ensure small windows are floating.
 window-rule {
-  match title="^$"
-  open-floating true
+    match title="^$"
+    open-maximized-to-edges false
+    open-floating true
 }
 
 // Custom rule to make a window float.
 window-rule {
 	match app-id="CustomFloat"
+    open-maximized-to-edges false
 	open-floating true
 }
 
@@ -569,7 +572,22 @@ window-rule {
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-maximized-to-edges false
     open-floating true
+}
+
+// Godot popup.
+window-rule {
+    match app-id="Godot"
+    open-maximized-to-edges false
+    open-floating true
+}
+
+// Godot itself.
+window-rule {
+    match app-id=r#"Godot"# title=".*\\.tscn.*Godot Engine$"
+    open-maximized-to-edges true
+    open-floating false
 }
 
 // Example: block out two password managers from screen capture.

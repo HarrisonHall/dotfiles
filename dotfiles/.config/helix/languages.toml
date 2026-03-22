@@ -18,6 +18,10 @@ args = []
 command = "biome"
 args = ["lsp-proxy"]
 
+[language-server.tempsnip-lsp]
+command = "tempsnip-lsp"
+args = []
+
 [[language]]
 name = "css"
 language-servers = ["biome"]
@@ -49,6 +53,10 @@ auto-format = true
 [[language]]
 name = "rust"
 auto-format = true
+language-servers = [
+  "rust-analyzer",
+  # "tempsnip-lsp"
+]
 
 [[language]]
 name = "typst"
