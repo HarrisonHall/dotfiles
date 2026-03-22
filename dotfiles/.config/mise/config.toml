@@ -6,4 +6,5 @@ usage = "latest"
 "cargo:cfait" = "latest"
 
 # Cargo:
+"cargo:cargo-zigbuild" = "latest"
 "cargo:starship-jj" = "0.7.0"
