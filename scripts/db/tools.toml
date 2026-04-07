@@ -1,5 +1,21 @@
 # A tools database file.
 
+[tools.cargo-zigbuild]
+description = "easy rust libc targetting"
+tags = ["rust", "libc", "zig"]
+
+[tools.cfait]
+description = "caldav task tui"
+tags = ["tasks", "calendar"]
+
+[tools.dua]
+description = "disk usage tui"
+tags = ["disk", "du"]
+
+[tools.dust]
+description = "disk usage tui"
+tags = ["disk", "du"]
+
 # Installed via mise.
 [tools.fd]
 description = "easy find"
@@ -9,13 +25,53 @@ tags = ["find", "files"]
 description = "easy nix"
 tags = ["nix", "pkgs"]
 
+[tools.fselect]
+description = "find with sql"
+tags = ["find", "sql"]
+
 [tools.git-cliff]
 description = "changelog generator"
 tags = ["changelog", "git"]
 
+[tools.hexyl]
+description = "hex viewer"
+tags = ["binary", "hex"]
+
+[tools.imhex]
+description = "hex viewer"
+tags = ["binary", "hex"]
+
 [tools.jj]
 description = "fancy git wrapper"
 tags = ["vcs", "git"]
+
+[tools.lnav]
+description = "log viewer"
+tags = ["log"]
+
+[tools.ouch]
+description = "easy de(compression)"
+tags = ["zip", "compression", "decompression"]
+
+[tools.pinta]
+description = "image editor"
+tags = ["paint", "art"]
+
+[tools.procs]
+description = "process querier"
+tags = ["ps", "procs"]
+
+[tools.ripgrep]
+description = "better grep"
+tags = ["grep"]
+
+[tools.ripgrep-all]
+description = "better grep, with docx support"
+tags = ["grep", "ripgrep"]
+
+[tools.sd]
+description = "find & replace"
+tags = ["find", "replace", "awk", "sed", "grep"]
 
 [tools.trippy]
 description = "traceroute + ping"
