@@ -15,6 +15,8 @@
     git  # Git
     gh  # Github cli
     unstable.jujutsu  # Jujutsu versioning cli
+    unstable.radicle-node  # Radicle
+    unstable.radicle-tui  # Radicle tui
     mosh  # UDP SSH
     onefetch  # Git repo visualizer
 

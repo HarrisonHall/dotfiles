@@ -27,6 +27,7 @@
     
     # Dev utils
     alsa-lib
+    lnav  # Log file navigation
     pkg-config
     udev
 
