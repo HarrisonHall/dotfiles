@@ -4,6 +4,7 @@ usage = "latest"
 
 # Utils:
 "cargo:cfait" = "latest"
+yq = "latest"
 
 # Cargo:
 "cargo:cargo-zigbuild" = "latest"
