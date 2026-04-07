@@ -67,6 +67,8 @@ color = { bg = "yellow", fg = "black" }
 [[read.tags.colors]]
 tag = "news"
 color = { fg = "green" }
+indicator.symbol = "N"
+indicator.color = "green"
 
 [[read.tags.colors]]
 tag = "gov"
@@ -75,10 +77,14 @@ color = { bg = "bright-magenta", fg = "black" }
 [[read.tags.colors]]
 tag = "hacking"
 color = { underline = "light-cyan" }
+indicator.symbol = "H"
+indicator.color = "light-cyan"
 
 [[read.tags.colors]]
 tag = "blog"
 color = { underline = "green" }
+indicator.symbol = "B"
+indicator.color = "blue"
 
 [[read.tags.colors]]
 tag = "gaming"
@@ -87,14 +93,20 @@ color = { fg = "light-blue" }
 [[read.tags.colors]]
 tag = "japanese"
 color = { underline = "red" }
+indicator.symbol = "語"
+indicator.color = "red"
 
 [[read.tags.colors]]
 tag = "fun"
 color = { bg = "light-magenta", fg = "black" }
+indicator.symbol = "%"
+indicator.color = "light-magenta"
 
 [[read.tags.colors]]
 tag = "satire"
 color = { bg = "yellow", fg = "black", underline = "black" }
+indicator.symbol = "X"
+indicator.color = "yellow"
 
 [[read.tags.colors]]
 tag = "comics"
@@ -119,10 +131,14 @@ color = { bg = "blue", fg = "black" }
 [[read.tags.colors]]
 tag = "important"
 color = { bg = "red", fg = "black" }
+indicator.symbol = "!"
+indicator.color = "yellow"
 
 [[read.tags.colors]]
 tag = "archive"
 color = { bg = "light-red", fg = "cyan" }
+indicator.symbol = "."
+indicator.color = "light-red"
 
 [[read.tags.colors]]
 tag = "read-later"

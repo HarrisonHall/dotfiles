@@ -31,6 +31,8 @@ exclude-title-words = [
   "llms",
   "agentic",
   "doge",
+  "vibe-coding",
+  "vibecoding",
 ]
 exclude-substrings = [
   "sport",
@@ -44,6 +46,9 @@ exclude-substrings = [
   "トランプ",
   "musk",
   "イーロン",
+]
+exclude-tags = [
+  "vibecoding",
 ]
 
 [global.options]
@@ -211,6 +216,10 @@ tags = ["hacking", "rust"]
 url = "https://granary.io/url?input=html&output=atom&url=https://news.indieweb.org/en"
 tags = ["hacking", "blog", "fun"]
 
+[feeds.radicle]
+url = "https://radicle.xyz/feed.xml"
+tags = ["hacking", "blog", "releases"]
+
 
 ## Hacking blogs
 
@@ -339,6 +348,18 @@ tags = ["blog", "hacking"]
 url = "https://nathanlaundry.substack.com/feed"
 tags = ["blog", "minimalism", "hacking"]
 
+[feeds.100-rabbits]
+url = "https://100r.co/links/rss.xml"
+tags = ["blog", "hacking"]
+
+[feeds.sebastian-wick]
+url = "https://blog.sebastianwick.net/posts/index.xml"
+tags = ["blog", "hacking"]
+
+[feeds.orhun]
+url = "https://blog.orhun.dev/rss.xml"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -420,9 +441,10 @@ tags = ["science"]
 url = "https://twostopbits.com/rss"
 tags = ["gaming"]
 
-[feeds.game-dev-city]
-url = "http://gamedev.city/rss"
-tags = ["hacking", "gaming"]
+# Offline :(
+# [feeds.game-dev-city]
+# url = "http://gamedev.city/rss"
+# tags = ["hacking", "gaming"]
 
 [feeds.rust-gamedev-wg]
 url = "https://gamedev.rs/rss.xml"
@@ -436,7 +458,7 @@ tags = ["gaming", "fun"]
 url = "https://www.gamingonlinux.com/article_rss.php"
 tags = ["gaming"]
 
-[feed.exok-games]
+[feeds.exok-games]
 url = "https://exok.com/atom.xml"
 tags = ["gaming", "indie"]
 
@@ -445,16 +467,16 @@ tags = ["gaming", "indie"]
 
 [feeds.xkcd]
 url = "https://xkcd.com/rss.xml"
-tags = ["comics", "fun"]
+tags = ["comics", "fun", "funny"]
 
 [feeds.khyleri]
 url = "https://old.reddit.com/r/Khyleri/new.rss"
-tags = ["comics", "fun"]
+tags = ["comics", "fun", "funny"]
 headers = { user-agent = "miniflux" }
 
 [feeds.calvin-and-hobbes]
 url = "https://www.comicsrss.com/rss/calvinandhobbes.rss"
-tags = ["comics", "fun"]
+tags = ["comics", "fun", "funny"]
 
 [feeds.chainsaw-man]
 url = "https://sjapi.up.railway.app/rss/chainsaw-man.xml"
@@ -506,7 +528,8 @@ url = "https://api.syosetu.com/writer/311735.Atom"
 tags = ["blog", "reading", "fun"]
 
 [feeds.annas-archive]
-url = "https://annas-archive.li/blog/rss.xml"
+# url = "https://annas-archive.li/blog/rss.xml"
+url = "https://annas-archive.gl/blog/rss.xml"
 tags = ["blog", "reading", "hacking"]
 
 
@@ -528,23 +551,23 @@ tags = ["blog", "links"]
 
 [feeds.the-onion]
 url = "https://theonion.com/feed/"
-tags = ["fun", "satire"]
+tags = ["fun", "satire", "funny"]
 
 [feeds.simpleflips]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
-tags = ["gaming", "video", "fun"]
+tags = ["gaming", "video", "fun", "funny"]
 
 [feeds.simpleflips-full]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCydmoF3pPpijDuFMvTaQIZw"
-tags = ["gaming", "video", "fun"]
+tags = ["gaming", "video", "fun", "funny"]
 
 [feeds.solidjj]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEq_Dr1GHvnNPQNfgOzhZ8Q"
-tags = ["video", "fun"]
+tags = ["video", "fun", "funny"]
 
 [feeds.dunkey]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg"
-tags = ["gaming", "video", "fun"]
+tags = ["gaming", "video", "fun", "funny"]
 
 [feeds.kurzgesagt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q"
@@ -608,7 +631,7 @@ tags = ["video", "music", "gaming"]
 
 [feeds.cheese-parade]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQ1aOToWpOdaIj1784_5M0g"
-tags = ["video", "fun"]
+tags = ["video", "fun", "funny"]
 
 [feeds.bobby-ivar]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCETZ4AkABYwBRzpWBJ33KUw"
@@ -616,7 +639,7 @@ tags = ["video", "gaming", "fun"]
 
 [feeds.chris-and-jack]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Liv5-jdU2Qk53lTtYDG2w"
-tags = ["video", "fun"]
+tags = ["video", "fun", "funny"]
 must-include-substrings = ["Chris & Jack"] # Ignore shorts
 
 [feeds.funke]
@@ -633,7 +656,7 @@ tags = ["video", "japanese", "gaming", "fun"]
 
 [feeds.scott-the-woz]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4rqhyiTs7XyuODcECvuiiQ"
-tags = ["video", "gaming", "fun"]
+tags = ["video", "gaming", "fun", "funny"]
 
 
 ## Social feeds
@@ -690,8 +713,10 @@ feeds = [
   ## Gaming
   "exok-games",
 ]
+step = 10
 
 [feeds.limited-news]
+step = 10
 tags = ["limited-news"]
 tag_allowlist = [
   "zine",
@@ -703,4 +728,19 @@ tag_allowlist = [
 ]
 tag_blocklist = [
   "ai",
+]
+
+[feeds.single-feed]
+step = 11
+tags = ["single-feed"]
+tag_allowlist = [
+  "news",
+  "limited-news",
+  "social",
+  "dont-miss",
+  "org",
+  "funny",
+]
+tag_blocklist = [
+  "satire",
 ]
