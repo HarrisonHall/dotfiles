@@ -125,3 +125,5 @@ post-install:
     fc-cache -fv
     # Update vale.
     vale sync
+    # Mise install
+    mise install
