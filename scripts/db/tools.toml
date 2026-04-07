@@ -1,0 +1,30 @@
+# A tools database file.
+
+# Installed via mise.
+[tools.fd]
+description = "easy find"
+tags = ["find", "files"]
+
+[tools.flox]
+description = "easy nix"
+tags = ["nix", "pkgs"]
+
+[tools.git-cliff]
+description = "changelog generator"
+tags = ["changelog", "git"]
+
+[tools.jj]
+description = "fancy git wrapper"
+tags = ["vcs", "git"]
+
+[tools.trippy]
+description = "traceroute + ping"
+tags = ["dns", "icmp", "networking"]
+
+
+
+# Test just for checking parser.
+[tools.test]
+description = "test tool"
+tags = ["test"]
+
