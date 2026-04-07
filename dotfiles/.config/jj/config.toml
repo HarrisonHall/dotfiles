@@ -8,6 +8,8 @@ stash-all = []
 branch-list = []
 log-bookmark = ["log", "-T", "builtin_log_detailed", "-r", "..@"]
 log-all = ["log", "-r", "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"]
+l = ["log", "-r", "(trunk()..@):: | (trunk()..@)-"]
+fresh = ["new", "trunk()"]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
 
 [ui]
