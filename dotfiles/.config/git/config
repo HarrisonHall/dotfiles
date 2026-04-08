@@ -21,6 +21,7 @@
 	branch-list = "!~/.config/git/scripts/branch-history.sh"
 	touch = "commit --amend --no-edit"
 	amend = "commit --amend --no-edit -a"
+	patch = "push rad HEAD:refs/patches"
 
 [include]
     path = ~/.config/git/delta/macchiato.gitconfig
