@@ -4,84 +4,55 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # Most core tools are located in the mise config.
+    # Tools here are either not installable via mise, or so fundamental it is
+    # worth having them in both places.
+    
     # Shell
     unstable.fish  # Friendly Interactive Shell
     unstable.nushell  # Modern shell
-
-    # Editor
-    unstable.helix  # "Post-modern" editor
-
-    # Coding
-    git  # Git
-    gh  # Github cli
-    unstable.jujutsu  # Jujutsu versioning cli
-    unstable.radicle-node  # Radicle
-    unstable.radicle-tui  # Radicle tui
-    mosh  # UDP SSH
-    onefetch  # Git repo visualizer
-
-    # Language
-    ## Compilers & Interpreters
-    rustup  # Manage rust toolchains
-    typst  # Latex alternative
-    typstyle  # Typst LSP
-    uv  # Python toolchains
-    zig  # Zig toolchain
-    ## LSP
-    ltex-ls  # Tex/Markdown spellcheck
-    marksman  # Markdown LSP
-    nodePackages.prettier  # Prettier
-    python313Packages.jedi-language-server
-    ruff
-    vale
-    vale-ls  # Spellcheck and grammar
-
-    # Core utils
-    atuin  # Shell history
-    bacon  # Rust compiler-driven development
     bash  # Legacy shell for use with scripts
-    bat  # Cat with wings
-    bottom  # Modern top utility
-    colordiff  # Diff- with color!
-    delta  # Diffing tool (for git)
-    difftastic  # Diffing tool (for git)
-    direnv  # Manage environments based on directory (nix support)
-    dust  # Disk usage
-    eza  # Better ls (ll)
-    fastfetch  # Fetching tool
-    fd  # Better find
-    file  # Get information on files
-    fzf  # Fuzzy file searching
-    gnupg  # PGP/GPG signing
-    just  # Justfile executor
-    jq  # JSON tool
-    kbd  # Keyboard & virtual terminal utils
-    macchina  # Fetch tool
-    mergiraf  # Merge tool
-    newsraft  # Feed viewing
-    nitch  # Minimal fetching
-    ouch  # Easy (de)compression
-    ripgrep  # Recursively search
-    slides  # Markdown presentation tool    
-    # (callPackage ./custom/slipstream.nix { })  # Feeds!
-    starship  # Easy prompt
-    systemctl-tui  # Experimental
-    taskwarrior3  # Tasks
-    tealdeer  # tldr
-    tokei  # Code counter
+
+    # Core tools
+    git  # 'nuff said
+    unstable.helix  # Editor
+    mosh  # UDP SSH
     tmux  # Terminal multiplexer
-    tmuxp  # tmux manager
     tree  # Display directory structure tree
-    viddy  # Better watch
-    wget  # Network downloader
-    yazi  # CLI file manager
-    zellij  # Terminal multiplexer
+
+    # Core utilities
+    bat  # "Cat with wings"
+    bottom  # System monitor
+    colordiff  # Diff- with color!
+    eza  # Better ls
+    file  # Get information on files
+    gnupg  # PGP/GPG signing
     zip  # Zipping
     unzip  # Unzipping
     p7zip  # 7z
+    ripgrep  # Better grep
+    starship  # Prompt
+    wget  # Network downloader
     xdg-utils  # Application opening/desktop integration
-    yt-dlp  # Youtube+ downloader
+
+    # Additional tools
+    unstable.radicle-tui  # Radicle tui
+    ltex-ls  # Tex/Markdown spellcheck
+    marksman  # Markdown LSP
+    nodePackages.prettier  # Prettier
+    vale  # Spellcheck and grammer
+    vale-ls  # vale LSP
+    kbd  # Keyboard & virtual terminal utils
+    macchina  # Fetch tool
+    nitch  # Minimal fetching
+    slides  # Markdown presentation tool    
+    ouch  # Handy compression tool
+    systemctl-tui  # Experimental
     zk  # CLI note manager
-    zoxide  # Better cd
+
+    # bacon  # Rust compiler-driven development
+    # direnv  # Manage environments based on directory (nix support)
+    # taskwarrior3  # Tasks
+    # zellij  # Terminal multiplexer
   ];
 }

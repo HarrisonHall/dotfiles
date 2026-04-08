@@ -10,8 +10,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd cosmic-session";
-        # command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
+        # command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd cosmic-session";
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd niri-session";
         # command = "${pkgs.tuigreet}/bin/tuigreet --time";
         user = "greeter";
       };
@@ -25,4 +25,8 @@
       Type = "idle";
     };
   };
+  environment.etc."greetd/environments".text = ''
+    niri-session
+    cosmic-session
+  '';
 }

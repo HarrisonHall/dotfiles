@@ -3,9 +3,12 @@
 
 title = "ghostty"
 shell-integration = fish
-initial-command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/main.yaml"
+initial-command = "fish -c tmux-init"
+# initial-command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/main.yaml"
+# initial-command = 'fish -c ~/tmux-init.fish'
 # command = "fish"
-command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/quick.yaml"
+# command = "tmuxp load -y ~/.config/tmux/layouts/tmuxp/quick.yaml"
+command = "fish -C tmux-init"
 # initial-command = "tmux new-session -A -s main"
 # initial-command = "zellij attach -c main"
 confirm-close-surface = false

@@ -9,10 +9,14 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 
 -- Launch
-config.default_prog = { 'tmux', 'new-session', '-A', '-s', 'main' }
+config.default_prog = { 'fish', '-c', 'tmux-init' }
+-- config.default_prog = { 'fish', '-c', 'tmuxp load -y ~/.config/tmux/layouts/tmuxp/main.yaml' }
+-- config.default_prog = { 'tmuxp', 'load', '-y', '~/.config/tmux/layouts/tmuxp/main.yaml' }
+-- config.default_prog = { 'tmux', 'new-session', '-A', '-s', 'main' }
 -- config.default_prog = { 'zellij', 'attach', '-c', 'main' }
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.window_close_confirmation = 'NeverPrompt'
 
 -- Wayland
 --config.enable_wayland = false  -- Force xWayland

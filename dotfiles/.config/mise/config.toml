@@ -1,11 +1,82 @@
 [tools]
+# Core tools:
+bat = "latest"
+eza = "latest"
+helix = "latest"
+jujutsu = "latest"
+tmux = "latest"
+
+# Core utilities
+atuin = "latest"
+bottom = "latest"
+delta = "latest"
+difftastic = "latest"
+jq = "latest"
+"cargo:mergiraf" = "latest"
+ripgrep = "latest"
+"pipx:tmuxp" = "latest"
+yazi = "latest"
+yq = "latest"
+zoxide = "latest"
+
+# Advanced utilities:
+"cargo:biff-datetime-cli" = "latest"
+"cargo:cargo-zigbuild" = "latest"
+"cargo:cfait" = "latest"
+d2 = "latest"
+# dig = "latest"
+dua = "latest"
+dust = "latest"
+fastfetch = "latest"
+fd = "latest"
+fzf = "latest"
+# gh = "latest"
+hexyl = "latest"
+just = "latest"
+lnav = "latest"
+"cargo:onefetch" = "latest"
+ripgrep-all = "latest"
+sd = "latest"
+"cargo:slipstream-cli" = "latest"
+starship = "latest"
+"cargo:starship-jj" = "0.7.0"
+"cargo:tealdeer" = "latest"
+"cargo:tokei" = "latest"
+typst = "latest"
+typstyle = "latest"
+viddy = "latest"
+"cargo:zk-cli" = "latest"
+
+# Platforms:
+uv = "latest"
+zig = "latest"
+rust = "latest"
+ruff = "latest"
+
+# Language support:
+marksman = "latest"
+ty = "latest"
+
+# "cargo:ouch" = "latest"
+
+# Some core tools need to be istalled via the package manager:
+# bash, fish, git, tree, mosh, wget, zip, unzip
+# colordiff, file, gnupg, kbd, xdg-utils
+# macchina, nitch, slides, yt-dlp
+# systemctl-tui, procs, fselect
+# ouch,
+# ltex-ls, 
+
 # Deps:
 usage = "latest"
+watchexec = "latest"
 
-# Utils:
-"cargo:cfait" = "latest"
-yq = "latest"
+[tools."http:radicle"]
+url = "https://files.radicle.xyz/releases/latest/radicle-1.8.0-x86_64-unknown-linux-musl.tar.xz"
+version = "1.8.0"
+bin_path = "radicle-1.8.0-x86_64-unknown-linux-musl/bin"
+checksum = "sha256:c6cf18a44d64182270bfcfcb70a19bc1556e8627bcd6d3b6d373fe7e1c461cc2"
 
-# Cargo:
-"cargo:cargo-zigbuild" = "latest"
-"cargo:starship-jj" = "0.7.0"
+[tasks.edit]
+description = "Edit the global mise config."
+run = "$EDITOR ~/.config/mise/config.toml"

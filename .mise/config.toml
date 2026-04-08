@@ -1,0 +1,193 @@
+# Dev environment for slipstream.
+
+[tools]
+# make = "latest"
+# python = "3.14"
+
+[vars]
+dotfiles = "~/.config/dotfiles"
+sudo = "sudo"
+gc_duration = "30d"
+
+
+[tasks.install]
+description = "Install config for nixos."
+usage = """
+arg "<flags>" help="Flags: update | ..." default=" "
+"""
+run = """
+#!/usr/bin/env fish
+
+mise run hier-build-base
+mise run symlinks-link
+mise run hier-build-extra
+
+set config (realpath {{vars.dotfiles}}/pkgs/nix/configuration.nixos.nix)
+
+# Update channels:
+if string match -i -r ".*update.*" {{usage.flags}} 1&2>/dev/null
+    echo "Updating..."
+    {{vars.sudo}} nix-channel --update
+end
+if string match -i -r ".*upgrade.*" {{usage.flags}} 1&2>/dev/null
+    echo "Use update, instead."
+    exit 1
+end
+
+# Update the configuration:
+{{vars.sudo}} nixos-rebuild switch -I nixos-config=$config -j 4
+
+# Run GC:
+if test $status -eq 0
+    {{vars.sudo}} nix-collect-garbage --delete-older-than {{vars.gc_duration}}
+    {{vars.sudo}} nix-store --gc
+    # {{vars.sudo}} nixos-rebuild boot
+    mise run post-install
+end
+"""
+
+[tasks.install-shell]
+description = "Install minimal shell config."
+usage = """
+arg "<flags>" help="Flags: update | ..." default=" "
+"""
+# if string match -i -r ".*update.*" {{usage.flags}} 1&2>/dev/null
+#     nix-channel --update
+#     {{vars.sudo}} nix-channel --update
+# end
+run = """
+#!/usr/bin/env fish
+
+mise run hier-build-base
+mise run symlinks-link
+mise run hier-build-extra
+
+nix profile install -f {{vars.dotfiles}}/pkgs/nix/configuration.profile.nix \
+    --extra-experimental-features nix-command
+if test $status -eq 0
+    nix-env --delete-generations {{vars.gc_duration}}
+    nix-store --gc
+end
+mise run post-install
+"""
+
+[tasks.hier-build-base]
+description = "Build base directories."
+run = """
+mise run directory-ensure-mk ~/.config
+mise run directory-ensure-mk ~/.local
+mise run directory-ensure-mk ~/.local/share/applications
+mise run directory-ensure-mk ~/downloads
+mise run directory-ensure-mk ~/workspace
+mise run directory-ensure-mk ~/workspace/bin
+mise run directory-ensure-mk ~/workspace/dev
+mise run directory-ensure-mk ~/workspace/dev/games
+mise run directory-ensure-mk ~/workspace/games
+mise run directory-ensure-mk ~/workspace/software
+mise run directory-ensure-mk ~/workspace/storage
+"""
+
+[tasks.hier-build-extra]
+description = "Build extra directories."
+run = """
+xdg-user-dirs-update
+mise run directory-ensure-rm ~/Desktop
+mise run directory-ensure-rm ~/Documents
+mise run directory-ensure-rm ~/Downloads
+mise run directory-ensure-rm ~/Music
+mise run directory-ensure-rm ~/Pictures
+mise run directory-ensure-rm ~/Public
+mise run directory-ensure-rm ~/Templates
+mise run directory-ensure-rm ~/Videos
+"""
+
+[tasks.hier-build-symlinks]
+description = "Ensure important directories exist."
+run = """
+mkdir -p ~/.config
+mkdir -p ~/.fonts
+mkdir -p ~/.ssh
+mkdir -p ~/.local/share/applications
+mkdir -p ~/.local/share/fcitx5
+mkdir -p ~/.local/share/icons
+mkdir -p ~/.local/share/man
+mkdir -p ~/.local/share/omf
+mkdir -p ~/.local/share/themes
+"""
+
+[tasks.directory-ensure-mk]
+description = "Ensure directory exists."
+usage = """
+arg "<dir>" help="Directory"
+"""
+run = """
+#!/usr/bin/env fish
+test -d {{usage.dir}} || mkdir -p {{usage.dir}}
+"""
+
+[tasks.directory-ensure-rm]
+description = "Ensure directory doesn't exist."
+usage = """
+arg "<dir>" help="Directory"
+"""
+run = """
+#!/usr/bin/env fish
+rmdir {{usage.dir}} 2> /dev/null || true
+"""
+
+[tasks.symlinks-link]
+description = "Link symlinks."
+depends = ["hier-build-symlinks"]
+run = """
+#!/usr/bin/env fish
+
+# Link/update dotfiles repo.
+mkdir -p ~/.config
+ln -sfn (realpath .) -T ~/.config/dotfiles
+
+# Config:
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.config ~/.config
+
+# Fonts:
+mkdir -p ~/.fonts
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.fonts ~/.fonts
+
+# Share:
+mkdir -p ~/.local/share
+mkdir -p ~/.local/share/applications
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.local/share/applications ~/.local/share/applications
+ln -sfn ~/.config/dotfiles/dotfiles/.local/share/fcitx5 -T ~/.local/share/fcitx5
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.local/share/icons ~/.local/share/icons
+mkdir -p ~/.local/share/man/man1
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.local/share/man/man1 ~/.local/share/man/man1
+ln -sfn ~/.config/dotfiles/dotfiles/.local/share/omf -T ~/.local/share/omf
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.local/share/themes ~/.local/share/themes
+
+# SSH:
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.ssh ~/.ssh
+"""
+
+[tasks.post-install]
+description = "Post-install events."
+run = [
+  # Update bat.
+  "bat cache --build",
+  # Update fonts.
+  "fc-cache -fv",
+  # Update vale.
+  # "value sync",
+  # Update mise.
+  "mise install",
+]
+
+# [tasks.symlink-directory]
+# description = "Symlink (stow) directory."
+# usage = """
+# arg "<from_directory>" help=".."
+# arg "<to_directory>" help="..."
+# """
+# run = """
+# #!/usr/bin/env fish
+# echo "Symlinking files in {{ usage.from_directory }} to {{ usage.to_directory }}."
+# python ./scripts/stow.py {{ usage.from_directory }} {{ usage.to_directory }}
+# """
