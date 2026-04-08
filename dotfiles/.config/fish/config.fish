@@ -15,6 +15,11 @@ fish_add_path --path "$HOME/.config/dotfiles/scripts"
 fish_add_path --path "$HOME/.cargo/bin"
 fish_add_path --path "$HOME/.nix-profile/bin"
 
+# Enable mise.
+# This is done at the beginning as it affects path.
+type -f mise 2&>/dev/null && mise activate fish | source
+type -f mise 2&>/dev/null && type -f usage 2&>/dev/null && mise completions fish | source
+
 set -x LD_LIBRARY_PATH \
     $NIX_LD_LIBRARY_PATH \
     $LD_LIBRARY_PATH
@@ -26,11 +31,6 @@ set -x DO_NOT_TRACK 1
 if status is-interactive
     # Disable fish greeting.
     set fish_greeting
-
-    # Enable mise.
-    # This is done at the beginning as it affects path.
-    type -f mise 2&>/dev/null && mise activate fish | source
-    type -f mise 2&>/dev/null && type -f usage 2&>/dev/null && mise completions fish | source
 
     # Set colors.
     type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)

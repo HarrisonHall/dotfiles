@@ -7,7 +7,7 @@
     # Language
     ## Compilers & Interpreters
     gcc  # GCC
-    libclang  # Clang
+    # libclang  # Clang
     patchelf  # Patch binaries
     ## LSP
     nil  # Nix LSP
@@ -20,14 +20,12 @@
     gparted  # Disk management
     imagemagick  # Image commands like convert
     pandoc  # File conversion
-    ripgrep-all  # rga = ripgrep + rich-text searching (pdf, docx, etc.)
     slides  # Markdown presentation tool
     wireguard-tools  # Wireguard CLI
     xsel  # X selection util
     
     # Dev utils
     alsa-lib
-    lnav  # Log file navigation
     pkg-config
     udev
 
@@ -36,12 +34,6 @@
     localsend  # Send things on the same network
     mdbook  # Convert markdown to books
     monolith  # Archive web-pages
-
-    # Experimental
-    hexyl
-    dua
-    procs
-    fselect
-    sd
+    yt-dlp  # Youtube+ downloader
   ];
 }

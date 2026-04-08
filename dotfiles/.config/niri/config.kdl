@@ -44,8 +44,8 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     // Terminal.
-    Mod+Shift+T hotkey-overlay-title="Terminal" { spawn "ghostty"; }
-    XF86Explorer hotkey-overlay-title="Terminal" { spawn "ghostty"; }
+    Mod+Shift+T hotkey-overlay-title="Terminal" { spawn "wezterm"; }
+    XF86Explorer hotkey-overlay-title="Terminal" { spawn "wezterm"; }
     XF86Calculator hotkey-overlay-title="Calculator" { spawn "ghostty" "-e" "~/.config/python/interactive_startup.fish"; }
     // XF86Calculator hotkey-overlay-title="Calculator" { spawn "~/.config/python/interactive_startup.fish"; }
     XF86Tools hotkey-overlay-title="Media" { spawn "vlc"; }
