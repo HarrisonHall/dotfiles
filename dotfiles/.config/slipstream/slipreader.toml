@@ -144,6 +144,11 @@ indicator.color = "light-red"
 tag = "read-later"
 color = { bg = "bright-blue", fg = "black" }
 
+[[read.tags.colors]]
+tag = "interest"
+color = { bg = "black", fg = "yellow", underline = "yellow" }
+
+
 [read.hooks]
 fetch = []
 insert = [":add-tag unread"]
