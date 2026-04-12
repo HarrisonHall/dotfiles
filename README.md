@@ -47,6 +47,9 @@ compatibility with non-nix systems.
 - `rustup toolchain install stable`
 - `rustup toolchain install nightly`
 
+After updates, sometimes it is useful to:
+`rustup uninstall stable && rustup install stable && rustup component add rust-analyzer`.
+
 ### SSH
 
 - Create your ssh key `ssh-keygen -t ed25519 -a 32 -f ~/.ssh/id_ed25519`

@@ -15,6 +15,7 @@
 
     # Core tools
     git  # 'nuff said
+    gnumake  # Make
     unstable.helix  # Editor
     mosh  # UDP SSH
     tmux  # Terminal multiplexer
@@ -27,13 +28,14 @@
     eza  # Better ls
     file  # Get information on files
     gnupg  # PGP/GPG signing
-    zip  # Zipping
-    unzip  # Unzipping
+    python314  # Python
     p7zip  # 7z
     ripgrep  # Better grep
     starship  # Prompt
     wget  # Network downloader
     xdg-utils  # Application opening/desktop integration
+    zip  # Zipping
+    unzip  # Unzipping
 
     # Additional tools
     unstable.radicle-tui  # Radicle tui

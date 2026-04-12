@@ -4,6 +4,7 @@ bat = "latest"
 eza = "latest"
 helix = "latest"
 jujutsu = "latest"
+# make = "latest"
 tmux = "latest"
 
 # Core utilities
@@ -51,9 +52,11 @@ viddy = "latest"
 uv = "latest"
 zig = "latest"
 rust = "latest"
+# python = "latest"
 ruff = "latest"
 
 # Language support:
+harper-ls = "latest"
 marksman = "latest"
 ty = "latest"
 

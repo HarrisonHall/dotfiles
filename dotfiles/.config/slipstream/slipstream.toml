@@ -658,6 +658,14 @@ tags = ["video", "japanese", "gaming", "fun"]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4rqhyiTs7XyuODcECvuiiQ"
 tags = ["video", "gaming", "fun", "funny"]
 
+[feeds.anime-news-network]
+url = "https://www.animenewsnetwork.com/all/atom.xml?ann-edition=us"
+tags = ["video", "anime"]
+
+[feeds.crunchyroll-news]
+url = "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss"
+tags = ["video", "anime"]
+
 
 ## Social feeds
 
@@ -674,6 +682,85 @@ freq = "15min"
 [feeds.iamals]
 url = "https://www.iamals.org/feed/"
 tags = ["org", "philanthropy"]
+
+
+## Filter news
+
+[feeds.filtered-news]
+tags = ["filtered", "filtered-news"]
+tag_allowlist = ["news"]
+tag_blocklist = []
+must-include-substrings = [
+  "economy",
+  "daylight savings",
+  "law",
+  "japan",
+  "travel",
+]
+step = 11
+
+
+## Interest feeds
+
+[feeds.interest-media]
+tags = ["interest"]
+tag_allowlist = []  # All
+tag_blocklist = []
+must-include-substrings = [
+  # Music
+  "daft punk",
+  "lena raine",
+  "yoasobi",
+  "shishamo",
+  "porter robinson",
+  # Dev
+  "rust",
+  "bevy",
+  "godot",
+  "cve-",
+  "cve2",
+  # Games
+  "celeste",
+  "counter strike",
+  "dota2",
+  "dota 2",
+  "r.e.p.o",
+  "lethal company",
+  "vampire survivors",
+  # Nintendo
+  "nintendo",
+  "mario bros",
+  "super mario",
+  "zelda",
+  "smash bros",
+  "sakurai",
+  "miyamoto",
+  # Anime
+  "tensura",
+  "slime",
+  "chainsawman",
+  "chainsaw man",
+  "chainsaw-man",
+  "frieren",
+  "villainess",
+  "mushoku",
+  "isekai",
+  "oshi no ko",
+  "to your eternity",
+  "dungeon meshi",
+  "delicious in dungeon",
+  "evangelion",
+  # Misc.
+  "sanderson",
+  "atla",
+  "avatar",
+  "airbender",
+  "Ben 10",
+  "the boys",
+  "invincible",
+  "marvel",
+]
+step = 11
 
 
 ## Common aggregates
@@ -713,10 +800,10 @@ feeds = [
   ## Gaming
   "exok-games",
 ]
-step = 10
+step = 20
 
 [feeds.limited-news]
-step = 10
+step = 20
 tags = ["limited-news"]
 tag_allowlist = [
   "zine",
@@ -725,21 +812,22 @@ tag_allowlist = [
   "indie",
   "fun",
   "hacking",
+  "interest",
 ]
 tag_blocklist = [
   "ai",
 ]
 
 [feeds.single-feed]
-step = 11
+step = 21
 tags = ["single-feed"]
 tag_allowlist = [
-  "news",
   "limited-news",
   "social",
   "dont-miss",
   "org",
   "funny",
+  "filtered",
 ]
 tag_blocklist = [
   "satire",
