@@ -12,6 +12,7 @@ spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-theme Bibata-
 spawn-at-startup "gsettings set org.gnome.desktop.interface cursor-size 24"
 spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme prefer-dark"
 spawn-at-startup "gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark"
+// spawn-at-startup "gnome-keyring-daemon --start"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.

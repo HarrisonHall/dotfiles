@@ -2,17 +2,17 @@
 
 add_newline = false
 palette = "catppuccin_mocha"
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
 format = """
 $username\
 $hostname\
 $localip\
 $directory\
 $package\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
 ${custom.jj}\
 $docker_context\
 $c\
@@ -27,7 +27,6 @@ $typst\
 $vlang\
 $zig\
 $nix_shell\
-$spack\
 $aws\
 $direnv\
 $env_var\
