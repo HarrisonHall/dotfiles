@@ -713,20 +713,37 @@ must-include-substrings = [
   "yoasobi",
   "shishamo",
   "porter robinson",
+  "miku",
+  "her abiding memory",
+  "gentle love",
+  "zutomayo",
+
   # Dev
   "rust",
   "bevy",
   "godot",
   "cve-",
   "cve2",
+  "jellyfin",
+  # "mastodon",
+
   # Games
   "celeste",
   "counter strike",
+  "cs2",
   "dota2",
   "dota 2",
   "r.e.p.o",
   "lethal company",
   "vampire survivors",
+  "undertale",
+  "deltarune",
+  "animal well",
+  "chicory",
+  "arkham",
+  "necrodancer",
+  "omori",
+
   # Nintendo
   "nintendo",
   "mario bros",
@@ -735,6 +752,8 @@ must-include-substrings = [
   "smash bros",
   "sakurai",
   "miyamoto",
+  "pokemon",
+
   # Anime
   "tensura",
   "slime",
@@ -744,12 +763,16 @@ must-include-substrings = [
   "frieren",
   "villainess",
   "mushoku",
-  "isekai",
+  # "isekai",
   "oshi no ko",
   "to your eternity",
   "dungeon meshi",
   "delicious in dungeon",
   "evangelion",
+  "serial experiments lain",
+  "steins;gate",
+  "steins gate",
+
   # Misc.
   "sanderson",
   "atla",

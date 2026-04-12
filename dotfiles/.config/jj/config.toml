@@ -11,6 +11,11 @@ log-all = ["log", "-r", "@ | ancestors(immutable_heads().., 2) | heads(immutable
 l = ["log", "-r", "(trunk()..@):: | (trunk()..@)-"]
 fresh = ["new", "trunk()"]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+rad-push = [
+  "util", "exec", "--", "fish", "-c", """
+  echo "hello $argv"
+  """
+]
 
 [ui]
 default-command = "log-bookmark"
@@ -20,6 +25,9 @@ conflict-marker-style = "git"
 
 merge-editor = "mergiraf"
 diff-formatter = ["delta"]
+
+[merge-tools.delta]
+diff-expected-exit-codes = [0, 1]
 
 [merge-tools.difft]
 diff-args = ["--color=always", "$left", "$right"]
