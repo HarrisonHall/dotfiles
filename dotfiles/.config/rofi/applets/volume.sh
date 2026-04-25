@@ -26,7 +26,7 @@ if [[ "$?" == 0 ]]; then
 else
 	urgent="-u 1"
 	stext='Mute'
-	sicon=''
+	sicon='🔇'
 fi
 
 # Microphone Info
