@@ -1,10 +1,15 @@
 # dotfiles
 
 Modern .dotfiles and configuration. This is designed for new setups using
-[nix](https://nixos.org/). Most configuration is placed outside of nix for
-compatibility with non-nix systems.
+[nix](https://nixos.org/) and [mise](https://mise.jdx.dev/). Most configuration
+is placed outside of nix for compatibility with non-nix systems.
 
 ## Setup
+
+> [!NOTE]  
+> If incorporating into an existing setup _or_ using a non-NixOS distro, it may
+> be beneficial to utilize [\_bootstrap](pkgs/_bootstrap) before utilizing any
+> of the instructions below.
 
 ### Mise
 

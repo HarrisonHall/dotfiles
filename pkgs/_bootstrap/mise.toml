@@ -1,0 +1,57 @@
+[tools]
+# Core tools:
+bat = "latest"
+eza = "latest"
+helix = "latest"
+jujutsu = "latest"
+tmux = "latest"
+
+# Core utilities
+bottom = "latest"
+delta = "latest"
+ripgrep = "latest"
+yazi = "latest"
+zoxide = "latest"
+
+# # Additional tools:
+# atuin = "latest"
+# difftastic = "latest"
+# fd = "latest"
+# fzf = "latest"
+# jq = "latest"
+# "cargo:onefetch" = "latest"
+# "cargo:mergiraf" = "latest"
+# "cargo:slipstream-cli" = "latest"
+# starship = "latest"
+# "cargo:tealdeer" = "latest"
+# "pipx:tmuxp" = "latest"
+# "cargo:tokei" = "latest"
+# "cargo:zk-cli" = "latest"
+# yq = "latest"
+
+# # Platforms:
+# uv = "latest"
+# zig = "latest"
+# rust = "latest"
+# # python = "latest"
+# ruff = "latest"
+
+# # Language support:
+# harper-ls = "latest"
+# marksman = "latest"
+# ty = "latest"
+
+# Deps:
+# usage = "latest"
+# watchexec = "latest"
+# cargo-binstall = "latest"
+
+# [tools."http:radicle"]
+# url = "https://files.radicle.xyz/releases/latest/radicle-1.8.0-x86_64-unknown-linux-musl.tar.xz"
+# version = "1.8.0"
+# bin_path = "radicle-1.8.0-x86_64-unknown-linux-musl/bin"
+# checksum = "sha256:c6cf18a44d64182270bfcfcb70a19bc1556e8627bcd6d3b6d373fe7e1c461cc2"
+
+# [tasks.edit]
+# description = "Edit this mise config."
+# run = "$EDITOR ~/.config/mise/config.toml"
