@@ -4,9 +4,9 @@
 if type -f mpc; then
   mpc -q pause
 fi
-if type -f amixer; then
-  amixer set Master mute
-fi
+# if type -f amixer; then
+#   amixer set Master mute
+# fi
 
 # Lock, via swaylock.
 if type -f swaylock; then
