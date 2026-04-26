@@ -12,6 +12,7 @@ x-scheme-handler/https=firefox.desktop
 text/markdown=helix.desktop
 text/plain=helix.desktop
 text/readme=helix.desktop
+text/csv=helix.desktop
 
 video/mp4=vlc.desktop
 video/webm=vlc.desktop
