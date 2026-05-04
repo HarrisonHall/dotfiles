@@ -24,7 +24,7 @@ editor = "hx"
 conflict-marker-style = "git"
 
 merge-editor = "mergiraf"
-diff-formatter = ["delta"]
+diff-formatter = "delta"
 
 [merge-tools.delta]
 diff-expected-exit-codes = [0, 1]
