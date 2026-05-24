@@ -5,12 +5,6 @@ shell_command_before:
   - launch-env
 
 windows:
-  - window_name: docs
-    layout: main-vertical
-    options:
-      main-pane-width: "50%"
-    panes:
-      - null
   - window_name: build
     layout: main-vertical
     options:

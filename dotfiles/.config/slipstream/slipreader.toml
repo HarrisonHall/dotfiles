@@ -54,8 +54,14 @@ freq = "240s"
 
 [read]
 scroll = 1
-scroll_buffer = 6
+scroll-buffer = 6
 initial-search = "--not-tag hidden"
+# preview_format = ["{tags} {summary}"]
+# preview_format = [
+#   "/-{feed}{hline}\\",
+#   "|{tags} {summary}|",
+#   "\\{hline}/",
+# ]
 
 [read.tags]
 hidden = ["unread", "important"]

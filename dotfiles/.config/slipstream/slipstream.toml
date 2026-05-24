@@ -360,6 +360,10 @@ tags = ["blog", "hacking"]
 url = "https://blog.orhun.dev/rss.xml"
 tags = ["blog", "hacking"]
 
+[feeds.veroniiiica]
+url = "https://veroniiiica.com/feed/"
+tags = ["blog", "accessibility", "a11y", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -769,7 +773,7 @@ must-include-substrings = [
   "dungeon meshi",
   "delicious in dungeon",
   "evangelion",
-  "serial experiments lain",
+  # "serial experiments lain",
   "steins;gate",
   "steins gate",
 
