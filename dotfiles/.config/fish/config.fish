@@ -41,7 +41,7 @@ if status is-interactive
     set -x DELTA_PAGER "bat -p"
 
     ## Set fetching aliases.
-    alias fetch macchina
+    alias fetch "fastfetch -l small -s os:kernel:deshell:de:wm:wmtheme:theme:icons:terminal:cpu:memory:disk"
     alias fetch-min nitch
     alias fetch-max fastfetch
     alias neofetch fastfetch

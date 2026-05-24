@@ -3,19 +3,19 @@ name = "Harrison Hall"
 email = "hachha@hachha.dev"
 
 [aliases]
-push-force = []
-stash-all = []
-branch-list = []
 log-bookmark = ["log", "-T", "builtin_log_detailed", "-r", "..@"]
 log-all = ["log", "-r", "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"]
 l = ["log", "-r", "(trunk()..@):: | (trunk()..@)-"]
 fresh = ["new", "trunk()"]
-tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
+tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
+mine = ["bookmark", "list", "-r", "mine()"]
 rad-push = [
   "util", "exec", "--", "fish", "-c", """
   echo "hello $argv"
   """
 ]
+pr-log = ["log", "--reversed", "-r", "main..@", "-T", "pr", "-G"]
 
 [ui]
 default-command = "log-bookmark"
@@ -38,3 +38,48 @@ diff-args = ["--color=always", "$left", "$right"]
 
 # [git]
 # subprocess = true
+
+[template-aliases]
+"commit_pr(commit)" = """
+if(commit.description().trim().len() > 0,
+  concat(
+    "- ",
+    commit.description().first_line(),
+    "\n",
+    commit.description().lines().map(|line|
+      if(
+        line != commit.description().first_line() && line.trim().len() > 0,
+        if(
+          line.starts_with("-"),
+          concat(
+            "  ",
+            line,
+            "\n",
+          ),
+          if(
+            line.starts_with(" "),
+            concat(
+              "  ",
+              line,
+              "\n",
+            ),
+            concat(
+              "  - ",
+              line.trim(),
+              "\n",
+            ),
+          )
+        ),
+        ""
+      )
+    ).join(""),
+  )
+)
+"""
+pr = "commit_pr(self)"
+pr_with_rev = """
+concat(
+  format_root_commit(self),
+  commit_pr(self),
+)
+"""

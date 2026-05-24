@@ -41,6 +41,7 @@ sd = "latest"
 "cargo:slipstream-cli" = "latest"
 starship = "latest"
 # "cargo:starship-jj" = "latest"
+"cargo:swpui" = "latest"
 "cargo:tealdeer" = "latest"
 "cargo:tokei" = "latest"
 typst = "latest"
@@ -65,7 +66,7 @@ ty = "latest"
 # Some core tools need to be istalled via the package manager:
 # bash, fish, git, tree, mosh, wget, zip, unzip
 # colordiff, file, gnupg, kbd, xdg-utils
-# macchina, nitch, slides, yt-dlp
+# nitch, slides, yt-dlp
 # systemctl-tui, procs, fselect
 # ouch,
 # ltex-ls, 
