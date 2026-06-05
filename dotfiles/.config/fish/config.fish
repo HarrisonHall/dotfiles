@@ -96,7 +96,7 @@ if status is-interactive
     type -f atuin 2&>/dev/null && atuin init fish | source
 
     # Hook direnv.
-    type -f direnv 2&>/dev/null && direnv hook fish | source
+    # type -f direnv 2&>/dev/null && direnv hook fish | source
 
     ## Hook starship.
     set -x STARSHIP_CONFIG ~/.config/starship/starship.toml
@@ -126,6 +126,7 @@ if status is-interactive
     ## Other misc. aliases.
     type -f bat 2&>/dev/null && alias cat bat
     type -f btm 2&>/dev/null && alias top btm && alias htop btm
+    type -f elio 2&>/dev/null && alias ee elio
 end
 
 # Start DE, if applicable.

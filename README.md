@@ -75,3 +75,8 @@ After updates, sometimes it is useful to:
 
 - VT shell - setvtrgb
 - Grub - grub2-mkdfont pf2
+
+### Celeste
+
+- `flatpak install flathub io.github.everestapi.Olympus`
+- `flatpak run io.github.everestapi.Olympus`
