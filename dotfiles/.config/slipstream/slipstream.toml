@@ -51,6 +51,15 @@ exclude-tags = [
   "vibecoding",
 ]
 
+[global.transforms.tag-derivations]
+"hacking" = ["rust", "zig", "c++"]
+
+[global.transforms.tag-aliases]
+"japanese" = ["japan", "日本", "にほん"]
+"gaming" = ["games"]
+"news" = ["report"]
+"science" = ["environment", "climate", "climate change"]
+
 [global.options]
 # Maximum feeds returned, something sane.
 max = 512

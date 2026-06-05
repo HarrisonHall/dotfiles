@@ -55,13 +55,16 @@ freq = "240s"
 [read]
 scroll = 1
 scroll-buffer = 6
-initial-search = "--not-tag hidden"
-# preview_format = ["{tags} {summary}"]
-# preview_format = [
-#   "/-{feed}{hline}\\",
-#   "|{tags} {summary}|",
-#   "\\{hline}/",
-# ]
+initial_search = "--not-tag hidden"
+preview_format = ["tag", "flags", "summary", "date"]
+priority = [
+  "blog",
+  "rust",
+  "science",
+  "hacking",
+  "limited-news",
+  "news",
+]
 
 [read.tags]
 hidden = ["unread", "important"]
@@ -73,8 +76,6 @@ color = { bg = "yellow", fg = "black" }
 [[read.tags.colors]]
 tag = "news"
 color = { fg = "green" }
-indicator.symbol = "N"
-indicator.color = "green"
 
 [[read.tags.colors]]
 tag = "gov"
@@ -83,18 +84,20 @@ color = { bg = "bright-magenta", fg = "black" }
 [[read.tags.colors]]
 tag = "hacking"
 color = { underline = "light-cyan" }
-indicator.symbol = "H"
+indicator.symbol = "💾"
 indicator.color = "light-cyan"
 
 [[read.tags.colors]]
 tag = "blog"
-color = { underline = "green" }
-indicator.symbol = "B"
+color = { fg = "blue" }
+indicator.symbol = "📃"
 indicator.color = "blue"
 
 [[read.tags.colors]]
 tag = "gaming"
 color = { fg = "light-blue" }
+indicator.symbol = "🕹"
+indicator.color = "yellow"
 
 [[read.tags.colors]]
 tag = "japanese"
@@ -105,13 +108,13 @@ indicator.color = "red"
 [[read.tags.colors]]
 tag = "fun"
 color = { bg = "light-magenta", fg = "black" }
-indicator.symbol = "%"
+indicator.symbol = "🎉"
 indicator.color = "light-magenta"
 
 [[read.tags.colors]]
 tag = "satire"
 color = { bg = "yellow", fg = "black", underline = "black" }
-indicator.symbol = "X"
+indicator.symbol = "🙃"
 indicator.color = "yellow"
 
 [[read.tags.colors]]
@@ -125,34 +128,42 @@ color = { bg = "magenta", fg = "black" }
 [[read.tags.colors]]
 tag = "social"
 color = { bg = "cyan", fg = "black" }
+indicator.symbol = "👥"
+indicator.color = "light-blue"
 
 [[read.tags.colors]]
 tag = "zine"
 color = { bg = "green", fg = "black" }
+indicator.symbol = "📰"
+indicator.color = "white"
 
 [[read.tags.colors]]
 tag = "dont-miss"
 color = { bg = "blue", fg = "black" }
+indicator.symbol = "‼️"
+indicator.color = "red"
 
 [[read.tags.colors]]
 tag = "important"
 color = { bg = "red", fg = "black" }
-indicator.symbol = "!"
+indicator.symbol = "‼️"
 indicator.color = "yellow"
 
 [[read.tags.colors]]
 tag = "archive"
 color = { bg = "light-red", fg = "cyan" }
-indicator.symbol = "."
+indicator.symbol = "🏛"
 indicator.color = "light-red"
 
 [[read.tags.colors]]
 tag = "read-later"
 color = { bg = "bright-blue", fg = "black" }
+indicator.symbol = "🔮"
+indicator.color = "bright-blue"
 
 [[read.tags.colors]]
 tag = "interest"
-color = { bg = "black", fg = "yellow", underline = "yellow" }
+color = { bg = "black", fg = "yellow" }
 
 
 [read.hooks]
@@ -169,6 +180,7 @@ up = "up"
 down = "down"
 left = "left"
 right = "right"
+enter = "swap"
 
 # Important:
 i = ":toggle-tag important"
