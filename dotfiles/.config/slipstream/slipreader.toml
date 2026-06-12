@@ -57,17 +57,28 @@ scroll = 1
 scroll-buffer = 6
 initial_search = "--not-tag hidden"
 preview_format = ["tag", "flags", "summary", "date"]
-priority = [
-  "blog",
-  "rust",
-  "science",
-  "hacking",
-  "limited-news",
-  "news",
-]
 
 [read.tags]
 hidden = ["unread", "important"]
+priority = [
+  "blog",
+  "essays",
+  "zine",
+  "funny",
+  "rust",
+  "science",
+  "anime",
+  "releases",
+  "a11y",
+  "gaming",
+  "hacking",
+  "interest",
+  "limited-news",
+  "aggregate",
+  "fun",
+  "gov",
+  "news",
+]
 
 [[read.tags.colors]]
 tag = "unread"
