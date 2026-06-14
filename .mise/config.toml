@@ -152,6 +152,10 @@ python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.config ~/.config
 mkdir -p ~/.fonts
 python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.fonts ~/.fonts
 
+# Themes:
+mkdir -p ~/.themes
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.themes ~/.themes
+
 # Share:
 mkdir -p ~/.local/share
 mkdir -p ~/.local/share/applications

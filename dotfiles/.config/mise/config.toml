@@ -78,6 +78,12 @@ usage = "latest"
 watchexec = "latest"
 cargo-binstall = "latest"
 
+[tools."http:cha"]
+url = "https://git.sr.ht/~bptato/chawan/refs/download/v0.4.2/chawan-0-4-2-linux-amd64.tar.xz"
+version = "0.4.2"
+bin_path = "chawan-0-4-2-linux-amd64"
+checksum = "sha256:f1f7e07a3eb6439e14e08f3913cdd8fc94861621b0af79c4b9cf1f1080071051"
+
 [tools."http:radicle"]
 url = "https://files.radicle.xyz/releases/latest/radicle-1.8.0-x86_64-unknown-linux-musl.tar.xz"
 version = "1.8.0"

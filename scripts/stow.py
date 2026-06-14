@@ -41,7 +41,7 @@ def symlink_all(from_directory: Path, to_directory: Path, **kwargs) -> int:
     if not from_directory.is_dir():
         raise Exception(f"{from_directory} is not a directory.")
     if not to_directory.exists():
-        to_directory.mkdir(parents=True, exists_ok=False)
+        to_directory.mkdir(parents=True, exist_ok=False)
     if not to_directory.is_dir():
         raise Exception(f"{to_directory} is not a directory.")
 
