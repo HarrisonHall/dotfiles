@@ -59,21 +59,27 @@ initial_search = "--not-tag hidden"
 preview_format = ["tag", "flags", "summary", "date"]
 
 [read.tags]
-hidden = ["unread", "important"]
+hidden = [
+  "unread",
+  "important",
+]
 priority = [
   "blog",
-  "essays",
   "zine",
-  "funny",
+  "essays",
   "rust",
+  "zig",
+  "python",
   "science",
   "anime",
   "releases",
   "a11y",
+  "funny",
   "gaming",
   "hacking",
   "interest",
   "limited-news",
+  "single-feed",
   "aggregate",
   "fun",
   "gov",
@@ -87,10 +93,14 @@ color = { bg = "yellow", fg = "black" }
 [[read.tags.colors]]
 tag = "news"
 color = { fg = "green" }
+# indicator.symbol = "📰"
+# indicator.color = "green"
 
 [[read.tags.colors]]
 tag = "gov"
 color = { bg = "bright-magenta", fg = "black" }
+indicator.symbol = "🗽"
+indicator.color = "bright-magenta"
 
 [[read.tags.colors]]
 tag = "hacking"
@@ -108,6 +118,7 @@ indicator.color = "blue"
 tag = "gaming"
 color = { fg = "light-blue" }
 indicator.symbol = "🕹"
+# indicator.symbol = "🕹️"
 indicator.color = "yellow"
 
 [[read.tags.colors]]
@@ -163,7 +174,8 @@ indicator.color = "yellow"
 [[read.tags.colors]]
 tag = "archive"
 color = { bg = "light-red", fg = "cyan" }
-indicator.symbol = "🏛"
+# indicator.symbol = "🏛"
+indicator.symbol = "🗃️"
 indicator.color = "light-red"
 
 [[read.tags.colors]]

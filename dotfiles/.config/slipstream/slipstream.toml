@@ -46,19 +46,23 @@ exclude-substrings = [
   "トランプ",
   "musk",
   "イーロン",
+  "-ai",
+  ".ai",
 ]
 exclude-tags = [
+  "sports",
   "vibecoding",
 ]
 
 [global.transforms.tag-derivations]
 "hacking" = ["rust", "zig", "c++"]
-
-[global.transforms.tag-aliases]
 "japanese" = ["japan", "日本", "にほん", "anime", "manga"]
 "gaming" = ["games", "switch", "singleplayer", "multiplayer"]
-"news" = ["report", "society"]
 "science" = ["environment", "climate", "climate change"]
+"sports" = ["basketball", "baseball", "nfl", "nhl", "fifa", "soccer"]
+
+[global.transforms.tag-aliases]
+"news" = ["report", "society"]
 
 [global.options]
 # Maximum feeds returned, something sane.

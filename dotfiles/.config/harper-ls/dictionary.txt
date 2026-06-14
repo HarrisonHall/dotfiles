@@ -1,5 +1,7 @@
 AsteroidOS
 Astrophotography
+CNO
+FastAPI
 Ghostty
 IPv8
 Konnichiwa

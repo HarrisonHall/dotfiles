@@ -14,6 +14,11 @@ spawn-at-startup "gsettings set org.gnome.desktop.interface color-scheme prefer-
 spawn-at-startup "gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark"
 // spawn-at-startup "gnome-keyring-daemon --start"
 
+// Flatpak
+spawn-at-startup "flatpak override --user --filesystem=$HOME/.themes"
+spawn-at-startup "flatpak override --user --filesystem=$HOME/.icons"
+spawn-at-startup "flatpak override --user --filesystem=xdg-config/gtk-4.0"
+
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.

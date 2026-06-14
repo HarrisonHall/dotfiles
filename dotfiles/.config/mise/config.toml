@@ -48,6 +48,7 @@ starship = "latest"
 typst = "latest"
 typstyle = "latest"
 viddy = "latest"
+"pipx:yt-dlp" = "latest"
 "cargo:zk-cli" = "latest"
 
 # Platforms:
