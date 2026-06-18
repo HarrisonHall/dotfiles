@@ -13,6 +13,7 @@
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;  # May be necessary for steam
 
+
   environment.systemPackages = with pkgs; [
     vulkan-loader
 
@@ -37,6 +38,8 @@
     # gamescope
 
     pkgsi686Linux.gperftools   # required to run CS:Source
+
+    (olympus.override { celesteWrapper = "steam-run"; })
   ];
 
   # Creates Enviroment path for 32 bit gperftools, required to run CS:Source
