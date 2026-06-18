@@ -16,7 +16,9 @@ is placed outside of nix for compatibility with non-nix systems.
 1. `curl https://mise.run | sh`
 2. `mise trust`
 
-### NixOS
+### Packages
+
+#### NixOS
 
 1. `nix-shell`
 2. Add unstable channel
@@ -24,13 +26,18 @@ is placed outside of nix for compatibility with non-nix systems.
    - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable`
 3. `mise run install update`
 
-### \*nix
+#### \*nix
 
 1. Install nix: `sh <(curl -L https://nixos.org/nix/install) --daemon`
 2. `nix-shell`
 3. Update profile: `mise run install-shell update`
 4. Custom setup:
    - Install GUI programs: firefox, discord, obsidian, thunderbird, vlc...
+
+### Flatpak
+
+1. Install flatpak: (_distro-dependent_)
+2. `mise install-flatpak`
 
 ### Manual setup
 
@@ -75,8 +82,3 @@ After updates, sometimes it is useful to:
 
 - VT shell - setvtrgb
 - Grub - grub2-mkdfont pf2
-
-### Celeste
-
-- `flatpak install flathub io.github.everestapi.Olympus`
-- `flatpak run io.github.everestapi.Olympus`

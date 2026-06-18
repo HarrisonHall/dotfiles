@@ -202,6 +202,8 @@ in
       ffmpeg
       # Only libraries are needed from those two
       libudev0-shim
+      # Celeste/Olympus
+      icu
       
       # Needed to run unity
       # gtk3

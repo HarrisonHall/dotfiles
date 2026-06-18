@@ -71,6 +71,16 @@ end
 mise run post-install
 """
 
+[tasks.install-flatpak]
+description = "Install flatpak software."
+run = """
+#!/usr/bin/env fish
+
+for item in pkgs/flatpak/*
+    fish $item
+end
+"""
+
 [tasks.hier-build-base]
 description = "Build base directories."
 run = """

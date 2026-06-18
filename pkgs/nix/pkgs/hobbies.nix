@@ -17,7 +17,7 @@
 
     # Art
     # aseprite 
-    libresprite
+    # libresprite
     blender
     inkscape-with-extensions  # Inkscape
     krita
