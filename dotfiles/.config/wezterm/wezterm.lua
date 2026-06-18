@@ -1,4 +1,4 @@
--- Wezterm configuration
+-- Wezterm configuration.
 
 -- Pull in the wezterm API
 local wezterm = require 'wezterm'
@@ -108,15 +108,10 @@ set_default(padding_table.h, { top = 0, bottom = 0 })
 
 -- [[ Config End ]]
 
+-- Center on window resize.
 wezterm.on("window-resized", function(window)
   util.compute_padding(window, padding_table)
 end);
-
-wezterm.on("window-config-reloaded", function(window)
-  util.compute_padding(window, padding_table)
-end);
-
--- CENTER
 
 
 -- and finally, return the configuration to wezterm
