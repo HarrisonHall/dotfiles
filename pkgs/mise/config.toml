@@ -10,9 +10,9 @@ experimental = true
 
 gpg_verify = true
 
-paranoid = false
-
 prefer_offline = true
+
+# paranoid = false
 
 # url_replacements = {}
 
@@ -58,7 +58,9 @@ hexyl = "latest"
 just = "latest"
 lnav = "latest"
 "cargo:onefetch" = "latest"
+rclone = "latest"
 ripgrep-all = "latest"
+"cargo:scooter" = "latest"
 sd = "latest"
 "cargo:slipstream-cli" = "latest"
 starship = "latest"
