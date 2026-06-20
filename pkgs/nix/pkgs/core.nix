@@ -7,7 +7,7 @@
     # Essential
     discord  # Discord, but with more features!
     firefox  # Browser
-    unstable.ghostty  # Terminal
+    wezterm  # Backup terminal
 
     # Utils
     # calibre  # ebook software
@@ -16,12 +16,11 @@
     nautilus  # File explorer
     halloy  # IRC
     imhex  # Hex viewer
-    kodi-wayland  # Entertainment center
+    # kodi-wayland  # Entertainment center
     obs-studio  # Capture audio and video
     pinta  # Basic image editor
     thunderbird-bin  # Thunderbird
     vlc  # Audio-video viewer
-    wezterm  # Backup terminal
   ];
 
   # Enable flatpak

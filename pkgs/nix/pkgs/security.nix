@@ -5,9 +5,8 @@
 {
   users.users.${user}.packages = with pkgs; [
     # Crypt
-    protonvpn-gui
-    # protonvpn-cli  # Deprecated
-    protonmail-bridge
+    # protonvpn-gui
+    # protonmail-bridge
 
     # Signal messaging
     signal-desktop
@@ -15,8 +14,8 @@
     # Tor
     tor
     tor-browser
-    mullvad
-    mullvad-vpn
-    mullvad-browser
+    # mullvad
+    # mullvad-vpn
+    # mullvad-browser
   ];
 }

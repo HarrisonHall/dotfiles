@@ -17,12 +17,15 @@ in
       # ./hardware/framework-13.nix
       # ./hardware/desktop.nix
       /etc/nixos/hardware-configuration.nix
+
       # System
       ./system/input.nix
       ./system/mounting.nix
       ./system/networking.nix
       ./system/sound.nix
+
       # Packages
+      
       ## Core
       ./pkgs/core.nix
       ./pkgs/dev.nix
@@ -30,14 +33,15 @@ in
       ./pkgs/security.nix
       ./pkgs/term-core.nix
       ./pkgs/term-extra.nix
+
       ## Custom
       ./pkgs/custom/greeter.nix
       ./pkgs/custom/podman.nix
       ./pkgs/custom/steam.nix
-      ./pkgs/custom/kde.nix
-      ./pkgs/custom/sway.nix
+      # ./pkgs/custom/kde.nix
+      # ./pkgs/custom/sway.nix
       ./pkgs/custom/niri.nix
-      ./pkgs/custom/cosmic.nix
+      # ./pkgs/custom/cosmic.nix
       ./pkgs/custom/music.nix
       ./pkgs/custom/syncthing.nix
       ./pkgs/custom/vm.nix

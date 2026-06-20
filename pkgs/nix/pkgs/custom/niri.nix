@@ -4,11 +4,49 @@
   programs.niri = {
     enable = true;
   };
-  
-  users.users.${user}.packages = with pkgs; [
-    unstable.xwayland-satellite
-  ];
 
+  users.users.${user}.packages = with pkgs; [
+    # Necessary for niri.
+    unstable.xwayland-satellite
+
+    # Icon configuration
+    papirus-icon-theme  # Icons
+
+    # Libs
+    glib # gsettings
+    glfw
+    libnotify  # libnotify + notify-send
+    mesa
+    wayland  # Wayland libs
+    wayland-protocols  # Other wayland stuffs
+
+    # Essential
+    mako  # Wayland notification daemon
+    mate.mate-polkit  # Polkit
+    networkmanagerapplet  # Network manager bar applet
+    shared-mime-info  # Allow apps to have mime info
+    swaylock  # Lock screen management
+    swayidle  # Idle management
+    waybar  # Better swaybar
+    wev  # Wayland keyboard
+    wl-clipboard  # Wayland clipboard utilities
+    wtype  # Wayland type utility
+    wf-recorder  # Wayland screen recorder
+    xdg-user-dirs  # XDG help
+    xdg-utils  # XDG
+
+    # Scripting Utils
+    acpi  # Battery
+    slurp  # Screenspace selector
+    swaybg  # Change sway bg
+
+    # Graphical Utils
+    pavucontrol  # Audio control
+    rofi # Widgets and pickers
+    rofi-emoji  # Emoji picker
+    wdisplays # Configure displays
+  ];
+  
   # Security
   security.polkit.enable = true;
   security.pam.services.swaylock.text = ''
