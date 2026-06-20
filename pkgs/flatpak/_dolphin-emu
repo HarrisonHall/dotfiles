@@ -1,0 +1,3 @@
+# flatpak install -y flathub org.DolphinEmu.dolphin-emu
+
+# flatpak run --device=all org.DolphinEmu.dolphin-emu

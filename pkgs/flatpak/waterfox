@@ -1,1 +1,1 @@
-flatpak install flathub net.waterfox.waterfox
+flatpak install -y flathub net.waterfox.waterfox

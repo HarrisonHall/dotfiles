@@ -1,1 +1,1 @@
-# flatpak install flathub io.github.everestapi.Olympus
+# flatpak install -y flathub io.github.everestapi.Olympus

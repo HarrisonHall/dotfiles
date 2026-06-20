@@ -1,11 +1,32 @@
+# Global mise config.
+
+[settings]
+
+# Compiling from scratch (when applicable) is recommended on NixOS and Alpine.
+# Otherwise, disable this to use pre-build binaries.
+all_compile = true
+
+experimental = true
+
+gpg_verify = true
+
+paranoid = false
+
+prefer_offline = true
+
+# url_replacements = {}
+
+[settings.python]
+compile = false
+
 [tools]
 # Core tools:
 bat = "latest"
 eza = "latest"
 helix = "latest"
 jujutsu = "latest"
-# make = "latest"
-tmux = "latest"
+"conda:make" = "latest"
+"aqua:tmux/tmux-builds" = "latest"
 
 # Core utilities
 atuin = "latest"
@@ -55,7 +76,7 @@ viddy = "latest"
 uv = "latest"
 zig = "latest"
 rust = "latest"
-# python = "latest"
+python = "latest"
 ruff = "latest"
 
 # Language support:
