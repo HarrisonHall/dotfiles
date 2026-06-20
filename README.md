@@ -24,7 +24,7 @@ is placed outside of nix for compatibility with non-nix systems.
 2. Add unstable channel
    - `sudo nix-channel --add https://nixos.org/channels/nixos-25.11 nixos`
    - `sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos-unstable`
-3. `mise run install update`
+3. `mise run install-nixos update`
 
 #### \*nix
 

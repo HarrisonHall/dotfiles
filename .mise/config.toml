@@ -10,7 +10,7 @@ sudo = "sudo"
 gc_duration = "30d"
 
 
-[tasks.install]
+[tasks.install-nixos]
 description = "Install config for nixos."
 usage = """
 arg "<flags>" help="Flags: update | ..." default=" "
@@ -75,6 +75,9 @@ mise run post-install
 description = "Install flatpak software."
 run = """
 #!/usr/bin/env fish
+
+flatpak remote-add --user --if-not-exists \
+    flathub https://flathub.org/repo/flathub.flatpakrepo
 
 for item in pkgs/flatpak/*
     fish $item
