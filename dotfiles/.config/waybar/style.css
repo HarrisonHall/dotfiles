@@ -148,15 +148,17 @@
 }
 
 #workspaces {
+  all: unset;
   border-radius: 1em;
-  margin: 5px;
   background-color: @surface0;
+  margin: 5px;
   margin-left: 1em;
   padding-left: 0.75em;
   padding-right: 0.75em;
 }
 
 #workspaces button {
+  all: unset;
   color: @text;
   background: transparent;
   border: none;
@@ -202,15 +204,17 @@
 }
 
 #taskbar {
+  all: unset;
   border-radius: 1em;
-  margin: 5px;
   background-color: @surface0;
+  margin: 5px;
   margin-left: 1em;
   padding-left: 0.75em;
   padding-right: 0.75em;
 }
 
 #taskbar button {
+  all: unset;
   color: @text;
   background: transparent;
   border: none;
@@ -222,7 +226,7 @@
 #taskbar button:hover {
   color: @sapphire;
   box-shadow: inset 0px 4px 0px 0px @sapphire;
-  text-shadow: 0px 1px 0px @sapphire;
+  /* text-shadow: 0px 1px 0px @sapphire; */
 }
 
 #clock {
