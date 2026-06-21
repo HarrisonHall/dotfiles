@@ -113,6 +113,12 @@ version = "1.8.0"
 bin_path = "radicle-1.8.0-x86_64-unknown-linux-musl/bin"
 checksum = "sha256:c6cf18a44d64182270bfcfcb70a19bc1556e8627bcd6d3b6d373fe7e1c461cc2"
 
+# [tools."http:yubico-piv-tool"]
+# url = "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-2.7.3.tar.gz"
+# version = "2.7.3"
+# bin_path = ""
+# checksum = "sha256:"
+
 [tasks.edit]
 description = "Edit the global mise config."
 run = "$EDITOR ~/.config/mise/config.toml"

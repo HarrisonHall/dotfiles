@@ -17,5 +17,9 @@
     # mullvad
     # mullvad-vpn
     # mullvad-browser
+
+    # PIV
+    yubikey-manager
+    yubico-piv-tool
   ];
 }

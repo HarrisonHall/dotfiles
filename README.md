@@ -18,6 +18,10 @@ is placed outside of nix for compatibility with non-nix systems.
 
 ### Packages
 
+#### Mise
+
+1. `mise install`
+
 #### NixOS
 
 1. `nix-shell`
@@ -34,7 +38,7 @@ is placed outside of nix for compatibility with non-nix systems.
 4. Custom setup:
    - Install GUI programs: firefox, discord, obsidian, thunderbird, vlc...
 
-### Flatpak
+#### Flatpak
 
 1. Install flatpak: (_distro-dependent_)
 2. `mise install-flatpak`
@@ -64,9 +68,21 @@ is placed outside of nix for compatibility with non-nix systems.
 After updates, sometimes it is useful to:
 `rustup uninstall stable && rustup install stable && rustup component add rust-analyzer`.
 
+### YubiKey
+
+- Load existing certs:
+  - `ssh-keygen -K`: dump keys
+    - `cp id_ed25519_sk.yubi ~/.ssh/.`
+  - Load the certificate:
+    `yubico-piv-tool -a import-certificate -s 9a -i cert.pem`
+  - Add to ssh: `ssh-add -K ./priv.key`
+  - Add gpg: `gpg --import ./dotfiles/.gnupg/public-keys/signing.gpg.public`
+  - ~~Add to ssh:
+    `ssh-keygen -D /nix/var/nix/profiles/system/sw/lib/opensc-pkcs11.so -e`~~
+
 ### SSH
 
-- Create your ssh key `ssh-keygen -t ed25519 -a 32 -f ~/.ssh/id_ed25519`
+- Create local ssh key `ssh-keygen -t ed25519 -a 32 -f ~/.ssh/id_ed25519`
 - Symlink to default `ln -s ~/.ssh/id_ed25519 ~/.ssh/default`
 - Add to servers:
   - `ssh-copy-id -i ~/.ssh/id_ed25519 hachha@home-server`

@@ -596,6 +596,30 @@ window-rule {
     open-floating false
 }
 
+window-rule {
+    match title=r".*OpenSSH Authentication.*"
+    open-maximized-to-edges false
+    open-floating true
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match title=r".*gpg.*"
+    open-maximized-to-edges false
+    open-floating true
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match title=r".*/bin/ssh.*"
+    open-maximized-to-edges false
+    open-floating true
+
+    block-out-from "screen-capture"
+}
+
 // Example: block out two password managers from screen capture.
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#

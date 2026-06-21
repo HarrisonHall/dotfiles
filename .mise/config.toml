@@ -181,7 +181,10 @@ ln -sfn ~/.config/dotfiles/dotfiles/.local/share/omf -T ~/.local/share/omf
 python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.local/share/themes ~/.local/share/themes
 
 # SSH:
+mkdir -p ~/.ssh
+mkdir -p ~/.gnupg
 python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.ssh ~/.ssh
+python ./scripts/stow.py ~/.config/dotfiles/dotfiles/.gnupg ~/.gnupg
 """
 
 [tasks.post-install]

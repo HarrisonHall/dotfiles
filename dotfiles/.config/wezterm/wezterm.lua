@@ -21,6 +21,9 @@ config.window_close_confirmation = 'NeverPrompt'
 -- Wayland
 --config.enable_wayland = false  -- Force xWayland
 
+-- SSH
+-- config.mux_enable_ssh_agent = false;
+
 -- Theming
 config.term = "xterm-256color"
 config.font = wezterm.font_with_fallback {

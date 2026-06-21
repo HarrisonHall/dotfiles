@@ -6,6 +6,7 @@ Ghostty
 IPv8
 Konnichiwa
 LinuxFest
+Mise
 Nano
 Niri
 OS
