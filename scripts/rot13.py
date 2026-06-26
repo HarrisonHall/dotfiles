@@ -2,6 +2,10 @@
 
 import argparse
 
+LOWERCASE: str = "abcdefghijklmnopqrstuvwxyz"
+UPPERCASE: str = LOWERCASE.upper()
+NUMBERS: str = "0123456789"
+
 
 def parse_args() -> dict:
     parser = argparse.ArgumentParser(
@@ -11,7 +15,6 @@ def parse_args() -> dict:
     parser.add_argument(
         "value",
         type=str,
-        # dest="value",
     )
     parser.add_argument(
         "-r",
@@ -20,23 +23,46 @@ def parse_args() -> dict:
         default=13,
         dest="x",
     )
+    parser.add_argument(
+        "--half",
+        action="store_true",
+    )
 
     args = parser.parse_args()
     return vars(args)
 
 
-def rotX(value: str, x: int) -> str:
-    letters: str = "abcdefghijklmnopqrstuvwxyz"
+def rot_char_x(char: str, charset: str, x: int | None) -> str:
+    if x is None:
+        x = len(charset) // 2
+    if char not in charset:
+        return char
+    return charset[(charset.find(char) + x) % len(charset)]
+
+
+def rot_x(value: str, x: int | None, **_kwargs) -> str:
     rotted: str = ""
     for char in value.lower():
-        if char not in letters:
-            rotted += char
+        if char in LOWERCASE:
+            rotted += rot_char_x(char, LOWERCASE, x)
             continue
-        rotted += letters[(letters.find(char) + x) % len(letters)]
+        if char in UPPERCASE:
+            rotted += rot_char_x(char, UPPERCASE, x)
+            continue
+        if char in NUMBERS:
+            rotted += rot_char_x(char, NUMBERS, x)
+            continue
+        rotted += char
     return rotted
 
 
 if __name__ == "__main__":
-    rotted = rotX(**parse_args())
+    args = parse_args()
+    if args.get("half", False):
+        args["x"] = None
+
+    rotted = rot_x(**args)
+
     print(rotted)
+
     exit(0)

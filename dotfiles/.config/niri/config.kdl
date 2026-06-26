@@ -542,6 +542,10 @@ animations {
 layer-rule {
     match namespace="^wallpaper$"
     place-within-backdrop true
+    // background-effect {
+    //     blur true
+    //     xray false
+    // }
 }
 
 // In general, open new windows so they're full width.
@@ -620,6 +624,19 @@ window-rule {
     block-out-from "screen-capture"
 }
 
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-maximized-to-edges false
+    open-floating true
+}
+window-rule {
+    match app-id="steam" title=r#"^notification_toasts"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+    open-maximized-to-edges false
+    open-floating true
+}
+
 // Example: block out two password managers from screen capture.
 window-rule {
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
@@ -631,7 +648,12 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 4
+    geometry-corner-radius 10
     clip-to-geometry true
 }
+
+// window-rule {
+//     match is-floating=true
+//     baba-is-float true
+// }
 

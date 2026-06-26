@@ -21,6 +21,7 @@
     wayland-protocols  # Other wayland stuffs
 
     # Essential
+    unstable.ashell  # Core bar
     mako  # Wayland notification daemon
     mate.mate-polkit  # Polkit
     networkmanagerapplet  # Network manager bar applet
@@ -85,15 +86,24 @@
     serviceConfig.Restart = "on-failure";
   };
   systemd.user.services."waybar" = {
-    enable = true;
+    enable = false;
     serviceConfig.ExecStart = "${pkgs.waybar}/bin/waybar";
+    wantedBy = ["niri.service"];
+    after = [ "graphical-session.target" ];
+    serviceConfig.Restart = "on-failure";
+    environment = lib.mkForce {};
+    conflicts = ["ashell.service"];
+  };
+  systemd.user.services."ashell" = {
+    enable = true;
+    serviceConfig.ExecStart = "${pkgs.unstable.ashell}/bin/ashell";
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
     environment = lib.mkForce {};
   };
   systemd.user.services."mako" = {
-    enable = true;
+    enable = false;
     serviceConfig.ExecStart = "${pkgs.mako}/bin/mako";
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];

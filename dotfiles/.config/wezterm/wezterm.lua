@@ -41,6 +41,8 @@ config.window_padding = {
   bottom = '0.25cell',
 }
 
+config.warn_about_missing_glyphs = false;
+
 -- Keybinds
 config.keys = {
   -- Disable accidental zoom-in

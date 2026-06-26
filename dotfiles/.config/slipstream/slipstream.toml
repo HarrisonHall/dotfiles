@@ -160,8 +160,9 @@ tags = ["news", "essays", "zine", "fun"]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking", "aggregate"]
 exclude-title-words = ["ai", "hiring", "fun"]
-exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt"]
+exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt", "anthropic"]
 exclude-tags = ["ai"]
+exclude-links = [".ai"]
 
 [feeds.lobsters]
 url = "https://lobste.rs/rss"
