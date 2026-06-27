@@ -378,6 +378,10 @@ tags = ["blog", "hacking"]
 url = "https://veroniiiica.com/feed/"
 tags = ["blog", "accessibility", "a11y", "hacking"]
 
+[feeds.kore-signet]
+url = "https://blog.cat-girl.gay/feed/"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -401,6 +405,10 @@ tags = ["blog", "hacking"]
 [feeds.lets-encrypt]
 url = "https://letsencrypt.org/feed.xml"
 tags = ["blog", "hacking"]
+
+[feeds."shattered.io"]
+url = "https://shattered.io/feed/"
+tags = ["hacking", "security"]
 
 
 ## Japanese
