@@ -31,7 +31,7 @@
 
     # Additional tools
     ltex-ls  # Tex/Markdown spellcheck
-    nodePackages.prettier  # Prettier
+    prettier  # Prettier
     # vale  # Spellcheck and grammer
     # vale-ls  # vale LSP
     kbd  # Keyboard & virtual terminal utils

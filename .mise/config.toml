@@ -27,6 +27,7 @@ set config (realpath {{vars.dotfiles}}/pkgs/nix/configuration.nixos.nix)
 # Update channels:
 if string match -i -r ".*update.*" {{usage.flags}} 1&2>/dev/null
     echo "Updating..."
+    {{vars.sudo}} nix-channel add https://nixos.org/channels/nixos-26.05 nixos
     {{vars.sudo}} nix-channel --update
 end
 if string match -i -r ".*upgrade.*" {{usage.flags}} 1&2>/dev/null

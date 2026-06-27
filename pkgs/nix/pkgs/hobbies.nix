@@ -8,8 +8,8 @@
     anki-bin
 
     # Games
-    dolphin-emu  # GC/Wii emulation
-    unstable.godot  # Godot engine
+    # dolphin-emu  # GC/Wii emulation
+    # unstable.godot  # Godot engine
     sgt-puzzles  # Simon Tatham's puzzles
 
     # Music

@@ -22,8 +22,8 @@
 
     # Essential
     unstable.ashell  # Core bar
-    mako  # Wayland notification daemon
-    mate.mate-polkit  # Polkit
+    # mako  # Wayland notification daemon
+    mate-polkit  # Polkit
     networkmanagerapplet  # Network manager bar applet
     shared-mime-info  # Allow apps to have mime info
     swaylock  # Lock screen management

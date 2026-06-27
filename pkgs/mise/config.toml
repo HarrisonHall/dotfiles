@@ -107,11 +107,16 @@ version = "0.4.2"
 bin_path = "chawan-0-4-2-linux-amd64"
 checksum = "sha256:f1f7e07a3eb6439e14e08f3913cdd8fc94861621b0af79c4b9cf1f1080071051"
 
+# [tools."http:radicle"]
+# url = "https://files.radicle.xyz/releases/latest/radicle-1.8.0-x86_64-unknown-linux-musl.tar.xz"
+# version = "1.8.0"
+# bin_path = "radicle-1.8.0-x86_64-unknown-linux-musl/bin"
+# checksum = "sha256:c6cf18a44d64182270bfcfcb70a19bc1556e8627bcd6d3b6d373fe7e1c461cc2"
 [tools."http:radicle"]
-url = "https://files.radicle.xyz/releases/latest/radicle-1.8.0-x86_64-unknown-linux-musl.tar.xz"
-version = "1.8.0"
-bin_path = "radicle-1.8.0-x86_64-unknown-linux-musl/bin"
-checksum = "sha256:c6cf18a44d64182270bfcfcb70a19bc1556e8627bcd6d3b6d373fe7e1c461cc2"
+url = "https://files.radicle.dev/releases/latest/radicle-1.9.1-x86_64-unknown-linux-musl.tar.xz"
+version = "1.9.1"
+bin_path = "radicle-1.9.1-x86_64-unknown-linux-musl/bin"
+checksum = "sha256:9374872f98d7497bfab631ba0113e3864b9916f8f56da0d1e52c0fc5b31b95f3"
 
 # [tools."http:yubico-piv-tool"]
 # url = "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-2.7.3.tar.gz"

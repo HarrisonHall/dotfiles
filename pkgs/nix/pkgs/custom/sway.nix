@@ -59,7 +59,7 @@ in
       # Essential
       grim  # Screenshot tool
       mako  # Wayland notification daemon
-      mate.mate-polkit  # Polkit
+      mate-polkit  # Polkit
       networkmanagerapplet  # Network manager bar applet
       shared-mime-info  # Allow apps to have mime info
       swaylock  # Lock screen management

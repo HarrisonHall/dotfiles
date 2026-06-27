@@ -15,18 +15,17 @@ fresh = ["new", "trunk()"]
 tug = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
 tug- = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@-"]
 mine = ["bookmark", "list", "-r", "mine()"]
-rad-push = [
-  "util", "exec", "--", "fish", "-c", """
-  echo "TODO $argv"
-  """
-]
 pr-log = ["log", "--reversed", "-r", "main..@", "-T", "pr", "-G"]
+rad-patch = ["util", "exec", "--", "fish", "-c", """
+VISUAL=$EDITOR git push rad HEAD:refs/patches
+""", ""]
 
 [ui]
 default-command = "log-bookmark"
 # default-revset = "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"
 editor = "hx"
 conflict-marker-style = "git"
+show-cryptographic-signatures = true
 
 merge-editor = "mergiraf"
 diff-formatter = "delta"
@@ -88,3 +87,41 @@ concat(
   commit_pr(self),
 )
 """
+# log_detailed_with_sig = '''
+# concat(
+#   "Commit ID: " ++ commit.commit_id() ++ "\n",
+#   "Change ID: " ++ commit.change_id() ++ "\n",
+#   surround("Bookmarks: ", "\n", separate(" ",
+#     commit.local_bookmarks(),
+#     commit.remote_bookmarks(),
+#   )),
+#   surround("Tags     : ", "\n", commit.tags()),
+#   "Author   : " ++ format_detailed_signature(commit.author()) ++ "\n",
+#   "Committer: " ++ format_detailed_signature(commit.committer())  ++ "\n",
+#   if(config("ui.show-cryptographic-signatures").as_boolean(),
+#     concat(
+#       "Signature: ",
+#       format_detailed_cryptographic_signature(commit.signature()),
+#       "\n",
+#     )
+#   ),
+#   "\n",
+#   indent("    ",
+#     if(commit.description(),
+#       commit.description().trim_end(),
+#       label(if(commit.empty(), "empty"), description_placeholder)
+#     ) ++ "\n"
+#   ),
+#   "\n",
+# )
+# '''
+
+[revsets]
+sign = "closest_pushable(@)"
+
+
+[revset-aliases]
+# Closest revision that is mutable, described and either non-empty or a merge
+'closest_pushable(to)' = '''
+  heads(::to & mutable() & ~description(exact:"") & (~empty() | merges()))
+'''
