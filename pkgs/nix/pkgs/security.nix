@@ -9,11 +9,11 @@
     # protonmail-bridge
 
     # Signal messaging
-    signal-desktop
+    # signal-desktop
 
     # Tor
-    tor
-    tor-browser
+    # tor
+    # tor-browser
     # mullvad
     # mullvad-vpn
     # mullvad-browser

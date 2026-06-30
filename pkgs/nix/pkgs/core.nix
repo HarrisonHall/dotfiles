@@ -15,10 +15,10 @@
     feh  # View images
     nautilus  # File explorer
     halloy  # IRC
-    imhex  # Hex viewer
+    # imhex  # Hex viewer
     # kodi-wayland  # Entertainment center
     obs-studio  # Capture audio and video
-    pinta  # Basic image editor
+    # pinta  # Basic image editor
     thunderbird-bin  # Thunderbird
     vlc  # Audio-video viewer
   ];

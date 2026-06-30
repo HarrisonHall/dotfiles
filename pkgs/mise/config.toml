@@ -19,6 +19,9 @@ prefer_offline = true
 [settings.python]
 compile = false
 
+[settings.node]
+compile = false
+
 [tools]
 # Core tools:
 bat = "latest"
@@ -31,6 +34,7 @@ jujutsu = "latest"
 # Core utilities
 atuin = "latest"
 bottom = "latest"
+# d2 = "latest"
 delta = "latest"
 difftastic = "latest"
 "cargo:elio" = "latest"
@@ -57,6 +61,7 @@ fzf = "latest"
 hexyl = "latest"
 just = "latest"
 lnav = "latest"
+"cargo:monolith" = "latest"
 "cargo:onefetch" = "latest"
 rclone = "latest"
 ripgrep-all = "latest"
@@ -68,8 +73,6 @@ starship = "latest"
 "cargo:swpui" = "latest"
 "cargo:tealdeer" = "latest"
 "cargo:tokei" = "latest"
-typst = "latest"
-typstyle = "latest"
 viddy = "latest"
 "pipx:yt-dlp" = "latest"
 "cargo:zk-cli" = "latest"
@@ -80,11 +83,17 @@ zig = "latest"
 rust = "latest"
 python = "latest"
 ruff = "latest"
+node = "latest"
 
 # Language support:
 harper-ls = "latest"
 marksman = "latest"
+prettier = "latest"
 ty = "latest"
+
+# typst = "latest"
+# typstyle = "latest"
+# tinymist = "latest"
 
 # "cargo:ouch" = "latest"
 

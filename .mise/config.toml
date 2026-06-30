@@ -27,7 +27,7 @@ set config (realpath {{vars.dotfiles}}/pkgs/nix/configuration.nixos.nix)
 # Update channels:
 if string match -i -r ".*update.*" {{usage.flags}} 1&2>/dev/null
     echo "Updating..."
-    {{vars.sudo}} nix-channel add https://nixos.org/channels/nixos-26.05 nixos
+    {{vars.sudo}} nix-channel --add https://nixos.org/channels/nixos-26.05 nixos
     {{vars.sudo}} nix-channel --update
 end
 if string match -i -r ".*upgrade.*" {{usage.flags}} 1&2>/dev/null
@@ -36,6 +36,7 @@ if string match -i -r ".*upgrade.*" {{usage.flags}} 1&2>/dev/null
 end
 
 # Update the configuration:
+# TODO: --install-bootloader?
 {{vars.sudo}} nixos-rebuild switch -I nixos-config=$config -j 4
 
 # Run GC:

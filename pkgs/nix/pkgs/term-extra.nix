@@ -11,9 +11,9 @@
     patchelf  # Patch binaries
     ## LSP
     nil  # Nix LSP
-    tinymist  # Typst LSP
+    # tinymist  # Typst LSP
     ## Toolchains
-    platformio-core
+    # platformio-core
 
     # Core utils
     ffmpeg-full  # Manage video
@@ -32,8 +32,8 @@
     # Extra tools
     atomicparsley  # Music metadata editor
     localsend  # Send things on the same network
-    mdbook  # Convert markdown to books
-    monolith  # Archive web-pages
+    # mdbook  # Convert markdown to books
+    # monolith  # Archive web-pages
     yt-dlp  # Youtube+ downloader
   ];
 }

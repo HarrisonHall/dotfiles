@@ -30,16 +30,16 @@
     unzip  # Unzipping
 
     # Additional tools
-    ltex-ls  # Tex/Markdown spellcheck
-    prettier  # Prettier
+    # ltex-ls  # Tex/Markdown spellcheck
+    # prettier  # Prettier
     # vale  # Spellcheck and grammer
     # vale-ls  # vale LSP
     kbd  # Keyboard & virtual terminal utils
     macchina  # Fetch tool
     nitch  # Minimal fetching
     slides  # Markdown presentation tool    
-    ouch  # Handy compression tool
-    systemctl-tui  # Experimental
+    # ouch  # Handy compression tool
+    # systemctl-tui  # Experimental
 
     # bacon  # Rust compiler-driven development
     # direnv  # Manage environments based on directory (nix support)
