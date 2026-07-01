@@ -66,7 +66,7 @@ textbox-prompt-colon {
     expand:                      false;
     str:                         "";
     padding:                     10px 13px;
-    border-radius:               0px;
+    border-radius:               10px;
     background-color:            @urgent;
     text-color:                  @background;
 }
@@ -74,7 +74,7 @@ textbox-prompt-colon {
 prompt {
     enabled:                     true;
     padding:                     10px;
-    border-radius:               0px;
+    border-radius:               10px;
     background-color:            @active;
     text-color:                  @background;
 }
@@ -117,7 +117,7 @@ element {
     enabled:                     true;
     padding:                     30px 10px;
     border:                      0px solid;
-    border-radius:               0px;
+    border-radius:               10px;
     border-color:                @selected;
     background-color:            transparent;
     text-color:                  @foreground;
@@ -125,7 +125,7 @@ element {
 }
 
 element-text {
-    font:                        "Font Awesome 6 Free Solid 28";
+    font:                        "Font Awesome 7 Free Solid 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

@@ -26,7 +26,7 @@ if [[ "$?" == 0 ]]; then
 else
 	urgent="-u 1"
 	stext='Mute'
-	sicon='🔇'
+	sicon='\uf6a9'
 fi
 
 # Microphone Info
@@ -61,7 +61,7 @@ option_5=""
 rofi_cmd() {
 	rofi -theme-str "window {width: $win_width;}" \
 		-theme-str "listview {columns: $list_col; lines: $list_row;}" \
-		-theme-str 'textbox-prompt-colon {str: "";}' \
+		-theme-str 'textbox-prompt-colon {str: "";}' \
 		-dmenu \
 		-p "$prompt" \
 		-mesg "$mesg" \

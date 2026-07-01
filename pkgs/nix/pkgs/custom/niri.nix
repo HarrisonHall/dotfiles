@@ -85,29 +85,31 @@
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
   };
-  systemd.user.services."waybar" = {
-    enable = false;
+  systemd.user.services."niri-waybar" = {
+    enable = true;
     serviceConfig.ExecStart = "${pkgs.waybar}/bin/waybar";
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
     environment = lib.mkForce {};
-    conflicts = ["ashell.service"];
+    conflicts = ["niri-ashell.service"];
   };
-  systemd.user.services."ashell" = {
-    enable = true;
+  systemd.user.services."niri-ashell" = {
+    enable = false;
     serviceConfig.ExecStart = "${pkgs.unstable.ashell}/bin/ashell";
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
     environment = lib.mkForce {};
+    conflicts = ["niri-waybar.service"];
   };
-  systemd.user.services."mako" = {
-    enable = false;
+  systemd.user.services."niri-mako" = {
+    enable = true;
     serviceConfig.ExecStart = "${pkgs.mako}/bin/mako";
     wantedBy = ["niri.service"];
     after = [ "graphical-session.target" ];
     serviceConfig.Restart = "on-failure";
+    conflicts = ["niri-ashell.service"];
   };
   systemd.user.services."niri-fcitx" = {
     enable = true;

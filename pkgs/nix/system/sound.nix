@@ -14,4 +14,8 @@
     pulse.enable = true;
     jack.enable = true;
   };
+
+  environment.systemPackages = [
+    pkgs.alsa-utils
+  ];
 }

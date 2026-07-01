@@ -1,12 +1,12 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    "spacing": 0, // Gaps between modules (0px)
-    // "margin-bottom": 5,
+    "reload_style_on_change": true,
+    "layer": "top",
+    "position": "top",
 
-    // Choose the order of the modules
+    "spacing": 0,
+
     "modules-left": [
-        // "custom/launcher",
+        "custom/launcher",
         "niri/workspaces",
         "sway/workspaces",
         "sway/scratchpad",
@@ -19,16 +19,15 @@
     ],
     "modules-right": [
         "tray", 
-        "idle_inhibitor", 
+        // "idle_inhibitor", 
         "pulseaudio", 
         // "keyboard-state", 
         "backlight", 
         "battery", 
         "clock"
     ],
-    // Modules configuration
+
     "niri/workspaces": {
-        // "disable-scroll": true,
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
@@ -50,11 +49,7 @@
             "1": [],
             "2": [], 
             "3": [],
-            "4": [],
-            // "5": [],
-            // "6": [],
-            // "7": [],
-            // "8": []
+            "4": []
         },
         "format": "{icon}",
         "format-icons": {
@@ -81,19 +76,26 @@
     },
     "wlr/taskbar": {
         "on-click": "activate",
+        "spacing": 5,
+        "ignore-list": [
+            "Alacritty"
+        ],
+        "cursor": true
     },
     "idle_inhibitor": {
         "format": "{icon} ",
         "format-icons": {
             // "activated": "",
             // "deactivated": ""
-            "activated": "目覚め",
-            "deactivated": "眠り"
+            "activated": "\ue163",
+            "deactivated": "\ue163"
+            // "activated": "目覚め",
+            // "deactivated": "眠り"
         }
     },
     "tray": {
         "icon-size": 20,
-        "spacing": 10,
+        "spacing": 2,
         "icons": {
             // "discord": "face-monkey",
         },
@@ -172,9 +174,11 @@
         "on-click": "$HOME/.config/rofi/applets/volume.sh"
     },
     "custom/launcher": {
-        "format": "火山",
+        // "format": "火山",
+        // "format": "󱗼",
+        "format": "\uf0c9",
         "on-click": "$HOME/.config/rofi/launcher/drun.sh",
-        "tooltip-format": "",
-        "tooltip": false
+        "tooltip-format": "Launcher\n\nSuper + S",
+        "tooltip": true
     }
 }
