@@ -7,6 +7,8 @@ build_window_format() {
   local text="$4"
   local fill="$5"
 
+  # number="$(num_to_japanese $number)"
+
   if [ "$window_status_enable" = "yes" ]; then
     local icon
     icon="$(build_window_icon)"
@@ -31,17 +33,17 @@ build_window_format() {
   fi
 
   if [ "$fill" = "all" ]; then
-    local show_number="#[fg=$background,bg=$color]$number"
-    local show_middle_separator="#[fg=$background,bg=$color,nobold,nounderscore,noitalics]$window_middle_separator"
-    local show_text="#[fg=$background,bg=$color]$text"
+    local show_number="#[fg=$background,bg=$color,bold]$number"
+    local show_middle_separator="#[fg=$background,bg=$color,bold,nounderscore,noitalics]$window_middle_separator"
+    local show_text="#[fg=$background,bg=$color,bold]$text"
 
     if [ "$status_connect_separator" = "yes" ]; then
-      local show_left_separator="#[fg=$color,bg=$thm_bg,nobold,nounderscore,noitalics]$window_left_separator"
-      local show_right_separator="#[fg=$color,bg=$thm_bg]$window_right_separator"
+      local show_left_separator="#[fg=$color,bg=$thm_bg,bold,nounderscore,noitalics]$window_left_separator"
+      local show_right_separator="#[fg=$color,bg=$thm_bg,bold]$window_right_separator"
 
     else
-      local show_left_separator="#[fg=$color,bg=default,nobold,nounderscore,noitalics]$window_left_separator"
-      local show_right_separator="#[fg=$color,bg=default]$window_right_separator"
+      local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]$window_left_separator"
+      local show_right_separator="#[fg=$color,bg=default,bold]$window_right_separator"
 
     fi
 
@@ -124,4 +126,44 @@ build_window_icon() {
   fi
 
   echo "$show_window_status"
+}
+
+# NOTE: This does not work since what is passed is the window index "#I", not the
+# actual window number.
+num_to_japanese() {
+  case "$1" in
+    0)
+      echo "〇"
+      ;;
+    1)
+      echo "一"
+      ;;
+    [2])
+      echo "二"
+      ;;
+    ".*3.*")
+      echo "三"
+      ;;
+    "4")
+      echo "四"
+      ;;
+    "5")
+      echo "五"
+      ;;
+    "6")
+      echo "六"
+      ;;
+    "7")
+      echo "七"
+      ;;
+    "8")
+      echo "八"
+      ;;
+    "9")
+      echo "九"
+      ;;
+    *)
+      echo ""
+      ;;
+  esac
 }

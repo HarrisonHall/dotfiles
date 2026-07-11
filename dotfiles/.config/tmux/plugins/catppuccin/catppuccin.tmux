@@ -83,7 +83,7 @@ main() {
   pane_border_style=$(get_tmux_option "@catppuccin_pane_border_style" "fg=${thm_gray}")
   pane_active_border_style=$(
     get_tmux_option "@catppuccin_pane_active_border_style" \
-      "#{?pane_in_mode,fg=${thm_yellow},#{?pane_synchronized,fg=${thm_magenta},fg=${thm_orange}}}"
+      "#{?pane_in_mode,fg=${thm_yellow},#{?pane_synchronized,fg=${thm_magenta},fg=${thm_green}}}"
   )
   pane_left_separator=$(get_tmux_option "@catppuccin_pane_left_separator" "█")
   pane_middle_separator=$(get_tmux_option "@catppuccin_pane_middle_separator" "█")
