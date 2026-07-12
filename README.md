@@ -4,6 +4,8 @@ Modern .dotfiles and configuration. This is designed for new setups using
 [nix](https://nixos.org/) and [mise](https://mise.jdx.dev/). Most configuration
 is placed outside of nix for compatibility with non-nix systems.
 
+![Desktop screenshot](docs/media/desktop.png)
+
 ## Setup
 
 > [!NOTE]  
