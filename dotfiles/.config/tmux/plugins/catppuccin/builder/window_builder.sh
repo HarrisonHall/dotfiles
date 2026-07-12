@@ -50,9 +50,9 @@ build_window_format() {
   fi
 
   if [ "$fill" = "number" ]; then
-    local show_number="#[fg=$background,bg=$color]$number"
+    local show_number="#[fg=$color,bg=$background]$number"
     local show_middle_separator="#[fg=$color,bg=$background,nobold,nounderscore,noitalics]$window_middle_separator"
-    local show_text="#[fg=$thm_fg,bg=$background]$text"
+    local show_text="#[fg=$color,bg=$background]$text"
 
     if [ "$window_number_position" = "right" ]; then
       if [ "$status_connect_separator" = "yes" ]; then
@@ -60,7 +60,7 @@ build_window_format() {
         local show_right_separator="#[fg=$color,bg=$thm_bg]$window_right_separator"
 
       else
-        local show_left_separator="#[fg=$background,bg=default,nobold,nounderscore,noitalics]$window_left_separator"
+        local show_left_separator="#[fg=$background,bg=$background,nobold,nounderscore,noitalics]$window_left_separator"
         local show_right_separator="#[fg=$color,bg=default]$window_right_separator"
 
       fi
@@ -68,12 +68,12 @@ build_window_format() {
 
     if [ "$window_number_position" = "left" ]; then
       if [ "$status_connect_separator" = "yes" ]; then
+        local show_left_separator="#[fg=$color,bg=$background]$window_left_separator"
         local show_right_separator="#[fg=$background,bg=$thm_bg,nobold,nounderscore,noitalics]$window_right_separator"
-        local show_left_separator="#[fg=$color,bg=$thm_bg]$window_left_separator"
 
       else
+        local show_left_separator="#[fg=$background,bg=default]$window_left_separator"
         local show_right_separator="#[fg=$background,bg=default,nobold,nounderscore,noitalics]$window_right_separator"
-        local show_left_separator="#[fg=$color,bg=default]$window_left_separator"
 
       fi
 

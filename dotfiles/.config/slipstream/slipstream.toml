@@ -382,6 +382,14 @@ tags = ["blog", "accessibility", "a11y", "hacking"]
 url = "https://blog.cat-girl.gay/feed/"
 tags = ["blog", "hacking"]
 
+[feeds.craig-mod]
+url = "https://craigmod.com/index.xml"
+tags = ["blog"]
+
+[feeds.marc-atthis-link]
+url = "https://atthis.link/rss.xml"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -629,7 +637,7 @@ tags = ["gaming", "comics"]
 
 [feeds.not-just-bikes]
 url = "https://rss.nebula.app/video/channels/notjustbikes.rss"
-tags = ["video"]
+tags = ["video", "urbanism"]
 
 [feeds.gmtk]
 url = "https://rss.nebula.app/video/channels/gmtk.rss"
@@ -725,6 +733,23 @@ must-include-substrings = [
 ]
 step = 11
 
+
+## Tag filters
+
+[feeds.craig-mod-hacking]
+tags = ["hacking"]
+feeds = ["craig-mod"]
+must-include-substrings = ["[RODEN]"]
+
+[feeds.craig-mod-urbanism]
+tags = ["japanese", "urbanism"]
+feeds = ["craig-mod"]
+must-include-substrings = ["[RIDGELINE]"]
+
+[feeds.craig-mod-essays]
+tags = ["essays", "zine"]
+feeds = ["craig-mod"]
+must-include-substrings = ["[ESSAYS]"]
 
 ## Interest feeds
 
