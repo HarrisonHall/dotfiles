@@ -390,6 +390,14 @@ tags = ["blog"]
 url = "https://atthis.link/rss.xml"
 tags = ["blog", "hacking"]
 
+[feeds.xeiaso]
+url = "https://xeiaso.net/blog.rss"
+tags = ["blog", "hacking"]
+
+[feeds.purple-syringa]
+url = "https://purplesyringa.moe/blog/feed.rss"
+tags = ["blog", "hacking"]
+
 ## Technology
 
 [feeds.guardian-technology]

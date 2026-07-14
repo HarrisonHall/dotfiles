@@ -32,6 +32,22 @@ build_window_format() {
 
   fi
 
+  if [ "$fill" = "bracket-none" ]; then
+    local show_number="#[fg=$thm_fg,bg=default,bold]$number"
+    local show_middle_separator="#[fg=$thm_fg,bg=default,nobold,nounderscore,noitalics]$window_middle_separator"
+    local show_text="#[fg=$thm_fg,bg=default,bold]$text"
+    local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]["
+    local show_right_separator="#[fg=$color,bg=default,bold]] "
+  fi
+
+  if [ "$fill" = "bracket" ]; then
+    local show_number="#[fg=$color,bg=default,bold]$number"
+    local show_middle_separator="#[fg=$color,bg=default,nobold,nounderscore,noitalics]$window_middle_separator"
+    local show_text="#[fg=$color,bg=default,bold]$text"
+    local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]("
+    local show_right_separator="#[fg=$color,bg=default,bold]) "
+  fi
+
   if [ "$fill" = "all" ]; then
     local show_number="#[fg=$background,bg=$color,bold]$number"
     local show_middle_separator="#[fg=$background,bg=$color,bold,nounderscore,noitalics]$window_middle_separator"
