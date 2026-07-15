@@ -67,6 +67,12 @@ main() {
     fi
   fi
 
+  # Update color if in ssh.
+  if ! [ -z "$SSH_CLIENT" ]; then
+    set status-bg "${thm_ssh}"
+    message_background="${thm_bg}"
+  fi
+
   set status-left-length "100"
   set status-right-length "100"
 
