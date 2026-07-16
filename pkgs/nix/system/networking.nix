@@ -41,5 +41,7 @@
     pkgs.p11-kit
     pkgs.libfido2
     pkgs.yubikey-manager
+
+    pkgs.upower
   ];
 }

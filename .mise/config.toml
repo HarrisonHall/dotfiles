@@ -36,8 +36,7 @@ if string match -i -r ".*upgrade.*" {{usage.flags}} 1&2>/dev/null
 end
 
 # Update the configuration:
-# TODO: --install-bootloader?
-{{vars.sudo}} nixos-rebuild switch -I nixos-config=$config -j 4
+{{vars.sudo}} nixos-rebuild switch -I nixos-config=$config -j 4 --show-trace --install-bootloader
 
 # Run GC:
 if test $status -eq 0
