@@ -9,12 +9,12 @@ show_disabled() { # This function name must match the module name!
   if [ "$disabled_option" = "true" ];
   then
     icon=""
-    color="$( get_tmux_option "@catppuccin_disabled_color" "$thm_red" )"
-    text="$(  get_tmux_option "@catppuccin_disabled_text"  "F12" )"
+    color="$( get_tmux_option "@status_disabled_color" "$thm_red" )"
+    text="$(  get_tmux_option "@status_disabled_text"  "F12" )"
   else
     icon=""
-    color="$( get_tmux_option "@catppuccin_disabled_color" "$thm_blue" )"
-    text="$(  get_tmux_option "@catppuccin_disabled_text"  "F12" )"
+    color="$( get_tmux_option "@status_disabled_color" "$thm_cyan" )"
+    text="$(  get_tmux_option "@status_disabled_text"  "F12" )"
   fi
 
   module=$( build_status_module "$index" "$icon" "$color" "$text" )

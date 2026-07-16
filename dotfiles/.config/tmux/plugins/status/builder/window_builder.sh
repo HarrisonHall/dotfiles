@@ -44,8 +44,8 @@ build_window_format() {
     local show_number="#[fg=$color,bg=default,bold]$number"
     local show_middle_separator="#[fg=$color,bg=default,nobold,nounderscore,noitalics]$window_middle_separator"
     local show_text="#[fg=$color,bg=default,bold]$text"
-    local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]("
-    local show_right_separator="#[fg=$color,bg=default,bold]) "
+    local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]"
+    local show_right_separator="#[fg=$color,bg=default,bold] "
   fi
 
   if [ "$fill" = "all" ]; then
@@ -115,14 +115,14 @@ build_window_icon() {
     custom_icon_window_zoom custom_icon_window_mark custom_icon_window_mark \
     custom_icon_window_silent custom_icon_window_activity custom_icon_window_bell
 
-  window_status_icon_enable=$(get_tmux_option "@catppuccin_window_status_icon_enable" "yes")
-  custom_icon_window_last=$(get_tmux_option "@catppuccin_icon_window_last" "󰖰")
-  custom_icon_window_current=$(get_tmux_option "@catppuccin_icon_window_current" "󰖯")
-  custom_icon_window_zoom=$(get_tmux_option "@catppuccin_icon_window_zoom" "󰁌")
-  custom_icon_window_mark=$(get_tmux_option "@catppuccin_icon_window_mark" "󰃀")
-  custom_icon_window_silent=$(get_tmux_option "@catppuccin_icon_window_silent" "󰂛")
-  custom_icon_window_activity=$(get_tmux_option "@catppuccin_icon_window_activity" "󱅫")
-  custom_icon_window_bell=$(get_tmux_option "@catppuccin_icon_window_bell" "󰂞")
+  window_status_icon_enable=$(get_tmux_option "@status_window_status_icon_enable" "yes")
+  custom_icon_window_last=$(get_tmux_option "@status_icon_window_last" "󰖰")
+  custom_icon_window_current=$(get_tmux_option "@status_icon_window_current" "󰖯")
+  custom_icon_window_zoom=$(get_tmux_option "@status_icon_window_zoom" "󰁌")
+  custom_icon_window_mark=$(get_tmux_option "@status_icon_window_mark" "󰃀")
+  custom_icon_window_silent=$(get_tmux_option "@status_icon_window_silent" "󰂛")
+  custom_icon_window_activity=$(get_tmux_option "@status_icon_window_activity" "󱅫")
+  custom_icon_window_bell=$(get_tmux_option "@status_icon_window_bell" "󰂞")
 
   if [ "$window_status_icon_enable" = "yes" ]; then
     # #!~[*-]MZ

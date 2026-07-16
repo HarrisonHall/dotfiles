@@ -2,9 +2,9 @@ show_battery() {
   local index icon color text module
 
   index=$1
-  icon=$(get_tmux_option "@catppuccin_battery_icon" "#{battery_icon}")
-  color=$(get_tmux_option "@catppuccin_battery_color" "$thm_yellow")
-  text=$(get_tmux_option "@catppuccin_battery_text" "#{battery_percentage}")
+  icon=$(get_tmux_option "@status_battery_icon" "#{battery_icon}")
+  color=$(get_tmux_option "@status_battery_color" "$thm_yellow")
+  text=$(get_tmux_option "@status_battery_text" "#{battery_percentage}")
 
   tmux set-option -g @batt_icon_charge_tier8 '󰁹'
   tmux set-option -g @batt_icon_charge_tier7 '󰂁'

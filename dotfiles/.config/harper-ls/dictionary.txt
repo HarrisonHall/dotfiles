@@ -2,6 +2,7 @@ Adguard
 AsteroidOS
 Astrophotography
 CNO
+Catppuccin
 Erren
 FastAPI
 Ghostty
