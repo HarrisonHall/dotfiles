@@ -57,8 +57,17 @@ main() {
   fi
 
   # Update color if in ssh.
+  sysname="$(hostname):$(whoami)"
   if ! [ -z "$SSH_CLIENT" ]; then
-    set status-bg "${thm_ssh}"
+    set status-bg "${thm_ssh_1}"
+    message_background="${thm_bg}"
+  fi
+  if [[ "$sysname" == *"home-server"* ]]; then
+    set status-bg "${thm_ssh_2}"
+    message_background="${thm_bg}"
+  fi
+  if [[ "$sysname" == *"web-server"* ]]; then
+    set status-bg "${thm_ssh_5}"
     message_background="${thm_bg}"
   fi
 

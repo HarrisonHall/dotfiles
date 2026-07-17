@@ -329,6 +329,16 @@
   color: @red;
 }
 
+#battery.disabled {
+  /* max-width: 0px; */
+  /* display: hidden; */
+}
+
+#backlight.disabled {
+  /* max-width: 0px; */
+  /* display: hidden; */
+}
+
 #backlight {
   font-family: "Font Awesome 7 Free", "M PLUS 1", "HackGen35 Console NFJ";
   color: @yellow;
@@ -343,7 +353,16 @@
   font-family: "Font Awesome 7 Free", "M PLUS 1", "HackGen35 Console NFJ";
   /* color: @red; */
   border-radius: 5px 0px 0px 5px;
-  margin-left: 0.5;
+  margin-left: 0.5em;
+  padding-left: 0.5em;
+}
+
+#mpd {
+  /* color: @mauve; */
+  font-family: "Font Awesome 7 Free", "M PLUS 1", "HackGen35 Console NFJ";
+  border-radius: 5px 0px 0px 5px;
+  margin-left: 0.5em;
+  margin-right: 1em;
   padding-left: 0.5em;
 }
 

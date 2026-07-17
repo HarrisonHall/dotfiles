@@ -60,6 +60,7 @@ exclude-tags = [
 "gaming" = ["games", "switch", "singleplayer", "multiplayer"]
 "science" = ["environment", "climate", "climate change"]
 "sports" = ["basketball", "baseball", "nfl", "nhl", "fifa", "soccer"]
+"releases" = ["release", "version"]
 
 [global.transforms.tag-aliases]
 "news" = ["report", "society"]
@@ -212,7 +213,7 @@ tags = ["hacking", "fun"]
 
 [feeds.ai-robots-txt]
 url = "https://github.com/ai-robots-txt/ai.robots.txt/releases.atom"
-tags = ["hacking", "ai"]
+tags = ["hacking", "ai", "releases"]
 
 [feeds.utopia-css]
 url = "https://utopia.fyi/feed.xml"

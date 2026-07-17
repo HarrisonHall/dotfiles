@@ -607,6 +607,13 @@ window-rule {
 
     block-out-from "screen-capture"
 }
+window-rule {
+    match title=r".*@nixos.*radicle*"
+    open-maximized-to-edges false
+    open-floating true
+
+    block-out-from "screen-capture"
+}
 
 window-rule {
     match title=r".*gpg.*"

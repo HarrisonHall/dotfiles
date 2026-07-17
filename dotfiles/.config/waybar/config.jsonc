@@ -18,6 +18,7 @@
         "sway/window"
     ],
     "modules-right": [
+        "mpd",
         "tray", 
         // "idle_inhibitor", 
         "pulseaudio", 
@@ -172,6 +173,35 @@
         "tooltip": true,
         "tooltip-format": "{desc} {volume}% {icon}",
         "on-click": "$HOME/.config/rofi/applets/volume.sh"
+    },
+    "mpd": {
+        "format": "{stateIcon}",
+        // "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format-disconnected": "",
+        // "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}",
+        "interval": 2,
+        "state-icons": {
+            // "paused": "",
+            // "playing": ""
+            "paused": "",
+            "playing": ""
+        },
+        // "consume-icons": {
+        //     "on": " " // Icon shows only when "consume" is on
+        // },
+        // "random-icons": {
+        //     "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        //     "on": " "
+        // },
+        // "repeat-icons": {
+        //     "on": " "
+        // },
+        // "single-icons": {
+        //     "on": "1 "
+        // },
+        "tooltip-format": "MPD (connected)\n{artist} / {album}",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "custom/launcher": {
         // "format": "火山",
