@@ -204,6 +204,7 @@ down = "down"
 left = "left"
 right = "right"
 enter = "swap"
+g = "clear"
 
 # Important:
 i = ":toggle-tag important"
