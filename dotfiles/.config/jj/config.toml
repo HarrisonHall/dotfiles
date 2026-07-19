@@ -19,6 +19,8 @@ pr-log = ["log", "--reversed", "-r", "main..@", "-T", "pr", "-G"]
 rad-patch = ["util", "exec", "--", "fish", "-c", """
 VISUAL=$EDITOR git push rad HEAD:refs/patches
 """, ""]
+pr-sign = ["sign", "-r", "trunk()+::@"]
+pr-sign- = ["sign", "-r", "trunk()+::@-"]
 
 [ui]
 default-command = "log-bookmark"

@@ -22,7 +22,7 @@ thm_ssh_1="#202637"  # Blue
 thm_ssh_2="#242C2C"  # Green
 thm_ssh_3="#3B2B34"  # Red
 thm_ssh_4="#2E2C2E"  # Yellow
-thm_ssh_5="#403752"  # Purple
+thm_ssh_5="#292437"  # Purple
 
 # NOTE: you can use vars with $<var> and ${<var>} as long as the str is double quoted: ""
 # WARNING: hex colors can't contain capital letters

@@ -44,8 +44,10 @@ build_window_format() {
     local show_number="#[fg=$color,bg=default,bold]$number"
     local show_middle_separator="#[fg=$color,bg=default,nobold,nounderscore,noitalics]$window_middle_separator"
     local show_text="#[fg=$color,bg=default,bold]$text"
-    local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]"
-    local show_right_separator="#[fg=$color,bg=default,bold] "
+    # local show_left_separator="#[fg=$color,bg=default,bold,nounderscore,noitalics]"
+    # local show_right_separator="#[fg=$color,bg=default,bold] "
+    local show_left_separator="#[fg=$thm_blue,bg=default,bold,nounderscore,noitalics]("
+    local show_right_separator="#[fg=$thm_blue,bg=default,bold]) "
   fi
 
   if [ "$fill" = "all" ]; then
