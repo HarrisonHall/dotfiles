@@ -54,7 +54,7 @@ exclude-tags = [
 ]
 
 [global.transforms.tag-derivations]
-"hacking" = ["rust", "zig", "c++"]
+"hacking" = ["rust", "zig", "c++", "python"]
 "japanese" = ["japan", "日本", "にほん", "anime", "manga"]
 "gaming" = ["games", "switch", "singleplayer", "multiplayer"]
 "science" = ["environment", "climate", "climate change"]
@@ -90,7 +90,7 @@ exclude-tags-strict = ["satire", "social"]
 [feeds]
 
 
-## News
+## News:
 
 [feeds.united-nations-top-stories]
 url = "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
@@ -135,6 +135,7 @@ max = 5
 [feeds.associated-press]
 url = "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"
 tags = ["news"]
+headers = { user-agent = "miniflux" }
 
 [feeds.bbc]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
@@ -157,7 +158,7 @@ tags = ["news", "essays", "zine", "fun"]
 # - https://finviz.com/
 
 
-## Hacking
+## Hacking:
 
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
@@ -239,7 +240,7 @@ url = "https://radicle.xyz/feed.xml"
 tags = ["hacking", "blog", "releases"]
 
 
-## Hacking blogs
+## Hacking blogs:
 
 [feeds.hachha]
 url = "https://hachha.dev/blog.feed"
@@ -468,12 +469,17 @@ tags = ["blog", "hacking"]
 url = "https://abhi.now/blog/feed.xml"
 tags = ["blog", "hacking"]
 
+[feeds.gwern]
+url = ""
+tags = ["blog", "hacking"]
+author = "gwern"
+
 # [feeds.]
 # url = ""
 # tags = ["blog", "hacking"]
 # author = ""
 
-## Technology
+## Technology:
 
 [feeds.guardian-technology]
 url = "https://www.theguardian.com/us/technology/rss"
@@ -502,7 +508,7 @@ url = "https://shattered.io/feed/"
 tags = ["hacking", "security"]
 
 
-## Japanese
+## Japanese:
 
 [feeds.matcha]
 url = "https://matcha-jp.com/easy/feed"
@@ -513,7 +519,7 @@ url = "https://nhkeasier.com/feed/"
 tags = ["japanese", "news"]
 
 
-## Environment & science
+## Environment & science:
 
 [feeds.guardian-environment]
 url = "https://www.theguardian.com/us/environment/rss"
@@ -552,7 +558,7 @@ url = "https://profmattstrassler.com/feed/"
 tags = ["science"]
 
 
-## Gaming
+## Gaming:
 
 [feeds.two-stop-bits]
 url = "https://twostopbits.com/rss"
@@ -580,7 +586,7 @@ url = "https://exok.com/atom.xml"
 tags = ["gaming", "indie"]
 
 
-## Comics
+## Comics:
 
 [feeds.xkcd]
 url = "https://xkcd.com/rss.xml"
@@ -600,7 +606,7 @@ url = "https://sjapi.up.railway.app/rss/chainsaw-man.xml"
 tags = ["comics", "fun", "japanese", "manga"]
 
 
-## Positive News
+## Positive News:
 
 [feeds.goodgoodgood]
 url = "https://www.goodgoodgood.co/articles/rss.xml"
@@ -611,7 +617,7 @@ url = "http://positive.news/rss"
 tags = ["news", "positive"]
 
 
-## Government
+## Government:
 
 [feeds.usa-bills]
 url = "https://www.govinfo.gov/rss/bills.xml"
@@ -626,13 +632,21 @@ url = "https://www.sec.gov/news/pressreleases.rss"
 tags = ["gov", "sec"]
 
 
-## Other blogs
+## Other blogs:
 
 [feeds.brandon-sanderson]
+url = "https://www.brandonsanderson.com/blogs/blog.atom"
+tags = ["blog", "reading", "fun"]
+freq = "24hrs"
+author = "Brandon Sanderson"
+headers = { user-agent = "miniflux" }
+
+[feeds.state-of-the-sanderson]
 url = "https://www.brandonsanderson.com/blogs/blog/tagged/state-of-the-sanderson.atom"
 tags = ["blog", "reading", "fun"]
-freq = "12hrs"
+freq = "48hrs"
 author = "Brandon Sanderson"
+headers = { user-agent = "miniflux" }
 
 [feeds.lmnt]
 url = "https://lmnt.me/feed.xml"
@@ -645,6 +659,7 @@ tags = ["blog", "reading"]
 [feeds.fuse]
 url = "https://api.syosetu.com/writer/311735.Atom"
 tags = ["blog", "reading", "fun"]
+author = "FUSE"
 
 [feeds.annas-archive]
 # url = "https://annas-archive.li/blog/rss.xml"
@@ -653,41 +668,46 @@ url = "https://annas-archive.gd/blog/rss.xml"
 tags = ["blog", "reading", "hacking"]
 
 
-## Stories
+## Stories:
 
 [feeds.gorogoromikan]
 url = "https://api.syosetu.com/writernovel/773478.Atom"
 tags = ["reading", "fun", "japanese"]
 
 
-## Link blogs
+## Link blogs:
 
 [feeds.hachha-links]
 url = "https://hachha.dev/links.feed"
 tags = ["blog", "links"]
 
 
-## Entertainment
+## Entertainment:
 
 [feeds.the-onion]
 url = "https://theonion.com/feed/"
 tags = ["fun", "satire", "funny"]
+author = "The Onion"
 
 [feeds.simpleflips]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
 tags = ["gaming", "video", "fun", "funny"]
+author = "Simpleflips"
 
 [feeds.simpleflips-full]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCydmoF3pPpijDuFMvTaQIZw"
 tags = ["gaming", "video", "fun", "funny"]
+author = "Simpleflips"
 
 [feeds.solidjj]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEq_Dr1GHvnNPQNfgOzhZ8Q"
 tags = ["video", "fun", "funny"]
+author = "SolidJJ"
 
 [feeds.dunkey]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg"
 tags = ["gaming", "video", "fun", "funny"]
+author = "Dunkey"
 
 [feeds.kurzgesagt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q"
@@ -735,19 +755,19 @@ tags = ["video", "japanese", "fun"]
 
 [feeds.3b1b]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw"
-tags = ["video", "math"]
+tags = ["video", "math", "fun"]
 
 [feeds.no-boilerplate]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA"
-tags = ["video", "hacking"]
+tags = ["video", "hacking", "fun"]
 
 [feeds.equalyze]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCg6bOX5kiEvLxY5GXoSvEGg"
-tags = ["video", "music", "gaming"]
+tags = ["video", "music", "gaming", "fun"]
 
 [feeds.qumu]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0QbcOX2gI5zruEvpSmnf6Q"
-tags = ["video", "music", "gaming"]
+tags = ["video", "music", "gaming", "fun"]
 
 [feeds.cheese-parade]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQ1aOToWpOdaIj1784_5M0g"
@@ -760,7 +780,7 @@ tags = ["video", "gaming", "fun"]
 [feeds.chris-and-jack]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Liv5-jdU2Qk53lTtYDG2w"
 tags = ["video", "fun", "funny"]
-must-include-substrings = ["Chris & Jack"] # Ignore shorts
+include = ["Chris & Jack"] # Ignore shorts
 
 [feeds.funke]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCd-qVRcjoK9zjtDs_LRxSmw"
@@ -787,7 +807,7 @@ url = "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss"
 tags = ["video", "anime"]
 
 
-## Social feeds
+## Social feeds:
 
 [feeds.mastodon]
 mastodon = "https://mastodon.social"
@@ -797,20 +817,20 @@ tags = ["social", "mastodon"]
 freq = "15min"
 
 
-## Organizations
+## Organizations:
 
 [feeds.iamals]
 url = "https://www.iamals.org/feed/"
 tags = ["org", "philanthropy"]
 
 
-## Filter news
+## Filter news:
 
 [feeds.filtered-news]
 tags = ["filtered", "filtered-news"]
 tag_allowlist = ["news"]
 tag_blocklist = []
-must-include-substrings = [
+include = [
   "economy",
   "daylight savings",
   "law",
@@ -820,30 +840,30 @@ must-include-substrings = [
 step = 11
 
 
-## Tag filters
+## Tag filters:
 
 [feeds.craig-mod-hacking]
 tags = ["hacking"]
 feeds = ["craig-mod"]
-must-include-substrings = ["[RODEN]"]
+include = ["[RODEN]"]
 
 [feeds.craig-mod-urbanism]
 tags = ["japanese", "urbanism"]
 feeds = ["craig-mod"]
-must-include-substrings = ["[RIDGELINE]"]
+include = ["[RIDGELINE]"]
 
 [feeds.craig-mod-essays]
 tags = ["essays", "zine"]
 feeds = ["craig-mod"]
-must-include-substrings = ["[ESSAYS]"]
+include = ["[ESSAYS]"]
 
-## Interest feeds
+## Interest feeds:
 
 [feeds.interest-media]
 tags = ["interest"]
 tag_allowlist = []  # All
 tag_blocklist = []
-must-include-substrings = [
+include = [
   # Music
   "daft punk",
   "lena raine",
@@ -923,7 +943,7 @@ must-include-substrings = [
 step = 11
 
 
-## Common aggregates
+## Common aggregates:
 
 [feeds.dont-miss]
 tags = ["dont-miss"]
@@ -976,6 +996,7 @@ tag_allowlist = [
 ]
 tag_blocklist = [
   "ai",
+  "satire",
 ]
 
 [feeds.single-feed]
