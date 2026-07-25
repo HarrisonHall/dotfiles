@@ -1,0 +1,172 @@
+# inherits = "fleet_dark"
+
+"attribute" = "yellow"
+
+"type" = "pink"
+"type.builtin" = "yellow"
+"type.enum.variant" = "teal"
+
+"constructor" = "blue"
+
+"constant" = "yellow"
+"constant.character" = "teal"
+"constant.character.escape" = "pink"
+"constant.numeric" = "pink"
+"constant.builtin" = "pink"
+
+"string" = "green"
+"string.regexp" = "pink"
+"string.special" = "blue"
+"string.special.symbol" = "red"
+
+"comment" = { fg = "comment" } #, modifiers = ["italic"] }
+
+"variable" = "text"
+"variable.parameter" = { fg = "red", modifiers = ["italic"] }
+"variable.builtin" = "red"
+"variable.other.member" = "blue"
+
+"label" = "blue4" # used for lifetimes
+
+"punctuation" = "teal"
+"punctuation.special" = "blue3"
+
+"operator" = { fg = "blue3" }
+
+"function" = "blue"
+# "function" = "blue2"
+"function.macro" = "pink"
+
+"tag" = { fg = "blue" }
+
+"namespace" = { fg = "yellow" } #, modifiers = ["italic"] }
+
+"special" = "blue" # fuzzy highlight
+
+"markup.heading.1" = "red"
+"markup.heading.2" = "pink"
+"markup.heading.3" = "yellow"
+"markup.heading.4" = "green"
+"markup.heading.5" = "blue"
+"markup.heading.6" = "purple"
+"markup.list" = "teal"
+"markup.list.unchecked" = "comment"
+"markup.list.checked" = "green"
+"markup.bold" = { fg = "red", modifiers = ["bold"] }
+"markup.italic" = { fg = "red", modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link.url" = { fg = "blue", modifiers = ["italic", "underlined"] }
+"markup.link.text" = "purple"
+"markup.link.label" = "blue"
+"markup.raw" = "green"
+"markup.quote" = "pink"
+
+"diff.plus" = "green"
+"diff.minus" = "red"
+"diff.delta" = "blue"
+
+# UI:
+
+"ui.background" = { fg= "text", bg = "bg"}
+# "ui.separator" = "bg"
+
+"ui.linenr" = { fg = "comment" }
+"ui.linenr.selected" = { fg = "text" }
+
+"ui.statusline" = { fg = "text", bg = "panel" }
+"ui.statusline.inactive" = { fg = "comment", bg = "bg" }
+"ui.statusline.normal" = { fg = "bg", bg = "pink", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "bg", bg = "green", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "bg", bg = "purple", modifiers = ["bold"] }
+
+"ui.popup" = { fg = "text", bg = "panel" }
+"ui.window" = { fg = "bg" }
+# "ui.window" = { fg = "text", bg = "bg" }
+"ui.help" = { fg = "panel", bg = "bg" }
+
+"ui.bufferline" = { fg = "highlight", bg = "mantle" }
+"ui.bufferline.active" = { fg = "purple", bg = "base", underline = { color = "purple", style = "line" } }
+"ui.bufferline.background" = { bg = "highlight" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "text", bg = "panel", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "border" }
+"ui.text.directory" = { fg = "blue" }
+
+"ui.virtual" = "panel"
+"ui.virtual.ruler" = { bg = "pink" }
+"ui.virtual.indent-guide" = "highlight"
+"ui.virtual.inlay-hint" = { fg = "comment", bg = "panel" }
+"ui.virtual.jump-label" = { fg = "pink", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "border" }
+
+"ui.cursor" = { fg = "bg", bg = "comment" }
+"ui.cursor.primary" = { fg = "bg", bg = "text" }
+# "ui.cursor.match" = { fg = "peach", modifiers = ["bold"] }
+"ui.cursor.match" = { fg = "teal", modifiers = ["bold"] }
+
+# "ui.cursor.primary.normal" = { fg = "bg", bg = "pink" }
+"ui.cursor.primary.normal" = { fg = "bg", bg = "text" }
+"ui.cursor.primary.insert" = { fg = "bg", bg = "green" }
+"ui.cursor.primary.select" = { fg = "bg", bg = "purple" }
+
+"ui.cursor.normal" = { fg = "text", bg = "bg" }
+# "ui.cursor.normal" = { fg = "text", bg = "secondary_cursor_normal" }
+# "ui.cursor.insert" = { fg = "text", bg = "secondary_cursor_insert" }
+# "ui.cursor.select" = { fg = "text", bg = "secondary_cursor_select" }
+
+"ui.cursorline.primary" = { bg = "panel" }
+
+"ui.highlight" = { bg = "highlight", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "text", bg = "panel" }
+"ui.menu.selected" = { fg = "text", bg = "highlight", modifiers = ["bold"] }
+
+"diagnostic.error" = { underline = { color = "red", style = "curl" } }
+"diagnostic.warning" = { underline = { color = "yellow", style = "curl" } }
+"diagnostic.info" = { underline = { color = "blue3", style = "curl" } }
+"diagnostic.hint" = { underline = { color = "teal", style = "curl" } }
+"diagnostic.unnecessary" = { modifiers = ["dim"] }
+"diagnostic.deprecated" = { modifiers = ["crossed_out"] }
+
+"error" = { fg = "red", bg = "highlight" }
+"warning" = { fg = "yellow", bg = "hightlight" }
+"info" = { fg = "teal" }
+"hint" = { fg = "blue2" }
+
+"rainbow" = ["red", "pink", "yellow", "green", "teal", "purple"]
+
+# My overrides:
+# "markup.strikethrough" = { modifiers = ["crossed_out"] }
+# "comment" = { fg = "overlay2", modifiers = [] }
+"keyword.control.conditional" = { fg = "purple", modifiers = [] }
+"keyword" = "purple"
+"keyword.storage" = "teal"
+"keyword.function" = "purple"
+"keyword.storage.type" = "purple"
+# "namespace" = { fg = "#be95ff", modifiers = []}
+
+[palette]
+bg = "#161616"
+text = "#dde1e6"
+panel = "#262626"
+
+red = "#ee5396"
+green = "#42be65"
+yellow = "#ffe966"
+blue = "#00b2ff"
+pink = "#ff73b8"
+# pink = "#ff7eb6"
+# teal = "#00dfdb"
+teal = "#08bdba"
+purple = "#be95ff"
+
+blue2 = "#82cfff"
+blue3 = "#78a9ff"
+blue4 = "#3ddbd9"
+
+border = "#393939"
+highlight = "#525252"
+# comment = "#7a7a7a"
+comment = "#A3A3A3"

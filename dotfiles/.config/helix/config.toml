@@ -1,4 +1,5 @@
-theme = "catppuccin_mocha_plus"
+# theme = "catppuccin_mocha_plus"
+theme = "oxocarbon"
 
 [editor]
 mouse = true

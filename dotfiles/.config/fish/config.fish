@@ -36,7 +36,8 @@ if status is-interactive
     set fish_greeting
 
     # Set colors.
-    type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
+    # type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
+    set -x LS_COLORS (cat ~/.config/dircolors/vivid/oxocarbon.ls_colors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-mocha.json
     set -x QT_STYLE_OVERRIDE kvantum
 

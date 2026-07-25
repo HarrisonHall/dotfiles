@@ -33,7 +33,8 @@ config.font = wezterm.font_with_fallback {
   'Font Awesome 6 Brands',
 }
 config.font_size = 12.0
-config.color_scheme = "Catppuccin Mocha"
+-- config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Oxocarbon Dark"
 config.window_padding = {
   left = '0.5cell',
   right = '0.5cell',

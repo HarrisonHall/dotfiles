@@ -1,0 +1,118 @@
+colors:
+  # Original "catppuccin" theme
+  # https://github.com/catppuccin/catppuccin
+
+  bg: "161616"
+  text: "dde1e6"
+  panel: "262626"
+  teal: "08bdba"
+  sky: "3ddbd9"
+  blue: "33b1ff"
+  red: "ee5396"
+  pink: "ff7eb6"
+  green: "42be65"
+  purple: "be95ff"
+
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+
+  directory:
+    foreground: blue
+
+  symlink:
+    foreground: pink
+
+  multi_hard_link: {}
+
+  fifo:
+    foreground: bg
+    background: blue
+
+  socket:
+    foreground: bg
+    background: pink
+
+  door:
+    foreground: bg
+    background: pink
+
+  block_device:
+    foreground: teal
+    background: panel
+
+  character_device:
+    foreground: pink
+    background: panel
+
+  broken_symlink:
+    foreground: bg
+    background: red
+
+  missing_symlink_target:
+    foreground: bg
+    background: red
+
+  setuid: {}
+
+  setgid: {}
+
+  file_with_capability: {}
+
+  sticky_other_writable: {}
+
+  other_writable: {}
+
+  sticky: {}
+
+  executable_file:
+    foreground: red
+    font-style: bold
+
+text:
+  special:
+    foreground: bg
+    background: purple
+
+  todo:
+    font-style: bold
+
+  licenses:
+    foreground: text
+
+  configuration:
+    foreground: purple
+
+  other:
+    foreground: purple
+
+markup:
+  foreground: purple
+
+programming:
+  source:
+    foreground: green
+
+  tooling:
+    foreground: teal
+
+    continuous-integration:
+      foreground: green
+
+media:
+  foreground: pink
+
+office:
+  foreground: red
+
+archives:
+  foreground: sky
+  font-style: underline
+
+executable:
+  foreground: red
+  font-style: bold
+
+unimportant:
+  foreground: text

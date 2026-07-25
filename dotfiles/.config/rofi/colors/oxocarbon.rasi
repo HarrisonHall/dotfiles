@@ -1,0 +1,16 @@
+/**
+ *
+ * Author : BattleCh1cken
+ * Github : @BattleCh1cken
+ * 
+ * Colors
+ **/
+
+* {
+    background:     #262626;
+    background-alt: #393939;
+    foreground:     #f2f4f8;
+    selected:       #82cfff;
+    active:         #42be65;
+    urgent:         #ee5396;
+}

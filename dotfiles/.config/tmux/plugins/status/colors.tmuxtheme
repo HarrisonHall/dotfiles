@@ -1,22 +1,20 @@
 # Theme file for status line.
 # Using Catppuccin Mocha theme.
 
-thm_bg="#1e1e2e"
-thm_fg="#cdd6f4"
-thm_cyan="#89dceb"
-thm_black="#181825"
+thm_bg="#161616"
+thm_fg="#dde1e6"
+thm_cyan="#3ddbd9"
+thm_black="#262626"
 # thm_gray="#313244"
 # thm_gray="#1e1e2e"
-thm_gray="#282839"
-thm_magenta="#cba6f7"
-thm_pink="#f5c2e7"
-thm_red="#f38ba8"
-thm_green="#a6e3a1"
-thm_yellow="#f9e2af"
-thm_blue="#89b4fa"
-thm_orange="#fab387"
-
-thm_black4="#585b70"
+thm_gray="#393939"
+thm_magenta="#be95ff"
+thm_pink="#ff7eb6"
+thm_red="#ee5396"
+thm_green="#42be65"
+thm_yellow="#3ddbd9"
+thm_blue="#33b1ff"
+thm_orange="#82cfff"
 
 thm_ssh_1="#202637"  # Blue
 thm_ssh_2="#242C2C"  # Green

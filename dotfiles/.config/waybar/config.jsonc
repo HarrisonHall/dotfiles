@@ -110,11 +110,11 @@
             "on-scroll"     : 1,
             "on-click-right": "mode",
             "format": {
-                "months":     "<span color='#d8dee9'><b>{}</b></span>",
-                "days":       "<span color='#b48ead'><b>{}</b></span>",
-                "weeks":      "<span color='#8fbcbb'><b>W{}</b></span>",
-                "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
-                "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+                "months":     "<span color='#ff7eb6'><b>{}</b></span>",
+                "days":       "<span color='#dde1e6'><b>{}</b></span>",
+                "weeks":      "<span color='#78a9ff'><b>W{}</b></span>",
+                "weekdays":   "<span color='#82cfff'><b>{}</b></span>",
+                "today":      "<span color='#be95ff'><b><u>{}</u></b></span>"
             }
         },
         "tooltip-format": "<span size='14pt' font='HackGen35 Console NF'>{calendar}</span>",

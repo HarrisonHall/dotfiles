@@ -7,10 +7,10 @@ default-timeout=8000
 anchor=top-right
 margin=10
 
-background-color=#1e1e2e
-text-color=#cdd6f4
-border-color=#89b4fa
-progress-color=over #313244
+background-color=#161616
+text-color=#dde1e6
+border-color=#262626
+progress-color=over #42be65
 
 [urgency=high]
-border-color=#fab387
+border-color=#ee5396

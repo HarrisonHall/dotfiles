@@ -1,12 +1,7 @@
 # Starship configuration
 
 add_newline = false
-palette = "catppuccin_mocha"
-# $git_branch\
-# $git_commit\
-# $git_state\
-# $git_metrics\
-# $git_status\
+palette = "oxocarbon"
 format = """
 $username\
 $hostname\
@@ -122,3 +117,15 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+
+[palettes.oxocarbon]
+pink = "#ff7eb6"
+mauve = "#be95ff"
+red = "#ee5396"
+yellow = "#82cfff"
+green = "#42be65"
+teal = "#08bdba"
+sky = "#82cfff"
+blue = "#78a9ff"
+text = "#dde1e6"
+base = "#525252"
