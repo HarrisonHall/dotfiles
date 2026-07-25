@@ -469,10 +469,20 @@ tags = ["blog", "hacking"]
 url = "https://abhi.now/blog/feed.xml"
 tags = ["blog", "hacking"]
 
-[feeds.gwern]
-url = ""
+# [feeds.gwern]
+# url = ""
+# tags = ["blog", "hacking"]
+# author = "gwern"
+
+[feeds.technomancy]
+url = "https://technomancy.us/atom.xml"
 tags = ["blog", "hacking"]
-author = "gwern"
+author = "Phil Hagelberg"
+
+[feeds.mccd]
+url = "https://mccd.space/feed.xml"
+tags = ["blog", "hacking"]
+author = "Marc Coquand"
 
 # [feeds.]
 # url = ""
@@ -945,6 +955,14 @@ step = 11
 
 ## Common aggregates:
 
+[feeds.fun]
+tag_allowlist = [
+  "fun",
+]
+tag_blocklist = [
+  "satire",
+]
+
 [feeds.dont-miss]
 tags = ["dont-miss"]
 feeds = [
@@ -1009,6 +1027,7 @@ tag_allowlist = [
   "org",
   "funny",
   "filtered",
+  "releases",
 ]
 tag_blocklist = [
   "satire",
