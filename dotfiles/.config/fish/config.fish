@@ -27,6 +27,9 @@ set -x LD_LIBRARY_PATH \
 # Do not track (https://consoledonottrack.com/).
 set -x DO_NOT_TRACK 1
 
+# Do not override missing commands.
+set -e COMMAND_NOT_FOUND_HANDLE
+
 # Shell setup.
 if status is-interactive
     # Disable fish greeting.
@@ -35,6 +38,7 @@ if status is-interactive
     # Set colors.
     type -f dircolors 2&>/dev/null && eval (dircolors -c ~/.config/dircolors/.dircolors)
     set -x GLAMOUR_STYLE ~/.config/glamour/styles/catppuccin-mocha.json
+    set -x QT_STYLE_OVERRIDE kvantum
 
     # Set pagers.
     set -x PAGER bat
@@ -58,6 +62,7 @@ if status is-interactive
     ## Alias ls.
     type -f eza 2&>/dev/null && alias ll "eza -la --icons=auto --group-directories-first --classify"
     type -f eza 2&>/dev/null && alias ls "eza --icons=auto --group-directories-first"
+    type -f eza 2&>/dev/null && alias tree "eza --tree --icons=auto --group-directories-first"
 
     ## Configure nix.
     alias nix-shell "nix-shell --command \"fish\""
