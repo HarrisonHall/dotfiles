@@ -22,13 +22,12 @@ database = "./slip.db"
 user-agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36"
 
 [global.filters]
-exclude-title-words = [
+exclude-titles = [
   "sport",
   "nfl",
   "scores",
   "#shorts",
   "llm",
-  "llms",
   "agentic",
   "doge",
   "vibe-coding",
@@ -65,6 +64,9 @@ exclude-tags = [
 [global.transforms.tag-aliases]
 "news" = ["report", "society"]
 
+[global.transforms]
+author = "{feed_fallback}"
+
 [global.options]
 # Maximum feeds returned, something sane.
 max = 512
@@ -81,7 +83,7 @@ freq = "2hrs"
 max = 256
 
 [serve.all.filters]
-exclude-tags = ["satire", "social"]
+exclude-tags-strict = ["satire", "social"]
 
 
 # Feed definitions and settings.
@@ -101,13 +103,13 @@ tags = ["news"]
 [feeds.npr-national]
 url = "https://feeds.npr.org/1003/rss.xml"
 tags = ["news"]
-exclude-content-words = ["trump", "biden"]
+exclude-contents = ["trump", "biden"]
 exclude-substrings = ["morning news brief"]
 
 [feeds.npr-world]
 url = "https://feeds.npr.org/1004/rss.xml"
 tags = ["news"]
-exclude-content-words = ["trump", "biden"]
+exclude-contents = ["trump", "biden"]
 exclude-substrings = ["morning news brief"]
 
 [feeds.conversation-politics]
@@ -160,16 +162,17 @@ tags = ["news", "essays", "zine", "fun"]
 [feeds.hackernews]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking", "aggregate"]
-exclude-title-words = ["ai", "hiring", "fun"]
+exclude-titles = ["hiring", "fun ", " fun"]
 exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt", "anthropic"]
-exclude-tags = ["ai"]
+exclude-tags-strict = ["ai"]
 exclude-links = [".ai"]
 
 [feeds.lobsters]
 url = "https://lobste.rs/rss"
 tags = ["hacking", "fun", "aggregate"]
-exclude-title-words = ["llm", "ai", "hiring"]
-exclude-tags = ["ai", "llm", "agent", "agents", "vibecoding"]
+exclude-titles = ["hiring"]
+exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt", "anthropic"]
+exclude-tags-strict = ["ai", "llm", "agent", "agents", "vibecoding"]
 
 [feeds.notado-jado-software-development]
 url = "https://notado.app/rss/jado/software-development/feed.rss"
@@ -241,22 +244,27 @@ tags = ["hacking", "blog", "releases"]
 [feeds.hachha]
 url = "https://hachha.dev/blog.feed"
 tags = ["blog", "hacking"]
+author = "HaChHa"
 
 [feeds.old-new-thing]
 url = "https://devblogs.microsoft.com/oldnewthing/feed"
 tags = ["blog", "hacking"]
+author = "Raymond Chen"
 
 [feeds.bennett-meares]
 url = "https://bmeares.com/rss/"
 tags = ["blog", "hacking"]
+author = "Bennett Meares"
 
 [feeds.dave-heinamann]
 url = "https://dheinemann.com/atom/"
 tags = ["blog", "hacking"]
+author = "Dave Heinemann"
 
 [feeds.lucidity]
 url = "https://ludic.mataroa.blog/rss/"
 tags = ["blog", "hacking"]
+author = "Nikhil Suresh (Lucidity)"
 
 [feeds.without-boats]
 url = "https://without.boats/index.xml"
@@ -286,6 +294,7 @@ tags = ["blog", "hacking"]
 [feeds.mitchellh]
 url = "https://mitchellh.com/feed.xml"
 tags = ["blog", "hacking"]
+author = "Mitchell Hashimoto"
 
 [feeds.erikarow]
 url = "https://erikarow.land/combined.xml"
@@ -399,6 +408,71 @@ tags = ["blog", "hacking"]
 url = "https://purplesyringa.moe/blog/feed.rss"
 tags = ["blog", "hacking"]
 
+[feeds.ratfactor]
+url = "https://ratfactor.com/atom.xml"
+tags = ["blog", "hacking"]
+author = "Dave Gauer"
+
+[feeds.drewdevault]
+url = "https://drewdevault.com/blog/index.xml"
+tags = ["blog", "hacking"]
+author = "Drew DeVault"
+
+[feeds.seangeodecke]
+url = "https://www.seangoedecke.com/feed.xml"
+tags = ["blog", "hacking"]
+author = "Sean Geodecke"
+
+[feeds.daring-fireball]
+url = "https://daringfireball.net/feeds/main"
+tags = ["blog", "hacking"]
+author = "John Gruber"
+
+[feeds.coding-horror]
+url = "https://blog.codinghorror.com/rss/"
+tags = ["blog", "hacking"]
+author = "Jeff Atwood"
+
+[feeds.mathbabe]
+url = "https://mathbabe.org/feed/"
+tags = ["blog", "hacking"]
+author = "Cathy O’Neil"
+
+[feeds.martinfowler]
+url = "https://www.martinfowler.com/feed.atom"
+tags = ["blog", "hacking"]
+author = "Martin Fowler"
+
+[feeds.wesmckinney]
+url = "https://wesmckinney.com/archives.xml"
+tags = ["blog", "hacking"]
+author = "Wes McKinney"
+
+[feeds.worm-blossom]
+url = "https://worm-blossom.org/rss.xml"
+tags = ["blog", "hacking"]
+
+[feeds.willow]
+url = "https://willowprotocol.org/rss_news.xml"
+tags = ["blog", "hacking"]
+
+[feeds.aljoscha-meyer]
+url = "https://aljoscha-meyer.de/rss.xml"
+tags = ["blog", "hacking"]
+
+[feeds.gwils-garden]
+url = "https://gwil.garden/rss/posts.xml"
+tags = ["blog", "hacking"]
+
+[feed.abhi]
+url = "https://abhi.now/blog/feed.xml"
+tags = ["blog", "hacking"]
+
+# [feeds.]
+# url = ""
+# tags = ["blog", "hacking"]
+# author = ""
+
 ## Technology
 
 [feeds.guardian-technology]
@@ -408,7 +482,7 @@ tags = ["news", "science", "technology"]
 [feeds.verge]
 url = "https://www.theverge.com/rss/index.xml"
 tags = ["tech"]
-exclude-title-words = ["ai", "llm", "fun"]
+exclude-titles = [" ai", "-ai", "llm", "fun"]
 exclude-tags = ["prime", "amazon", "deals", "smart home", "buying guide", "gift guide", "verge video", "cast"]
 
 [feeds.conversation-science-tech]
@@ -557,6 +631,8 @@ tags = ["gov", "sec"]
 [feeds.brandon-sanderson]
 url = "https://www.brandonsanderson.com/blogs/blog/tagged/state-of-the-sanderson.atom"
 tags = ["blog", "reading", "fun"]
+freq = "12hrs"
+author = "Brandon Sanderson"
 
 [feeds.lmnt]
 url = "https://lmnt.me/feed.xml"
@@ -572,7 +648,8 @@ tags = ["blog", "reading", "fun"]
 
 [feeds.annas-archive]
 # url = "https://annas-archive.li/blog/rss.xml"
-url = "https://annas-archive.gl/blog/rss.xml"
+# url = "https://annas-archive.gl/blog/rss.xml"
+url = "https://annas-archive.gd/blog/rss.xml"
 tags = ["blog", "reading", "hacking"]
 
 
