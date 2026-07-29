@@ -13,5 +13,11 @@
     dig  # DNS tool
     # obsidian  # GUI note manager
     radicle-desktop  # Radicle desktop interface
+
+    ## Email
+    aerc  # Email client
+    isync  # Email sync
+    w3m  # Email viewer (web browser)
+    msmtp  # Sendmail
   ];
 }

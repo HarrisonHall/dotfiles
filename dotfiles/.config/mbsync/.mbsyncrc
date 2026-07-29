@@ -1,0 +1,28 @@
+# mbsync (isync) config
+
+# Feeds
+# source   = imaps://feeds.hachha@mail.hocko.tech@imap.mymangomail.com:993
+#source-cred-cmd  = echo "pzxB39svtINaivbi"
+IMAPAccount feeds.hachha
+Host imap.mymangomail.com
+Port 993
+User feeds.hachha@mail.hocko.tech
+PassCmd "echo pzxB39svtINaivbi"
+# PassCmd "pass email/you@example.com"
+TLSType IMAPS
+
+IMAPStore feeds.hachha-remote
+Account feeds.hachha
+
+MaildirStore feeds.hachha-local
+SubFolders Verbatim
+Path ~/.cache/mail/feeds.hachha/
+Inbox ~/.cache/mail/feeds.hachha/INBOX
+
+Channel feeds.hachha
+Far :feeds.hachha-remote:
+Near :feeds.hachha-local:
+Patterns *
+Create Both
+Expunge Both
+SyncState *
