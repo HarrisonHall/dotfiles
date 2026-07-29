@@ -82,6 +82,7 @@ viddy = "latest"
 uv = "latest"
 zig = "latest"
 rust = "latest"
+go = "latest"
 python = "latest"
 ruff = "latest"
 node = "latest"
@@ -111,6 +112,11 @@ usage = "latest"
 watchexec = "latest"
 cargo-binstall = "latest"
 
+# "go:git.sr.ht/~rjarry/aerc" = "latest"
+"cargo:meli" = "latest"
+pitchfork = "latest"
+gopass = "latest"
+
 [tools."http:cha"]
 url = "https://git.sr.ht/~bptato/chawan/refs/download/v0.4.2/chawan-0-4-2-linux-amd64.tar.xz"
 version = "0.4.2"
@@ -122,6 +128,12 @@ url = "https://files.radicle.dev/releases/latest/radicle-1.9.1-x86_64-unknown-li
 version = "1.9.1"
 bin_path = "radicle-1.9.1-x86_64-unknown-linux-musl/bin"
 checksum = "sha256:9374872f98d7497bfab631ba0113e3864b9916f8f56da0d1e52c0fc5b31b95f3"
+
+# [tools."http:aerc"]
+# url = "https://git.sr.ht/~rjarry/aerc/archive/0.22.0.tar.gz"
+# version = "0.22.0"
+# bin_path = "aerc-0.22.0/"
+# checksum = "sha256:f1cd5e358fd836051d4d88c189ecaa025a108b729281985525b45b13bc49e70f"
 
 # [tools."http:yubico-piv-tool"]
 # url = "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-2.7.3.tar.gz"

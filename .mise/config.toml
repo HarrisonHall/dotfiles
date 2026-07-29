@@ -127,6 +127,8 @@ mkdir -p ~/.local/share/icons
 mkdir -p ~/.local/share/man
 mkdir -p ~/.local/share/omf
 mkdir -p ~/.local/share/themes
+mkdir -p ~/.cache
+mkdir -p ~/.cache/mail
 """
 
 [tasks.directory-ensure-mk]
@@ -199,6 +201,7 @@ run = [
   # "value sync",
   # Update mise.
   "mise install",
+  "pitchfork boot enable",
 ]
 
 # [tasks.symlink-directory]
