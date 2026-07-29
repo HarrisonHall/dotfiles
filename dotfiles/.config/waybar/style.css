@@ -38,11 +38,14 @@
 @define-color workspaces @surface0;
 @define-color workspacesfocused @blue;
 @define-color workspacesfocusedtext @base;
+@define-color selected @green;
+@define-color hovered @sapphire;
+@define-color panel @base;
 
 /* Reset all styles */
 * {
   border: none;
-  border-radius: 0;
+  border-radius: 5px;
   min-height: 0;
   margin: 0;
   padding: 0;
@@ -152,7 +155,7 @@
 #workspaces {
   all: unset;
   border-radius: 5px;
-  background-color: @base;
+  background-color: @panel;
   margin: 5px;
   margin-right: 0px;
   /* padding-top: auto; */
@@ -181,7 +184,7 @@
 
 /* Workspaces that are urgent. */
 #workspaces button.urgent {
-  color: @red;
+  color: @critical;
 }
 
 /* Workspaces focused on other monitor. */
@@ -196,18 +199,18 @@
 
 /* Workspaces focused on current monitor. */
 #workspaces button.focused {
-  color: @green;
+  color: @selected;
 }
 
 #workspaces button:hover {
-  color: @sapphire;
-  box-shadow: inset 0px 4px 0px 0px @sapphire;
-  text-shadow: 0px 1px 0px @sapphire;
+  color: @hovered;
+  box-shadow: inset 0px 4px 0px 0px @hovered;
+  text-shadow: 0px 1px 0px @hovered;
 }
 
 #taskbar {
   all: unset;
-  background-color: @base;
+  background-color: @panel;
   border-radius: 5px;
   margin: 5px;
   margin-left: 0.5em;
@@ -226,9 +229,9 @@
 }
 
 #taskbar button:hover {
-  color: @sapphire;
-  box-shadow: inset 0px 4px 0px 0px @sapphire;
-  /* text-shadow: 0px 1px 0px @sapphire; */
+  color: @hovered;
+  box-shadow: inset 0px 4px 0px 0px @hovered;
+  /* text-shadow: 0px 1px 0px @hovered; */
 }
 
 #taskbar.empty {
@@ -240,11 +243,11 @@
 
 #tray {
   all: unset;
-  background: @base;
-  color: @crust;
+  background: @panel;
+  color: @bg;
   border-right: 5px solid;
   border-left: 5px solid;
-  border-color: @base;
+  border-color: @panel;
 }
 
 #tray button {
@@ -300,13 +303,13 @@
 #pulseaudio,
 #custom-lock,
 #custom-power {
-  background-color: @base;
+  background-color: @panel;
   /* padding: 0.5em 1em; */
   margin: 5px 0;
 }
 
 #clock {
-  color: @green;
+  color: @selected;
   border-radius: 0px 5px 5px 0px;
   margin-right: 0.5em;
   margin-left: 0em;
@@ -316,17 +319,24 @@
   /* padding-bottom: auto; */
 }
 
+tooltip {
+  background-color: @dark;
+  border: 2px solid @bg;
+  /* border-width: 4px; */
+  border-radius: 5px;
+}
+
 #battery {
   font-family: "Font Awesome 7 Free", "M PLUS 1", "HackGen35 Console NFJ";
-  color: @green;
+  color: @selected;
 }
 
 #battery.charging {
-  color: @green;
+  color: @selected;
 }
 
 #battery.warning:not(.charging) {
-  color: @red;
+  color: @critical;
 }
 
 #battery.disabled {
@@ -351,7 +361,7 @@
 
 #pulseaudio {
   font-family: "Font Awesome 7 Free", "M PLUS 1", "HackGen35 Console NFJ";
-  /* color: @red; */
+  /* color: @critical; */
   border-radius: 5px 0px 0px 5px;
   margin-left: 0.5em;
   padding-left: 0.5em;
@@ -379,7 +389,7 @@
 #custom-power {
   margin-right: 0.5em;
   border-radius: 0px 5px 5px 0px;
-  color: @red;
+  color: @critical;
 }
 
 #tray {

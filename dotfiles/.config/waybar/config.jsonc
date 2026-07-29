@@ -18,7 +18,7 @@
         "sway/window"
     ],
     "modules-right": [
-        "mpd",
+        // "mpd",
         "tray", 
         // "idle_inhibitor", 
         "pulseaudio", 
@@ -110,11 +110,11 @@
             "on-scroll"     : 1,
             "on-click-right": "mode",
             "format": {
-                "months":     "<span color='#d8dee9'><b>{}</b></span>",
-                "days":       "<span color='#b48ead'><b>{}</b></span>",
-                "weeks":      "<span color='#8fbcbb'><b>W{}</b></span>",
-                "weekdays":   "<span color='#ebcb8b'><b>{}</b></span>",
-                "today":      "<span color='#bf616a'><b><u>{}</u></b></span>"
+                "months":     "<span color='#f5c2e7'><b>{}</b></span>",
+                "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks":      "<span color='#74c7ec'><b>W{}</b></span>",
+                "weekdays":   "<span color='#cba6f7'><b>{}</b></span>",
+                "today":      "<span color='#a6e3a1'><b><u>{}</u></b></span>"
             }
         },
         "tooltip-format": "<span size='14pt' font='HackGen35 Console NF'>{calendar}</span>",
