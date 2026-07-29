@@ -494,6 +494,11 @@ url = "https://mccd.space/feed.xml"
 tags = ["blog", "hacking"]
 author = "Marc Coquand"
 
+[feeds.mark-pitblado]
+url = "https://www.markpitblado.me/feed.xml"
+tags = ["hacking", "security"]
+author = "Mark Pitblado"
+
 # [feeds.]
 # url = ""
 # tags = ["blog", "hacking"]
@@ -962,7 +967,6 @@ include = [
 ]
 step = 11
 
-
 ## Common aggregates:
 
 [feeds.fun]
@@ -972,6 +976,7 @@ tag_allowlist = [
 tag_blocklist = [
   "satire",
 ]
+step = 11
 
 [feeds.dont-miss]
 tags = ["dont-miss"]
@@ -1042,3 +1047,30 @@ tag_allowlist = [
 tag_blocklist = [
   "satire",
 ]
+
+## Recent versions of top feeds.
+[feeds."interest-media/new"]
+tag_allowlist = ["interest"]
+tag_blocklist = []
+step = 50
+oldest = "2hrs"
+
+[feeds."fun/new"]
+feeds = ["fun"]
+step = 50
+oldest = "2hrs"
+
+[feeds."dont-miss/new"]
+feeds = ["dont-miss"]
+step = 50
+oldest = "2hrs"
+
+[feeds."single-feed/new"]
+feeds = ["single-feed"]
+step = 50
+oldest = "2hrs"
+
+[feeds."limited-news/new"]
+feeds = ["limited-news"]
+step = 50
+oldest = "2hrs"
