@@ -164,9 +164,15 @@ tags = ["news", "essays", "zine", "fun"]
 url = "https://news.ycombinator.com/rss"
 tags = ["hacking", "aggregate"]
 exclude-titles = ["hiring", "fun ", " fun"]
-exclude-substrings = ["openai", "llm", "-ai", "ai-", "agent", "claude", "gpt", "anthropic"]
+exclude-substrings = [
+  "llm", "-ai", "ai-", "agent", "model",
+  "openai", "gpt",
+  "anthropic", "claude",
+  "kimi",
+  "llama",
+]
 exclude-tags-strict = ["ai"]
-exclude-links = [".ai"]
+exclude-links = [".ai", "openai"]
 
 [feeds.lobsters]
 url = "https://lobste.rs/rss"
@@ -238,6 +244,10 @@ tags = ["hacking", "blog", "fun"]
 [feeds.radicle]
 url = "https://radicle.xyz/feed.xml"
 tags = ["hacking", "blog", "releases"]
+
+[feeds.mxroute]
+url = "https://docs.mxroute.com/changelog-feed.xml"
+tags = ["hacking", "releases", "mail"]
 
 
 ## Hacking blogs:

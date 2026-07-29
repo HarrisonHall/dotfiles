@@ -24,8 +24,11 @@ set -x LD_LIBRARY_PATH \
     $NIX_LD_LIBRARY_PATH \
     $LD_LIBRARY_PATH
 
-# Do not track (https://consoledonottrack.com/).
+# Do not track (~~https://consoledonottrack.com/~~ https://donottrack.sh/).
 set -x DO_NOT_TRACK 1
+
+# Use color (https://force-color.org/).
+set -x FORCE_COLOR 1
 
 # Do not override missing commands.
 set -e COMMAND_NOT_FOUND_HANDLE
@@ -116,6 +119,9 @@ if status is-interactive
 
     ## Configure rust.
     set -x RUST_BACKTRACE 1
+
+    ## Configure go.
+    set -x GOPATH "$HOME/.cache/go"
 
     ## Configure python.
     set -x PYTHONSTARTUP "$HOME/.config/python/interactive_startup.py"
