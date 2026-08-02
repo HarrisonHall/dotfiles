@@ -1,4 +1,9 @@
-[daemons.email]
-run = "~/.config/dotfiles/scripts/email-fetch.fish"
+[daemons.test]
+run = "echo test > /tmp/pitchfork-test"
 cron = { schedule = "0 */5 * * * *", retrigger = "finish" }
 boot_start = true  # Required until next release.
+
+# [daemons.email]
+# run = "~/.config/dotfiles/scripts/email-fetch.fish"
+# cron = { schedule = "0 */5 * * * *", retrigger = "finish" }
+# boot_start = true  # Required until next release.
