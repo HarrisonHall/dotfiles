@@ -499,6 +499,21 @@ url = "https://www.markpitblado.me/feed.xml"
 tags = ["hacking", "security"]
 author = "Mark Pitblado"
 
+[feeds.arya-dradjica]
+url = "https://bal-e.org/blog/rss.xml"
+tags = ["blog", "hacking"]
+author = "Arya Dradjica"
+
+[feeds.information-camouflage]
+url = "https://bruceediger.com/index.xml"
+tags = ["blog", "hacking"]
+author = "Bruce Ediger"
+
+[feeds.starting-from-nix]
+url = "https://www.startingfromnix.com/feed"
+tags = ["blog", "literature", "philosophy"]
+author = "Nix"
+
 # [feeds.]
 # url = ""
 # tags = ["blog", "hacking"]
@@ -531,6 +546,13 @@ tags = ["blog", "hacking"]
 [feeds."shattered.io"]
 url = "https://shattered.io/feed/"
 tags = ["hacking", "security"]
+
+[feeds.wired]
+url = "https://www.wired.com/feed/rss"
+tags = ["tech"]
+exclude = ["coupons", "deals", "the best", " ai "]
+exclude-titles = [" ai", "-ai", "llm", "agents"]
+exclude-tags = ["prime", "amazon", "deals", "smart home", "buying guide", "gift guide", "cast"]
 
 
 ## Japanese:
@@ -565,6 +587,7 @@ tags = ["news", "science"]
 [feeds.inside-climate-news]
 url = "https://insideclimatenews.org/feed"
 tags = ["news", "science"]
+headers = { user-agent = "miniflux" }
 
 [feeds.nasa-breaking-news]
 url = "http://nasa.gov/rss/dyn/breaking_news.rss"
@@ -629,6 +652,13 @@ tags = ["comics", "fun", "funny"]
 [feeds.chainsaw-man]
 url = "https://sjapi.up.railway.app/rss/chainsaw-man.xml"
 tags = ["comics", "fun", "japanese", "manga"]
+author = "Fujimoto"
+
+[feeds.shen-comics]
+url = "https://old.reddit.com/user/shenanigansen/submitted/.rss"
+tags = ["comics", "fun", "funny"]
+author = "Shad"
+headers = { user-agent = "miniflux" }
 
 
 ## Positive News:
@@ -831,6 +861,11 @@ tags = ["video", "anime"]
 url = "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss"
 tags = ["video", "anime"]
 
+[feeds.memoria]
+url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMrvc5gVjmEqZe-mPX9Vh1A"
+tags = ["gaming", "video", "fun", "funny"]
+author = "Memoria"
+
 
 ## Social feeds:
 
@@ -1010,6 +1045,7 @@ feeds = [
   "funke",
   "dogen",
   "cheese-parade",
+  "memoria",
   ## Gaming
   "exok-games",
 ]

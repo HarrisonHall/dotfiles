@@ -20,6 +20,7 @@ OS
 Radicale
 Radicle
 SRS
+Smallville
 Tofugu
 Trixie
 WearOS
@@ -31,5 +32,6 @@ openssl
 otome
 polkit
 strava
+syndications
 tk
 villainess
