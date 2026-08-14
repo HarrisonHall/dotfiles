@@ -124,18 +124,21 @@ tags = ["news", "japanese"]
 # More feeds: https://www.asahi.com/information/service/rss.html
 url = "https://www.asahi.com/rss/asahi/newsheadlines.rdf"
 tags = ["news", "japanese"]
+headers = { user-agent = "miniflux" }
 max = 5
 
 [feeds.nhk]
 # More feeds: https://www.nhk.or.jp/toppage/rss/index.html
 url = "https://www3.nhk.or.jp/rss/news/cat0.xml"
 tags = ["news", "japanese"]
+headers = { user-agent = "miniflux" }
 max = 5
 
 [feeds.associated-press]
 url = "https://news.google.com/rss/search?q=when:24h+allinurl:apnews.com&hl=en-US&gl=US&ceid=US:en"
 tags = ["news"]
 headers = { user-agent = "miniflux" }
+retry_count = 2
 
 [feeds.bbc]
 url = "https://feeds.bbci.co.uk/news/rss.xml"
@@ -498,6 +501,7 @@ author = "Marc Coquand"
 url = "https://www.markpitblado.me/feed.xml"
 tags = ["hacking", "security"]
 author = "Mark Pitblado"
+headers = { user-agent = "miniflux" }
 
 [feeds.arya-dradjica]
 url = "https://bal-e.org/blog/rss.xml"
@@ -644,6 +648,7 @@ tags = ["comics", "fun", "funny"]
 url = "https://old.reddit.com/r/Khyleri/new.rss"
 tags = ["comics", "fun", "funny"]
 headers = { user-agent = "miniflux" }
+retry_count = 5
 
 [feeds.calvin-and-hobbes]
 url = "https://www.comicsrss.com/rss/calvinandhobbes.rss"
@@ -659,7 +664,21 @@ url = "https://old.reddit.com/user/shenanigansen/submitted/.rss"
 tags = ["comics", "fun", "funny"]
 author = "Shad"
 headers = { user-agent = "miniflux" }
+retry_count = 5
 
+[feeds.nhim]
+url = "https://old.reddit.com/user/nhimzy/submitted/.rss"
+tags = ["comics", "fun", "funny"]
+author = "Nhim"
+
+max = 2
+freq = "4min"
+oldest = "2min"
+keep-empty = false
+apply-tags = true
+headers = { user-agent = "miniflux" }
+step = 2
+retry_count = 5
 
 ## Positive News:
 
@@ -748,53 +767,77 @@ author = "The Onion"
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCiYpKsB66LZsk7s4yhxJqlQ"
 tags = ["gaming", "video", "fun", "funny"]
 author = "Simpleflips"
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.simpleflips-full]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCydmoF3pPpijDuFMvTaQIZw"
 tags = ["gaming", "video", "fun", "funny"]
 author = "Simpleflips"
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.solidjj]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEq_Dr1GHvnNPQNfgOzhZ8Q"
 tags = ["video", "fun", "funny"]
 author = "SolidJJ"
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.dunkey]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsvn_Po0SmunchJYOWpOxMg"
 tags = ["gaming", "video", "fun", "funny"]
 author = "Dunkey"
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.kurzgesagt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q"
 tags = ["video", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.hbomberguy]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UClt01z1wHHT7c5lKcU8pxRQ"
 tags = ["video", "notify", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.clustermint]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPQGGTbdmv0AsE1XARaOAVA"
 tags = ["gaming", "video", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.asahilina-yt]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCwkfNQzKwICfPKs6V0ZUFZQ"
 tags = ["hacking", "video", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.warowl]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCpFcHE36IoySjYj1Rytxyog"
 tags = ["gaming", "video", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.ign-reviews]
 url = "http://feeds.feedburner.com/ign/reviews"
 tags = ["gaming"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.ign-tech]
 url = "http://feeds.feedburner.com/ign/tech-articles"
 tags = ["tech", "gaming"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.ign-comics]
 url = "https://feeds.feedburner.com/ign/comics-articles"
 tags = ["gaming", "comics"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.not-just-bikes]
 url = "https://rss.nebula.app/video/channels/notjustbikes.rss"
@@ -807,51 +850,75 @@ tags = ["video", "gaming", "fun"]
 [feeds.yuka-chan]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCaYX_KdvYlylMr2wZ03DMfA"
 tags = ["video", "japanese", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.3b1b]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw"
 tags = ["video", "math", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.no-boilerplate]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUMwY9iS8oMyWDYIe6_RmoA"
 tags = ["video", "hacking", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.equalyze]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCg6bOX5kiEvLxY5GXoSvEGg"
 tags = ["video", "music", "gaming", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.qumu]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0QbcOX2gI5zruEvpSmnf6Q"
 tags = ["video", "music", "gaming", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.cheese-parade]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQ1aOToWpOdaIj1784_5M0g"
 tags = ["video", "fun", "funny"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.bobby-ivar]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCETZ4AkABYwBRzpWBJ33KUw"
 tags = ["video", "gaming", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.chris-and-jack]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC3Liv5-jdU2Qk53lTtYDG2w"
 tags = ["video", "fun", "funny"]
 include = ["Chris & Jack"] # Ignore shorts
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.funke]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCd-qVRcjoK9zjtDs_LRxSmw"
 tags = ["video", "gaming", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.dogen]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCSX0NhNdBA-ZnEFkYFzdw4A"
 tags = ["video", "japanese", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.sakurai-on-creating-games]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5CTV3JSdrlo5Pa42QkK8SA"
 tags = ["video", "japanese", "gaming", "fun"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.scott-the-woz]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC4rqhyiTs7XyuODcECvuiiQ"
 tags = ["video", "gaming", "fun", "funny"]
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 [feeds.anime-news-network]
 url = "https://www.animenewsnetwork.com/all/atom.xml?ann-edition=us"
@@ -865,6 +932,8 @@ tags = ["video", "anime"]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMrvc5gVjmEqZe-mPX9Vh1A"
 tags = ["gaming", "video", "fun", "funny"]
 author = "Memoria"
+headers = { user-agent = "miniflux" }
+retry_count = 3
 
 
 ## Social feeds:
@@ -1062,6 +1131,7 @@ tag_allowlist = [
   "fun",
   "hacking",
   "interest",
+  "video",
 ]
 tag_blocklist = [
   "ai",

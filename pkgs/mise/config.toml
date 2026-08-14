@@ -124,10 +124,10 @@ bin_path = "chawan-0-4-2-linux-amd64"
 checksum = "sha256:f1f7e07a3eb6439e14e08f3913cdd8fc94861621b0af79c4b9cf1f1080071051"
 
 [tools."http:radicle"]
-url = "https://files.radicle.dev/releases/latest/radicle-1.9.1-x86_64-unknown-linux-musl.tar.xz"
-version = "1.9.1"
-bin_path = "radicle-1.9.1-x86_64-unknown-linux-musl/bin"
-checksum = "sha256:9374872f98d7497bfab631ba0113e3864b9916f8f56da0d1e52c0fc5b31b95f3"
+url = "https://files.radicle.dev/releases/latest/radicle-1.10.1-x86_64-unknown-linux-musl.tar.xz"
+version = "1.10.1"
+bin_path = "radicle-1.10.1-x86_64-unknown-linux-musl/bin"
+checksum = "sha256:9354f7f6241a88ddca1d41a080aa6337ddfc5dc682b8de78ab6d418b5782225a"
 
 # [tools."http:aerc"]
 # url = "https://git.sr.ht/~rjarry/aerc/archive/0.22.0.tar.gz"
