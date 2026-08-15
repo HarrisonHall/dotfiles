@@ -958,7 +958,7 @@ tags = ["org", "philanthropy"]
 [feeds.filtered-news]
 tags = ["filtered", "filtered-news"]
 tag_allowlist = ["news"]
-tag_blocklist = []
+tag_blocklist = ["satire"]
 include = [
   "economy",
   "daylight savings",
@@ -1080,6 +1080,7 @@ tag_allowlist = [
 tag_blocklist = [
   "satire",
 ]
+tags = ["feed-fun"]
 step = 11
 
 [feeds.dont-miss]
