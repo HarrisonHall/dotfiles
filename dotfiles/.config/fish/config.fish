@@ -63,7 +63,7 @@ if status is-interactive
         --multi"
 
     ## Alias ls.
-    type -f eza 2&>/dev/null && alias ll "eza -la --icons=auto --group-directories-first --classify"
+    type -f eza 2&>/dev/null && alias ll "eza -la --icons=auto --group-directories-first --classify=always"
     type -f eza 2&>/dev/null && alias ls "eza --icons=auto --group-directories-first"
     type -f eza 2&>/dev/null && alias tree "eza --tree --icons=auto --group-directories-first"
 

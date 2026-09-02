@@ -27,13 +27,9 @@ exclude-titles = [
   "nfl",
   "scores",
   "#shorts",
-  "llm",
-  "agentic",
-  "doge",
-  "vibe-coding",
-  "vibecoding",
 ]
 exclude-substrings = [
+  # Exclude sports from news.
   "sport",
   "soccer",
   "サッカー",
@@ -41,12 +37,36 @@ exclude-substrings = [
   "フットボール",
   "basketball",
   "バスケットボール",
+
+  # Exclude tiring politics.
   "trump",
   "トランプ",
   "musk",
   "イーロン",
-  "-ai",
+  " doge",
+  "doge ",
+
+  # Exclude slop opinion pieces.
+  "genai",
+  "gen-ai",
+  "generative-ai",
+  " ai,",
+  " ai ",
+  "-ai ",
+  "-ai,",
+  " ai-",
   ".ai",
+  "llm",
+  "agentic",
+  "agents",  # Crazy I have to block this, but here we are.
+  "vibe-cod",
+  "vibecod",
+  "vibe cod",
+  "claude",
+  "anthropic",
+  "openai",
+  "llama",
+  "gemini",
 ]
 exclude-tags = [
   "sports",
@@ -55,7 +75,13 @@ exclude-tags = [
 
 [global.transforms.tag-derivations]
 "hacking" = ["rust", "zig", "c++", "python"]
-"japanese" = ["japan", "日本", "にほん", "anime", "manga"]
+"japanese" = [
+  "japan",
+  "日本",
+  "にほん",
+  # "anime",
+  # "manga"
+]
 "gaming" = ["games", "switch", "singleplayer", "multiplayer"]
 "science" = ["environment", "climate", "climate change"]
 "sports" = ["basketball", "baseball", "nfl", "nhl", "fifa", "soccer"]
@@ -95,6 +121,7 @@ exclude-tags-strict = ["satire", "social"]
 [feeds.united-nations-top-stories]
 url = "https://news.un.org/feed/subscribe/en/news/all/rss.xml"
 tags = ["news"]
+headers = { user-agent = "miniflux" }
 
 [feeds.guardian-us]
 url = "https://www.theguardian.com/us/rss"
@@ -157,25 +184,38 @@ tags = ["news", "essays", "zine", "fun"]
 url = "https://asteriskmag.com/feed"
 tags = ["news", "essays", "zine", "fun"]
 
+[feeds.nautilus]
+url = "https://nautil.us/feed"
+tags = ["news", "zine", "fun"]
+
+[feeds.bubbles]
+url = "https://bubbles.town/feed"
+tags = ["aggregate", "fun", "news"]
+
+[feeds.bubbles-hot]
+url = "https://bubbles.town/feed/hot"
+tags = ["aggregate", "fun"]
+
 # Additional news sites:
 # - https://finviz.com/
 
 
 ## Hacking:
 
-[feeds.hackernews]
-url = "https://news.ycombinator.com/rss"
-tags = ["hacking", "aggregate"]
-exclude-titles = ["hiring", "fun ", " fun"]
-exclude-substrings = [
-  "llm", "-ai", "ai-", "agent", "model",
-  "openai", "gpt",
-  "anthropic", "claude",
-  "kimi",
-  "llama",
-]
-exclude-tags-strict = ["ai"]
-exclude-links = [".ai", "openai"]
+# Sadly, these exclusions are not enough to keep the slop out of hackernews.
+# [feeds.hackernews]
+# url = "https://news.ycombinator.com/rss"
+# tags = ["hacking", "aggregate"]
+# exclude-titles = ["hiring", "fun ", " fun"]
+# exclude-substrings = [
+#   "llm", "-ai", "ai-", "agent", "model",
+#   "openai", "gpt",
+#   "anthropic", "claude",
+#   "kimi",
+#   "llama",
+# ]
+# exclude-tags-strict = ["ai"]
+# exclude-links = [".ai", "openai"]
 
 [feeds.lobsters]
 url = "https://lobste.rs/rss"
@@ -187,6 +227,10 @@ exclude-tags-strict = ["ai", "llm", "agent", "agents", "vibecoding"]
 [feeds.notado-jado-software-development]
 url = "https://notado.app/rss/jado/software-development/feed.rss"
 tags = ["hacking", "fun", "aggregate"]
+
+[feeds.bubbles-hacking]
+url = "https://bubbles.town/feed/cat/tech"
+tags = ["aggregate", "fun", "hacking"]
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"
@@ -466,17 +510,19 @@ author = "Wes McKinney"
 url = "https://worm-blossom.org/rss.xml"
 tags = ["blog", "hacking"]
 
-[feeds.willow]
-url = "https://willowprotocol.org/rss_news.xml"
-tags = ["blog", "hacking"]
+# TODO: Some weird parsing issue causes all entries to be new?
+# [feeds.willow]
+# url = "https://willowprotocol.org/rss_news.xml"
+# tags = ["blog", "hacking"]
 
 [feeds.aljoscha-meyer]
 url = "https://aljoscha-meyer.de/rss.xml"
 tags = ["blog", "hacking"]
 
-[feeds.gwils-garden]
-url = "https://gwil.garden/rss/posts.xml"
-tags = ["blog", "hacking"]
+# TODO: Some weird parsing issue causes all entries to be new?
+# [feeds.gwils-garden]
+# url = "https://gwil.garden/rss/posts.xml"
+# tags = ["blog", "hacking"]
 
 [feed.abhi]
 url = "https://abhi.now/blog/feed.xml"
@@ -922,11 +968,17 @@ retry_count = 3
 
 [feeds.anime-news-network]
 url = "https://www.animenewsnetwork.com/all/atom.xml?ann-edition=us"
-tags = ["video", "anime"]
+tags = [
+  # "video",
+  "anime"
+]
 
 [feeds.crunchyroll-news]
 url = "https://cr-news-api-service.prd.crunchyrollsvc.com/v1/en-US/rss"
-tags = ["video", "anime"]
+tags = [
+  # "video",
+  "anime"
+]
 
 [feeds.memoria]
 url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMrvc5gVjmEqZe-mPX9Vh1A"

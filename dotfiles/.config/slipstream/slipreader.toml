@@ -147,11 +147,18 @@ on-tag = []
 [feeds.limited-news]
 url = "https://feeds.hachha.dev/feed/limited-news/feed"
 tags = ["limited-news"]
+exclude-tags = ["social", "satire"]
 freq = "240s"
 
 [feeds.fun]
-url = "https://feeds.hachha.dev/tag/fun/feed"
+url = "https://feeds.hachha.dev/feed/fun/feed"
 tags = ["limited-news"]
+exclude-tags = ["social", "satire"]
+freq = "240s"
+
+[feeds.single-feed]
+url = "https://feeds.hachha.dev/feed/single-feed/feed"
+exclude-tags = ["social", "satire"]
 freq = "240s"
 
 [read]
