@@ -515,9 +515,10 @@ tags = ["blog", "hacking"]
 # url = "https://willowprotocol.org/rss_news.xml"
 # tags = ["blog", "hacking"]
 
-[feeds.aljoscha-meyer]
-url = "https://aljoscha-meyer.de/rss.xml"
-tags = ["blog", "hacking"]
+# TODO: Some weird parsing issue causes all entries to be new?
+# [feeds.aljoscha-meyer]
+# url = "https://aljoscha-meyer.de/rss.xml"
+# tags = ["blog", "hacking"]
 
 # TODO: Some weird parsing issue causes all entries to be new?
 # [feeds.gwils-garden]
