@@ -22,6 +22,11 @@ compile = false
 [settings.node]
 compile = false
 
+[settings.github]
+# Uncomment on machines where credentials are stored in a manager:
+# credential_command = 'gh auth token --hostname "$MISE_CREDENTIAL_HOST"'
+use_git_credentials = true
+
 [tools]
 # Core tools:
 bat = "latest"
@@ -29,7 +34,7 @@ eza = "latest"
 helix = "latest"
 jujutsu = "latest"
 "conda:make" = "latest"
-"aqua:tmux/tmux-builds" = "latest"
+"tmux" = "3.6b"
 
 # Core utilities
 atuin = "latest"

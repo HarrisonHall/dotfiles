@@ -27,6 +27,7 @@ exclude-titles = [
   "nfl",
   "scores",
   "#shorts",
+  "[Sponsor]",
 ]
 exclude-substrings = [
   # Exclude sports from news.
@@ -191,10 +192,14 @@ tags = ["news", "zine", "fun"]
 [feeds.bubbles]
 url = "https://bubbles.town/feed"
 tags = ["aggregate", "fun", "news"]
+[feeds.bubbles.substitutions]
+"\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
 [feeds.bubbles-hot]
 url = "https://bubbles.town/feed/hot"
 tags = ["aggregate", "fun"]
+[feeds.bubbles-hot.substitutions]
+"\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
 # Additional news sites:
 # - https://finviz.com/
@@ -231,6 +236,8 @@ tags = ["hacking", "fun", "aggregate"]
 [feeds.bubbles-hacking]
 url = "https://bubbles.town/feed/cat/tech"
 tags = ["aggregate", "fun", "hacking"]
+[feeds.bubbles-hacking.substitutions]
+"\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
 [feeds.ziglang]
 url = "https://ziglang.org/devlog/index.xml"

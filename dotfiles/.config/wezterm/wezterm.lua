@@ -22,7 +22,7 @@ config.window_close_confirmation = 'NeverPrompt'
 --config.enable_wayland = false  -- Force xWayland
 
 -- SSH
--- config.mux_enable_ssh_agent = false;
+config.mux_enable_ssh_agent = false;
 
 -- Theming
 config.term = "xterm-256color"
