@@ -93,6 +93,7 @@ exclude-tags = [
 
 [global.transforms]
 author = "{feed_fallback}"
+builtin-link-extractions = true
 
 [global.options]
 # Maximum feeds returned, something sane.
@@ -100,7 +101,7 @@ max = 512
 # Oldest entry returned.
 oldest = "1month"
 # Default feed update frequency.
-freq = "2hrs"
+freq = "1hr"
 
 
 [serve]
@@ -199,6 +200,12 @@ tags = ["aggregate", "fun", "news"]
 url = "https://bubbles.town/feed/hot"
 tags = ["aggregate", "fun"]
 [feeds.bubbles-hot.substitutions]
+"\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
+
+[feeds.bubbles-new]
+url = "https://bubbles.town/feed/new"
+tags = ["aggregate", "news", "test"]
+[feeds.bubbles-new.substitutions]
 "\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
 # Additional news sites:
@@ -699,7 +706,7 @@ url = "https://xkcd.com/rss.xml"
 tags = ["comics", "fun", "funny"]
 
 [feeds.khyleri]
-url = "https://old.reddit.com/r/Khyleri/new.rss"
+url = "https://reddit.com/r/Khyleri/new/.rss"
 tags = ["comics", "fun", "funny"]
 headers = { user-agent = "miniflux" }
 retry_count = 5
@@ -714,14 +721,14 @@ tags = ["comics", "fun", "japanese", "manga"]
 author = "Fujimoto"
 
 [feeds.shen-comics]
-url = "https://old.reddit.com/user/shenanigansen/submitted/.rss"
+url = "https://reddit.com/user/shenanigansen/submitted/.rss"
 tags = ["comics", "fun", "funny"]
 author = "Shad"
 headers = { user-agent = "miniflux" }
 retry_count = 5
 
 [feeds.nhim]
-url = "https://old.reddit.com/user/nhimzy/submitted/.rss"
+url = "https://reddit.com/user/nhimzy/submitted/.rss"
 tags = ["comics", "fun", "funny"]
 author = "Nhim"
 
