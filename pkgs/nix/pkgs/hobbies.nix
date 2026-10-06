@@ -5,7 +5,7 @@
 {
   users.users.${user}.packages = with pkgs; [
     # 日本語
-    anki-bin
+    # anki-bin  # TODO: Anki is bloated.
 
     # Games
     # dolphin-emu  # GC/Wii emulation

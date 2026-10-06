@@ -54,7 +54,7 @@ zoxide = "latest"
 # Advanced utilities:
 "cargo:biff-datetime-cli" = "latest"
 "cargo:cargo-zigbuild" = "latest"
-"cargo:cfait" = "latest"
+# "cargo:cfait" = "latest"
 d2 = "latest"
 # dig = "latest"
 dua = "latest"
@@ -118,7 +118,7 @@ watchexec = "latest"
 cargo-binstall = "latest"
 
 # "go:git.sr.ht/~rjarry/aerc" = "latest"
-"cargo:meli" = "latest"
+# "cargo:meli" = "latest"
 pitchfork = "latest"
 gopass = "latest"
 

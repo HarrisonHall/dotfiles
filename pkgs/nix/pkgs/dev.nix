@@ -12,6 +12,6 @@
     # d2  # Diagramming tool
     dig  # DNS tool
     # obsidian  # GUI note manager
-    radicle-desktop  # Radicle desktop interface
+    # radicle-desktop  # Radicle desktop interface
   ];
 }

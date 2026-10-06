@@ -1,8 +1,10 @@
 # Security configuration
 
-{ config, pkgs, lib, user, ... }:
+{ config, pkgs, lib, user, programs, ... }:
 
 {
+  programs.firejail.enable = true;
+
   users.users.${user}.packages = with pkgs; [
     # Crypt
     # protonvpn-gui
