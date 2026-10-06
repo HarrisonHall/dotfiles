@@ -136,8 +136,8 @@ if status is-interactive
 
     ## Other misc. aliases.
     type -f bat 2&>/dev/null && alias cat bat
-    type -f btm 2&>/dev/null && alias top btm && alias htop btm
-    type -f elio 2&>/dev/null && alias ee elio
+    # type -f btm 2&>/dev/null && alias top btm && alias htop btm
+    # type -f elio 2&>/dev/null && alias ee elio
 end
 
 # Start DE, if applicable.

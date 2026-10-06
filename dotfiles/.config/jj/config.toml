@@ -8,7 +8,7 @@ backend = "gpg"
 key = "1DE592D5A097E8ED4983A4E4BE6B77E1847DEB78"
 
 [aliases]
-log-bookmark = ["log", "-T", "builtin_log_detailed", "-r", "..@"]
+log-bookmark = ["log", "-T", "builtin_log_detailed"]
 log-all = ["log", "-r", "@ | ancestors(immutable_heads().., 2) | heads(immutable_heads())"]
 l = ["log", "-r", "(trunk()..@):: | (trunk()..@)-"]
 fresh = ["new", "trunk()"]
