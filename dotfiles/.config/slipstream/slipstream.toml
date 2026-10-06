@@ -57,6 +57,7 @@ exclude-substrings = [
   "-ai,",
   " ai-",
   ".ai",
+  "a.i.",
   "llm",
   "agentic",
   "agents",  # Crazy I have to block this, but here we are.
@@ -72,6 +73,7 @@ exclude-substrings = [
 exclude-tags = [
   "sports",
   "vibecoding",
+  "a.i.",
 ]
 
 [global.transforms.tag-derivations]
@@ -202,10 +204,16 @@ tags = ["aggregate", "fun"]
 [feeds.bubbles-hot.substitutions]
 "\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
-[feeds.bubbles-new]
-url = "https://bubbles.town/feed/new"
-tags = ["aggregate", "news", "test"]
-[feeds.bubbles-new.substitutions]
+# [feeds.bubbles-new]
+# url = "https://bubbles.town/feed/new"
+# tags = ["aggregate", "news", "test"]
+# [feeds.bubbles-new.substitutions]
+# "\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
+
+[feeds.bubbles-briefing]
+url = "https://bubbles.town/briefing/feed"
+tags = ["aggregate", "news", "fun"]
+[feeds.bubbles-briefing.substitutions]
 "\\[🫧 Open on Bubbles\\]\\(.*\\)" = ""
 
 # Additional news sites:

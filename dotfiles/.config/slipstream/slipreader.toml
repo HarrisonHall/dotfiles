@@ -38,6 +38,7 @@ command = [
   "-c",
   """
   curl \
+    --location \
     --silent \
     -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36" \
     {{link.url}} \
@@ -56,16 +57,16 @@ command = [
 
 [[commands]]
 name = "read-1"
-command = ["fish", "-c", "curl --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url1}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
+command = ["fish", "-c", "curl --location --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url1}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
 [[commands]]
 name = "read-2"
-command = ["fish", "-c", "curl --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url2}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
+command = ["fish", "-c", "curl --location --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url2}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
 [[commands]]
 name = "read-3"
-command = ["fish", "-c", "curl --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url3}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
+command = ["fish", "-c", "curl --location --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url3}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
 [[commands]]
 name = "read-4"
-command = ["fish", "-c", "curl --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url4}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
+command = ["fish", "-c", "curl --location --silent -A \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36\" {{link.url4}} | pandoc --from html --to gfm-raw_html -o - | bat --color=always --language=markdown --terminal-width={{terminal.width}} -"]
 
 # Open the url.
 [[commands]]
